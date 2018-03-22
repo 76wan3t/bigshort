@@ -1,0 +1,88 @@
+package main;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+
+public class BigShortDAO {
+	
+	Connection conn =null;
+    PreparedStatement pstmt = null;
+    int result;
+    ResultSet rs;
+    ArrayList<BigShortDTO> list = new ArrayList<>();
+    
+    public void insert(BigShortDTO bSdto, String area ,String seq) {
+    	
+    	
+    	try {
+    		
+			conn = DBManger.getConnection();
+			
+			String sql = "INSERT INTO "+ area
+					+ " VALUES( "+seq+" , ?, ?, ?, NULL, ?, ?, ?) "; // 여기서 매매, 전세는 보조금이 없으므로 null값으로 들어간다.
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, bSdto.getDongname());
+			pstmt.setString(2, bSdto.getAptname());
+			pstmt.setString(3, bSdto.getDeal());
+			pstmt.setInt(4, bSdto.getPrice());
+			pstmt.setInt(5, bSdto.getDongextent());
+			pstmt.setInt(6, bSdto.getDonglevel());
+			
+			result = pstmt.executeUpdate();
+			
+			if(result > 0) {
+				System.out.println("등록 성공");
+			}else {
+				System.out.println("등록 실패");
+			}
+			
+			
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+			
+		}finally {
+			
+		}
+    }
+ public void insertSubsidy(BigShortDTO bSdto, String area, String seq) {
+    	
+    	
+    	try {
+    		
+			conn = DBManger.getConnection();
+			
+			String sql = "INSERT INTO "+area
+					+ " VALUES( "+seq+" , ?, ?, ?, ?, ?, ?, ?) ";
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, bSdto.getDongname());
+			pstmt.setString(2, bSdto.getAptname());
+			pstmt.setString(3, bSdto.getDeal());
+			pstmt.setInt(4, bSdto.getSubsidy());
+			pstmt.setInt(5, bSdto.getPrice());
+			pstmt.setInt(6, bSdto.getDongextent());
+			pstmt.setInt(7, bSdto.getDonglevel());
+			
+			result = pstmt.executeUpdate();
+			
+			if(result > 0) {
+				System.out.println("등록 성공");
+			}else {
+				System.out.println("등록 실패");
+			}
+			
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+			
+		}finally {
+			
+		}
+    }
+}
