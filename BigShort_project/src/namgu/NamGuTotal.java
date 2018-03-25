@@ -24,7 +24,9 @@ public class NamGuTotal {
     ArrayList<BigShortDTO> list = new ArrayList<>();
     
     public void namgutotal() throws IOException {
-        
+		
+	    ArrayList<BigShortDTO> list = new ArrayList<>();
+
         BigShortDAO bSdAo = new BigShortDAO();
         Scanner sc = new Scanner(System.in);
         System.out.println("======================================");

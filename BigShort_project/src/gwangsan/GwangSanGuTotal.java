@@ -23,7 +23,9 @@ public class GwangSanGuTotal {
      ArrayList<BigShortDTO> list = new ArrayList<>();
      
      public void gwangsangutotal() throws IOException {
-    	    
+ 		
+ 	    ArrayList<BigShortDTO> list = new ArrayList<>();
+
          BigShortDAO bSdAo = new BigShortDAO();
          Scanner sc = new Scanner(System.in);
          System.out.println("======================================");
