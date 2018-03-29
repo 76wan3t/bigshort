@@ -18,9 +18,8 @@ public class GwangSanGuTotal {
      static int page = 1;
      static int total = 167;
      static String comlete_page ;
-     static String area = "gwansan";
-     static String seq = "gwansan_seq.NEXTVAL";
-     ArrayList<BigShortDTO> list = new ArrayList<>();
+     static String area = "gwangsan";
+     static String seq = "gwangsan_seq.NEXTVAL";
      
      public void gwangsangutotal() throws IOException {
  		
@@ -43,7 +42,7 @@ public class GwangSanGuTotal {
 
          Elements body = Sarang.select("td[rowspan='2'] > a");
          System.out.println();
-         System.out.println("페이지 번호 "+page);
+         System.out.println("==========================페이지 번호 "+page +"===========================");
          System.out.println();
 
          for(Element element:body) {
@@ -175,56 +174,42 @@ public class GwangSanGuTotal {
                      		back = doc.select("div.viewLineadPrice").text().substring(3, 4);// ex) 매3억5백만원 이면 "5"을 가져온다.
                      		backnum = Integer.parseInt(back); // 타입을 변환해주기
                      		
-                     		System.out.println(backstring);
-                     		System.out.println(millionnum);
-                     		System.out.println(backnum);
-                     		
                      		}
 
  		                     if(mreview.equals("억") && count == 1){ //"억"자가 들어가고 숫자 길이가 1개이면 1억을 곱한다.
- 		                          
  		                         number = number * 100000000;
  		                        
  		                     }else if(mreview.equals("억") && backstring.equals("백") && count >= 2) { //3억5백 같은 경우
- 		                    	 
  		                    	 millionnum = millionnum * 100000000; // 억단위에는 억을 곱해주고
  		                    	 backnum = backnum * 1000000; // 백단위에는 백을 곱해준다.
  		                    	 number = millionnum + backnum; // 합쳐진 값을 number 변수에 합쳐준다.
  		                    	 
- 		                     }else if (!mreview.equals("억")&& count == 3) {// "억"자가 아니고 숫자 길이가 3개이면 천만원을 곱한다.
- 		                          
+ 		                     }else if (mreview.equals("천") && count == 2) {// "천"자가 들어가고 숫자 길이가 2개이면 백만원을 곱한다.
+ 		                          number = number * 1000000;
+ 		                        
+ 		                     }else if (mreview.equals("천") && count == 1) {// "천"자가 들어가고 숫자 길이가 1개이면 천만원을 곱한다.
  		                         number = number * 10000000;
  		                        
- 		                     }else if (!mreview.equals("억")&& count == 2) {// "억"자가 아니고 숫자 길이가 2개이면 1억원을 곱한다.
- 		                          
+ 		                     }else if (mreview.equals("천") && count == 4) {// "억"자가 들어가고 숫자 길이가 1개이면 천만원을 곱한다.
+ 		                         number = number * 10000;
+ 		                        
+ 		                     }else if (!mreview.equals("천") &&!mreview.equals("억")&& count == 3) {// "억"자가 아니고 숫자 길이가 3개이면 천만원을 곱한다.
+ 		                         number = number * 10000000;
+ 		                        
+ 		                     }else if (!mreview.equals("천") &&!mreview.equals("억")&& count == 2) {// "억"자가 아니고 숫자 길이가 2개이면 1억원을 곱한다.
  		                         number = number * 100000000;
  		                        
  		                     }else if (mreview.equals("억") && count == 2) {// "억"자가 들어가고 숫자 길이가 2개이면 천만원을 곱한다.
- 		                          
- 		                         number = number * 10000000;
- 		                        
- 		                     }else if (mreview.equals("천") && count == 2) {// "천"자가 들어가고 숫자 길이가 2개이면 백만원을 곱한다.
- 		                          
- 		                         number = number * 1000000;
- 		                        
- 		                     }else if (mreview.equals("천") && count == 1) {// "천"자가 들어가고 숫자 길이가 1개이면 천만원을 곱한다.
- 		                          
  		                         number = number * 10000000;
  		                        
  		                     }else if (mreview.equals("억") && count == 4) {// "억"자가 들어가고 숫자 길이가 4개이면 십만원을 곱한다.
- 		                          
  		                         number = number * 100000;
  		                        
- 		                     }else if (mreview.equals("천") && count == 4) {// "억"자가 들어가고 숫자 길이가 1개이면 천만원을 곱한다.
- 		                          
- 		                         number = number * 10000;
- 		                        
  		                     }else if(mreview.equals("억") && count == 3) { // "억"자가 들어가고 숫자가 3개이면 백만원을 곱한다.
- 		                          
  		                          number = number * 1000000;
  		                          
  		                     }else if(count == 5) { // 숫자가 5개이면 만원을 곱한다.
- 		                          
+ 		                    	 number = 0;
  		                          number = number * 10000;
  		                          
  		                     }
@@ -236,8 +221,38 @@ public class GwangSanGuTotal {
                       }else if(deal.equals("월세")&& deal2.equals("보")) {
                            
                            if(mreview.equals("천")) {
-                                 
-                                 if(count2==2) {
+                        	   
+                        	   			String mc  = doc.select("div.viewLineadPrice").text();//월세에서 길이를 파악 하기 위해서
+                        	   			int monthlylength = mc.length();
+                        	   			
+                        	   			if(monthlylength > 10) {
+                                       	 
+                                       	 String monthlys  = doc.select("div.viewLineadPrice").text().substring(0, 8); // 보증금은 얻기 위한 변수
+                                       	 String monthlys2 = monthlys.replaceAll("[^0-9]", ""); // 보증금쪽에서 숫자 들만 가져 오기
+                                       	 number2 = Integer.parseInt(monthlys2); // 보증금 변수 타입을 int형으로 변환하기
+                                            
+                                            number2 = number2 * 10000; // 보5천6백70만을 곱해서 56900000원으로 변경
+                                            monthly2 = doc.select("div.viewLineadPrice").text().substring(9, 12);//월세만 가져오기
+                                            monthlynumber2 = monthly2.replaceAll("[^0-9]", ""); // 월세에서 숫자만 빼오기
+                                            
+                                            int length = monthlynumber2.length(); // 자리 갯수를 구하기 위해서
+                                            
+                                            number3 = Integer.parseInt(monthlynumber2); // 타입 변환
+                                            
+                                                  if(length==1) {
+                                                        
+                                                        number3 = number3 * 1000000;// 월세는 백만원이면 단위라서 백만원을 곱해준다.
+                                                        
+                                                  }else if(length==2) {
+                                                        
+                                                        number3 = number3 * 10000;// 만원 단위이면 만원을 곱해준다.
+                                                        
+                                                  }else if(length==3) {
+                                                        
+                                                        number3 = number3 * 10000;
+                                                  
+                                                  }
+                                            }else if(count2==2) {
                                  
                                  number2 = number2 * 1000000; //"천"자가 들어가고 숫자갯수가 2개면 백만원을 곱한다.
                                  monthly2 = doc.select("div.viewLineadPrice").text().substring(7, 10);//월세만 가져오기

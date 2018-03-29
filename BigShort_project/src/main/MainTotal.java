@@ -20,8 +20,8 @@ public class MainTotal {
               System.out.println("1. 광산구");
               System.out.println("2. 북구");
               System.out.println("3. 동구");
-              System.out.println("4. 서구");
-              System.out.println("5. 남구");
+              System.out.println("4. 남구");
+              System.out.println("5. 서구");
               System.out.println("6. 프로그램 종료");
               System.out.print("code : ");
               int code = sc.nextInt();
