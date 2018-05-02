@@ -24,7 +24,7 @@ public class MainTotal {
               System.out.println("5. 서구");
               System.out.println("6. 프로그램 종료");
               System.out.print("code : ");
-              int code = sc.nextInt();
+              int code = 3;// sc.nextInt();
              
               if(code == 1) {
                   

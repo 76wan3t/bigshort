@@ -15,15 +15,15 @@ import main.BigShortDTO;
 public class NamGuTotal {
 	
 	static String base_url = "http://home.sarangbang.com/linead/list.html?nPage=";
-    static String base_url2="&nScale=20&total_page=107&now_location=%2Flinead%2Flist.html&sort_default=&sort_km=&sort_year=&sort_money=&dong=&code_area1=1&code_area2=13&menu=apt&submenu=&apt_code=&search_type=&search_price_type=select&search_sub_view=hide&fMenu=&tMenu=&sMenu=&tSch1=&tSch2=&search_area=&search_k6=0&search_price=&search_price_input1=&search_price_input2=&search_floor=&search_keyword2=&orderby_sort=";
+    static String base_url2="&nScale=20&total_page=109&now_location=%2Flinead%2Flist.html&sort_default=&sort_km=&sort_year=&sort_money=&dong=&menu=apt&submenu=&code_area1=1&code_area2=13";
     static int page = 1;
-    static int total = 106;
+    static int total = 109;
     static String comlete_page ;
     static String area = "namgu";
     static String seq = "namgu_seq.NEXTVAL";
     
     public void namgutotal() throws IOException {
-		
+    	
  	    ArrayList<BigShortDTO> list = new ArrayList<>();
 
          BigShortDAO bSdAo = new BigShortDAO();
@@ -36,7 +36,8 @@ public class NamGuTotal {
          comlete_page = base_url + page + base_url2;
          
      while(page <= total) {
-
+    	 
+    	 int overlap = 0;//몇번째 인지 알기 위한 변수
          
          
          Document Sarang = Jsoup.connect(comlete_page).get();
@@ -69,15 +70,17 @@ public class NamGuTotal {
                      list =  bSdAo.search(urltotal, area); // 중복값을 찾기 위해서 조회를 하기 위해 사용
                      String nameprice2 = ""; //초기화
                      String url2 = ""; // 초기화
+                     
                            for (BigShortDTO bigShortDTO : list) { // 조회되는 값을 변수들에게 담아 둔다.
                                  nameprice2 = bigShortDTO.getNameprice();
                                  url2 = bigShortDTO.getUrl();              
                            }
    
                      if(nameprice2.equals(nameprice)&&url2.equals(urltotal)) { // url 주소와 글자로 된 가격이 둘 다 같으면 중복 하나라도 틀리면 새로 들어간다.
-                           
-                                 System.out.println();
+                    	 		 overlap = overlap + 1;
+                                 System.out.println(overlap+"번째");
                                  System.out.println("중복입니다.");
+                                 System.out.println(urltotal);
                                  System.out.println();
                                  
                      }else {
@@ -198,19 +201,23 @@ public class NamGuTotal {
  		                         number = number * 10000000;
  		                        
  		                     }else if (!mreview.equals("천") &&!mreview.equals("억")&& count == 2) {// "억"자가 아니고 숫자 길이가 2개이면 1억원을 곱한다.
+ 		                    	 
  		                         number = number * 100000000;
  		                        
  		                     }else if (mreview.equals("억") && count == 2) {// "억"자가 들어가고 숫자 길이가 2개이면 천만원을 곱한다.
+ 		                    	 
  		                         number = number * 10000000;
  		                        
  		                     }else if (mreview.equals("억") && count == 4) {// "억"자가 들어가고 숫자 길이가 4개이면 십만원을 곱한다.
+ 		                    	 
  		                         number = number * 100000;
  		                        
  		                     }else if(mreview.equals("억") && count == 3) { // "억"자가 들어가고 숫자가 3개이면 백만원을 곱한다.
+ 		                    	 
  		                          number = number * 1000000;
  		                          
  		                     }else if(count == 5) { // 숫자가 5개이면 만원을 곱한다.
- 		                    	 number = 0;
+ 		                    	 
  		                          number = number * 10000;
  		                          
  		                     }
@@ -226,19 +233,19 @@ public class NamGuTotal {
                         	   			String mc  = doc.select("div.viewLineadPrice").text();//월세에서 길이를 파악 하기 위해서
                         	   			int monthlylength = mc.length();
                         	   			
-                        	   			if(monthlylength > 10) {
+                        	   			if(monthlylength > 11) {
                                        	 
                                        	 String monthlys  = doc.select("div.viewLineadPrice").text().substring(0, 8); // 보증금은 얻기 위한 변수
                                        	 String monthlys2 = monthlys.replaceAll("[^0-9]", ""); // 보증금쪽에서 숫자 들만 가져 오기
                                        	 number2 = Integer.parseInt(monthlys2); // 보증금 변수 타입을 int형으로 변환하기
                                             
-                                            number2 = number2 * 10000; // 보5천6백70만을 곱해서 56900000원으로 변경
-                                            monthly2 = doc.select("div.viewLineadPrice").text().substring(9, 12);//월세만 가져오기
-                                            monthlynumber2 = monthly2.replaceAll("[^0-9]", ""); // 월세에서 숫자만 빼오기
-                                            
-                                            int length = monthlynumber2.length(); // 자리 갯수를 구하기 위해서
-                                            
-                                            number3 = Integer.parseInt(monthlynumber2); // 타입 변환
+                                        number2 = number2 * 10000; // 보5천6백70만을 곱해서 56900000원으로 변경
+                                        monthly2 = doc.select("div.viewLineadPrice").text().substring(9, 12);//월세만 가져오기
+                                        monthlynumber2 = monthly2.replaceAll("[^0-9]", ""); // 월세에서 숫자만 빼오기
+                                        
+                                        int length = monthlynumber2.length(); // 자리 갯수를 구하기 위해서
+                                        
+                                        number3 = Integer.parseInt(monthlynumber2); // 타입 변환
                                             
                                                   if(length==1) {
                                                         
@@ -253,15 +260,55 @@ public class NamGuTotal {
                                                         number3 = number3 * 10000;
                                                   
                                                   }
-                                            }else if(count2==2) {
+	                                }else if(mreview.equals("천") && monthlylength > 9) {
+                                      	 
+                                      	 String monthlys  = doc.select("div.viewLineadPrice").text().substring(0, 4); // 보증금은 얻기 위한 변수
+                                      	 String monthlys2 = monthlys.replaceAll("[^0-9]", ""); // 보증금쪽에서 숫자 들만 가져 오기
+                                      	 number2 = Integer.parseInt(monthlys2); // 보증금 변수 타입을 int형으로 변환하기
+                                           
+                                       number2 = number2 * 10000000; // 
+                                       monthly2 = doc.select("div.viewLineadPrice").text().substring(5, 10);//월세만 가져오기
+                                       monthlynumber2 = monthly2.replaceAll("[^0-9]", ""); // 월세에서 숫자만 빼오기
+                                       
+                                       int length = monthlynumber2.length(); // 자리 갯수를 구하기 위해서
+                                       
+                                       number3 = Integer.parseInt(monthlynumber2); // 타입 변환
+                                           
+                                                 if(length==1) {
+                                                       
+                                                       number3 = number3 * 1000000;// 월세는 백만원이면 단위라서 백만원을 곱해준다.
+                                                       
+                                                 }else if(length==2) {
+                                                       
+                                                       number3 = number3 * 10000;// 만원 단위이면 만원을 곱해준다.
+                                                       
+                                                 }else if(length==3) {
+                                                       
+                                                       number3 = number3 * 10000;
+                                                 
+                                                 }
+	                                }else if(monthlylength == 8) {
+	                                       
+	                                       number2 = number2 * 10000000; // 천만원으로 변경
+	                                       monthly2 = doc.select("div.viewLineadPrice").text().substring(5, 7);//월세만 가져오기
+	                                       monthlynumber2 = monthly2.replaceAll("[^0-9]", ""); // 월세에서 숫자만 빼오기
+	                                       
+	                                       int length = monthlynumber2.length(); // 자리 갯수를 구하기 위해서
+	                                       
+	                                       number3 = Integer.parseInt(monthlynumber2); // 타입 변환
+	                                       
+	                                       number3 = number3 * 10000;// 월세는 백만원이면 단위라서 백만원을 곱해준다.
+                                                              
+                                                      
+                                   }else if(count2==2) {
                                  
-                                 number2 = number2 * 1000000; //"천"자가 들어가고 숫자갯수가 2개면 백만원을 곱한다.
-                                 monthly2 = doc.select("div.viewLineadPrice").text().substring(7, 10);//월세만 가져오기
-                                 monthlynumber2 = monthly2.replaceAll("[^0-9]", ""); // 월세에서 숫자만 빼오기
-                                 
-                                 int length = monthlynumber2.length(); // 자리 갯수를 구하기 위해서
-                                 
-                                 number3 = Integer.parseInt(monthlynumber2); // 타입 변환
+                                	    number2 = number2 * 1000000; //"천"자가 들어가고 숫자갯수가 2개면 백만원을 곱한다.
+	                                 	monthly2 = doc.select("div.viewLineadPrice").text().substring(7, 10);//월세만 가져오기
+	                                 	monthlynumber2 = monthly2.replaceAll("[^0-9]", ""); // 월세에서 숫자만 빼오기
+	                                 
+	                                 	int length = monthlynumber2.length(); // 자리 갯수를 구하기 위해서
+	                                 
+	                                 	number3 = Integer.parseInt(monthlynumber2); // 타입 변환
                                  
                                        if(length==1) {
                                              
@@ -276,6 +323,7 @@ public class NamGuTotal {
                                              number3 = number3 * 10000;
                                        
                                        }
+                                       
                                  }else if(count2==1) {
                                  
                                  number2 = number2 * 10000000; //"천"자가 들어가고 숫자갯수가 1개면 천만원을 곱한다.
@@ -350,8 +398,20 @@ public class NamGuTotal {
  	                                        number2 = number2 * 100000000; //"억"자가 들어가면서 숫자 갯수가 1개면 1억원을 곱한다.
  	                                		monthly2 = doc.select("div.viewLineadPrice").text().substring(4, 7);//월세만 가져오기
  	                                		monthlynumber2 = monthly2.replaceAll("[^0-9]", ""); // 월세에서 숫자만 빼오기
- 	                                		number3 = Integer.parseInt(monthlynumber2); // 타입 변환
- 	                                		number3 = number3 * 100000;
+ 	                                		int cc = monthlynumber2.length(); // 숫자 갯수 파악
+ 	                                		
+ 	                                		if ( cc == 1 ) { // 월세중에서 갯수가 1개면
+ 	                                			
+ 	                                			number3 = Integer.parseInt(monthlynumber2); // 타입 변환
+ 	 	                                		number3 = number3 * 1000000; // 1백만이면 10000000원이 된다.
+ 	 	                                		
+ 	                                		} else if( cc == 2 ){ //월세중에서 갯수가 2개면
+ 	                                			
+ 	                                			number3 = Integer.parseInt(monthlynumber2); // 타입 변환
+ 	 	                                		number3 = number3 * 10000; // 15만 이라 10000곱하면 150000원이된다.
+ 	 	                                		
+ 	                                		}
+ 	                                		
                                  		}
                                  }
                            }
@@ -394,7 +454,11 @@ public class NamGuTotal {
                                  
                                  number2 = number2 * 10000000;
                                  
-                           }else if(deal.equals("전세")&&deal2.equals("보")) {
+                           }else if(mreview.equals("억") && count2 == 5 ) {
+                               
+                                 number2 = number2 * 10000;
+                               
+                         }else if(deal.equals("전세")&&deal2.equals("보")) {
                                  
                                  if(mreview.equals("억") && count2 == 1 ) {
                                        

@@ -19,6 +19,7 @@ public class BigShortDAO {
             conn = DBManger.getConnection();
             
             String sql = "INSERT INTO "+ area
+                    + " ( dongno,dongname, aptname, deal,subsidy ,price ,dongextent, donglevel, nameprice, url)"
                     + " VALUES( "+seq+" , ?, ?, ?, NULL, ?, ?, ? ,? , ?) "; // 여기서 매매, 전세는 보조금이 없으므로 null값으로 들어간다.
             
             pstmt = conn.prepareStatement(sql);
@@ -57,6 +58,7 @@ public void insertSubsidy(BigShortDTO bSdto, String area, String seq) {
             conn = DBManger.getConnection();
             
             String sql = "INSERT INTO "+area
+                    + " ( dongno,dongname, aptname, deal,subsidy ,price ,dongextent, donglevel, nameprice, url)"
                     + " VALUES( "+seq+" , ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
             
             pstmt = conn.prepareStatement(sql);
