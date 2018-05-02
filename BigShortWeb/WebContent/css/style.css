@@ -2,6 +2,7 @@
 
 @import "base.css";
 
+/* 메인페이지 사진 */
 .wrap {
 	background: url('../images/visual.png') no-repeat center top;
 	opacity: 0.95;
@@ -41,6 +42,7 @@
 	padding: 120px 0 40px;
 }
 
+/* 메인의 글귀 위치, 사이즈, 규격 */
 #container div.top_page > h3 {
 	text-align: center;
 	color: white;
@@ -49,21 +51,24 @@
 	font-weight: 500;
 }
 
+/* 각 구 나누는 원의 위치, 글자크기 */
 #container .local ul.gj {
 	text-align: center;
-	font-size: 17px;
+	font-size: 25px;
 }
 
+/* 각 구 나누는 원 간격 증가 */
 #container .local ul.gj>li {
 	display: inline-block;
-	margin: 0 10px;
+	margin: 0px 37px;
 }
 
+/* 각 구 클릭하는 원 */
 #container .local ul.gj>li>a {
 	display: table-cell;
 	background: #fff;
-	width: 140px;
-	height: 140px;
+	width: 180px;
+	height: 180px;
 	padding: 0px 20px;
 	vertical-align: middle;
 	overflow: hidden;

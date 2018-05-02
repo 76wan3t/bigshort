@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="ko">
+<head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport"
@@ -10,11 +10,9 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <meta name="Publisher" content="dewy.chang">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="./css/style.css">
+<title>Bigshort</title>
 
-<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
 	<div class="wrap">
@@ -27,6 +25,9 @@
 			</div>
 		</div>
 		<div id="container">
+			<div class="top_page">
+				<h3>집 가격을 가방에 담다<br><br>가방</h3>
+			</div>
 			<div class="inner">
 				<div class="local">
 					<!--검색전-->
@@ -187,7 +188,5 @@
 			</div>
 		</div>
 	</div>
-	
-
 </body>
 </html>
