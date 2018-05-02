@@ -1,0 +1,46 @@
+@charset "utf-8";
+@font-face {font-family:'NanumGothic'; src:url('../font/NanumGothic.eot');src:url('../font/NanumGothic.woff') format('woff');}
+
+*{margin:0;padding:0;list-style-type:none;}
+html{height:100%;}
+mark{background-color:transparent;}
+body{width:100%;min-height:100%;margin:0;padding:0;}
+body{font-size:13px;font-family:'NanumGothic','noto sans kr', Noto Serif, serif, 'Myriad Pro','Tahoma','Verdana','Dotum','Gulim';line-height: 1.4;color: #2e313d;}
+h1,h2,h3,h4,h5,h6{font-size:1em; font-weight:normal;}
+h1,h2,h3,h4,h5,h6,div,p,dl,dt,dd,ul,ol,li,form,fieldset,blockquote,address,table,thead,tbody,tfoot,tr,td,caption,legend,label{margin:0;padding:0}
+a:link {color: #2e313d;text-decoration:none;}
+a:visited {color: #2e313d;text-decoration:none;}
+a:hover, a:active, a:focus {text-decoration:none;}
+ul,ol{list-style:none}
+em,var{font-style:normal}
+img,fieldset{border:0 none}
+div,p,span,li,table td{word-break:keep-all}
+hr{visibility:hidden;overflow:hidden;position:absolute;top:0;left:0;width:0;height:0;padding:0;font-size:0;line-height:0}
+caption,legend{visibility:hidden;top:0;left:0;width:0;height:0;padding:0;font-size:0;line-height:0}
+textarea{resize:none;position: relative;border: 1px solid #c7c7c7;background: #f4f4f4;line-height: 25px;padding: 0 3px 0 5px;margin: 0;border-radius: 5px;}
+.skip, .tableskip{visibility:hidden;overflow:hidden;width:0;height:0;margin:0;padding:0;font-size:0;line-height:0}
+article,aside,canvas,details,figcaption,figure,footer,header,hgroup,nav,menu,nav,section,summary{display:block}
+*, *:before, *:after {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+table{border-collapse:collapse}
+select, input{color:#666;font-family:'NanumGothic','noto sans kr', Noto Serif, serif, 'Myriad Pro','Tahoma','Verdana','Dotum','Gulim'; font-size:13px;vertical-align:top;}
+iframe{border:0;}
+sup {vertical-align: top;}
+
+ul li{list-style:none;}
+.hide{display:none;}
+img.mid {vertical-align: middle;}
+.hidden {visibility:hidden;margin:0;padding:0;width:0;height:0;background:none;font-size:0;line-height:0;display:none;}
+
+hr.blank_line {position: static;clear: both;}
+
+input[type=text] {position: relative;height: 25px;border: 1px solid #c7c7c7;background: #f4f4f4;line-height: 25px;padding: 0 3px 0 5px;margin: 0;border-radius: 5px;}
+input[type=radio] {margin-left:5px;} 
+input{vertical-align: middle;}
+label{display:none;}
+
+button{text-align: center;border:0;vertical-align: middle;}
+.clear:after{content:'';display: block;clear:both;}
+
+
+
+
