@@ -1,5 +1,7 @@
 package main;
 
+import java.sql.Date;
+
 public class BigShortDTO {
       private int dongno; // 등록 번호
       private String dongname; // 동대 이름
@@ -11,7 +13,8 @@ public class BigShortDTO {
     private int donglevel; // 층수
     private String nameprice; //가격 글자로 표현
     private String url; // url 주소
-   
+    private Date dongdate;
+    
     public BigShortDTO() {}
    
    
@@ -87,7 +90,19 @@ public class BigShortDTO {
       
       
 
-      public int getDongno() {
+      public Date getDongdate() {
+		return dongdate;
+	}
+
+
+
+	public void setDongdate(Date dongdate) {
+		this.dongdate = dongdate;
+	}
+
+
+
+	public int getDongno() {
             return dongno;
       }
 
