@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>bigshort</display-name>
+  <welcome-file-list>
+  
+  <!-- 페이지를 못찾을 경우 이순서대로 페이지를 출력 -->
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- .Bigshort로 시작된 페이지면 모두 BzipollFrontController로 작동 -->
+  
+  <servlet>
+  	<servlet-name>BSController</servlet-name>
+  	<servlet-class>com.bigshort.controller.BigshortFrontController</servlet-class>
+  </servlet>
+  	<servlet-mapping>
+  		<servlet-name>BSController</servlet-name>
+  		<url-pattern>*.bigshort</url-pattern>
+  	</servlet-mapping>
+</web-app>
