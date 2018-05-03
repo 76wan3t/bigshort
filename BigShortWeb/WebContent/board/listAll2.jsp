@@ -2,33 +2,48 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%-- <%@ include file="header.jsp" %> --%>
+<%-- <%@ include file="../header.jsp" %> --%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>자유게시판</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="css/bootstrap.css">
 <style type="text/css">
 	body{
-		height:100%;
-		font-size: 13px;
-		font-family: 'Noto Sans KR',Tahoma,sans-serif;
-		font-weight: 400;
-		color:#717171;
-	
+	font-size: 13px;
+	font-family: 'Noto Sans KR',Tahoma,sans-serif;
+	font-weight: 400;
+	color: #717171;
 	}
-	
 	#container{
 		margin-top:132px;
 	}
-	#content{
-	width:1000px;
-	margin:0 auto;
-	padding:22px 0 100px;
+	div{
+	 margin: 0;
+	 padding: 0;
 	}
-	.sub_title_wrap h2{
+	h2{
+	 margin: 0;
+	 padding: 0;
+	}
+	#content{
+		width: 1000px;
+		margin: 0 auto;
+		padding: 22px 0 100px;
+	}
+	.sub_title{
+		position: relative;
+		height: 62px;
+		overflow: hidden;
+		position: absolute;
+		top:0;
+	}
+	
+		.sub_title_wrap h2{
 		font-size: 34px;
-		font-weight:500;
+		font-weight: 500;
 		color: #767067;
 		text-align: center;
 		line-height: 38px;
@@ -37,53 +52,73 @@
 		box-shadow: 1px 1px 4px rgba(0,0,0,0.34);
 	}
 	.tab_type>.btn_tab{
-		display:table;
+		display: table;
 		table-layout: fixed;
 		width: 100%;
+	}
+	ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
 	}
 	.tab_type>.btn_tab>li{
 		display: table-cell;
 		position: relative;
 		vertical-align: middle;
 	}
+	li{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
 	.tab_type>.btn_tab>li.active a{
-		background-color:#fff;
+		background-color: #fff;
 		border-bottom: 1px solid #fff;
 		color:#38474f;
 	}
-	.tab_type>.btn_tab>li a {
-		display:block;
+	.tab_type>.btn_tab>li a:hover {
+		background-color: #fff;
+		border-bottom: 1px solid #fff;
+		color:#38474f;
+	}
+	.tab_type>.btn_tab>li a{
+		display: block;
 		width: 100%;
 		height: 100%;
 		background-color: #faf8f7;
 		border-top: 1px solid #fbf9f8;
 		border-bottom: 1px solid #f2f0ef;
-		font-size:20px;
+		font-size: 20px;
 		font-weight: 500;
 		color:#808486;
 		text-align: center;
 		line-height: 54px;
 	}
 	a{
-		color:#666;
+		/* color:#666; */
 		text-decoration: none;
 	}
 	.notice .notice_area .tab_content_wrap{
 		padding: 50px 70px 45px;
 	}
-	.tab_type >.tab_content_wrap{
-		padding:25px;
+	.tab_type>.tab_content_wrap{
 		background-color: #fff;
 	}
 	.tab_type .tab_content.active{
 		display: block;
 	}
+	form{
+		margin: 0;
+		padding: 0;
+	}
 	input{
-	 font-size:13px;
-	 font-family:'Noto Sans KR',Tahoma,sans-serif;
-	 font-weight: 400;
-	 color:#717171;
-	 vertical-align: middle;
+		font-size: 13px;
+		font-family: 'Noto Sans KR',Tahoma,sans-serif;
+		font-weight: 400;
+		color:#717171;
+		vertical-align: middle;
+		margin: 0;
+		padding: 0;
 	}
 	.notice .notice_area .form_group{
 		margin: 0 auto;
@@ -95,6 +130,7 @@
 		float:left;
 		margin: 0 -2px 0 10px;
 	}
+	
 	.notice .notice_area .form_group .sel_box{
 		width: 90px;
 	}
@@ -110,26 +146,20 @@
 		text-align: left;
 	}
 	.sel_box select{
-		display:block;
-		width:100%;
+		display: block;
+		width: 100%;
 		height: 100%;
 		padding: 0 0 0 5px;
 		border: 0;
 	}
-	select{
-	 font-size:13px;
-	 font-family:'Noto Sans KR',Tahoma,sans-serif;
-	 font-weight: 400;
-	 color:#717171;
-	 vertical-align: middle;
+	select {
+	font-size: 13px;
+	font-family: 'Noto Sans KR',Tahoma,sans-serif;
+	font-weight: 400;
+	color: #717171;
+	vertical-align: middle;
 	}
-	option{
-		font-weight: normal;
-		display: block;
-		white-space: pre;
-		min-height: 1.2em;
-		padding:0px 2px 1px;
-	}
+	
 	.form_item{
 		display: inline-block;
 		position: relative;
@@ -142,10 +172,24 @@
 		position: relative;
 		z-index: 5;
 		border: 1px solid #bebebe;
-		background: 
+		
+	}
+	input[type='text']{
+		height: 34px;
+		padding-left: 10px;
+		line-height: 36px;
+		font-size: 14px;
+	}
+	.form_group:after{
+		display: block;
+		content: '';
+		clear : both;
 	}
 	.notice .notice_area .form_group .btn{
 		width: 150px;
+	}
+	.btn_srch .btn_txt{
+		color: #fff;
 	}
 	a.btn{
 		display: inline-block;
@@ -153,13 +197,91 @@
 		padding: 0 10px;
 		border: 2px solid #0078ae;
 		font-size: 14px;
-		font-weight: 500;
-		color:#0078ae;
+		font-weight : 500;
+		color: #0078ae;
 		text-align: center;
 	}
 	.btn_srch{
 		background-color: #38474f !important;
 		border-color: #38474f !important;
+	}
+	a.btn .btn_txt{
+		display: inline-block;
+		vertical-align: middle;
+	}
+	
+	.notice .notice_area .srch_result{
+		margin-top: 15px;
+		font-size: 14px;
+		color: #f06418;
+		text-align: right;
+		line-height: 30px;
+	}
+	p{
+		margin: 0;
+		padding: 0;
+	}
+	.tbl_lst{
+		width: 100%;
+	}
+	table{
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+	.tbl_lst th{
+		border-top:1px solid #717171;
+		font-size: 14px;
+		font-weight: 500;
+		color: #38474f;
+		height: 44px;
+		border-bottom: 1px solid #e2ddd5;
+		text-align: center;
+	}
+	th{
+	font-family: 'Noto Sans KR',Tahoma,sans-serif;
+	margin: 0;
+	padding: 0;
+	}
+	.tbl_lst td{
+		font-size: 14px;
+		color: #717171;
+		height: 44px;
+		border-bottom: 1px solid #e2ddd5;
+		text-align: center;
+	}
+	.tbl_lst tr:hover td{
+		background-color: #faf8f7;
+		color:#38474f;
+	}
+	td{
+		font-family: 'Noto Sans KR',Tahoma,sans-serif;
+		font-weight: 400;
+		padding: 0;
+		margin: 0;
+	}
+	.tbl_lst td>a {
+		display: block;
+		overflow: hidden;
+		width: 500px;
+		padding: 0 20px;
+		text-align: left;
+		color: #717171;
+		text-overflow: ellipsis;
+		word-break: break-all;
+		white-space: nowrap;
+	}
+	.pagination{
+	text-align: center;
+	}
+
+	.pagination > .active > a {
+		background-color: #B7F0B1;
+		border-color: #B7F0B1;
+	}
+	
+	.pagination > .active > a:hover {
+		background-color: #A5DE9F;
+		border-color: #A5DE9F;
 	}
 	
 </style>
@@ -171,10 +293,11 @@
 			<!--  content -->
 			<div id="content" class="notice">
 				
+				<div class="sub_title">
 				<div class="sub_title_wrap">
 						<h2>공지사항</h2>
 				</div>
-				
+				</div>
 				<!-- sub_title -->
 				
 				<div class="notice_area">
@@ -279,7 +402,6 @@
 			</div>
 
 </div>
-
 
 </body>
 </html>
