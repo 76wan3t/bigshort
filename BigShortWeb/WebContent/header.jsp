@@ -46,18 +46,6 @@
 				<!-- 로그인 모달 -->
 				<div class="modal_btn">
 				  <!-- <button onclick="document.getElementById('id01').style.display='block'" class="w3-button">로그인</button> -->
-				  <c:choose>
-				  	<c:when test="${empty sessionScope.loginUser}">
-				  		<button onclick="document.getElementById('id01').style.display='block'" class="w3-button">로그인</button>
-				  	</c:when>
-				  	<c:otherwise>
-				  		<ul id = modal_ul>
-				  		<li>${sessionScope.loginUser.mname}(${sessionScope.loginUser.mid})</li>
-				  		<li><a href="#" id="logout_btn">로그아웃</a></li>
-				  		<li><a href="#" id="mypage">마이페이지</a></li>
-				  		</ul>
-				  	</c:otherwise>
-				  </c:choose>
 				  <div id="id01" class="w3-modal">
 				    <div class="w3-modal-content">
 				      <div class="w3-container">
@@ -110,18 +98,31 @@
 							<div class="header-search">
 							</div>
 						</li>
-						<li class="help">
-							<a href="#" title="고객센터"> 고객센터</a>
-						</li>
+
 						<li>
-							<a href="freeboard.bizpoll">게시판</a>
-						</li>
-						<li class="orderstatus">
-							<a id=order-status href="#" title="주문배송">주문배송</a>
-						</li>
+							<c:choose>
+							  	<c:when test="${empty sessionScope.loginUser}">
+							  		<a onclick="document.getElementById('id01').style.display='block'" style="cursor: pointer;" >로그인</a>
+							  	</c:when>
+							  	<c:otherwise>
+							  		<ul id = modal_ul>
+							  		<li>${sessionScope.loginUser.mname}(${sessionScope.loginUser.mid})</li>
+							  		<li><a href="#" id="logout_btn">로그아웃</a></li>
+							  		<li><a href="#" id="mypage">마이페이지</a></li>
+							  		</ul>
+							  	</c:otherwise>
+						    </c:choose>
+				  		</li>
 						<li class="myaccount guestuser">
 							<a href="constract.bizpoll">회원가입</a>
 						</li>
+												<li>
+							<a href="freeboard.bizpoll">자유게시판</a>
+						</li>
+						<li class="help">
+							<a href="#" title="고객센터">고객센터</a>
+						</li>
+
 					</ul>						
 				</div>
 				<div class="nav-menu">
@@ -147,10 +148,6 @@
 												남구
 											</a>
 										</li>
-									</ul>
-								
-								<li class="secondary-navigation">
-									<ul class="level-1">
 										<li id="SpecialGifts" class="navigation-link first">
 											<a href="https://kr.mcmworldwide.com/gifts-1" class="level-1 cat">
 												서구
@@ -164,6 +161,7 @@
 									</ul>
 								</li>
 							</ul>
+
 					</nav>
 				</div>
 			</header>
