@@ -1,6 +1,3 @@
-@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
-@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-/* font-family: 'Jeju Gothic', serif; */
 	* {
 		background-repeat: no-repeat;
 		background-position: center;
@@ -93,7 +90,7 @@
 		background-color: #FFF;
 	}	
 	#header	{
-		height: 104px;
+		height: 155px;
 		min-width: 100%;
 		position: fixed;
 		z-index: 120;
@@ -155,7 +152,6 @@
 		font-weight: bold;
 	}
 	.utility-menu{
-		position: absolute;
 		top: 0;
 		width: 1180px;
 	}
@@ -373,8 +369,7 @@
 	}
 	#navigation {
 		position: absolute;
-		top: 59px;
-		z-index: 100;
+		top: 100px;
 		width: 100%;
 		text-align: center;
 	}	
@@ -644,6 +639,9 @@
 		right: -1170px;
 		top: 7px;
 		background-color: none!important;
+	}
+	#muin{
+		height: 39px;
 	}
 	/* 로그인 모달 스타일 */
 	#wrap {

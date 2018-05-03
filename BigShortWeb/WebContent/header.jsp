@@ -24,9 +24,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="./css/header.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" type="text/css" href="css/header.css?var=1">
 </head>
 <body>
 
@@ -35,12 +35,6 @@
 		<div id="header" role="banner" class="header-shadow clearfix">
 
 			<header class="clearfix">
-				<h1 class="primary-logo clearfix">
-					<p class="hide" itemprop="brand">MCM</p>
-					<a href="#" itemprop="url">
-						<div class="logo">MCM</div>
-					</a>
-				</h1>
 				<div class="utility-menu">
 				<!-- 로그인 모달 -->
 				<div class="modal_btn">
@@ -54,7 +48,7 @@
 							<div id="kakao_header">
 								<h1>
 								<a id="kakao_logo" href="#">
-									<img src="image/logo.png">
+									<img src="images/gabang_logo.png">
 								</a>
 								</h1>
 							</div>
@@ -91,7 +85,7 @@
 				    </div>
 				  </div>
 				</div>
-					
+					<div id="muin">
 					<ul class="menu-utility-user">
 						<li class="search">
 							<div class="header-search">
@@ -122,10 +116,11 @@
 							<a href="#" title="고객센터">고객센터</a>
 						</li>
 
-					</ul>						
+					</ul>
+					</div>						
 				</div>
 				<div class="nav-menu">
-					<a id="menu-navigator" class="menu menu-navigator"></a>
+					<div><img src="images/gabang_logo.png"></div>
 				</div>
 				<div id="navigation" role="navigation">
 					<nav class="clearfix">
