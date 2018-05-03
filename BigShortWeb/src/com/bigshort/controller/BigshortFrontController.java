@@ -53,12 +53,12 @@ public class BigshortFrontController extends HttpServlet {
 			
 			//======액션 매핑======
 			// 실제로 동작하는 곳, 하나의 Servlet에서 URL을 읽어 해당 기능을 구현
-			if(command.equals("/index.bigshort")) {
-				
+			if(command.equals("/index.bigshort")) { //메인페이지
 				action = new IndexAction();//action은 인터페이스: 다형성을 이용해서 해당 액션기능을 action에 넣는다
 				forward = action.excute(request, respnse); // 공통 분기작업에 보낼 forward
-				
-				
+			}else if(command.equals("/constract.bigshort")) { // 회원가입 동의페이지
+				action = new ConstractAction();
+				forward = action.excute(request, respnse);
 			}
 			
 			

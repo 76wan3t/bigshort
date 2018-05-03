@@ -24,6 +24,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <title>Insert title here</title>
+<style type="text/css">
+.w3-container{
+	z-index: 3;
+	opacity: 1;
+	
+}
+
+</style>
 <link rel="stylesheet" type="text/css" href="./css/header.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">

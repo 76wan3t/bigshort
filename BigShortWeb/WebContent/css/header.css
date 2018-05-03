@@ -7,6 +7,14 @@
 		box-sizing: border-box;
 		word-wrap: break-word;
 	}
+	.w3-container{
+		z-index: 2;
+		opacity: 1;
+	}
+	#id01{
+		z-index: 2;
+		opacity: 1;
+	}
 	.sidenav {
 		height: 100%;
 		width: 0;

@@ -4,6 +4,7 @@
 	<%@ taglib uri = "http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 	<%@ include file = "header.jsp"%>
 	
+	
 <%response.setHeader("Cache-control", "no-store");response.setHeader("Pragma", "no-cache");%>
 	
 <!DOCTYPE html>
@@ -23,14 +24,6 @@
 </head>
 <body>
 	<div class="wrap">
-		<!-- <div id="header">
-			<div class="inner">
-				<ul class="auth">
-					<li><a href="#">로그인</a></li>
-					<li><a href="#">회원가입</a></li>
-				</ul>
-			</div>
-		</div> -->
 		<div id="container">
 			<div class="top_page">
 				<h3>집 가격을 가방에 담다<br><br>가방</h3>
@@ -189,11 +182,12 @@
 				</div>
 			</div>
 		</div>
-		<div id="footer">
+		<!-- <div id="footer">
 			<div class="inner">
 				Copyright(C) 2018 Bigshort. All right Reserved.
 			</div>
-		</div>
+		</div> -->
 	</div>
 </body>
 </html>
+<%@ include file = "footer.jsp" %>
