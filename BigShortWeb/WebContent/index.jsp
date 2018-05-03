@@ -2,11 +2,9 @@
 
     <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 	<%@ taglib uri = "http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+	<%@ include file = "header.jsp"%>
 	
-	<%
-		response.setHeader("Cache-control", "no-store");
-		response.setHeader("Pragma", "no-cache");
-	%>
+<%response.setHeader("Cache-control", "no-store");response.setHeader("Pragma", "no-cache");%>
 	
 <!DOCTYPE html>
 <html lang="ko">
@@ -25,14 +23,14 @@
 </head>
 <body>
 	<div class="wrap">
-		<div id="header">
+		<!-- <div id="header">
 			<div class="inner">
 				<ul class="auth">
 					<li><a href="#">로그인</a></li>
 					<li><a href="#">회원가입</a></li>
 				</ul>
 			</div>
-		</div>
+		</div> -->
 		<div id="container">
 			<div class="top_page">
 				<h3>집 가격을 가방에 담다<br><br>가방</h3>
@@ -47,7 +45,7 @@
 
 					<!-- 구 -->
 					<ul class="gj">
-						<li class="on"><a href="#">북구</a></li>
+						<li><a href="#">북구</a></li>
 						<li><a href="#">서구</a></li>
 						<li><a href="#">광산구</a></li>
 						<li><a href="#">남구</a></li>
@@ -106,8 +104,8 @@
 										type : 'line'
 									}
 								};/* 차트의 전체 크기 조절 */
-								options["width"] = 3500;
-								options["height"] = 500;
+								options["width"] = 2000;
+								options["height"] = 400;
 								options["overflow"] = scroll;
 								
 								var chart = new google.visualization.ComboChart(

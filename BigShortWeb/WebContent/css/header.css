@@ -93,12 +93,14 @@
 		background-color: #FFF;
 	}	
 	#header	{
-		background: url("image/header-bg.png");
 		height: 104px;
 		min-width: 100%;
 		position: fixed;
 		z-index: 120;
 		top: 0;
+		text-align: center;
+		border-bottom : 1px solid #ddd;
+		
 	}
 	.header{
 		position: relative;
@@ -135,6 +137,9 @@
 		height: 0;
 		visibility: hidden;
 	}
+	.clearfix{
+		display: inline-block;
+	}
 	#header .primary-logo{
 		line-height: 0;
 		margin: 0 auto;
@@ -142,6 +147,7 @@
 		text-align: center;
 		width: 67px;
 		z-index: 101;
+		text-align: center;
 	}
 	h1{
 		display: block;
@@ -369,6 +375,11 @@
 		position: absolute;
 		top: 59px;
 		z-index: 100;
+		width: 100%;
+		text-align: center;
+	}	
+	#navigation a:hover {
+		color: #ddd;
 	}
 	#mini-cart{
 		float: right;
@@ -376,10 +387,6 @@
 		z-index: 200;
 		margin-top: -23px;
 		color: #000;
-	}
-	nav {
-		margin: 0 auto;
-		min-width: 1180px;
 	}
 	#navigation .mobile-close-nav{
 		display: none;
@@ -407,7 +414,6 @@
 	}
 	.menu-category .primary-navigation{
 		padding: 0;
-		width: 50%;
 	}
 	.menu-category li, ul.level-1 li{
 		display: inline-block;
@@ -423,9 +429,10 @@
 	}
 	.menu-category ul.level-1 li a.level-1 {
 	    font-family:'Jeju Gothic';
-	    font-size: 14px;
+	    font-size: 25px;
 	    letter-spacing: .1em;
 	    font-weight: 400;
+	    margin: 0px 30px 0px 30px;
 	}
 	.menu-category ul.level-1>li>a {
     	white-space: nowrap;
@@ -491,7 +498,6 @@
 	}
 	.menu-category .secondary-navigation {
 		width: 40%;
-		margin-left: 42px;
 		text-align: center;
 	}
 	.menu-category div.level-2 ul.level-2 a:hover, div.level-2 .custom .header-menu-banner-title a:hover{
