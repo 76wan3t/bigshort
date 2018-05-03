@@ -4,6 +4,6 @@
 	<classpathentry kind="src" path="BigShort_project/src"/>
 	<classpathentry kind="src" path="bigshort/BigShort_project/src"/>
 	<classpathentry kind="lib" path="D:/java/jsoup/jsoup-1.11.2.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v9.0"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v8.0"/>
 	<classpathentry kind="output" path="BigShort_project/bin"/>
 </classpath>

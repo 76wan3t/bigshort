@@ -1,4 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+    <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	<%@ taglib uri = "http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+	
+	<%
+		response.setHeader("Cache-control", "no-store");
+		response.setHeader("Pragma", "no-cache");
+	%>
+	
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -11,7 +20,7 @@
 <meta name="author" content="">
 <meta name="Publisher" content="dewy.chang">
 <title>Bigshort</title>
-
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
