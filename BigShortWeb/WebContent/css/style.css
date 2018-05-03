@@ -5,7 +5,7 @@
 /* 메인페이지 사진 */
 .wrap {
 	background: url('../images/visual.png') no-repeat center top;
-	opacity: 0.95;
+	opacity: 0.93;
 }
 
 .inner {
@@ -43,39 +43,43 @@
 }
 
 /* 메인의 글귀 위치, 사이즈, 규격 */
-#container div.top_page > h3 {
+#container div.top_page>h3 {
 	text-align: center;
 	color: white;
 	font-size: 50px;
-	padding-bottom: 300px;
+	margin-top: 70px;
 	font-weight: 500;
+	padding-bottom: 300px;
 }
 
 /* 각 구 나누는 원의 위치, 글자크기 */
 #container .local ul.gj {
 	text-align: center;
-	font-size: 25px;
+	font-size: 22px;
 }
 
 /* 각 구 나누는 원 간격 증가 */
 #container .local ul.gj>li {
 	display: inline-block;
-	margin: 0px 37px;
+	margin: 20px 55px;
 }
 
 /* 각 구 클릭하는 원 */
-#container .local ul.gj>li>a {
+#container .local ul.gj > li > a {
 	display: table-cell;
-	background: #fff;
-	width: 180px;
-	height: 180px;
+	background: #ffab84;
+	width: 150px;
+	height: 150px;
 	padding: 0px 20px;
-	vertical-align: middle;
+	color: white;
+	font-weight: 600px; 
+	vertical-align : middle;
 	overflow: hidden;
 	border-radius: 50%;
+	vertical-align: middle;
 }
 
-#container .local ul.gj>li.on>a, #container .local ul.gj>li>a:hover {
+#container .local ul.gj>li>a:hover {
 	background-color: #ffab84;
 	color: #fff;
 	border: 10px solid #ff7650;
@@ -83,8 +87,8 @@
 }
 
 #container .graph-con {
-	background: url(../images/bg.png);
-	margin-top: 50px;
+	/* background: url(../images/bg.png); */
+	margin-top: -52px;
 	padding: 30px 20px;
 }
 
