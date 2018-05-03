@@ -69,7 +69,7 @@
 					</div>						
 				</div>
 				<div class="nav-menu">
-					<div><img src="images/gabang_logo.png"></div>
+					<div><img src="/BigShortWeb/images/gabang_logo.png"></div>
 				</div>
 				<div id="navigation" role="navigation">
 					<nav class="clearfix">
