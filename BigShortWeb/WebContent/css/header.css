@@ -4,55 +4,11 @@
 		box-sizing: border-box;
 		word-wrap: break-word;
 	}
-	.sidenav {
-		height: 100%;
-		width: 0;
-		position: fixed;
-		z-index: 1;
-		top: 0;
-		left: 0;
-		background-color: #111;
-		overflow-x:hidden;
-		transition: 0.5s;
-		padding-top: 60px;
-	}
-	
-	.sidenav a{
-		padding: 8px 8px 8px 32px;
-		text-decoration: none;
-		font-size: 25px;
-		color: #818181;
-		display: block;
-		transition: 0.3s;
-	}
-	
-	.sidenav a:hover {
-		color: #f1f1f1;
-	}
-	
-	.sidenav .closebtn {
-		position: absolute;
-		top: 0;
-		right: 25px;
-		font-size: 36px;
-		margin-left: 50px;
-	}
-	
-	#sidemain > span{
-		transition: margin-left .5s;
-		pause: 16px;
-		display: inline-block;
-		z-index: 2;
-		top: 0;
-		left: 0;
-		position: fixed;
-	}
-
 	@media screen and (max-height: 450px){
 		.sidenav {padding-top:15px;}
 		.sidenav a{font-size:18px;}
 	}
-	#header .menu-utility .language-selector .country, #header .menu-utility .language-selector .dialogify, #header .menu-utility .language-selector .language {
+	#header{
     	vertical-align: top;
 	}
 	blockquote, body, dd, div, dl, dt, fieldset, figure, form, h1, h2, h3, h4, h5, h6, html, input, li, ol, p, pre, td, th, ul {
@@ -98,12 +54,6 @@
 		text-align: center;
 		border-bottom : 1px solid #ddd;
 		
-	}
-	.header{
-		position: relative;
-		margin: 0 auto;
-		width: 1180px;
-		height: 100px;
 	}
 	header{
 		position: relative;
@@ -191,45 +141,16 @@
 		margin-left: 30px;
 		position: relative;
 	}
-	.header-search{
+/* 	.header-search{
 		position: relative;
 		float: right;
-	}
+	} */
 	fieldset{
 		border: 0;
 		margin: 0;
 		padding: 0;
 	}
-	.header-search legend {
-		background: none;
-	}
-	.visually-hidden {
-		border: 0;
-		height: 1px;
-		margin: -1px;
-		overflow: hidden;
-		padding: 0;
-		position: absolute;
-		width: 1px;
-		font-family: 'Jeju Gothic'
-	}
-	element.style{
-		display: none;
-	}
-	.header-search input[type=email], .header-search input[type=text] {
-		text-transform: capitalize;
-	   	background: none;
-	    border-color: -moz-use-text-color -moz-use-text-color #ccc;
-	    border-style: none none solid;
-	    border-width: medium medium 1px;
-	    color: #000;
-	    height: 14px;
-	    margin: 0;
-	    padding: 0 0 0 5px;
-	    width: 180px;
-	    display: none;
-	    outline: 0;
-	}
+
 	#header .primary-logo a{
 		display: block;
 		float: left;

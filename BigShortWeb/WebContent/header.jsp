@@ -39,8 +39,6 @@
 					<div id="muin">
 					<ul class="menu-utility-user">
 						<li class="search">
-							<div class="header-search">
-							</div>
 						</li>
 
 						<li>
