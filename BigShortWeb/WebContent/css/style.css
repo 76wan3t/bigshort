@@ -14,9 +14,10 @@
 }
 
 #header {
-	height: 100px;
 	background: #fff;
-	opacity: 0.5;
+	 opacity: 0.5;
+	/* background-color: rgba( 255, 255, 255, 0.5 ); */
+	z-index: 1;
 }
 
 #header ul.auth>li {

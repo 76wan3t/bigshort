@@ -36,55 +36,6 @@
 
 			<header class="clearfix">
 				<div class="utility-menu">
-				<!-- 로그인 모달 -->
-				<div class="modal_btn">
-				  <!-- <button onclick="document.getElementById('id01').style.display='block'" class="w3-button">로그인</button> -->
-				  <div id="id01" class="w3-modal">
-				    <div class="w3-modal-content">
-				      <div class="w3-container">
-				        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-				       <!-- 모달 로그인 -->
-				       <div id="wrap">
-							<div id="kakao_header">
-								<h1>
-								<a id="kakao_logo" href="#">
-									<img src="images/gabang_logo.png">
-								</a>
-								</h1>
-							</div>
-							<div id="kakao_content">
-								<div id="login_content">
-									<div id="login_area">
-							<div id="container">
-								<form action="loginck.bizpoll" method="POST" id="frm_login" name="frm_login">
-									<input class="idpw" type="text" id="login_id" name="login_id" placeholder="아이디를 입력 해 주세요"></input>
-									<input class="idpw" type="password" id="login_pw" name="login_pw" placeholder="비밀번호(4~16자리)"></input>
-									<span id="span_login">아이디 또는 비밀번호가 틀렸습니다</span>
-									<a href="#" id="btn_login" name="btn_login"><span> 로그인 </span></a>
-								</form>		
-							</div>
-							<div id="login_help">
-								<div id="remember"> 
-									<input type="checkbox" name="remember" id="remember2">
-									<label for="remember2">자동 로그인</label>
-								</div>
-								
-								<div class="right">
-									<a href="#">계정 찾기</a>
-									<span class="right_bar"></span>
-									<a href="#">비밀번호 찾기</a>
-								</div>
-								<a id="member" href="member.bizpoll">회원가입</a>
-							</div>
-									</div>
-								</div>
-							</div>
-						</div>
-				       <!-- 모달 끝 -->
-				      </div>
-				    </div>
-				  </div>
-				</div>
 					<div id="muin">
 					<ul class="menu-utility-user">
 						<li class="search">
@@ -162,6 +113,58 @@
 		</div>
 	</div>
 	
+	
+	
+	
+		<!-- 로그인 모달 -->
+	<div class="modal_btn">
+	  <!-- <button onclick="document.getElementById('id01').style.display='block'" class="w3-button">로그인</button> -->
+	  <div id="id01" class="w3-modal">
+	    <div class="w3-modal-content">
+	      <div class="w3-container">
+	        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+	       <!-- 모달 로그인 -->
+	       <div id="wrap">
+				<div id="kakao_header">
+					<h1>
+					<a id="kakao_logo" href="#">
+						<img src="images/gabang_logo.png">
+					</a>
+					</h1>
+				</div>
+				<div id="kakao_content">
+					<div id="login_content">
+						<div id="login_area">
+							<div id="container">
+								<form action="loginck.bizpoll" method="POST" id="frm_login" name="frm_login">
+									<input class="idpw" type="text" id="login_id" name="login_id" placeholder="아이디를 입력 해 주세요"></input>
+									<input class="idpw" type="password" id="login_pw" name="login_pw" placeholder="비밀번호(4~16자리)"></input>
+									<span id="span_login">아이디 또는 비밀번호가 틀렸습니다</span>
+									<a href="#" id="btn_login" name="btn_login"><span> 로그인 </span></a>
+								</form>		
+							</div>
+							<div id="login_help">
+								<div id="remember"> 
+									<input type="checkbox" name="remember" id="remember2">
+									<label for="remember2">자동 로그인</label>
+								</div>
+								
+								<div class="right">
+									<a href="#">계정 찾기</a>
+									<span class="right_bar"></span>
+									<a href="#">비밀번호 찾기</a>
+								</div>
+								<a id="member" href="member.bizpoll">회원가입</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	       <!-- 모달 끝 -->
 
 </body>
 </html>
