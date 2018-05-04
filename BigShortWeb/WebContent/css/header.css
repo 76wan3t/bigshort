@@ -813,8 +813,12 @@ h1 {
 	right: 30px;
 }
 #logo{
-	float: left;
-	
+	position: absolute;
+    z-index: 99;
+    left: 400px;
+    top: 23px;
+    width: 130px;
+    height: 60px;
 }
 
 .link_info:hover {

@@ -35,7 +35,7 @@
 <link rel="stylesheet" type="text/css" href="/BigShortWeb/css/header.css?var=1">
 </head>
 <body>
-
+<img id="logo" src="/BigShortWeb/images/gabang_logo.png">
 	<div id="wrapper">
 		<!-- 네비게이션 시작 -->
 		<div id="header" role="banner" class="header-shadow clearfix">
@@ -70,7 +70,7 @@
 				</div>
 
 				<div id="navigation" role="navigation">
-					<img id="logo" src="/BigShortWeb/images/gabang_logo.png">
+					<!-- <img id="logo" src="/BigShortWeb/images/gabang_logo.png"> -->
 					<nav class="clearfix">
 						<ul class="menu-category clearfix">
 							<li class="primary-navigation">

@@ -20,7 +20,7 @@
 <meta name="Publisher" content="dewy.chang">
 <title>Bigshort</title>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" type="text/css" href="css/style.css?var=1">
+<link rel="stylesheet" type="text/css" href="css/style.css?var=2">
 </head>
 <body>
 	<div class="wrap">
