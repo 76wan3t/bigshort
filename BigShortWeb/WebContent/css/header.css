@@ -88,18 +88,18 @@ ol, ul { /* ul 태그에 기본적으로 해야 할 것 */
 	list-style-type: none;
 }
 
-li {
+/* li {
 	display: list-item;
 	text-align: -webkit-match-parent;
 	float: left;
-}
+} 
 
-a {
+ a {
 	color: #000;
 	outline: 0;
 	overflow: hidden;
 	text-decoration: none;
-}
+} 
 
 a:link, a:visited { /* 앵커 태그에 기본적으로 해야할것 */
 	text-decoration: none;
@@ -125,12 +125,12 @@ a:link, a:visited { /* 앵커 태그에 기본적으로 해야할것 */
 	background-color: white;
 }
 
-header {
+/* header {
 	position: relative;
 	margin: 0 auto;
 	width: 1180px;
 	height: 50px;
-}
+} */
 
 #header .primary-logo {
 	z-index: 202;
@@ -413,7 +413,7 @@ button, input[type=button], input[type=reset], input[type=submit] {
 }
 
 #navigation {
-	position: absolute;
+	/* position: absolute; */
 	top: 58px;
 	width: 100%;
 	text-align: center;
@@ -603,13 +603,15 @@ div.level-3 {
 /* 로그인 모달 스타일 */
 #wrap {
 	border: 3px solid gray;
-	width: 322px;
-	height: 350px;
-	margin: 50px auto 0;
+    width: 275px;
+    height: 347px;
+    margin: 50px auto 0;
+    position: relative;
+    top: -30px;
 }
 
 #kakao_header {
-	height: 39px;
+	height: 60px;
 	padding-top: 16px;
 	overflow: hidden;
 }
@@ -629,13 +631,13 @@ h1 {
 }
 
 #kakao_logo>img {
-	width: 80px;
-	height: 56px;
-	float: left;
-	margin-right: 10px;
-	top: -17px;
-	position: absolute;
-	left: 95px;
+	width: 103px;
+    height: 51px;
+    float: left;
+    margin-right: 10px;
+    top: -22px;
+    position: absolute;
+    left: 78px;
 }
 
 #kakao_logo>span {
@@ -907,3 +909,12 @@ h1 {
 	top: 12px;
 }
 /* 로그인 모달 스타일 끝 */
+
+
+
+
+
+
+
+
+

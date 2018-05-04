@@ -1,25 +1,62 @@
-#body_wrap {
-	width: 1180px;
-    padding-top: 200px;
-    padding-right: 300px;
-    padding-left: 500px;
-    margin: 0 auto;
+	#body_wrap {
+		width: 1180px;
+	    padding-top: 200px;
+	    padding-right: 300px;
+	    padding-left: 300px;
+	    margin: 0 auto;
 	}
-form#join_content {
+
+	#constract_container{
+		box-sizing: border-box;
+		position: relative;
+	}
+	
+	div.lang {
+		position: absolute;
+		top: 150px;
+		right: 600px;
+	}
+	.lang > select {
+		background: url('/BigShortWeb/images/sel_arr.gif') 100% 50% no-repeat;
+		-webkit-appearance: none;
+		width: 98px;
+		height: 30px;
+		background-color: white;
+	}
+	
+	select#langselect {
+		font-size: 13px;
+		font-weight: 400;
+		height: 30px;
+		padding: 6px 8px 5px 7px;
+		min-width: 98px;
+		color: #333;
+		border: 1px solid #ccc;
+	}
+	
+	option {
+		pause: 0px 2px 1px;
+		display: block;
+	}
+	
+	form#join_content {
 		width: 460px!important;
 		margin: 0 auto!important;
 	}
+	
 	.terms {
 		margin-bottom: 20px;
 		background-color: white;
 		border: 1px solid #dadada;
 	}
+	
 	.terms_span {
 		position: relative;
 		display: block;
 		height: 58px;
 	}
-	.terms_span > input{
+	
+	.terms_span > input {
 		position: absolute;
 		right: 1px;
 		top: 50%;
@@ -28,14 +65,16 @@ form#join_content {
 		margin-top: -11px;
 		visibility: hidden;
 	}
+	
 	.terms_p {
 		display: block;
 		padding: 15px;
 		margin: 0px;
 		position: relative;
 	}
+	
 	.terms_span > label {
-		background: url('image/check_off.gif') 100% 50% no-repeat;
+		background: url('/BigShortWeb/images/check_off.gif') 100% 50% no-repeat;
 		display: block;
 		line-height: 20px;
 		height: 58px;
@@ -43,42 +82,49 @@ form#join_content {
 		font-size: 14px;
 		font-weight: 700;
 	}
-	.terms_span >input:checked + label{
-		background-image: url('image/check_on.gif');
+	
+	.terms_span > input:checked + label {
+		background-image: url('/BigShortWeb/images/check_on.gif');
 	}
 	
 	#terms_ul {
 		padding-bottom: 7px;
 		list-style: none;
+		padding-left: 10px;
 	}
+	
 	#terms_ul_li1 {
 		border-top: 1px solid #f0f0f0;
 	}
+	
 	ul#terms_ul > li {
 		display: block;
 		padding: 13px 15px 7px;
 	}
-	.ul_li_span {
+	
+	ul.ul_li_span {
 		position: relative;
 		display: block;
-		height: 24px;
+		height: 24px;	
 	}
-	.label1 {
+	
+	 .label1 {
 		height: 24px;
 		font-size: 14px;
 		font-weight: 700;
 		line-height: 24px;
-		position: absolute;
+		position: relative;
 		color: #333;
-		top: 0px;
 		left: 0px;
 		width: 100%;
-	}
+	} 
+	
 	.span_only {
-		color: #0d9900;
+		color: #FF8C0A;
 		font-size: 12px;
 		font-weight: 400;
 	}
+	
 	.ul_li_span > input {
 		visibility: hidden;
 		position: absolute;
@@ -88,13 +134,16 @@ form#join_content {
 		margin-top: -11px;
 		top: 50%;
 	}
+	
 	.ul_li_span > label {
-		background: url('image/check_off.gif') 100% 50% no-repeat;
+		background: url('/BigShortWeb/images/check_off.gif') 100% 50% no-repeat;
 		display: block;
 	}
+	
 	.ul_li_span > input:checked + label {
-		background-image: url('image/check_on.gif');
+		background-image: url('/BigShortWeb/images/check_on.gif');
 	}
+	
 	.terms_box {
 		position: relative;
 		box-sizing: border-box;
@@ -105,35 +154,43 @@ form#join_content {
 		background-color: #f7f7f7;
 		overflow: auto;
 	}
-	.article{
+	
+	.article {
 		margin: 0px;
 	}
-	h3.article_title{
+	
+	h3.article_title {
 		font-size: 12px;
 		font-weight: 700;
 		line-height: 16px;
 		color: #666;
 	}
+	
 	.article > p {
 		display: block;
 		font-size: 12px;
 		line-height: 16px;
 		color: #666;
 	}
+	
 	.span_select {
 		color: #969696;
 		font-size: 12px;
 		font-weight: 400;
 	}
+	
 	.btn_double_area {
 		margin: 30px -5px 0px;
 		overflow: hidden;
+		padding-bottom: 60px;
 	}
+	
 	.btn_double_area > span {
 		display: block;
 		float: left;
 		width: 50%;
 	}
+	
 	.btn_type {
 		width: auto;
 		margin: 0px 5px;
@@ -146,35 +203,53 @@ form#join_content {
 		padding-top: 1px;
 		text-align: center;
 	}
+	
 	.btn_default {
 		color: #333;
 		border: 1px solid #e7e7e7;
 		background-color: #fff;
 	}
+	
 	.btn_agree {
-		color: white;
-		border: 1px solid #e7e7e7;
-		background-color: black;
+		color: #fff;
+		border: 1px solid #FFB914;
+		background-color: #FFB914;
 	}
-	a {
-		text-decoration: none;
-		color: inherit;
-	}
+	
 	.group_join {
 		margin: 20px 0px 65px;
 		text-align: center;
 		color: #666;
 		font-size: 12px;
 	}
-	.group_join > a{
+	
+	.group_join > a {
 		text-decoration: underline;
 		color: #333;
 	}
 	
-	#span {
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+	
+	#error_span {
 		font-size: 12px;
 		line-height: 16px;
 		margin: -3px 15px 11px;
 		color: red;
 		display: none;
-	}
+	} 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

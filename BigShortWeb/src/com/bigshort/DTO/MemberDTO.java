@@ -34,6 +34,13 @@ public class MemberDTO {
 		this.memail2 = memail2;
 		this.regdate = regdate;
 	}
+	
+
+	public MemberDTO(String mid, String mpw) {
+		super();
+		this.mid = mid;
+		this.mpw = mpw;
+	}
 
 	public String getMid() {
 		return mid;

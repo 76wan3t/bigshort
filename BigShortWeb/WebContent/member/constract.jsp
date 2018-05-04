@@ -141,7 +141,7 @@
 						</span>
 					</li>
 				</ul>
-				<span id="span">네이버 이용약관과 개인정보 수집 및 이용에 대한 안내 모두 동의해주세요.</span>
+				<span id="error_span">네이버 이용약관과 개인정보 수집 및 이용에 대한 안내 모두 동의해주세요.</span>
 			</div>	
 			<div class="btn_double_area">
 				<span><a href="#" class="btn_type btn_default">비동의</a></span>
@@ -150,9 +150,7 @@
 			</div>
 				
 		</form>
-		<div class="group_join">
-			회사, 동아리 등 단체에서 사용할 ID가 필요하세요? <a href="#">단체 회원 가입</a>
-		</div>
+		
 	</div>				
 </div>
 	

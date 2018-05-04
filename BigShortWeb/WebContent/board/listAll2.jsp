@@ -11,8 +11,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>자유게시판</title>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="../css/header.css?var=2">
 <style type="text/css">
 	body{
 	font-size: 13px;
@@ -64,10 +62,11 @@
 	margin: 0;
 	padding: 0;
 	}
-	.tab_type>.btn_tab>li{
+	.tab_type>.btn_tab > li{
 		display: table-cell;
 		position: relative;
 		vertical-align: middle;
+		float: inherit;
 	}
 	li{
 		list-style: none;
@@ -135,7 +134,7 @@
 	}
 	
 	.notice .notice_area .form_group .sel_box{
-		width: 90px;
+		width: 80px;
 	}
 	.sel_box{
 		display: inline-block;
@@ -211,6 +210,7 @@
 	a.btn .btn_txt{
 		display: inline-block;
 		vertical-align: middle;
+		height: 10px;
 	}
 	
 	.notice .notice_area .srch_result{
@@ -236,6 +236,7 @@
 		font-size: 14px;
 		font-weight: 500;
 		color: #38474f;
+		width:100px;
 		height: 44px;
 		border-bottom: 1px solid #e2ddd5;
 		text-align: center;
@@ -249,6 +250,7 @@
 		font-size: 14px;
 		color: #717171;
 		height: 44px;
+		width: 100px;
 		border-bottom: 1px solid #e2ddd5;
 		text-align: center;
 	}
@@ -286,6 +288,9 @@
 		background-color: #A5DE9F;
 		border-color: #A5DE9F;
 	}
+	#btn1{
+		display: inline-block;
+	}
 	
 </style>
 </head>
@@ -305,35 +310,16 @@
 				
 				<div class="notice_area">
 					<div class="tab_type">
-						<ul class="btn_tab">
-							<li class="active"><a href="#">게시글</a></li>
-							<li><a href="#">자유컬럼</a></li>
-						</ul>
+							<ul class="btn_tab">
+								<li class="active"><a href="#">게시글</a></li>
+								<li><a href="#">자유컬럼</a></li>
+							</ul>
 						<div class="tab_content_wrap">
 							<div class="tab_content active">
 								<form id="searchForm" name=searchForm" action="#" method="post">
 									<input type="hidden" id="type" name="type" value="N">
 									<input type="hidden" id="pageNo" name="pageNo" value="1">
-									<div class="form_group" style="width:530px;">
-										<div class="form field">
-											<div class="sel_box">
-												<select id="search" name="search">
-													<option value="subject" selected="">제목</option>
-													<option value="content">내용</option>
-													<option value="all">제목+내용</option>
-												</select>
-											</div>
-										</div>
-										<div class="form_field">
-											<div class="form_item">
-												<input type="text" id="conditionTemp" name="conditionTemp" class="i_text" value="">
-												<input type="hidden" id="condition" name="condition" class="i_text" value="">
-											</div>
-										</div>
-										<div class="form_field">
-											<a href="javacript:fncSearch();" class="btn btn_srch"><span class="btn_txt">검색</span></a>
-										</div>
-									</div>
+									
 								</form>
 								<p class="srch_result">게시글수:<span>1</span>건</p>
 								<table class="tbl_lst">
@@ -360,17 +346,79 @@
 											<td>2018-04-06</td>
 											<td>6857</td>
 										</tr>
-										
+										<tr>
+											<td>267</td>
+											<td><a href="#" onclick="">피자나라 치킨공주</a></td>
+											<td>글쓴이</td>
+											<td>2018-04-06</td>
+											<td>6857</td>
+										</tr>
+										<tr>
+											<td>267</td>
+											<td><a href="#" onclick="">도미노</a></td>
+											<td>글쓴이</td>
+											<td>2018-04-06</td>
+											<td>6857</td>
+										</tr>
+										<tr>
+											<td>267</td>
+											<td><a href="#" onclick="">도미노</a></td>
+											<td>글쓴이</td>
+											<td>2018-04-06</td>
+											<td>6857</td>
+										</tr>
+										<tr>
+											<td>267</td>
+											<td><a href="#" onclick="">도미노</a></td>
+											<td>글쓴이</td>
+											<td>2018-04-06</td>
+											<td>6857</td>
+										</tr>
+										<tr>
+											<td>267</td>
+											<td><a href="#" onclick="">도미노</a></td>
+											<td>글쓴이</td>
+											<td>2018-04-06</td>
+											<td>6857</td>
+										</tr>
+										<tr>
+											<td>267</td>
+											<td><a href="#" onclick="">도미노</a></td>
+											<td>글쓴이</td>
+											<td>2018-04-06</td>
+											<td>6857</td>
+										</tr>
+										<tr>
+											<td>267</td>
+											<td><a href="#" onclick="">도미노</a></td>
+											<td>글쓴이</td>
+											<td>2018-04-06</td>
+											<td>6857</td>
+										</tr>
+										<tr>
+											<td>267</td>
+											<td><a href="#" onclick="">도미노</a></td>
+											<td>글쓴이</td>
+											<td>2018-04-06</td>
+											<td>6857</td>
+										</tr>
+										<tr>
+											<td>267</td>
+											<td><a href="#" onclick="">도미노</a></td>
+											<td>글쓴이</td>
+											<td>2018-04-06</td>
+											<td>6857</td>
+										</tr>
 											
 									</tbody>
 								</table>
-								
+								<br>
 								<form id="insert" name="insert" action="#"  method="post">
              						 <input type="button" value="게시글 작성" class="w3-button w3-black" id="btn_submit2">
              						 <input type="hidden" value="<%-- ${sessionScope.loginUser.mid } --%>" name="hidden_id">
         						</form>
-        						
-        	<div class="text-center">
+        						<br>
+        						<div class="text-center">
 						<ul class = "pagination">
 							<c:if test="${pageMaker.prev}">
 							<li>
@@ -394,9 +442,30 @@
 							</c:if>
 						</ul>
 					
-					
-					
 				</div>
+        					<br>	
+        						<div class="form_group" style="width:530px;">
+										<div class="form_field">
+											<div class="sel_box">
+												<select id="search" name="search">
+													<option value="subject" selected="">제목</option>
+													<option value="content">내용</option>
+													<option value="all">제목+내용</option>
+												</select>
+											</div>
+										</div>
+										<div class="form_field">
+											<div class="form_item">
+												<input type="text" id="conditionTemp" name="conditionTemp" class="i_text" value="">
+												<input type="hidden" id="condition" name="condition" class="i_text" value="">
+											</div>
+										</div>
+										<div class="form_field">
+											<a href="#" class="btn btn_srch"><span class="btn_txt">검색</span></a>
+										</div>
+									</div>
+        						
+        	
         						
 							</div>
 						</div>
