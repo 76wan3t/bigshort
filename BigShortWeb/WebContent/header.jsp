@@ -60,7 +60,7 @@
 										</ul>
 									</c:otherwise>
 								</c:choose></li>
-							<li class="myaccount guestuser"><a href="constract.bizpoll">회원가입</a>
+							<li class="myaccount guestuser"><a href="constract.bigshort">회원가입</a>
 							</li>
 							<li><a href="freeboard.bizpoll">자유게시판</a></li>
 							<li class="help"><a href="#" title="고객센터">고객센터</a></li>
@@ -141,7 +141,7 @@
 											<a href="#">계정 찾기</a> <span class="right_bar"></span> <a
 												href="#">비밀번호 찾기</a>
 										</div>
-										<a id="member" href="member.bizpoll">회원가입</a>
+										<a id="member" href="constract.bigshort">회원가입</a>
 									</div>
 								</div>
 							</div>
