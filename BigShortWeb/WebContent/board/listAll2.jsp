@@ -11,8 +11,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>자유게시판</title>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="../css/header.css?var=2">
 <style type="text/css">
 	body{
 	font-size: 13px;
@@ -64,10 +62,11 @@
 	margin: 0;
 	padding: 0;
 	}
-	.tab_type>.btn_tab>li{
+	.tab_type>.btn_tab > li{
 		display: table-cell;
 		position: relative;
 		vertical-align: middle;
+		float: inherit;
 	}
 	li{
 		list-style: none;
@@ -286,6 +285,9 @@
 		background-color: #A5DE9F;
 		border-color: #A5DE9F;
 	}
+	#btn1{
+		display: inline-block;
+	}
 	
 </style>
 </head>
@@ -305,17 +307,17 @@
 				
 				<div class="notice_area">
 					<div class="tab_type">
-						<ul class="btn_tab">
-							<li class="active"><a href="#">게시글</a></li>
-							<li><a href="#">자유컬럼</a></li>
-						</ul>
+							<ul class="btn_tab">
+								<li class="active"><a href="#">게시글</a></li>
+								<li><a href="#">자유컬럼</a></li>
+							</ul>
 						<div class="tab_content_wrap">
 							<div class="tab_content active">
 								<form id="searchForm" name=searchForm" action="#" method="post">
 									<input type="hidden" id="type" name="type" value="N">
 									<input type="hidden" id="pageNo" name="pageNo" value="1">
 									<div class="form_group" style="width:530px;">
-										<div class="form field">
+										<div class="form_field">
 											<div class="sel_box">
 												<select id="search" name="search">
 													<option value="subject" selected="">제목</option>
@@ -331,7 +333,7 @@
 											</div>
 										</div>
 										<div class="form_field">
-											<a href="javacript:fncSearch();" class="btn btn_srch"><span class="btn_txt">검색</span></a>
+											<a href="#" class="btn btn_srch"><span class="btn_txt">검색</span></a>
 										</div>
 									</div>
 								</form>
@@ -360,7 +362,69 @@
 											<td>2018-04-06</td>
 											<td>6857</td>
 										</tr>
-										
+										<tr>
+											<td>267</td>
+											<td><a href="#" onclick="">도미노</a></td>
+											<td>글쓴이</td>
+											<td>2018-04-06</td>
+											<td>6857</td>
+										</tr>
+										<tr>
+											<td>267</td>
+											<td><a href="#" onclick="">도미노</a></td>
+											<td>글쓴이</td>
+											<td>2018-04-06</td>
+											<td>6857</td>
+										</tr>
+										<tr>
+											<td>267</td>
+											<td><a href="#" onclick="">도미노</a></td>
+											<td>글쓴이</td>
+											<td>2018-04-06</td>
+											<td>6857</td>
+										</tr>
+										<tr>
+											<td>267</td>
+											<td><a href="#" onclick="">도미노</a></td>
+											<td>글쓴이</td>
+											<td>2018-04-06</td>
+											<td>6857</td>
+										</tr>
+										<tr>
+											<td>267</td>
+											<td><a href="#" onclick="">도미노</a></td>
+											<td>글쓴이</td>
+											<td>2018-04-06</td>
+											<td>6857</td>
+										</tr>
+										<tr>
+											<td>267</td>
+											<td><a href="#" onclick="">도미노</a></td>
+											<td>글쓴이</td>
+											<td>2018-04-06</td>
+											<td>6857</td>
+										</tr>
+										<tr>
+											<td>267</td>
+											<td><a href="#" onclick="">도미노</a></td>
+											<td>글쓴이</td>
+											<td>2018-04-06</td>
+											<td>6857</td>
+										</tr>
+										<tr>
+											<td>267</td>
+											<td><a href="#" onclick="">도미노</a></td>
+											<td>글쓴이</td>
+											<td>2018-04-06</td>
+											<td>6857</td>
+										</tr>
+										<tr>
+											<td>267</td>
+											<td><a href="#" onclick="">도미노</a></td>
+											<td>글쓴이</td>
+											<td>2018-04-06</td>
+											<td>6857</td>
+										</tr>
 											
 									</tbody>
 								</table>
