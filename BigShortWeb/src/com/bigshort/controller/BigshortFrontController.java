@@ -59,6 +59,12 @@ public class BigshortFrontController extends HttpServlet {
 			}else if(command.equals("/constract.bigshort")) { // 회원가입 동의페이지
 				action = new ConstractAction();
 				forward = action.excute(request, respnse);
+			}else if(command.equals("/loginck.bigshort")) { // 로그인 섹션
+				action = new LoginCkAction();
+				forward = action.excute(request, respnse);
+			}else if(command.equals("/logout.bigshort")) { // 로그인 섹션
+				action = new LoginOutAction();
+				forward = action.excute(request, respnse);
 			}
 			
 			

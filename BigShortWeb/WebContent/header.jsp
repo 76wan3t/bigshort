@@ -28,8 +28,118 @@
 .w3-container {
 	z-index: 3;
 	opacity: 1;
+	
 }
+#span_id{
+	color: red;
+	}
 </style>
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		
+		$("#btn_login").on("click", function(){
+				 
+	     			var id =$("#login_id").val();
+	     			var pw = $("#login_pw").val();
+	     			
+						
+					if(id == ""){
+						 $("#login_id").focus();
+	                 	 $("#span_id").text("아이디를 입력해주세요").css("display", "block");
+	                 	 return false;
+	                 	
+					}else if(pw == ""){
+						 $("#login_pw").focus();
+	                 	 $("#span_id").text("비밀번호를 입력해주세요").css("display", "block");
+	                 	 return false;
+	                 	
+					}else {
+						
+						$("#span_id").css("display", "none");
+						
+						$.ajax({
+							url:"loginck.bigshort",
+							type: "POST",
+							dataType :"json",
+							data : "id=" +id +"&"+ "pw=" +  pw,
+							success : function(data){
+								
+								if(data.flag == 0 ){
+									
+									alert("로그인 실패");
+									$("#loginid").select();
+									$("#span_id").text(" 아이디 또는 패스워드가 틀렸습니다. ").css("display", "block");
+									
+								}else{
+									
+									alert("로그인성공");
+									location.reload();
+								} 
+							},
+							
+							error : function(){
+								alert("System Error!!!");
+								
+							}
+						});
+					}
+					
+					
+					
+					
+			});
+					
+		
+		
+		$("#login_id").blur(function(){
+         	var uid = $('#login_id');
+         	var id = $.trim(uid.val());
+ 			if(id != ""){
+ 				$("#span_id").css("display", "none");
+ 			}
+         });
+		
+		$("#login_pw").blur(function(){
+         	var upw = $('#login_pw');
+         	var pw = $.trim(upw.val());
+ 			if(pw != ""){
+ 				$("#span_id").css("display", "none");
+ 			}
+ 				
+         });
+		
+	
+	$("#logout_btn").on("click", function(){
+		
+		$.ajax({
+			url:"logout.bigshort",
+			type: "POST",
+			dataType :"JSON",
+			success : function(data){				
+				if(data.flag == "0" ){
+					
+					alert("로그아웃 실패");
+					
+				}else{
+					
+					alert("로그아웃 성공");
+					//location.href = "index.bizpoll";
+					//$("#frm_memeber").submit();
+					location.reload();
+				} 
+			},
+			
+			error : function(){
+				alert("System Error!!!");
+				
+				}
+			});
+		});
+	});
+
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" type="text/css" href="/BigShortWeb/css/header.css?var=1">
@@ -60,7 +170,7 @@
 										</ul>
 									</c:otherwise>
 								</c:choose></li>
-							<li class="myaccount guestuser"><a href="constract.bizpoll">회원가입</a>
+							<li class="myaccount guestuser"><a href="/BigShortWeb/constract.bizpoll">회원가입</a>
 							</li>
 							<li><a href="freeboard.bizpoll">자유게시판</a></li>
 							<li class="help"><a href="#" title="고객센터">고객센터</a></li>
@@ -123,12 +233,10 @@
 									<div id="container">
 										<form action="loginck.bizpoll" method="POST" id="frm_login"
 											name="frm_login">
-											<input class="idpw" type="text" id="login_id" name="login_id"
-												placeholder="아이디를 입력 해 주세요"></input> <input class="idpw"
-												type="password" id="login_pw" name="login_pw"
-												placeholder="비밀번호(4~16자리)"></input> <span id="span_login">아이디
-												또는 비밀번호가 틀렸습니다</span> <a href="#" id="btn_login" name="btn_login"><span>
-													로그인 </span></a>
+											<input class="idpw" type="text" id="login_id" name="login_id" placeholder="아이디를 입력 해 주세요"></input> 
+											<input class="idpw"	type="password" id="login_pw" name="login_pw" placeholder="비밀번호(4~16자리)"></input>
+											<span id="span_id">아이디 또는 비밀번호가 틀렸습니다</span> 
+											<a href="#" id="btn_login" name="btn_login"><span> 로그인 </span></a>
 										</form>
 									</div>
 									<div id="login_help">
