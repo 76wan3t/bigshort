@@ -11,14 +11,14 @@ public class ConstractAction implements Action{
 	@Override
 	public ActionForward excute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String url = "join.jsp";
-		
+		String url = "member/constract.jsp";
 		
 		ActionForward forward = new ActionForward();
-		
 		forward.setPath(url);
-		forward.setRedirect(false); 
-		 
+		forward.setRedirect(false);
+
+		
+		
 		return forward;
 	}
 

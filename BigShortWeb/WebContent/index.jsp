@@ -182,11 +182,6 @@
 				</div>
 			</div>
 		</div>
-		<!-- <div id="footer">
-			<div class="inner">
-				Copyright(C) 2018 Bigshort. All right Reserved.
-			</div>
-		</div> -->
 	</div>
 </body>
 </html>
