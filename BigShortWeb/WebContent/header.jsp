@@ -30,10 +30,9 @@
 	opacity: 1;
 }
 </style>
-<link rel="stylesheet" type="text/css" href="./css/header.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" type="text/css" href="css/header.css?var=1">
+<link rel="stylesheet" type="text/css" href="/BigShortWeb/css/header.css?var=1">
 </head>
 <body>
 
@@ -61,7 +60,7 @@
 										</ul>
 									</c:otherwise>
 								</c:choose></li>
-							<li class="myaccount guestuser"><a href="constract.bigshort">회원가입</a>
+							<li class="myaccount guestuser"><a href="constract.bizpoll">회원가입</a>
 							</li>
 							<li><a href="freeboard.bizpoll">자유게시판</a></li>
 							<li class="help"><a href="#" title="고객센터">고객센터</a></li>
@@ -69,12 +68,9 @@
 						</ul>
 					</div>
 				</div>
-				<div class="nav-menu">
-					<div>
-						<img src="/BigShortWeb/images/gabang_logo.png">
-					</div>
-				</div>
+
 				<div id="navigation" role="navigation">
+					<img id="logo" src="/BigShortWeb/images/gabang_logo.png">
 					<nav class="clearfix">
 						<ul class="menu-category clearfix">
 							<li class="primary-navigation">
@@ -145,7 +141,7 @@
 											<a href="#">계정 찾기</a> <span class="right_bar"></span> <a
 												href="#">비밀번호 찾기</a>
 										</div>
-										<a id="member" href="constract.bigshort">회원가입</a>
+										<a id="member" href="member.bizpoll">회원가입</a>
 									</div>
 								</div>
 							</div>
