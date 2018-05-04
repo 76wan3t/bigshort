@@ -14,9 +14,10 @@
 }
 
 #header {
-	height: 100px;
 	background: #fff;
-	opacity: 0.5;
+	 opacity: 0.5;
+	/* background-color: rgba( 255, 255, 255, 0.5 ); */
+	z-index: 1;
 }
 
 #header ul.auth>li {
@@ -61,7 +62,7 @@
 /* 각 구 나누는 원 간격 증가 */
 #container .local ul.gj>li {
 	display: inline-block;
-	margin: 20px 55px;
+	margin: 20px 54px;
 }
 
 /* 각 구 클릭하는 원 */
@@ -104,9 +105,3 @@
 	min-height: 350px;
 }
 
-#footer {
-	bottom: 0;
-	text-align: center;
-	padding: 15px;
-	background: #e3e5e9;
-}

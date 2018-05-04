@@ -18,7 +18,7 @@ public class ConstractAction implements Action{
 		
 		forward.setPath(url);
 		forward.setRedirect(false); 
-		
+		 
 		return forward;
 	}
 
