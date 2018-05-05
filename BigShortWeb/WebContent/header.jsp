@@ -34,7 +34,7 @@
 	color: red;
 	}
 </style>
-<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="/BigShortWeb/js/jquery-3.3.1.js"></script>
 <script type="text/javascript">
 
 	$(document).ready(function(){
@@ -224,7 +224,7 @@
 						<div id="kakao_header">
 							<h1>
 								<a id="kakao_logo" href="#"> <img
-									src="images/gabang_logo.png">
+									src="/BigShortWeb/images/gabang_logo.png">
 								</a>
 							</h1>
 						</div>
