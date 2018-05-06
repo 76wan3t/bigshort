@@ -57,8 +57,8 @@
 	
 		float: right;
 		color: #fff;
-    		background-color: #449d44;
-    		border-color: #398439;
+    	background-color: #449d44;
+    	border-color: #398439;
 		border: none;
 		text-align: center;
 		text-decoration: none;
@@ -68,8 +68,8 @@
 		margin-top: 5px;
 		margin-right: 5px;
 		padding-left: 20px;
-    		padding-right: 20px;
-    		letter-spacing: 1px;
+    	padding-right: 20px;
+    	letter-spacing: 1px;
 	}
 	.pull-right:hover{
 	
@@ -80,8 +80,8 @@
 	.pull-left{
 		float: left;
 		color: #333;
-    		background-color: #fff;
-    		border-color: #ccc!important;
+    	background-color: #fff;
+    	border-color: #ccc!important;
 		text-align: center;
 		text-decoration: none;
 		display: inline-block;
@@ -96,7 +96,7 @@
 	}
 	#label{
 		float: right;
-		background-color: #f1404b;
+		background-color: #449d44;
 		border: none;
 		color: white;
 		text-align: center;
@@ -104,6 +104,7 @@
 		display: inline-block;
 		cursor: pointer;
 		margin-top: 15px;
+		padding: 5px 12px;
 	}
 	#label:hover{
 		box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 
@@ -153,9 +154,13 @@
 		border-color: #ddd;
 		margin-bottom: 20px;
    		background-color: #fff;
-    		border: 1px solid #ddd;
-    		border-radius: 4px;
+    	border: 1px solid #ddd;
+    	border-radius: 4px;
    		box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+   		padding: 20px 40px;
+	}
+	#new_h1{
+		margin: 15px 0px 15px 0px;
 	}
 
 	
@@ -176,9 +181,9 @@ $(document).ready(function() {
 			
 			$("#insert").submit();
 	});	
-	$(".list").on("click", function() {
+	$(".pull-left").on("click", function() {
 		
-		location.href = "boardlist.bizpoll"
+		location.href = "../boardlist.bigshort"
 	});	
 });
 </script>
@@ -186,11 +191,11 @@ $(document).ready(function() {
 <body>
 	<div>
 		<div class="container">
-	      <form id ="insert" name="insert" action="boardinertsave.bizpoll" method="post" enctype="multipart/form-data" >
+	      <form id ="insert" name="insert" action="../boardinsertsave.bigshort" method="post" enctype="multipart/form-data" >
 			<table class="table table-bordered">
 			
 			   <thead>
-			    <caption> <h1>새 글 쓰기</h1> </caption>
+			    <caption> <h1 id="new_h1">새 글 쓰기</h1> </caption>
 				    <tbody>
 				            <tr>
 				                <th>제목 : </th>
@@ -198,7 +203,7 @@ $(document).ready(function() {
 				            </tr>
 				            <tr>
 				                <th>작성자 : </th>
-				                <td><input type="text" name="writer"  class="form-control" readonly="readonly" value="${id}"></td>
+				                <td><input type="text" name="writer"  class="form-control"  value="${id}"></td>
 				            </tr>
 				            <tr>
 						<th >첨부파일 : </th>
@@ -218,7 +223,6 @@ $(document).ready(function() {
 				                <td colspan="2">
 				                    <input type="button" value="등록" class="btn pull-right"/>
 				                    <input type="button" value="취소" class="btn pull-left"/>
-				                    <input type="button" value="글 목록" class="btn list" />
 				                </td>
 				            </tr>
 				    </tbody>

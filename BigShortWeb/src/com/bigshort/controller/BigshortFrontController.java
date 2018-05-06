@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.bigshort.action.*;
+import com.bigshort.action.board.*;
 
 
 /**
@@ -64,6 +65,12 @@ public class BigshortFrontController extends HttpServlet {
 				forward = action.excute(request, respnse);
 			}else if(command.equals("/logout.bigshort")) { // 로그인 섹션
 				action = new LoginOutAction();
+				forward = action.excute(request, respnse);
+			}else if(command.equals("/boardInsertView.bigshort")) { // 로그인 섹션
+				action = new BoardInsertViewAction();
+				forward = action.excute(request, respnse);
+			}else if(command.equals("/boardinsertsave.bigshort")) { // 로그인 섹션
+				action = new BoardInsertSaveAction();
 				forward = action.excute(request, respnse);
 			}
 			
