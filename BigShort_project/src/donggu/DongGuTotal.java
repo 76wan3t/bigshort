@@ -23,20 +23,7 @@ public class DongGuTotal {
       static String area = "donggu";
       static String seq = "donggu_seq.NEXTVAL";
       
-      public void sleep(int time){
-
-    	    try {
-
-    	      Thread.sleep(time);
-
-    	    } catch (InterruptedException e) { }
-
-    	}
-    	
-      
       public void donggutotal() throws IOException {
-    	  
-    	  
     		
    	    ArrayList<BigShortDTO> list = new ArrayList<>();
 
@@ -45,13 +32,12 @@ public class DongGuTotal {
            System.out.println("======================================");
            System.out.print("시작할 페이지 : ");
            
-           page = 33;// sc.nextInt();
+           page = sc.nextInt();
            
            comlete_page = base_url + page + base_url2;
            
        while(page <= total) {
-    	 
-    	
+      	 
       	 int overlap = 0;//몇번째 인지 알기 위한 변수
            
            
@@ -63,8 +49,7 @@ public class DongGuTotal {
            System.out.println();
 
            for(Element element:body) {
-        	   //this.sleep(500); 
-        	   
+                 
                  int number = 0;
                  int number2 = 0;
                  int number3 = 0;
@@ -98,9 +83,8 @@ public class DongGuTotal {
                                    System.out.println("중복입니다.");
                                    System.out.println(urltotal);
                                    System.out.println();
-                                   continue;
                                    
-                       } else {
+                       }else {
     
       
                         String aptname = doc.select(".scrollTitleWrap > span.tit , .gray_box").text(); // 아파트 이름 .gray_box= 중간에 태그가 바뀌므로 못불러옴 그래서 추가
