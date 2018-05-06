@@ -9,9 +9,6 @@
 <link rel="stylesheet" type="text/css" href="../css/newboard.css?var=1">
 <style type="text/css">
 
-	#header{
-		position: static;
-	}
 	#header a{
 		text-decoration: none;
 	}
