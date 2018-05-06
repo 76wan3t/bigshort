@@ -64,6 +64,8 @@ a:link, a:visited {text-decoration: none; color: #656565;}
     <a href="#this" class="btn" id="list">목록으로</a>
     <a href="#this" class="btn" id="update">수정하기</a>
     </div>
+    
+    <!-- 답글  -->
   
      
     <%-- <%@ include file="/WEB-INF/include/include-body.jspf" %> --%>
