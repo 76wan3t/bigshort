@@ -84,7 +84,7 @@
 	}
 	
 	.terms_span > input:checked + label {
-		background-image: url('/BigShortWeb/images/check_on.gif');
+		background-image: url('/BigShortWeb/images/check_on2.png');
 	}
 	
 	#terms_ul {
@@ -120,7 +120,7 @@
 	} 
 	
 	.span_only {
-		color: #FF8C0A;
+		color: #63BBED;
 		font-size: 12px;
 		font-weight: 400;
 	}
@@ -141,7 +141,7 @@
 	}
 	
 	.ul_li_span > input:checked + label {
-		background-image: url('/BigShortWeb/images/check_on.gif');
+		background-image: url('/BigShortWeb/images/check_on2.png');
 	}
 	
 	.terms_box {
@@ -212,8 +212,8 @@
 	
 	.btn_agree {
 		color: #fff;
-		border: 1px solid #FFB914;
-		background-color: #FFB914;
+    	border: 1px solid #A4D2ED;
+    	background-color: #A4D2ED;
 	}
 	
 	.group_join {
