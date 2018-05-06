@@ -167,9 +167,9 @@
 										</ul>
 									</c:otherwise>
 								</c:choose></li>
-							<li class="myaccount guestuser"><a href="/BigShortWeb/constract.bizpoll">회원가입</a>
+							<li class="myaccount guestuser"><a href="/BigShortWeb/constract.bigshort">회원가입</a>
 							</li>				
-							<li class="help"><a href="#" title="고객센터">고객센터</a></li>
+							<li class="help"><a href="/BigShortWeb/board/listAll.bigshort" title="고객센터">고객센터</a></li>
 
 						</ul>
 					</div>
