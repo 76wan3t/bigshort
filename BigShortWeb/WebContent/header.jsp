@@ -60,7 +60,7 @@
 						$("#span_id").css("display", "none");
 						
 						$.ajax({
-							url:"loginck.bigshort",
+							url:"/BigShortWeb/loginck.bigshort",
 							type: "POST",
 							dataType :"json",
 							data : "id=" +id +"&"+ "pw=" +  pw,
@@ -138,6 +138,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" type="text/css" href="/BigShortWeb/css/header.css?var=2">
+<link rel="stylesheet" type="text/css" href="/BigShortWeb/css/footer.css?var=1">
 </head>
 <body>
 <a id="logo_a" href="/BigShortWeb/index.bigshort"><img id="logo" src="/BigShortWeb/images/LOGO2.png"></a>
@@ -169,7 +170,7 @@
 								</c:choose></li>
 							<li class="myaccount guestuser"><a href="/BigShortWeb/constract.bigshort">회원가입</a>
 							</li>				
-							<li class="help"><a href="/BigShortWeb/board/listAll.bigshort" title="고객센터">고객센터</a></li>
+							<li class="help"><a href="/BigShortWeb/listAll.bigshort" title="고객센터">고객센터</a></li>
 
 						</ul>
 					</div>
@@ -245,7 +246,7 @@
 											<a href="#">계정 찾기</a> <span class="right_bar"></span> <a
 												href="#">비밀번호 찾기</a>
 										</div>
-										<a id="member" href="constract.bigshort">회원가입</a>
+										<a id="member" href="/BigShortWeb/constract.bigshort">회원가입</a>
 									</div>
 								</div>
 							</div>

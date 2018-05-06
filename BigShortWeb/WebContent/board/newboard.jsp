@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="../css/newboard.css?var=1">
+<link rel="stylesheet" type="text/css" href="/BigShortWeb/css/newboard.css?var=1">
 <style type="text/css">
 
 	#header a{
@@ -34,7 +34,7 @@ $(document).ready(function() {
 	});	
 	$(".pull-left").on("click", function() {
 		
-		location.href = "../boardlist.bigshort"
+		location.href = "/BigShortWeb/listAll.bigshort"
 	});	
 });
 </script>
@@ -54,7 +54,7 @@ $(document).ready(function() {
 				            </tr>
 				            <tr>
 				                <th>작성자 : </th>
-				                <td><input type="text" name="writer"  class="form-control"  value="${id}"></td>
+				                <td><input type="text" name="writer"  class="form-control" readonly="readonly" value="${mid}"></td>
 				            </tr>
 				            <tr>
 						<th >첨부파일 : </th>
@@ -83,3 +83,5 @@ $(document).ready(function() {
 	</div>
 </body>
 </html>
+
+<%@ include file = "../footer.jsp" %>

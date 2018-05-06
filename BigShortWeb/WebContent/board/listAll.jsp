@@ -293,6 +293,31 @@
 	}
 	
 </style>
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		
+		// 게시글 등록 버튼을 클릭하면 이벤트 처리
+		$("#btn_submit2").on("click", function() {
+			
+			var dd =  "<%=session.getAttribute("loginUser")%>"
+			
+			
+			if(dd != "null"){
+				
+				$("#insert").submit();
+				
+				
+			}else {
+				alert("로그인 해주세요!!!!!!")
+				$("#id01").css("display", "block");
+				
+				} 
+		});
+	
+	});
+</script>
 </head>
 <body>
 <!-- 콘테이너  -->
@@ -413,9 +438,9 @@
 									</tbody>
 								</table>
 								<br>
-								<form id="insert" name="insert" action="#"  method="post">
+							<form id="insert" name="insert" action="/BigShortWeb/boardInsertView.bigshort"  method="post">
              						 <input type="button" value="게시글 작성" class="w3-button w3-black" id="btn_submit2">
-             						 <input type="hidden" value="<%-- ${sessionScope.loginUser.mid } --%>" name="hidden_id">
+             						 <input type="hidden" value="${sessionScope.loginUser.mid }" name="mid">
         						</form>
         						<br>
         						<div class="text-center">

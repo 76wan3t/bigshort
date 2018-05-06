@@ -1,10 +1,13 @@
-package com.bigshort.action;
+package com.bigshort.action.member;
 
 import java.io.IOException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.bigshort.action.Action;
+import com.bigshort.action.ActionForward;
 
 public class ConstractAction implements Action{
 
