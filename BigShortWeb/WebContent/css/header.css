@@ -1,3 +1,9 @@
+	
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+@import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+
+
 * {
 	background-repeat: no-repeat;
 	background-position: center;
@@ -117,7 +123,7 @@ a:link, a:visited { /* 앵커 태그에 기본적으로 해야할것 */
 #header {
 	height: 116px;
 	min-width: 100%;
-	position: fixed;
+	position: relative;
 	z-index: 1;
 	top: 0;
 	text-align: center;
@@ -413,8 +419,8 @@ button, input[type=button], input[type=reset], input[type=submit] {
 }
 
 #navigation {
-	/* position: absolute; */
-	top: 58px;
+	position: relative;
+	top: 11px;
 	width: 100%;
 	text-align: center;
 }
@@ -816,12 +822,21 @@ h1 {
 	right: 30px;
 }
 #logo{
-	position: fixed;
+	position: relative;
     z-index: 2;
+    left: 363px;
+    top: 23px;
+    width: 130px;
+    height: 60px;
+}
+#logo_span {
+	position: relative;
+	z-index: 2;
     left: 400px;
     top: 23px;
     width: 130px;
     height: 60px;
+	font-family: 'Hanna', serif;
 }
 
 .link_info:hover {
@@ -910,10 +925,18 @@ h1 {
 }
 /* 로그인 모달 스타일 끝 */
 
+#logo_a {
+	display: block; 
+}
 
-
-
-
+.logo_a {
+	position: relative;
+    left: -729px;
+    top: 35px;
+    font-size: 50px;
+	font-family: 'Jeju Hallasan', serif;
+	color: white;
+}
 
 
 

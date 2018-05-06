@@ -85,13 +85,8 @@
 							}
 						});
 					}
-					
-					
-					
-					
 			});
-					
-		
+
 		
 		$("#login_id").blur(function(){
          	var uid = $('#login_id');
@@ -142,10 +137,12 @@
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" type="text/css" href="/BigShortWeb/css/header.css?var=1">
+<link rel="stylesheet" type="text/css" href="/BigShortWeb/css/header.css?var=2">
 </head>
 <body>
-<a href="/BigShortWeb/index.bigshort"><img id="logo" src="/BigShortWeb/images/gabang_logo.png"></a>
+<a id="logo_a" href="/BigShortWeb/index.bigshort"><img id="logo" src="/BigShortWeb/images/LOGO2.png"></a>
+	
+	
 	<div id="wrapper">
 		<!-- 네비게이션 시작 -->
 		<div id="header" role="banner" class="header-shadow clearfix">
@@ -155,7 +152,7 @@
 					<div id="muin">
 						<ul class="menu-utility-user">
 							<li class="search"></li>
-
+							<li class="logo_a">가방</li>
 							<li><c:choose>
 									<c:when test="${empty sessionScope.loginUser}">
 										<a
@@ -170,10 +167,8 @@
 										</ul>
 									</c:otherwise>
 								</c:choose></li>
-							<li class="myaccount guestuser"><a href="constract.bigshort">회원가입</a>
 							<li class="myaccount guestuser"><a href="/BigShortWeb/constract.bizpoll">회원가입</a>
-							</li>
-							<li><a href="freeboard.bizpoll">자유게시판</a></li>
+							</li>				
 							<li class="help"><a href="#" title="고객센터">고객센터</a></li>
 
 						</ul>
