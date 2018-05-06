@@ -10,20 +10,23 @@ body{
 	padding: 0;
 	margin: 0;
 }
+/* 경고문 */
 #ck{
 	color: red;
 	font-size: 13px;
-	margin-left: 20px;
+	display: none; 
 }
+/* 전체를 감싸는 div */
 #join_wrap{
 	width: 600px;
-	margin: 50px auto;
+	margin: 20px auto;
 }
+/* 각 영역을 나누고 있는 div? */
 .info_wrap{
 	width: 500px;
-	height: 150px;
 	border: 1px solid gray;
 }
+/* input영역을 감싸는 div */
 .info{
 	width: 100%;
 	height:50px;
@@ -33,55 +36,101 @@ body{
 	border-bottom: none;
 }
 #info_wrap3{
-	height: 230px;
+	height: 280px;
 }
+/* input태그 */
 .info_input{
-	width: 90%;
+	width: 65%;
 	height: 50%;
 	border: none;
-	margin-left: 20px;
+	margin: 10px 20px;
 }
 #mail{
-	width: 50%;
+	width: 40%;
 }
+/* 사업자 번호 */
 .brn_input{
 	width: 20%;
 	border: 1px solid gray;
+	text-align: center;
 }
+/* 중개소 전화번호 */
 #sphone{
-	width: 70%;
+	width: 75%;
 }
+select{
+	height: 90%;
+	border: none;
+	outline: none;
+}
+/* 중개소 주소 */
+.join{
+	height: 25px;
+	margin: 3px;
+}
+#address{
+	width:128%;
+}
+#address2{
+	width: 90%;
+}
+#addr_button{
+	height: 30px;
+}
+/* 회원가입 버튼 */
 #frm_submit{
+	display: block;
 	width: 100px;
-	height: 40px;
+	height: 36px;
+	text-align: center;
+	text-decoration: none;
+	padding-top: 10px;
+	font-weight: bold;
 }
 #submit_wrap{
 	width: 200px;
 	margin: 0 auto;
 }
+/* 버튼 */
+.join_btn{
+	background-color: #63BBED;
+	border: 1px solid #dadada;
+	color: white;
+}
 </style>
+<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var id = $("#id").val();
+		
+		$("#frm_submit").click(function(){
+			if(id == ""){
+				alert("test");
+				$("#ck").css("display","inline-block");
+			}	
+		});
+	});
+</script>
 </head>
 <body>
 <!-- 사업자 번호 / 아이디(not null) / 이름(not null) / 비번(not null) / 중개소명(not null) / 중개소 주소 / 전화번호(not null) / 이메일(not null) -->
-<!-- 사업자 등록 번호 ***-**-***** 10자리 형식 --> 
 <form action="" method="POST" id="joinfrm" name="joinfrm">
 	<div id="join_wrap">
-	
 		<div class="info_wrap" id="info_wrap1">
-		<!-- 아이디 -->
+		<!-- 아이디 (필수) -->
 			<div class="info">
 				<span>
 					<input class="info_input" id="id" name="id" placeholder="아이디">
 				</span>
-				<div id="ck">필수정보 입니다.</div>
+				<span id="ck">필수정보 입니다.</span>
 			</div>
-		<!-- 비번 -->
+		<!-- 비번 (필수) -->
 			<div class="info">	
 				<span>
 					<input class="info_input" id="pass" name="pass" placeholder="비밀번호">
 				</span>
 			</div>
-		<!-- 비번 확인 -->
+		<!-- 비번 확인 (필수) -->
 			<div class="info">
 				<span>
 					<input class="info_input" id="pass2" name="pass2" placeholder="비밀번호 재확인">
@@ -90,19 +139,19 @@ body{
 		</div>
 <br>
 		<div class="info_wrap" id="info_wrap2">
-		<!-- 이름	 -->
+		<!-- 이름	 (필수) -->
 			<div class="info">
 				<span>
 					<input class="info_input" id="name" name="name" placeholder="이름">
 				</span>
 			</div>
-		<!-- 전화번호 -->
+		<!-- 전화번호 (필수) -->
 			<div class="info">
 				<span>
 					<input class="info_input" id="phone" name="phone" placeholder="핸드폰 번호 ('-'를 제외한 11자리만 입력해주세요.)">
 				</span>
 			</div>
-		<!-- 이메일 -->	
+		<!-- 이메일 (필수) -->	
 			<div class="info">
 				<span class="mail_span">
 					<input class="info_input" id="mail" name="mail" placeholder="이메일">
@@ -121,6 +170,7 @@ body{
 <br>		
 		<div class="info_wrap" id="info_wrap3">
 		<!-- 사업자 번호 -->
+		<!-- 사업자 등록 번호 ***-**-***** 10자리 형식 --> 
 			<div class="info">
 				<span>
 					<input class="info_input brn_input" id="brn1" name="brn" placeholder="사업자 번호"> 
@@ -136,7 +186,7 @@ body{
 			</div>
 		<!-- 중개소 전화번호 -->
 			<div class="info">
-				<span>
+				<span class="info_input">
 					<select>
 						<option>062</option>
 						<option>061</option>
@@ -146,11 +196,11 @@ body{
 				</span>
 			</div>
 		<!-- 중개소 주소 다음 api 활용 -->
-			<div class="info">
-				<input type="text" class="join" id="sample6_postcode" placeholder="우편번호">
-						<input type="button" id="addr_button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-						<input type="text" class="join" id="sample6_address" placeholder="주소">
-						<input type="text" class="join" id="sample6_address2" placeholder="상세주소">
+			<div class="info_input">
+				<input type="text" class="join" id="postcode" placeholder="우편번호">
+						<input type="button" id="addr_button" class="join_btn" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+						<input type="text" class="join" id="address" placeholder="주소">
+						<input type="text" class="join" id="address2" placeholder="상세주소">
 						<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 						<script>
 						    function sample6_execDaumPostcode() {
@@ -198,7 +248,7 @@ body{
 			</div>
 		</div>
 	</div>
-	<div id="submit_wrap"><input id="frm_submit" name="frm_submit" type="submit" value="회원가입"></div>	
+	<div id="submit_wrap"><a href="#" id="frm_submit" class="join_btn">회원가입</a></div>	
 </form>
 </body>
 </html>
