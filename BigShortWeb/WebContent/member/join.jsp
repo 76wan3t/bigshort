@@ -1,103 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ include file="../header.jsp" %>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Bigshort_join</title>
-<style type="text/css">
-body{
-	padding: 0;
-	margin: 0;
-}
-/* 경고문 */
-#ck{
-	color: red;
-	font-size: 13px;
-	display: none; 
-}
-/* 전체를 감싸는 div */
-#join_wrap{
-	width: 600px;
-	margin: 20px auto;
-}
-/* 각 영역을 나누고 있는 div? */
-.info_wrap{
-	width: 500px;
-	border: 1px solid gray;
-}
-/* input영역을 감싸는 div */
-.info{
-	width: 100%;
-	height:50px;
-	border-bottom: 1px solid gray;
-}
-.info:last-child{
-	border-bottom: none;
-}
-#info_wrap3{
-	height: 280px;
-}
-/* input태그 */
-.info_input{
-	width: 65%;
-	height: 50%;
-	border: none;
-	margin: 10px 20px;
-}
-#mail{
-	width: 40%;
-}
-/* 사업자 번호 */
-.brn_input{
-	width: 20%;
-	border: 1px solid gray;
-	text-align: center;
-}
-/* 중개소 전화번호 */
-#sphone{
-	width: 75%;
-}
-select{
-	height: 90%;
-	border: none;
-	outline: none;
-}
-/* 중개소 주소 */
-.join{
-	height: 25px;
-	margin: 3px;
-}
-#address{
-	width:128%;
-}
-#address2{
-	width: 90%;
-}
-#addr_button{
-	height: 30px;
-}
-/* 회원가입 버튼 */
-#frm_submit{
-	display: block;
-	width: 100px;
-	height: 36px;
-	text-align: center;
-	text-decoration: none;
-	padding-top: 10px;
-	font-weight: bold;
-}
-#submit_wrap{
-	width: 200px;
-	margin: 0 auto;
-}
-/* 버튼 */
-.join_btn{
-	background-color: #63BBED;
-	border: 1px solid #dadada;
-	color: white;
-}
-</style>
+<link rel="stylesheet" href="../css/join.css"/>
 <script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
