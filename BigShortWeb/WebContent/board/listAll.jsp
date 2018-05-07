@@ -21,6 +21,9 @@
 	#container{
 		margin-top:200px;
 	}
+	#navigation{
+		margin-left: 5px;
+	}
 	div{
 	 margin: 0;
 	 padding: 0;
@@ -155,11 +158,11 @@
 		border: 0;
 	}
 	select {
-	font-size: 13px;
-	font-family: 'Noto Sans KR',Tahoma,sans-serif;
-	font-weight: 400;
-	color: #717171;
-	vertical-align: middle;
+		font-size: 13px;
+		font-family: 'Noto Sans KR',Tahoma,sans-serif;
+		font-weight: 400;
+		color: #717171;
+		vertical-align: middle;
 	}
 	
 	.form_item{
@@ -242,9 +245,9 @@
 		text-align: center;
 	}
 	th{
-	font-family: 'Noto Sans KR',Tahoma,sans-serif;
-	margin: 0;
-	padding: 0;
+		font-family: 'Noto Sans KR',Tahoma,sans-serif;
+		margin: 0;
+		padding: 0;
 	}
 	.tbl_lst td{
 		font-size: 14px;
@@ -276,7 +279,7 @@
 		white-space: nowrap;
 	}
 	.pagination{
-	text-align: center;
+		text-align: center;
 	}
 
 	.pagination > .active > a {
@@ -310,7 +313,7 @@
 				
 				
 			}else {
-				alert("로그인 해주세요!!!!!!")
+				alert("로그인을 하셔야 게시글을 작성 할 수 있습니다.")
 				$("#id01").css("display", "block");
 				
 				} 
