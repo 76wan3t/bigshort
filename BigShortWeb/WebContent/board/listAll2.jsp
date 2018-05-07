@@ -6,7 +6,7 @@
 <style type="text/css">
 
 a:link, a:visited {text-decoration: none; color: #656565;}
- 
+ /* 헤더 겹침 수정  */
  #header{
    position: static;
 }

@@ -5,7 +5,7 @@
 <html>
 <head>
     <title>글 상세보기</title>
-    
+    <!-- 댓글 미완성  -->
     <style type="text/css">
     	#main{
     		float: left;
