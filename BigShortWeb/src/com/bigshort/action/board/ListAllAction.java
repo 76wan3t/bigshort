@@ -16,7 +16,6 @@ public class ListAllAction implements Action {
 			throws ServletException, IOException {
 		String url = "board/listAll.jsp";
 		
-		System.out.println("여기 타고 있음");
 		
 		ActionForward forward = new ActionForward();
 	
