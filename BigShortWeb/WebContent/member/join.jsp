@@ -6,18 +6,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Bigshort_join</title>
-<link rel="stylesheet" href="../css/join.css"/>
+<link rel="stylesheet" type="text/css" href="../css/join.css?var=1"/>
 <script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
 <script type="text/javascript">
-	$(document).ready(function(){
-		var id = $("#id").val();
-		
-		$("#frm_submit").click(function(){
-			if(id == ""){
-				alert("test");
-				$("#ck").css("display","inline-block");
-			}	
-		});
+	$(document).on("click","#frm_submit",function(){
+		var id = $.trim($("#id").val()),
+			pw = $.trim($("#pass").val());
+		alert(id + pw);
 	});
 </script>
 </head>
@@ -29,20 +24,20 @@
 		<!-- 아이디 (필수) -->
 			<div class="info">
 				<span>
-					<input class="info_input" id="id" name="id" placeholder="아이디">
+					<input class="info_input" type="text" id="id" name="id" placeholder="아이디">
 				</span>
 				<span id="ck">필수정보 입니다.</span>
 			</div>
 		<!-- 비번 (필수) -->
 			<div class="info">	
 				<span>
-					<input class="info_input" id="pass" name="pass" placeholder="비밀번호">
+					<input class="info_input" type="password" id="pass" name="pass" placeholder="비밀번호">
 				</span>
 			</div>
 		<!-- 비번 확인 (필수) -->
 			<div class="info">
 				<span>
-					<input class="info_input" id="pass2" name="pass2" placeholder="비밀번호 재확인">
+					<input class="info_input" type="password" id="pass2" name="pass2" placeholder="비밀번호 재확인">
 				</span>
 			</div>
 		</div>
@@ -51,19 +46,19 @@
 		<!-- 이름	 (필수) -->
 			<div class="info">
 				<span>
-					<input class="info_input" id="name" name="name" placeholder="이름">
+					<input class="info_input" type="text" id="name" name="name" placeholder="이름">
 				</span>
 			</div>
 		<!-- 전화번호 (필수) -->
 			<div class="info">
 				<span>
-					<input class="info_input" id="phone" name="phone" placeholder="핸드폰 번호 ('-'를 제외한 11자리만 입력해주세요.)">
+					<input class="info_input" type="text" id="phone" name="phone" placeholder="핸드폰 번호 ('-'를 제외한 11자리 입력)">
 				</span>
 			</div>
 		<!-- 이메일 (필수) -->	
 			<div class="info">
 				<span class="mail_span">
-					<input class="info_input" id="mail" name="mail" placeholder="이메일">
+					<input class="info_input" type="text" id="mail" name="mail" placeholder="이메일">
 				</span>
 				<span>
 					<select>
@@ -90,7 +85,7 @@
 		<!-- 중개소 명 -->
 			<div class="info">
 				<span>
-					<input class="info_input" id="sname" name="sname" placeholder="중개소 이름">
+					<input class="info_input" type="text"  id="sname" name="sname" placeholder="중개소 이름">
 				</span>
 			</div>
 		<!-- 중개소 전화번호 -->
@@ -101,7 +96,7 @@
 						<option>061</option>
 						<option>063</option>
 					</select>
-					<input class="info_input" id="sphone" name="sphone" placeholder="중개소 전화번호">
+					<input class="info_input" type="text" id="sphone" name="sphone" placeholder="중개소 전화번호">
 				</span>
 			</div>
 		<!-- 중개소 주소 다음 api 활용 -->
@@ -161,3 +156,4 @@
 </form>
 </body>
 </html>
+<%@ include file="../footer.jsp" %>
