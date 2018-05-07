@@ -11,6 +11,8 @@
 	<!-- 별명부여 -->
 	<typeAliases>
 		<typeAlias type="com.bigshort.DTO.MemberDTO" alias="mDto"/>
+		<typeAlias type="com.bigshort.DTO.BoardDTO" alias="bDto"/>
+		
 
 	</typeAliases>
 	

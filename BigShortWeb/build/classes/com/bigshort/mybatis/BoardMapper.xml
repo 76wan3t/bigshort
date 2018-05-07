@@ -12,5 +12,18 @@
 	  		VALUES((select nvl(max(bno)+1, 1) FROM tblboard), #{title} , #{content} ,#{writer}, #{filename}, #{filesize})
 	  		
   	</insert>
+  	
+  	<select id="modfiyList" resultType="bDto" >
+  
+  			SELECT * FROM tblboard WHERE bno = #{bno}
+  		
+  	</select>
+  	
+  		 <update id="modfiyUpdate">
+	  	
+	  		UPDATE tblboard SET title = #{title}, content= #{content}, writer = #{writer}, filename = #{filename} , filesize = #{filesize} 
+	  		WHERE bno = #{bno}
+	  		
+	 </update>
   
 </mapper>

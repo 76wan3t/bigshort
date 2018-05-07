@@ -64,17 +64,23 @@ public class BigshortFrontController extends HttpServlet {
 			}else if(command.equals("/loginck.bigshort")) { // 로그인 섹션
 				action = new LoginCkAction();
 				forward = action.excute(request, respnse);
-			}else if(command.equals("/logout.bigshort")) { // 로그인 섹션
+			}else if(command.equals("/logout.bigshort")) { // 로그아웃 액션
 				action = new LoginOutAction();
 				forward = action.excute(request, respnse);
-			}else if(command.equals("/boardInsertView.bigshort")) { // 로그인 섹션
+			}else if(command.equals("/boardInsertView.bigshort")) { // 새로운 게시글 등록 사이트
 				action = new BoardInsertViewAction();
 				forward = action.excute(request, respnse);
-			}else if(command.equals("/boardinsertsave.bigshort")) { // 로그인 섹션
+			}else if(command.equals("/boardinsertsave.bigshort")) { // 새로운 게시글 등록 할때 타는 액션
 				action = new BoardInsertSaveAction();
 				forward = action.excute(request, respnse);
-			}else if(command.equals("/listAll.bigshort")) { // 로그인 섹션
+			}else if(command.equals("/listAll.bigshort")) { // 게시판 목록 보는 액션
 				action = new ListAllAction();
+				forward = action.excute(request, respnse);
+			}else if(command.equals("/modifyview.bigshort")) { // 수정 게시판 액션
+				action = new ModifyViewAction();
+				forward = action.excute(request, respnse);
+			}else if(command.equals("/boardupdate.bigshort")) { // 수정 누르면 타는 액션
+				action = new BoardUpdateAction();
 				forward = action.excute(request, respnse);
 			}
 			

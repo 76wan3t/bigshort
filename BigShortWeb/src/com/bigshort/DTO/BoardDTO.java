@@ -26,7 +26,32 @@ public class BoardDTO {
 		this.filename = filename;
 		this.filesize = filesize;
 	}
+	
 
+
+	public BoardDTO(int bno, String title, String content, String writer, Date regdate, int viewcnt, String filename,
+			int filesize) {
+		super();
+		this.bno = bno;
+		this.title = title;
+		this.content = content;
+		this.writer = writer;
+		this.regdate = regdate;
+		this.viewcnt = viewcnt;
+		this.filename = filename;
+		this.filesize = filesize;
+	}
+	
+
+	public BoardDTO(int bno, String title, String content, String writer, String filename, int filesize) {
+		super();
+		this.bno = bno;
+		this.title = title;
+		this.content = content;
+		this.writer = writer;
+		this.filename = filename;
+		this.filesize = filesize;
+	}
 
 	public int getDownloadcnt() {
 		return downloadcnt;

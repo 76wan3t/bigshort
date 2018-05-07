@@ -1,9 +1,7 @@
 package com.bigshort.DAO;
 
-import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
-
-import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -63,5 +61,75 @@ public class BoardDAO {
 						
 					}
 					return ruselt;
+				}
+				
+				
+				public BoardDTO modifyList(int bno) {
+					
+					sqlSession = sqlSessionFactory.openSession();
+					
+					List<BoardDTO> list = null;
+					BoardDTO bDto = new BoardDTO();
+					
+					try {
+						
+						list = sqlSession.selectList("modfiyList", bno);
+						
+						for (BoardDTO boardDTO : list) {
+							bno = boardDTO.getBno();
+							String title = boardDTO.getTitle();
+							String content = boardDTO.getContent();
+							String writer = boardDTO.getWriter();
+							Date regdate = boardDTO.getRegdate();
+							int viewcnt = boardDTO.getViewcnt();
+							String  filename = boardDTO.getFilename();
+							int filesize = boardDTO.getFilesize();
+							
+							bDto = new BoardDTO(bno, title, content, writer, regdate, viewcnt, filename, filesize);
+							
+							System.out.println(bno + " , " + title + " , " + content + " , " + writer + " , " + regdate + " , " + viewcnt + " , " + filename + " , " + filesize);
+							
+						}
+						
+						
+					} catch (Exception e) {
+						
+						e.printStackTrace();
+						
+					}finally {
+						
+						sqlSession.close();
+						
+					}
+					return bDto;
+				}
+				
+				
+				
+					public int modifUpdate(BoardDTO bDto) {
+					
+					sqlSession = sqlSessionFactory.openSession();
+					
+					int rusult = 0;
+				
+					
+					try {
+						
+						rusult = sqlSession.update("modfiyUpdate", bDto);
+						sqlSession.commit();
+						
+						
+						
+						
+					} catch (Exception e) {
+						
+						e.printStackTrace();
+						
+					}finally {
+						
+						sqlSession.close();
+						
+					}
+					return rusult;
 				}
 }
