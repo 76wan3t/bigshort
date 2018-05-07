@@ -7,6 +7,12 @@
 
 a:link, a:visited {text-decoration: none; color: #656565;}
  
+ #header{
+   position: static;
+}
+#logo_a{
+   position: fixed;
+}
 .board_list {width:100%;border-top:2px solid #252525;border-bottom:1px solid #ccc}
 .board_list thead th:first-child{background-image:none}
 .board_list thead th {border-bottom:1px solid #ccc;padding:12px 0 13px 0;color:#3b3a3a;vertical-align:middle}
@@ -15,7 +21,7 @@ a:link, a:visited {text-decoration: none; color: #656565;}
 .board_list tbody td.title {text-align:left; padding-left:20px}
 .board_list tbody td a {display:inline-block}
  
-.board_view {width:80%;border-top:2px solid #252525;border-bottom:1px solid #ccc;border-right:1px solid #252525;border-left:1px solid #252525}
+.board_view {width:80%;border-top:2px solid #252525;border-bottom:1px solid #ccc;border-right:1px solid #252525;border-left:1px solid #252525; margin: 0 auto;}
 .board_view tbody th {text-align:left;background:#f7f7f7;color:#3b3a3a}
 .board_view tbody th.list_tit {font-size:13px;color:#000;letter-spacing:0.1px}
 .board_view tbody .no_line_b th, .board_view tbody .no_line_b td {border-bottom:none}
@@ -32,18 +38,18 @@ a:link, a:visited {text-decoration: none; color: #656565;}
 </style>
 </head>
 <body>
-    <table class="board_view" style="margin-left: auto; margin-right: auto;">
+    <table class="board_view">
         <colgroup>
             <col width="15%"/>
             <col width="35%"/>
             <col width="15%"/>
             <col width="35%"/>
         </colgroup>
-        <caption class="gesi">게시글 상세페이지</caption>
+        <caption class="gesi">게시글 상세</caption>
         <tbody>
             <tr>
                 <th scope="row">글 번호</th>
-                <td>${map.TITLE }</td>
+                <td>${map.IDX }</td>
                 <th scope="row">조회수</th>
                 <td>${map.HIT_CNT }</td>
             </tr>
@@ -60,18 +66,29 @@ a:link, a:visited {text-decoration: none; color: #656565;}
             <tr>
                 <td colspan="4">${map.CONTENTS }</td>
             </tr>
+            <tr>
+                <th scope="row">첨부파일</th>
+                <td colspan="3">
+                    <c:forEach var="row" items="${list }">
+                        <input type="hidden" id="IDX" value="${row.IDX }">
+                        <a href="#this" name="file">${row.ORIGINAL_FILE_NAME }</a>
+                        (${row.FILE_SIZE }kb)
+                    </c:forEach>
+                </td>
+            </tr>
         </tbody>
     </table>
+    <br/>
      
     <div id="button2">
     <a href="#this" class="btn" id="list">목록으로</a>
     <a href="#this" class="btn" id="update">수정하기</a>
     </div>
-    
-    <!-- 답글  -->
-  
      
-    <%-- <%@ include file="/WEB-INF/include/include-body.jspf" %> --%>
+    <!-- 댓글 달기  -->
+    
+    
+    
     <script type="text/javascript">
         $(document).ready(function(){
             $("#list").on("click", function(e){ //목록으로 버튼
@@ -79,9 +96,13 @@ a:link, a:visited {text-decoration: none; color: #656565;}
                 fn_openBoardList();
             });
              
-            $("#update").on("click", function(e){
+            $("#update").on("click", function(e){ //수정하기 버튼
                 e.preventDefault();
                 fn_openBoardUpdate();
+            });
+             
+            $("a[name='file']").on("click", function(e){ //파일 이름
+                e.preventDefault();
             });
         });
          
@@ -98,6 +119,7 @@ a:link, a:visited {text-decoration: none; color: #656565;}
             comSubmit.addParam("IDX", idx);
             comSubmit.submit();
         }
+
     </script>
 </body>
 </html>
