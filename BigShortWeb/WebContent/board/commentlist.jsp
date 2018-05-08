@@ -1,247 +1,266 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>  
+ <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+ <%@ include file="../header.jsp" %>
+ <!DOCTYPE html>
+ <html lang="ko">
+ <head>
+ <style type="text/css">
  
-<html>
-<head>
-    <title>±Û »ó¼¼º¸±â</title>
-    <!-- ´ñ±Û ¹Ì¿Ï¼º  -->
-    <style type="text/css">
-    	#main{
-    		float: left;
-    		width: 950px;
-    		height: 600px;
-    		text-align: center;
-    		vertical-align: middle;
-    		overflow: auto;/* ÀÚµ¿½ºÅ©·Ñ  */
-    	}
-    
-        #wrap {
-            width: 800px;
-            margin: 0 auto 0 auto;    
-        }
-    
-        #detailBoard{
-            text-align :center;
-        }
-        
-        #title{
-            height : 16;
-            font-family :'µ¸¿ò';
-            font-size : 12;
-            text-align :center;
-            background-color: #F7F7F7;
-        }
-        
-        #btn{
-            font-family :'µ¸¿ò';
-            font-size : 14;
-            text-align :center;
-        }
+ a:link, a:visited {text-decoration: none; color: #656565;}
+ /* í—¤ë” ê²¹ì¹¨ ìˆ˜ì •  */
+  #header{
+    position: static;
+ }
+	body{
+	font-family:Verdana,sans-serif;
+	}
+ .board_list {width:100%;border-top:2px solid #252525;border-bottom:1px solid #ccc}
+ .board_list thead th:first-child{background-image:none}
+ .board_list thead th {border-bottom:1px solid #ccc;padding:12px 0 13px 0;color:#3b3a3a;vertical-align:middle}
+ .board_list tbody td {border-top:1px solid #ccc;padding:10px 0;text-align:center;vertical-align:middle}
+ .board_list tbody tr:first-child td {border:none}
+ .board_list tbody td.title {text-align:left; padding-left:20px}
+ .board_list tbody td a {display:inline-block}
+  
+ .board_view {width:60%;border-top:2px solid #252525;border-bottom:1px solid #ccc;border-right:1px solid #252525;border-left:1px solid #252525; margin: 0 auto;}
+ .board_view tbody th {text-align:left;background:#f7f7f7;color:#3b3a3a}
+ .board_view tbody th.list_tit {font-size:13px;color:#000;letter-spacing:0.1px}
+ .board_view tbody .no_line_b th, .board_view tbody .no_line_b td {border-bottom:none}
+ .board_view tbody th, .board_view tbody td {padding:15px 0 16px 16px;border-bottom:1px solid #ccc}
+ .board_view tbody td.view_text {border-top:1px solid #ccc; border-bottom:1px solid #ccc;padding:45px 18px 45px 18px}
+ .board_view tbody th.th_file {padding:0 0 0 15px; vertical-align:middle}
+ .gesi{font-size: 30px; color:black; font-family:Verdana,sans-serif;}
+ .wdp_90 {width:90%}
+ .btn {border-radius:3px;padding:5px 11px;color:#fff !important; display:inline-block; background-color:#6b9ab8; border:1px solid #56819d;vertical-align:middle}
+ #button2{margin-left: 405px;}
+ #navigation{
+ 	    margin-left: 5px;
+ }
+ /* ëŒ“ê¸€ ë””ìì¸  */
+ .brunch_comment{padding:0 0 80px; background-color:#fbfbfb;}
+ .brunch_comment .wrap_comment_facebook{position:relative;}
+ div{font-family: "Noto Sans Light","Malgun Gothic",sans-serif;margin:0;}
+ .screen_out{overflow: hidden;position: absolute;width: 0;height: 0;line-height: 0;text-indent: -9999px;}
+ a{color:#333; text-decoration: none;}	
+ .brunch_comment .comment_head{width: 700px; height: 30px; margin: 0 auto 12px;}
+ 	
+ 	
+ </style>
+ </head>
+ <body>
+ <br>
+     <table class="board_view">
+         <colgroup>
+             <col width="15%"/>
+             <col width="35%"/>
+             <col width="15%"/>
+             <col width="35%"/>
+         </colgroup>
+         <caption class="gesi">ê²Œì‹œê¸€ ìƒì„¸</caption>
+         <tbody>
+             <tr>
+                 <th scope="row">ê¸€ ë²ˆí˜¸</th>
+                 <td>${map.IDX }</td>
+                 <th scope="row">ì¡°íšŒìˆ˜</th>
+                 <td>${map.HIT_CNT }</td>
+             </tr>
+             <tr>
+                 <th scope="row">ì‘ì„±ì</th>
+                 <td>${map.CREA_ID }</td>
+                 <th scope="row">ì‘ì„±ì‹œê°„</th>
+                 <td>${map.CREA_DTM }</td>
+             </tr>
+             <tr>
+                 <th scope="row">ì œëª©</th>
+                 <td colspan="3">${map.TITLE }</td>
+             </tr>
+             <tr>
+                 <td colspan="4">${map.CONTENTS }</td>
+             </tr>
+             <tr>
+                 <th scope="row">ì²¨ë¶€íŒŒì¼</th>
+                 <td colspan="3">
+                     <c:forEach var="row" items="${list }">
+                         <input type="hidden" id="IDX" value="${row.IDX }">
+                         <a href="#this" name="file">${row.ORIGINAL_FILE_NAME }</a>
+                         (${row.FILE_SIZE }kb)
+                     </c:forEach>
+                 </td>
+             </tr>
+         </tbody>
+     </table>
+     <br>
+      
+    <%--  <div id="button2">
+     <a href="#this" class="btn" id="list">ëª©ë¡ìœ¼ë¡œ</a>
+     <a href="#this" class="btn" id="update">ìˆ˜ì •í•˜ê¸°</a>
+     </div>
+      	<br>
+      	<table class="board_view">
+         <colgroup>
+             <col width="15%"/>
+             <col width="35%"/>
+             <col width="15%"/>
+             <col width="35%"/>
+         </colgroup>
+         <tbody>
+             <tr>
+                 <th scope="row">ê¸€ ë²ˆí˜¸</th>
+                 <td>${map.IDX }</td>
+                 <th scope="row">ì¡°íšŒìˆ˜</th>
+                 <td>${map.HIT_CNT }</td>
+             </tr>
+             </tbody>
+          </table> --%>
+          
+          <div class="brunch_comment #comment" style="display: block;">
+
+            <a name="comments" class="screen_out">ëŒ“ê¸€</a>
+
+			
+            <div class="comment_head"><strong class="tit_comment">ëŒ“ê¸€<span class="txt_num">3</span></strong>
+</div>
+            <div class="comment_content">
+                <div class="list_comment_more" style="display: none;">
+                    <button type="button" data-action="moreList" class="btn_preview">ì´ì „ ëŒ“ê¸€ ë³´ê¸°</button>
+                </div>
+
+                <ul class="list_comment"><li class="item animation_up"><div class="comment">
+		<a href="/@@3jUF" class="link_profile">
+			<img src="//img1.daumcdn.net/thumb/C42x42/?fname=http://t1.daumcdn.net/brunch/service/user/3jUF/image/iSvVjV7XpGc6Ns_2hm8BrIocFj4.jpg" width="42" height="42" class="img_thumb" alt="Vegit ì´ë¯¸ì§€">
+		</a>
+	<div class="cont_info">
+		<div class="info_append">
+			<strong class="tit_userid">
+				<a href="/@@3jUF" class="link_userid">Vegit</a>
+			</strong>
+			<span class="ico_dot"></span>
+			<span class="txt_time">May 07. 2018</span>
+		</div>
+		<p class="desc_comment">ì €ë„ ì˜›ë‚  ì˜›ì ì— ì¸í„°ë·°ë¥¼ í•œë²ˆ í–ˆë‹¤ê°€, ëŒ“ê¸€ì„ ë³´ê³  ê¹œì§ ë†€ë€ì ì´ ìˆì£ . ë¬¼ë¡  ì œê°€ í•œë§ì´ ì•„ë‹Œë° ì œê°€ í•œë§ë¡œ ì²˜ë¦¬ ëœ ë¶€ë¶„ë„ ìˆì—ˆì§€ë§Œ, ê·¸ì™€ ìƒê´€ì—†ì´ ì°¸ ì´ìƒí•œ ì‚¬ëŒë“¤ì´ ë§êµ¬ë‚˜.. ë¼ê³  ìƒê°í–ˆë˜ ê²½í—˜ì´ ìˆë„¤ìš”.</p>
+
+		<div class="comment_setting">
+			<div class="wrap_comment_menu">
+						<button type="button" class="btn_set" data-action="report" data-commentno="347302">ì‹ ê³ </button>
+					
+			</div>
+		</div>
+	</div>
+</div></li><li class="item animation_up"><div class="comment">
+		<a href="/@@1bGJ" class="link_profile">
+			<img src="//img1.daumcdn.net/thumb/C42x42/?fname=http://t1.daumcdn.net/brunch/service/user/1bGJ/image/kd3sYi-62AgGas31xLFYGJ57u3c.jpg" width="42" height="42" class="img_thumb" alt="ë£¨í¼íŠ¸ ì´ë¯¸ì§€">
+		</a>
+	<div class="cont_info">
+		<div class="info_append">
+			<strong class="tit_userid">
+				<a href="/@@1bGJ" class="link_userid">ë£¨í¼íŠ¸</a>
+			</strong>
+			<span class="ico_dot"></span>
+			<span class="txt_time">May 07. 2018</span>
+		</div>
+		<p class="desc_comment"><a href="/@@3jUF" class="link_mention" data-id="3jUF">@Vegit</a> ì €ì™€ ë¹„ìŠ·í•œ ê²½í—˜ì„ í•˜ì‹ ë¶„ì´êµ°ìš”!<br>í‰ì†Œì—ëŠ” ìˆëŠ”ì¤„ ëª¨ë¥´ëŠ” ì´ìƒí•œ ì‚¬ëŒë“¤ì´ ë§ì£ </p>
+
+		<div class="comment_setting">
+			<div class="wrap_comment_menu">
+						<button type="button" class="btn_set" data-action="report" data-commentno="347320">ì‹ ê³ </button>
+					
+			</div>
+		</div>
+	</div>
+</div></li><li class="item animation_up"><div class="comment">
+		<a href="/@@3jUF" class="link_profile">
+			<img src="//img1.daumcdn.net/thumb/C42x42/?fname=http://t1.daumcdn.net/brunch/service/user/3jUF/image/iSvVjV7XpGc6Ns_2hm8BrIocFj4.jpg" width="42" height="42" class="img_thumb" alt="Vegit ì´ë¯¸ì§€">
+		</a>
+	<div class="cont_info">
+		<div class="info_append">
+			<strong class="tit_userid">
+				<a href="/@@3jUF" class="link_userid">Vegit</a>
+			</strong>
+			<span class="ico_dot"></span>
+			<span class="txt_time">May 07. 2018</span>
+		</div>
+		<p class="desc_comment">ì–´ì©”ìˆ˜ì—†ëŠ”ê²ƒ ê°™ì•„ìš”. ê¸°ì‚¬ì˜ ëª©ì ì— ë”°ë¼ ê¸€ì„ ë¬˜í•˜ê²Œ ë‹¤ë¥´ê²Œ ì´í•´í•œ ì‚¬ëŒì´ ê¸€ì„ ì“°ê¸°ë„ í•˜ê³ , ë˜ ë°›ì•„ë“¤ì´ëŠ” ì‚¬ëŒì´ ë‹¤ë¥´ê²Œ ë°›ì•„ë“¤ì´ê¸°ë„ í•˜ëŠ”ê²ƒ ê°™ë”ë¼êµ¬ìš”. ìœ ëª…í•œ ì‚¬ëŒë“¤ì€ ê·¸ë˜ì„œ ë” í–‰ë³µí•˜ê³ , ë” í˜ë“¤ê³  ê·¸ëŸ´ê²ƒ ê°™ë‹¤ëŠ” ìƒê°ì„ í–ˆì—ˆë„¤ìš”.</p>
+
+		<div class="comment_setting">
+			<div class="wrap_comment_menu">
+						<button type="button" class="btn_set" data-action="report" data-commentno="347324">ì‹ ê³ </button>
+					
+			</div>
+		</div>
+	</div>
+</div></li></ul>
+            </div>
+
+            <div class="wrap_comment_write">
+            <form class="comment_write brunch_login" method="post" novalidate="">
+	<input type="hidden" name="sticker" value="">
+
+	<fieldset>
+		<legend class="screen_out">ëŒ“ê¸€ ì‘ì„± í¼</legend>
+		<div class="link_profile">
+					<img src="//img1.daumcdn.net/thumb/C42x42/?fname=http://t1.daumcdn.net/brunch/service/guest/image/05yccYvwPPjX61Yi9Q1qeS99Esc.jpg" width="42" height="42" class="img_thumb" alt="ì´ë¯¸ì§€ ì •ë³´">
+		</div>
+		<div class="box_area">
+			<label for="tfCmt" class="screen_out">ëŒ“ê¸€ ì‘ì„±</label>
+			<span class="wrap_area">
+					<div contenteditable="" class="editor tf_area"></div><div class="editor_placeholder" style="display: block;">ì‘ê°€ì™€ ê¸€ì— ëŒ€í•´ ì´ì•¼ê¸°ë¥¼ ë‚˜ëˆ„ì–´ ë³´ì„¸ìš”!</div><textarea class="editor tf_area" name="content" maxlength="1000" placeholder="ì‘ê°€ì™€ ê¸€ì— ëŒ€í•´ ì´ì•¼ê¸°ë¥¼ ë‚˜ëˆ„ì–´ ë³´ì„¸ìš”!" style="display: none;"></textarea>
+			</span>
+			<div class="comment_sticker"></div>
+
+			<div class="write_append">
+
+				<div class="select_sticker">
+					<button type="button" class="ico_brunch btn_sticker #sticker" data-action="selectSticker">ìŠ¤í‹°ì»¤</button>
+					<div class="layer_sticker">
+						<strong class="screen_out">ìŠ¤í‹°ì»¤ ì¹´í…Œê³ ë¦¬ ì„ íƒ</strong>
+						<ul class="tab_sticker">
+							<li>
+								<a href="#none" class="link_tab"></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="wrap_btn">
+						<button type="submit" class="btn_default #submit">í™•ì¸</button>
+				</div>
+			</div>
+		<ul class="_mention_list" style="display: none;"></ul></div>
+	</fieldset>
+</form></div>
+		        </div>
+     
+     
+ <script type="text/javascript">
+         $(document).ready(function(){
+             $("#list").on("click", function(e){ //ëª©ë¡ìœ¼ë¡œ ë²„íŠ¼
+                 e.preventDefault();
+                 fn_openBoardList();
+             });
+              
+             $("#update").on("click", function(e){ //ìˆ˜ì •í•˜ê¸° ë²„íŠ¼
+                 e.preventDefault();
+                 fn_openBoardUpdate();
+             });
+              
+             $("a[name='file']").on("click", function(e){ //íŒŒì¼ ì´ë¦„
+                 e.preventDefault();
+             });
+         });
+          
+         function fn_openBoardList(){
+             var comSubmit = new ComSubmit();
+             comSubmit.setUrl("<c:url value='/sample/openBoardList.do' />");
+             comSubmit.submit();
+         }
+          
+         function fn_openBoardUpdate(){
+             var idx = "${map.IDX}";
+             var comSubmit = new ComSubmit();
+             comSubmit.setUrl("<c:url value='/sample/openBoardUpdate.do' />");
+             comSubmit.addParam("IDX", idx);
+             comSubmit.submit();
+         }
  
-    </style>
-    
-    <script type="text/javascript">
-        function changeView(value)
-        {
-            if(value == 0)    
-                location.href='BoardListAction.bo?page=${pageNum}';
-            else if(value == 1)
-                location.href='BoardReplyFormAction.bo?num=${board.board_num}&page=${pageNum}';
-        }
-        
-        function doAction(value)
-        {
-            if(value == 0) // ¼öÁ¤
-                location.href="BoardUpdateFormAction.bo?num=${board.board_num}&page=${pageNum}";
-            else if(value == 1) // »èÁ¦
-                location.href="BoardDeleteAction.bo?num=${board.board_num}";
-        }
-        
- 
-        var httpRequest = null;
-        
-        // httpRequest °´Ã¼ »ı¼º
-        function getXMLHttpRequest(){
-            var httpRequest = null;
-        
-            if(window.ActiveXObject){
-                try{
-                    httpRequest = new ActiveXObject("Msxml2.XMLHTTP");    
-                } catch(e) {
-                    try{
-                        httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
-                    } catch (e2) { httpRequest = null; }
-                }
-            }
-            else if(window.XMLHttpRequest){
-                httpRequest = new window.XMLHttpRequest();
-            }
-            return httpRequest;    
-        }
-        
-        // ´ñ±Û µî·Ï
-        function writeCmt()
-        {
-            var form = document.getElementById("writeCommentForm");
-            
-            var board = form.comment_board.value
-            var id = form.comment_id.value
-            var content = form.comment_content.value;
-            
-            if(!content)
-            {
-                alert("³»¿ëÀ» ÀÔ·ÂÇÏ¼¼¿ä.");
-                return false;
-            }
-            else
-            {    
-                var param="comment_board="+board+"&comment_id="+id+"&comment_content="+content;
-                    
-                httpRequest = getXMLHttpRequest();
-                httpRequest.onreadystatechange = checkFunc;
-                httpRequest.open("POST", "CommentWriteAction.co", true);    
-                httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;charset=EUC-KR'); 
-                httpRequest.send(param);
-            }
-        }
-        
-        function checkFunc(){
-            if(httpRequest.readyState == 4){
-                // °á°ú°ªÀ» °¡Á®¿Â´Ù.
-                var resultText = httpRequest.responseText;
-                if(resultText == 1){ 
-                    document.location.reload(); // »ó¼¼º¸±â Ã¢ »õ·Î°íÄ§
-                }
-            }
-        }
-    
-    </script>
-</head>
-<body>
- 
-<div id="wrap">
-    <br><br>
-    <div id="board">
-        <table id="detailBoard" width="800" border="3" bordercolor="lightgray">
-        
-            <tr>
-                <td id="title">ÀÛ¼ºÀÏ</td>
-                <td>${board.board_date}</td>
-            </tr>
-            <tr>
-                <td id="title">ÀÛ¼ºÀÚ</td>
-                <td>${board.board_id}</td>
-            </tr>
-            <tr>
-                <td id="title">
-                    Á¦ ¸ñ
-                </td>
-                <td>
-                    ${board.board_subject}
-                </td>        
-            </tr>
-            <tr>
-                <td id="title">
-                    ³» ¿ë
-                </td>
-                <td>
-                    ${board.board_content}
-                </td>        
-            </tr>
-            <tr>
-                <td id="title">
-                    Ã·ºÎÆÄÀÏ
-                </td>
-                <td>
-                    <a href='FileDownloadAction.bo?file_name=${board.board_file}'>${board.board_file}</a>
-                </td>    
-            </tr>
-    
-            <tr align="center" valign="middle">
-                <td colspan="5">
-                <c:if test="${sessionScope.sessionID !=null}">
-                    <c:if test="${sessionScope.sessionID == board.board_id}">
-                        <input type="button" value="¼öÁ¤" onclick="doAction(0)">
-                        <input type="button" value="»èÁ¦" onclick="doAction(1)">
-                    </c:if>
-                        <input type="button" value="´ä±Û" onclick="changeView(1)" >
-                </c:if>        
-                    <input type="button" value="¸ñ·Ï" onclick="changeView(0)">            
-                </td> <!-- javascript:location.href='BoardListAction.bo?page=${pageNum}' -->
-            </tr>
-        </table>
-    </div>
-    <br><br>
-    
-    <!-- ´ñ±Û ºÎºĞ -->
-    <div id="comment">
-        <table border="1" bordercolor="lightgray">
-    <!-- ´ñ±Û ¸ñ·Ï -->    
-    <c:if test="${requestScope.commentList != null}">
-        <c:forEach var="comment" items="${requestScope.commentList}">
-        
-            <tr>
-                <!-- ¾ÆÀÌµğ, ÀÛ¼º³¯Â¥ -->
-                <td width="150">
-                    <div>
-                        ${comment.comment_id}<br>
-                        <font size="2" color="lightgray">${comment.comment_date}</font>
-                    </div>
-                </td>
-                <!-- º»¹®³»¿ë -->
-                <td width="550">
-                    <div class="text_wrapper">
-                        ${comment.comment_content}
-                    </div>
-                </td>
-                <!-- ¹öÆ° -->
-                <td width="100">
-                    <div id="btn" style="text-align:center;">
-                        <a href="#">[´äº¯]</a><br>
-                    <!-- ´ñ±Û ÀÛ¼ºÀÚ¸¸ ¼öÁ¤, »èÁ¦ °¡´ÉÇÏµµ·Ï -->    
-                    <c:if test="${comment.comment_id == sessionScope.sessionID}">
-                        <a href="#">[¼öÁ¤]</a><br>    
-                        <a href="#">[»èÁ¦]</a>
-                    </c:if>        
-                    </div>
-                </td>
-            </tr>
-            
-        </c:forEach>
-    </c:if>
-            
-            <!-- ·Î±×ÀÎ ÇßÀ» °æ¿ì¸¸ ´ñ±Û ÀÛ¼º°¡´É -->
-            <c:if test="${sessionScope.sessionID !=null}">
-            <tr bgcolor="#F5F5F5">
-            <form id="writeCommentForm">
-                <input type="hidden" name="comment_board" value="${board.board_num}">
-                <input type="hidden" name="comment_id" value="${sessionScope.sessionID}">
-                <!-- ¾ÆÀÌµğ-->
-                <td width="150">
-                    <div>
-                        ${sessionScope.sessionID}
-                    </div>
-                </td>
-                <!-- º»¹® ÀÛ¼º-->
-                <td width="550">
-                    <div>
-                        <textarea name="comment_content" rows="4" cols="70" ></textarea>
-                    </div>
-                </td>
-                <!-- ´ñ±Û µî·Ï ¹öÆ° -->
-                <td width="100">
-                    <div id="btn" style="text-align:center;">
-                        <p><a href="#" onclick="writeCmt()">[´ñ±Ûµî·Ï]</a></p>    
-                    </div>
-                </td>
-            </form>
-            </tr>
-            </c:if>
-    
-        </table>
-    </div>
-</div>    
- 
-</body>
-</html>
+     </script>
+ </body>
+ </html>
