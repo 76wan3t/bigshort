@@ -38,11 +38,11 @@
 
 					<!-- 구 -->
 					<ul class="gj">
-						<li><a href="#">광산구</a></li>
-						<li><a href="#">북구</a></li>
-						<li><a href="#">남구</a></li>
-						<li><a href="#">서구</a></li>
-						<li><a href="#">동구</a></li>
+						<li><a href="gwangsandetail.bigshort">광산구</a></li>
+						<li><a href="bukgudetail.bigshort">북구</a></li>
+						<li><a href="namgudetail.bigshort">남구</a></li>
+						<li><a href="seogudetail.bigshort">서구</a></li>
+						<li><a href="donggudetail.bigshort">동구</a></li>
 					</ul>
 					<!-- 구 end//-->
 

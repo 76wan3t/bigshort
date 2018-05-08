@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.bigshort.action.*;
 import com.bigshort.action.board.*;
 import com.bigshort.action.member.*;
+import com.bigshort.action.zone.*;
 
 
 /**
@@ -84,6 +85,21 @@ public class BigshortFrontController extends HttpServlet {
 				forward = action.excute(request, respnse);
 			}else if(command.equals("/join.bigshort")) { // 수정 누르면 타는 액션
 				action = new JoinAction();
+				forward = action.excute(request, respnse);
+			}else if(command.equals("/gwangsandetail.bigshort")) { // 수정 누르면 타는 액션
+				action = new GwangSanDetailAction();
+				forward = action.excute(request, respnse);
+			}else if(command.equals("/bukgudetail.bigshort")) { // 수정 누르면 타는 액션
+				action = new BukGuDetailAction();
+				forward = action.excute(request, respnse);
+			}else if(command.equals("/namgudetail.bigshort")) { // 수정 누르면 타는 액션
+				action = new NamGuDetailAction();
+				forward = action.excute(request, respnse);
+			}else if(command.equals("/donggudetail.bigshort")) { // 수정 누르면 타는 액션
+				action = new DongGuDetailAction();
+				forward = action.excute(request, respnse);
+			}else if(command.equals("/seogudetail.bigshort")) { // 수정 누르면 타는 액션
+				action = new SeoGuDetailAction();
 				forward = action.excute(request, respnse);
 			}
 			
