@@ -21,7 +21,7 @@
  .board_list tbody td.title {text-align:left; padding-left:20px}
  .board_list tbody td a {display:inline-block}
   
- .board_view {width:60%;border-top:2px solid #252525;border-bottom:1px solid #ccc;border-right:1px solid #252525;border-left:1px solid #252525; margin: 0 auto;}
+ .board_view {width:35%;border-top:2px solid #252525;border-bottom:1px solid #ccc;border-right:1px solid #252525;border-left:1px solid #252525; margin: 0 auto;}
  .board_view tbody th {text-align:left;background:#f7f7f7;color:#3b3a3a}
  .board_view tbody th.list_tit {font-size:13px;color:#000;letter-spacing:0.1px}
  .board_view tbody .no_line_b th, .board_view tbody .no_line_b td {border-bottom:none}
@@ -38,12 +38,58 @@
  /* 댓글 디자인  */
  .brunch_comment{padding:0 0 80px; background-color:#fbfbfb;}
  .brunch_comment .wrap_comment_facebook{position:relative;}
- div{font-family: "Noto Sans Light","Malgun Gothic",sans-serif;margin:0;}
+ div{font-family: "Noto Sans Light","Malgun Gothic",sans-serif;margin:0;padding: 0;}
  .screen_out{overflow: hidden;position: absolute;width: 0;height: 0;line-height: 0;text-indent: -9999px;}
  a{color:#333; text-decoration: none;}	
  .brunch_comment .comment_head{width: 700px; height: 30px; margin: 0 auto 12px;}
- 	
- 	
+ .comment_head .tit_comment{float: left; padding-top: 3px; font-weight: 400; font-size: 16px;}
+ .comment_head .tit_comment .txt_num{padding-left: 5px; color: #00c3bd;}
+ .brunch_comment .comment_content{width: 700px; margin: 0 auto;}
+ .brunch_comment .btn_preview{width: 100%; height:47px;border-top:1px solid #ddd; font-size: 12px; line-height: 47px;color: #959595;}
+ button{font-family:"Noto Sans Light","Malgun Gothic",sans-serif;border: 0 none; background-color: transparent; cursor: pointer; outline: none; border-radius: 0px; vertical-align: middle; line-height:1.5;}
+ .brunch_comment .list_comment{display:block;width:100%; border-top: 1px solid #eee;}
+ ul{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; list-style: none; margin: 0; padding: 0;}
+ .list_comment li.item{float: left; padding: 30px 0; border-bottom:1px solid #eee;}
+ .list_comment li.item:hover{background:#f8f8f8;}
+ .animation_up{animation: animation_up .2s; transition:opacity 0.2s}
+ li{font-family:"Noto Sans Light","Malgun Gothic",sans-serif;list-style: none; margin:0;}
+ .brunch_comment .link_profile{overflow:visible;float:left;position:relative;width:42px;height:42px;margin-left:10px;}
+ .list_comment .cont_info{float:left;position:relative;width:628px;padding-left:20px;}
+ .list_comment .info_append{width:100%;font-size: 12px;line-height:14px;}
+ .list_comment .info_append .tit_userid{float:left;}
+ .list_comment .info_append .link_userid{font-weight: 400;}
+ .list_comment .info_append .ico_dot{float:left;width: 2px; height:2px;margin: 6px 4px 0; background-color:#e4e4e4; vertical-align:top;}
+ .list_comment .info_append .txt_time{float:left;color:#959595;}
+ .list_comment .desc_comment{padding:8px 50px 0 0; font-size: 14px; word-wrap:break-word;clear:left;}
+ p{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0;}
+ .list_comment .comment_setting{display:none; position:absolute; right: 18px; top:-3px;}
+ .comment_setting .btn_set{display:inline; float:left; margin-left:8px; font-size:12px; color:#959595;}
+.brunch_comment .link_profile .img_thumb{border-radius:42px; background-color:#fff;}
+.img_thumb{display:block; border:0 none;}
+.list_comment  .desc_comment a.link_mention{display:inline-block; padding:0 2px; font-weight:700; background-color:#ddd; text-decoration:none;}
+.wrap_comment_write{clear:both;}
+.brunch_comment .comment_write{position:relative; width:700px; padding-top:27px; margin:0 auto;}
+form{font-family:"Noto Sans Light","Malgun Gothic",sans-serif;padding:0;}
+input{font-family:"Noto Sans Light","Malgun Gothic",sans-serif;font-size:14px;line-height:1.5; vertical-align:middle; margin:0; padding:0;}
+fieldset{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; border:0 none; margin: 0; padding:0;}
+legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padding: 0;}
+.comment_write .link_profile{margin:6px 0 0 10px;}
+.comment_write .box_area{float:right;position:relative;width:624px; border:1px solid #eee; background-color:#fff;}
+.comment_write .wrap_area{display:block;}
+.comment_write .tf_area{padding:17px 17px 0; width: 590px; min-height:45px;border: none;line-height:22px; color:#666; background:0 0; white-space:pre-wrap; word-wrap:break-word; outline:transparent dotted; z-index:1;}
+.comment_write .editor_placeholder{position:absolute; z-index:0;top:17px; left:17px; line-height:22px; color:silver;}
+ textarea{font-family:"Noto Sans Light","Malgun Gothic",sans-serif;font-size:14px;vertical-align:middle; margin:0;}
+ .comment_write .comment_sticker{display:none; width:64px; margin:0 0 13px 17px;}
+ .brunch_comment .comment_sticker{position:relative;padding-top:10px;}
+ .comment_write .write_append{height:44px; padding:10px 19px 0;}
+ .comment_write .select_sticker{float:left;position:relative;padding-top:7px;}
+ .comment_write .btn_sticker{float:left;width:22px;height:22px;background-position:-340px 0;}
+ .ico_brunch{display:inline-block; overflow:hidden; background:url(//t1.daumcdn.net/brunch/static/img/help/pc/ico_brunch8_180227.png) no-repeat; line-height:0;text-indent:-9999px;vertical-align:top;}
+ .comment_write .layer_sticker{display:none;}
+ .comment_write .write_append .wrap_btn{float:right;}
+ .comment_write .write_append .btn_default{width:56px;height:30px;margin-left:5px; border:1px solid #bbb;border-radius:32px; line-height:28px;color:#666;}
+ .brunch_comment ._mention_list{overflow:hidden; overflow-y:auto; position:absolute; width:238px; max-height:334px; border:1px solid #d9d9d9;background-color:#fff;z-index:11;}
+ 
  </style>
  </head>
  <body>
@@ -67,7 +113,7 @@
                  <th scope="row">작성자</th>
                  <td>${map.CREA_ID }</td>
                  <th scope="row">작성시간</th>
-                 <td>${map.CREA_DTM }</td>
+                 <td>${bDto.regdate}</td>
              </tr>
              <tr>
                  <th scope="row">제목</th>
@@ -90,27 +136,6 @@
      </table>
      <br>
       
-    <%--  <div id="button2">
-     <a href="#this" class="btn" id="list">목록으로</a>
-     <a href="#this" class="btn" id="update">수정하기</a>
-     </div>
-      	<br>
-      	<table class="board_view">
-         <colgroup>
-             <col width="15%"/>
-             <col width="35%"/>
-             <col width="15%"/>
-             <col width="35%"/>
-         </colgroup>
-         <tbody>
-             <tr>
-                 <th scope="row">글 번호</th>
-                 <td>${map.IDX }</td>
-                 <th scope="row">조회수</th>
-                 <td>${map.HIT_CNT }</td>
-             </tr>
-             </tbody>
-          </table> --%>
           
           <div class="brunch_comment #comment" style="display: block;">
 

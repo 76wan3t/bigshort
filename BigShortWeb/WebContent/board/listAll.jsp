@@ -367,76 +367,44 @@
 										</tr>
 									</thead>
 									<tbody>
-									<tr>
-											<td>267</td>
-											<td><a href="" onclick="">도미노</a></td>
-											<td>글쓴이</td>
-											<td>2018-04-06</td>
-											<td>6857</td>
-										</tr>
-										<tr>
-											<td>267</td>
-											<td><a href="#" onclick="">피자나라 치킨공주</a></td>
-											<td>글쓴이</td>
-											<td>2018-04-06</td>
-											<td>6857</td>
-										</tr>
-										<tr>
-											<td>267</td>
-											<td><a href="#" onclick="">도미노</a></td>
-											<td>글쓴이</td>
-											<td>2018-04-06</td>
-											<td>6857</td>
-										</tr>
-										<tr>
-											<td>267</td>
-											<td><a href="#" onclick="">도미노</a></td>
-											<td>글쓴이</td>
-											<td>2018-04-06</td>
-											<td>6857</td>
-										</tr>
-										<tr>
-											<td>267</td>
-											<td><a href="#" onclick="">도미노</a></td>
-											<td>글쓴이</td>
-											<td>2018-04-06</td>
-											<td>6857</td>
-										</tr>
-										<tr>
-											<td>267</td>
-											<td><a href="#" onclick="">도미노</a></td>
-											<td>글쓴이</td>
-											<td>2018-04-06</td>
-											<td>6857</td>
-										</tr>
-										<tr>
-											<td>267</td>
-											<td><a href="#" onclick="">도미노</a></td>
-											<td>글쓴이</td>
-											<td>2018-04-06</td>
-											<td>6857</td>
-										</tr>
-										<tr>
-											<td>267</td>
-											<td><a href="#" onclick="">도미노</a></td>
-											<td>글쓴이</td>
-											<td>2018-04-06</td>
-											<td>6857</td>
-										</tr>
-										<tr>
-											<td>267</td>
-											<td><a href="#" onclick="">도미노</a></td>
-											<td>글쓴이</td>
-											<td>2018-04-06</td>
-											<td>6857</td>
-										</tr>
-										<tr>
-											<td>267</td>
-											<td><a href="#" onclick="">도미노</a></td>
-											<td>글쓴이</td>
-											<td>2018-04-06</td>
-											<td>6857</td>
-										</tr>
+									<c:forEach items="${boardlist}" var="bDto">
+			<tr>
+				<td>${bDto.bno}</td>
+				<td><a href="boarddetail.bizpoll?bno=${bDto.bno}">
+				<!-- 답글 들여쓰기  -->
+				<c:forEach var = "i" begin = "1" end = "${bDto.re_level}">
+				&nbsp;&nbsp;
+				</c:forEach>
+				${bDto.title} </a></td>
+			
+			<c:if test="${bDto.replycnt ne 0}">
+				[${bDto.replycnt}"]
+			</c:if>
+				
+				
+				<td>${bDto.writer}</td>
+				<td class="text_center">
+				
+				
+				<fmt:formatDate value="${today}" pattern="yyyy-MM-dd" var="today2"/>
+				<fmt:formatDate value="${bDto.regdate}" pattern="yyyy-MM-dd" var="regdate2"/>
+				
+				<c:choose>
+					<c:when test="${today2 == regdate2}">
+					<fmt:formatDate pattern="yyyy-MM-dd-HH:mm" value="${bDto.regdate}"/>
+					</c:when>
+					<c:otherwise>
+						<fmt:formatDate pattern="yyyy-MM-dd" value="${bDto.regdate}"/>
+					</c:otherwise>
+				</c:choose>
+						<c:if test = "${bDto.filesize > 0}">
+							<i class = "fa fa-floppy -0"></i>
+						</c:if>
+				</td>
+			
+				<td>${bDto.viewcnt}</td>
+			</tr>
+		</c:forEach>
 											
 									</tbody>
 								</table>
