@@ -611,6 +611,7 @@ div.level-3 {
 	height: 70px;
 	padding-top: 21px;
 	overflow: hidden;
+	background-color: #63BBED;
 }
 
 h1 {
@@ -634,11 +635,18 @@ h1 {
     margin-right: 10px;
     top: -22px;
     position: absolute;
-    left: 78px;
+    left: 44px;
 }
 
 #bigshort_logo > span {
 	line-height: 20px;
+    position: relative;
+    left: 104px;
+    top: -5px;
+    font-size: 40px;
+    font-weight: 600;
+    color: white;
+    font-family: 'Jeju Hallasan', serif;
 }
 
 .list_help {
@@ -913,9 +921,9 @@ h1 {
 
 .logo_a {
 	position: relative;
-   	left: -729px;
+   	left: -743px;
     	top: 35px;
-    	font-size: 50px;
+    	font-size: 55px;
 	font-family: 'Jeju Hallasan', serif;
 	color: white;
 }

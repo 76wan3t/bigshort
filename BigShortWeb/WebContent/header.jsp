@@ -214,7 +214,7 @@
 						<div id="bigshort_header">
 							<h1>
 								<a id="bigshort_logo" href="#"> <img
-									src="/BigShortWeb/images/gabang_logo.png">
+									src="/BigShortWeb/images/LOGO2.png"><span>가방</span>
 								</a>
 							</h1>
 						</div>
