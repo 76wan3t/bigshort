@@ -16,9 +16,9 @@ import main.DBManger;
 public class DongGuTotal {
       
       static String base_url = "http://home.sarangbang.com/linead/list.html?nPage=";
-      static String base_url2="&nScale=20&total_page=33&now_location=%2Flinead%2Flist.html&sort_default=&sort_km=&sort_year=&sort_money=&dong=&menu=apt&submenu=&code_area1=1&code_area2=11";
+      static String base_url2="&nScale=20&total_page=34&now_location=%2Flinead%2Flist.html&sort_default=&sort_km=&sort_year=&sort_money=&dong=&menu=apt&submenu=&code_area1=1&code_area2=11";
       static int page = 1;
-      static int total = 33;
+      static int total = 34;
       static String comlete_page ;
       static String area = "donggu";
       static String seq = "donggu_seq.NEXTVAL";
@@ -380,7 +380,6 @@ public class DongGuTotal {
                                          
                                    }
                              
-                             
                              }else if(mreview.equals("억")) {
                                    
                                    if(mreview.equals("억")&&count2==2) {
@@ -424,14 +423,7 @@ public class DongGuTotal {
                                    }
                              }
                              
-                       
-                             
-                             
-                              //System.out.println("보증금 "+number2+"원");
-                              //System.out.println("월세 "+number3+"원");
-                              //System.out.println();
-                             
-                              number = number3; // 데이터 베이스에 저장 하기 위해 number 변수에 대입
+                             number = number3; // 데이터 베이스에 저장 하기 위해 number 변수에 대입
                              
                               BigShortDTO bDto = new BigShortDTO(dongname, aptname, deal, number2, number, dongextent, donglevel , nameprice , urltotal);
                               bSdAo.insertSubsidy(bDto ,area, seq);
