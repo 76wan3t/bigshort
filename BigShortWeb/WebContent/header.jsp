@@ -141,8 +141,8 @@
 <link rel="stylesheet" type="text/css" href="/BigShortWeb/css/footer.css?var=1">
 </head>
 <body>
-<a id="logo_a" href="/BigShortWeb/index.bigshort"><img id="logo" src="/BigShortWeb/images/LOGO2.png"></a>
-	
+
+	<a id="logo_a" href="/BigShortWeb/index.bigshort"><img id="logo" src="/BigShortWeb/images/LOGO2.png"></a>
 	
 	<div id="wrapper">
 		<!-- 네비게이션 시작 -->
@@ -182,17 +182,11 @@
 						<ul class="menu-category clearfix">
 							<li class="primary-navigation">
 								<ul class="level-1">
-									<li id="Women" class="navigation-link first"><a href="#"
-										class="level-1 cat"> 광산구 </a></li>
-									<li id="Women" class="navigation-link first"><a href="#"
-										class="level-1 cat"> 북구 </a></li>
-									<li id="Women" class="navigation-link first"><a href="#"
-										class="level-1 cat"> 남구 </a></li>
-									<li id="SpecialGifts" class="navigation-link first"><a
-										href="https://kr.mcmworldwide.com/gifts-1" class="level-1 cat">
-											서구 </a></li>
-									<li class="lookbook navigation-link  "><a
-										class="level-1 lookbook" href="#"> 동구 </a></li>
+									<li id="Women" class="navigation-link first"><a href="#" class="level-1 cat"> 광산구 </a></li>
+									<li id="Women" class="navigation-link first"><a href="#" class="level-1 cat"> 북구 </a></li>
+									<li id="Women" class="navigation-link first"><a href="#" class="level-1 cat"> 남구 </a></li>
+									<li id="SpecialGifts" class="navigation-link first"><a href="https://kr.mcmworldwide.com/gifts-1" class="level-1 cat">서구 </a></li>
+									<li class="lookbook navigation-link"><a class="level-1 lookbook" href="#"> 동구 </a></li>
 								</ul>
 							</li>
 						</ul>
