@@ -165,6 +165,7 @@
 			$("#mail2").val(selemail).css("text-align","right");
 		}
 	});
+	
 	/* sphone select */
 	$(document).on("change","#sphone_num", function(){
 		var sphone = $(this).val();
