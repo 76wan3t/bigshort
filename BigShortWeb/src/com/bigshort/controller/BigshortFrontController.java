@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.bigshort.action.*;
 import com.bigshort.action.board.*;
-import com.bigshort.action.member.ConstractAction;
+import com.bigshort.action.member.*;
 
 
 /**
@@ -81,6 +81,9 @@ public class BigshortFrontController extends HttpServlet {
 				forward = action.excute(request, respnse);
 			}else if(command.equals("/boardupdate.bigshort")) { // 수정 누르면 타는 액션
 				action = new BoardUpdateAction();
+				forward = action.excute(request, respnse);
+			}else if(command.equals("/join.bigshort")) { // 수정 누르면 타는 액션
+				action = new JoinAction();
 				forward = action.excute(request, respnse);
 			}
 			

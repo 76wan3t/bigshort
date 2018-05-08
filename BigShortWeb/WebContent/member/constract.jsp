@@ -58,7 +58,7 @@
 		
 	<div id="body_wrap">
 		<div id="constract_container">
-			<form id="join_content">
+			<form id="join_content" action="join.bigshort" method="get">
 				<div class="terms">
 					<p class="terms_p">
 						<span class="terms_span">
@@ -144,7 +144,7 @@
 				<span id="error_span">가방 이용약관과 개인정보 수집 및 이용에 대한 안내 모두 동의해주세요.</span>
 			</div>	
 			<div class="btn_double_area">
-				<span><a href="#" class="btn_type btn_default">비동의</a></span>
+				<span><a href="index.bigshort" class="btn_type btn_default">비동의</a></span>
 				<span><a href="#" class="btn_type btn_agree">동의</a></span>
 			
 			</div>
