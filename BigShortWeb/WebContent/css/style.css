@@ -66,7 +66,8 @@
 /* 각 구 나누는 원 간격 증가 */
 #container .local ul.gj>li {
 	display: inline-block;
-	margin: 20px 51px;
+    margin: 45px 127px 30px 0px;
+    float: left;
 }
 
 /* 각 구 클릭하는 원 */
@@ -136,6 +137,7 @@
 .menu-utility-user > li > a {
 	color: white;
 	font-size: 15px;
+	font-family: 'Jeju Gothic', serif;
 	
 }
 
@@ -158,3 +160,25 @@
 	border-bottom: none;
 	background-color: #63BBED;
 }
+
+
+#container .local ul.gj>li:last-child {
+	margin-right: 0px;	
+}
+	
+#container .local ul.gj>li:first-child {
+	margin-left: 19px
+} 
+	
+
+
+
+
+
+
+
+
+
+
+
+

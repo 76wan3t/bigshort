@@ -81,7 +81,7 @@
 
 </script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" type="text/css" href="css/style.css?var=1">
+<link rel="stylesheet" type="text/css" href="css/style.css?var=2">
 </head>
 <body>
 	<div class="wrap">
@@ -99,11 +99,11 @@
 
 					<!-- 구 -->
 					<ul class="gj">
-						<li><a class="gwangsan" href="gwangsandetail.bigshort">광산구</a></li>
-						<li><a class="north" href="bukgudetail.bigshort">북구</a></li>
+						<li id="gwangsan"><a class="gwangsan" href="gwangsandetail.bigshort">광산구</a></li>
+						<li class="li_gj"><a class="north" href="bukgudetail.bigshort">북구</a></li>
 						<li><a class="south" href="namgudetail.bigshort">남구</a></li>
 						<li><a class="west" href="seogudetail.bigshort">서구</a></li>
-						<li><a class="east" href="donggudetail.bigshort">동구</a></li>
+						<li id="east"><a class="east" href="donggudetail.bigshort">동구</a></li>
 					</ul>
 					<!-- 구 end//-->
 

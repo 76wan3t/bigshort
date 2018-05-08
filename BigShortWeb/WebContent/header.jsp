@@ -146,10 +146,11 @@
 	<div id="wrapper">
 		<!-- 네비게이션 시작 -->
 		<div id="header" role="banner" class="header-shadow clearfix">
-
 			<header class="clearfix">
 				<div class="utility-menu">
-	<a id="logo_a" href="/BigShortWeb/index.bigshort"><img id="logo" src="/BigShortWeb/images/LOGO6.png">가방</a>
+					<a id="logo_a" href="/BigShortWeb/index.bigshort">
+						<img id="logo" src="/BigShortWeb/images/LOGO6.png">가방
+					</a>
 					<div id="muin">
 						<ul class="menu-utility-user">
 							<li class="search"></li>
@@ -194,6 +195,7 @@
 					</nav>
 				</div> -->
 			</header>
+					<div id="header_inner"></div>
 		</div>
 	</div>
 
