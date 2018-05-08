@@ -72,10 +72,10 @@ select{
 	width: 100%;	
 }
 #addr_button{
-	height: 30px;
+	height: 33px;
 	color: white;
 	font-size: 12px;
-	padding: 5px;
+	padding: 5px 5px 0;
 }
 /* 회원가입 버튼 */
 #frm_submit{
