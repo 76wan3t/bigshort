@@ -6,8 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Bigshort_join</title>
-<link rel="stylesheet" type="text/css" href="../css/join.css?var=1"/>
-<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+<link rel="stylesheet" type="text/css" href="/BigShortWeb/css/join.css?var=1"/>
 <script type="text/javascript">
 	$(document).on("click","#frm_submit",function(){
 		var mid = $("#id"),
@@ -16,6 +15,7 @@
 		 	mname = $("#name"),
 		 	mphone = $("#phone"),
 		 	mmail = $("#mail"),
+		 	mmail2 = $("#mail2"),
 		 	mbrn1 = $("#brn1"),
 		 	mbrn2 = $("#brn2"),
 		 	mbrn3 = $("#brn3"),
@@ -32,6 +32,7 @@
 			name = $.trim(mname.val()),
 			phone = $.trim(mphone.val()),
 			mail = $.trim(mmail.val()),
+			mail2 = $.trim(mmail2.val()),
 			brn1 = $.trim(mbrn1.val()),
 			brn2 = $.trim(mbrn2.val()),
 			brn3 = $.trim(mbrn3.val()),
@@ -49,10 +50,14 @@
 		var regId = /^.*(?=.{4,20})(?=.*[0-9])(?=.*[a-zA-Z]).*$/;
 		if(id == ""){
 			mid.focus();
-			$("#idck").css("display","inline-block");
+			mid.css("display","block").css("margin-bottom","0");
+			$("#idck").css("display","block").css("margin-left","20px");
+			return false;
 		}else if(!regId.test(id)){
 			mid.select();
-			$("#idck").text("4~20자 이내 숫자,영문만 사용하세요.").css("display","inline-block");
+			mid.css("display","block").css("margin-bottom","0");
+			$("#idck").text("4~20자 이내 숫자,영문만 사용하세요.").css("display","block").css("margin-left","20px");
+			return false;
 		}else{
 			mpw.focus();
 			$("#idck").css("display","none");
@@ -62,20 +67,24 @@
 		var regPass = /^.*(?=.{6,20})(?=.*[0-9])(?=.*[a-zA-Z]).*$/;
 		if(pw == ""){
 			mpw.focus();
-			$("#pwck").css("display","inline-block");
+			mpw.css("display","block").css("margin-bottom","0");
+			$("#pwck").css("display","block").css("margin-left","20px");
 			return false;
 		}else if(!regPass.test(pw)){
 			mpw.select();
-			$("#pwck").text("6~20자 이내 숫자,영문만 사용하세요.").css("display","inline-block");
+			mpw.css("display","block").css("margin-bottom","0");
+			$("#pwck").text("6~20자 이내 숫자,영문만 사용하세요.").css("display","block").css("margin-left","20px");
 			return false;
 		}else if(pw2 == ""){
 			mpw2.focus();
 			$("#pwck").css("display","none");
-			$("#pw2ck").css("display","inline-block");
+			mpw2.css("display","block").css("margin-bottom","0");
+			$("#pw2ck").css("display","block").css("margin-left","20px");
 			return false;
 		}else if(pw != pw2){
 			mpw2.focus();
-			$("#pw2ck").text("다시 입력해주세요.").css("display","inline-block");
+			mpw2.css("display","block").css("margin-bottom","0");
+			$("#pw2ck").text("다시 입력해주세요.").css("display","block").css("margin-left","20px");
 			return false;
 		}else{
 			mname.focus();
@@ -86,113 +95,143 @@
 		/* nameck */
 		if(name == ""){
 			mname.focus();
-			$("#nameck").css("display","inline-block");
+			mname.css("display","block").css("margin-bottom","0");
+			$("#nameck").css("display","block").css("margin-left","20px");
 			return false;
+		}else{
+			$("#nameck").css("display","none");
+			mphone.focus();
 		}
 		
 		/* phoneck */
 		var regPhone = /^(?:(010\d{4})|(01[1|6|7|8|9]\d{3,4}))(\d{4})$/;
 		if(phone == ""){
 			mphone.focus();
-			$("#phoneck").css("display","inline-block");
+			mphone.css("display","block").css("margin-bottom","0");
+			$("#phoneck").css("display","block").css("margin-left","20px");
 			return false
 		}else if($.isNumeric(phone)==false){
 			mphone.focus();
             mphone.val("");
-            $("#phoneck").text("숫자만 입력하세요.").css("display","inline-block");
+            mphone.css("display","block").css("margin-bottom","0");
+            $("#phoneck").text("숫자만 입력하세요.").css("display","block").css("margin-left","20px");
             return false;
 		}else if(!regPhone.test(phone)){
 			mphone.focus();
-            $("#phoneck").text("정확한 값을 입력하세요.").css("display","inline-block");
+			mphone.css("display","block").css("margin-bottom","0");
+            $("#phoneck").text("정확한 값을 입력하세요.").css("display","block").css("margin-left","20px");
             return false;
+		}else{
+			mmail.focus();
+			$("#phoneck").css("display","none");
 		}
 		
 		/* mail */
 		var regEmail= /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+		var allmail = mail +"@"+ mail2;
 		if(mail == ""){
-			memail.focus();
-			$("#mailck").css("display","inline-block");
+			mmail.focus();
+			mmail.css("display","block").css("margin-bottom","0");
+            $("#mailck").text("정확한 값을 입력하세요.").css("display","block").css("margin-left","20px");
 			return false;
-		}else if(!regEmail.test(email)){
-			memail.focus();
-			$("#mailck").text("정확한 값을 입력해주세요.").css("display","inline-block");
+		}else if(mail2 == ""){
+			mmail2.focus();
+			mmail.css("display","block").css("margin-bottom","0");
+            $("#mailck").text("정확한 값을 입력하세요.").css("display","block").css("margin-left","20px");
 			return false;
+		}else if(!regEmail.test(allmail)){
+			mmail.focus();
+			mmail.css("display","block").css("margin-bottom","0");
+            $("#mailck").text("정확한 값을 입력하세요.").css("display","block").css("margin-left","20px");
+			return false;
+		}else{
+			$("#mailck").css("display","none");
 		}
 		
-		/* 사업자정보 */
-		
+	/* 사업자정보 */
 		/* brn */
+		
+		/* sname */
+		
+		/* sphone */
 		
 	});
 	/* mail select */
 	$(document).on("change","#selemail",function(){
 		var selemail = $("#selemail").val();
 		if(selemail == "self"){
-			$("#mail").val("");
-			$("#mail").focus();
+			$("#mail2").focus();
 		}else{
-			$("#mail").val(selemail).css("text-align","right");
+			$("#mail2").val(selemail).css("text-align","right");
 		}
 	});
-	
+	/* sphone select */
+	$(document).on("change","#sphone_num", function(){
+		var sphone = $(this).val();
+		if(sphone == "choi"){
+			sphone.focus();
+		}else{
+			$("#sphone").val(sphone).css("text-align","left");
+		}
+	});
 	
 	
 </script>
 </head>
 <body>
-<!-- 사업자 번호 / 아이디(not null) / 이름(not null) / 비번(not null) / 중개소명(not null) / 중개소 주소 / 전화번호(not null) / 이메일(not null) -->
 <form action="" method="POST" id="joinfrm" name="joinfrm">
 	<div id="join_wrap">
 		<div class="info_wrap" id="info_wrap1">
 		<!-- 아이디 (필수) -->
-			<div class="info">
+			<div class="info" id="id_div">
 				<span>
 					<input class="info_input " type="text" id="id" name="id" placeholder="아이디">
 				</span>
 				<span id="idck" class="ck">필수정보 입니다.</span>
 			</div>
 		<!-- 비번 (필수) -->
-			<div class="info">	
+			<div class="info" id="pw_div">	
 				<span>
 					<input class="info_input" type="password" id="pass" name="pass" placeholder="비밀번호">
 				</span>
 				<span id="pwck" class="ck">필수정보 입니다.</span>
 			</div>
 		<!-- 비번 확인 (필수) -->
-			<div class="info">
+			<div class="info" id="pw2_div">
 				<span>
 					<input class="info_input" type="password" id="pass2" name="pass2" placeholder="비밀번호 재확인">
 				</span>
-				<span id="pw2ck" class="ck">필수정보 입니다.</span>
+				<span id="pw2ck" class="ck">입력해주세요.</span>
 			</div>
 		</div>
 <br>
 		<div class="info_wrap" id="info_wrap2">
 		<!-- 이름	 (필수) -->
-			<div class="info">
+			<div class="info" id="name_div">
 				<span>
 					<input class="info_input" type="text" id="name" name="name" maxlength="4" placeholder="이름">
 				</span>
 				<span id="nameck" class="ck">필수정보 입니다.</span>
 			</div>
 		<!-- 전화번호 (필수) -->
-			<div class="info">
+			<div class="info" id="phone_div">
 				<span>
 					<input class="info_input" type="text" id="phone" name="phone" maxlength="11" placeholder="핸드폰 번호 (숫자만 입력)">
 				</span>
 				<span id="phoneck" class="ck">필수정보 입니다.</span>
 			</div>
 		<!-- 이메일 (필수) -->	
-			<div class="info">
+			<div id="mail_div" class="info">
 				<span class="mail_span">
 					<input class="info_input mail_input" type="text" id="mail" name="mail" placeholder="이메일">
+					@<input class="info_input mail_input" type="text" id="mail2" name="mail2">
 				</span>
 				<span>
 					<select id="selemail">
 						<option value="self">직접 입력 </option>
-						<option value="@naver.com">@naver.com</option>
-						<option value="@hanmail.net">@hanmail.net</option>
-						<option value="@gmail.com">@gmail.com</option>
+						<option value="naver.com">naver.com</option>
+						<option value="hanmail.net">hanmail.net</option>
+						<option value="gmail.com">gmail.com</option>
 					</select>
 				</span>
 				<span id="mailck" class="ck">필수정보 입니다.</span>
@@ -203,36 +242,37 @@
 		<div class="info_wrap" id="info_wrap3">
 		<!-- 사업자 번호 -->
 		<!-- 사업자 등록 번호 ***-**-***** 10자리 형식 --> 
-			<div class="info selinfo">
+			<div id="brn_div" class="info selinfo">
 				<span>
-					<input class="info_input brn_input" id="brn1" name="brn" placeholder="사업자 번호"> 
-					- <input class="info_input brn_input" id="brn2" placeholder="**"> 
-					- <input class="info_input brn_input" id="brn3" placeholder="*****">
+					<input class="info_input brn_input" id="brn1" name="brn" placeholder="사업자 번호" maxlength="3"> 
+					- <input class="info_input brn_input" id="brn2" placeholder="**" maxlength="2"> 
+					- <input class="info_input brn_input" id="brn3" placeholder="*****" maxlength="5">
 				</span>
 			</div>
 		<!-- 중개소 명 -->
-			<div class="info selinfo">
+			<div class="info selinfo" id="sname_div">
 				<span>
 					<input class="info_input" type="text"  id="sname" name="sname" placeholder="중개소 이름">
 				</span>
 			</div>
 		<!-- 중개소 전화번호 -->
-			<div class="info selinfo">
+			<div class="info selinfo" id="sphone_div">
 				<span class="info_input">
 					<select id="sphone_num">
+						<option value="choi">선택</option>
 						<option value="062)">062</option>
 						<option value="061)">061</option>
 						<option value="063)">063</option>
 					</select>
-					<input class="info_input" type="text" id="sphone" name="sphone" placeholder="중개소 전화번호">
+					<input class="info_input" type="text" id="sphone" name="sphone" placeholder="중개소 전화번호" maxlength="11">
 				</span>
 			</div>
 		<!-- 중개소 주소 다음 api 활용 -->
 			<div class="info_input" id="address_wrap">
 				<input type="text" class="join" id="postcode" placeholder="우편번호">
 						<input type="button" id="addr_button" class="join_btn" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-						<input type="text" class="join" id="address" placeholder="주소">
-						<input type="text" class="join" id="address2" placeholder="상세주소">
+						<input type="text" class="join addr_input" id="address" placeholder="주소">
+						<input type="text" class="join addr_input" id="address2" placeholder="상세주소">
 						<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 						<script>
 						    function sample6_execDaumPostcode() {

@@ -33,13 +33,15 @@ span.ck{
 }
 /* input태그 */
 .info_input{
-	width: 40%;
-	height: 50%;
+	width: 90%;
+	height: 60%;
 	border: none;
 	margin: 10px 20px;
 }
-#mail{
-	width: 40%;
+.mail_input{
+	display: inline-block;
+	width:20%;
+	margin-bottom:20px;
 }
 /* 사업자 번호 */
 .brn_input{
@@ -49,7 +51,7 @@ span.ck{
 }
 /* 중개소 전화번호 */
 #sphone{
-	width: 75%;
+	width: 68%;
 }
 select{
 	height: 90%;
@@ -64,13 +66,10 @@ select{
 	padding-left: 10px;
 }
 #address_wrap{
-	width: 65%;
+	width: 83%;
 }
-#address{
-	width:128%;
-}
-#address2{
-	width: 90%;
+.addr_input{
+	width: 100%;	
 }
 #addr_button{
 	height: 30px;
