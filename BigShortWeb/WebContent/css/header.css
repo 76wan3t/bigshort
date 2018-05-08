@@ -1,7 +1,10 @@
-	
 @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
-@import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+
+@import
+	url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+
 @import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+
 @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
 
 * {
@@ -11,10 +14,17 @@
 	word-wrap: break-word;
 }
 /*HEAD */
-.w3-modal-content{
-	width: 470px!important;
-	top: 70px!important;
+.w3-modal-content {
+	width: 600px !important;
+	height: 550px;
+	top: 70px !important;
+	margin: auto;
+    background-color: #fff;
+    position: relative;
+    padding: 0;
+    outline: 0;
 }
+
 .w3-container {
 	z-index: 2;
 	opacity: 1;
@@ -112,7 +122,7 @@ ol, ul { /* ul 태그에 기본적으로 해야 할 것 */
 } 
 
 /* 앵커 태그에 기본적으로 해야할것 */
-a:link, a:visited { 
+a:link, a:visited {
 	text-decoration: none;
 	color: inherit;
 	display: inline-block;
@@ -141,7 +151,6 @@ a:link, a:visited {
 	width: 1180px;
 	height: 50px;
 } */
-
 #header .primary-logo {
 	z-index: 202;
 	line-height: 0;
@@ -262,7 +271,6 @@ fieldset {
 	overflow: hidden;
 	margin-top: 16px;
 }
-
 
 button, input {
 	line-height: normal;
@@ -479,10 +487,10 @@ ul.level-1 {
 
 .menu-category ul.level-1 li a.level-1 {
 	font-family: 'Hanna', serif;
-    letter-spacing: .1em;
-    font-weight: 600;
-    margin: 0px 30px 0px 30px;
-    font-size: 30px;
+	letter-spacing: .1em;
+	font-weight: 600;
+	margin: 0px 30px 0px 30px;
+	font-size: 30px;
 }
 
 .menu-category ul.level-1>li>a {
@@ -599,19 +607,17 @@ div.level-3 {
 }
 /* 로그인 모달 스타일 */
 #wrap {
-	border: 2px solid gray;
-    width: 274px;
-    height: 100%;
-    margin: 50px auto 0;
-    position: relative;
-    top: -30px;
+	width: 274px;
+	height: 100%;
+	top: -30px;
 }
 
 #bigshort_header {
-	height: 70px;
-	padding-top: 21px;
-	overflow: hidden;
-	background-color: #63BBED;
+	height: 115px;
+    width: 600px;
+    overflow: hidden;
+    padding-top: 20px;
+    background-color: #63BBED;
 }
 
 h1 {
@@ -628,22 +634,22 @@ h1 {
 	position: relative;
 }
 
-#bigshort_logo > img {
-	width: 103px;
-    height: 51px;
+#bigshort_logo>img {
+	width: 50px;
+    height: 45px;
     float: left;
     margin-right: 10px;
-    top: -22px;
+    top: -12px;
     position: absolute;
-    left: 44px;
+    left: 213px;
 }
 
-#bigshort_logo > span {
+#bigshort_logo>span {
 	line-height: 20px;
     position: relative;
-    left: 104px;
-    top: -5px;
-    font-size: 40px;
+    left: 270px;
+    top: 15px;
+    font-size: 60px;
     font-weight: 600;
     color: white;
     font-family: 'Jeju Hallasan', serif;
@@ -673,16 +679,14 @@ h1 {
 #login_content {
 	width: 270px;
 	height: 100%;
-	border: 1px solid #ddd;
+	/* border: 1px solid #ddd; */
 	text-align: left;
 	display: inline-block;
 }
-#bigshort_content{
-	height: 224px;
-		
-	
-}
 
+#bigshort_content {
+	height: 224px;
+}
 
 #subtitle {
 	position: relative;
@@ -700,20 +704,23 @@ h1 {
 }
 
 .idpw {
-	color: #333; /* 글자색깔 */
-	letter-spacing: -1px; /* 글자 간격 */
-	background-color: white; /* 배경색 */
-	width: 250px; /* 가로길이 */
-	height: 30px; /* 세로길이 */
-	border: 1px solid #e5e5e5; /* 외곽 선 */
-	border-radius: 5px; /* 선 둥글기 */
-	font-weight: normal; /* 글자 굵기 */
-	font-size: 15px; /* 글자 사이즈 */
-	line-height: 22px; /* 글자 상하 위치 */
-	padding: 8px 12px; /* 안쪽 여백 */
-	margin: 8px; /* 바텀 바깥여백 */
-	outline: none; /*  */
-	font-family: 'Jeju Gothic';
+	color: #333;
+    letter-spacing: -1px;
+    background-color: white;
+    width: 425px;
+    height: 50px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 22px;
+    padding: 8px 10px;
+    margin: 10px;
+    outline: none;
+    text-align: center;
+    font-family: 'Jeju Gothic';
+    margin-left: 85px;
+    margin-top: 30px;
 }
 
 #login_form {
@@ -731,8 +738,9 @@ h1 {
 }
 
 #remember {
-	margin: -1px 0 16px; /* 3개만 쓸때는 상 좌우 하 순으로 들어간다 */
-	position: relative;
+	/* margin: -1px 0 16px; */
+    position: relative;
+    right: -147px;
 }
 
 #remember>input {
@@ -748,41 +756,48 @@ h1 {
 }
 
 #btn_login {
-	display: inline-block; /* 전체를 블록화 */
-	background-color: #63BBED; /* 배경색 */
-	border: 1px solid white; /* 테두리 선 */
-	width: 268px; /* 좌우 길이 */
-	text-align: center; /* 글자 정렬 */
-	border-radius: 5px; /* 테두리 둥글기 */
-	color: white;
-	font-weight: bold;
-	font-family: 'Jeju Gothic';
-	height: 46px;
-	font-size: 24px;
-	margin-top: 6px;
-	font-style: italic;
-	position: relative;
+	display: inline-block;
+    background-color: #A4D2ED;
+    border: 1px solid white;
+    width: 430px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Jeju Gothic';
+    height: 60px;
+    font-size: 24px;
+    margin-top: 35px;
+    font-style: italic;
+    position: relative;
+    line-height: 2.5;
+    margin-left: 83px;
 }
 
 #btn_login:hover {
-	background-color: #A4D2ED;
+	background-color: #63BBED;
 	color: white;
 	font-family: 'Jeju Gothic';
 	font-style: none;
 }
 
 #login_help {
-	width: 270px;
-	position: absolute;
-	padding-top: 7px;
-	font-size: 12px;
-	letter-spacing: -1px;
-	font-family: 'Jeju Gothic';
+	width: 587px;
+    position: absolute;
+    padding-top: 40px;
+    font-size: 17px;
+    letter-spacing: -1px;
+    font-family: 'Jeju Gothic';
+    margin-top: 20px;
+    margin-left: 32px;
 }
 
 #login_help a {
 	letter-spacing: -1px;
-	color: #333;
+    color: inherit;
+    font-weight: 500;
+    position: relative;
+    left: -1px;
 }
 
 #login_help a:hover {
@@ -791,9 +806,11 @@ h1 {
 
 .right {
 	display: inline-block;
-	position: absolute;
-	right: 28px;
-	top: 5px;
+    position: absolute;
+    right: 185px;
+    top: -1px;
+    margin-top: 40px;
+    font-size: 18px;
 }
 
 .right>a {
@@ -806,7 +823,7 @@ h1 {
 	height: 11px;
 	background-color: #ccc;
 	font-size: 11px;
-	margin: 4px 1px 0 3px;
+	margin: 4px 1px 0 4px;
 }
 
 #member {
@@ -814,17 +831,19 @@ h1 {
 	font-weight: 700;
 	margin-left: 8px;
 }
-#logo{
-    width: 27px;
-    height: 30px;
+
+#logo {
+	width: 27px;
+	height: 30px;
 }
+
 #logo_span {
 	position: relative;
 	z-index: 2;
-    left: 400px;
-    top: 23px;
-    width: 130px;
-    height: 60px;
+	left: 400px;
+	top: 23px;
+	width: 130px;
+	height: 60px;
 	font-family: 'Hanna', serif;
 }
 
@@ -881,8 +900,6 @@ h1 {
 	text-decoration: underline;
 }
 
-
-
 #login_pw {
 	font-family: sans-serif;
 	margin-top: 8px;
@@ -910,7 +927,6 @@ h1 {
 	top: 12px;
 }
 /* 로그인 모달 스타일 끝 */
-
 #logo_a {
 	display: inline-block;
 	float: left;
@@ -919,43 +935,49 @@ h1 {
 	color: white;
 }
 
-
 .logo_a {
 	left: -750px;
-    top: 3px;
-    font-size: 41px;
-    font-family: 'Jeju Hallasan', serif;
-    color: white;
+	top: 3px;
+	font-size: 41px;
+	font-family: 'Jeju Hallasan', serif;
+	color: white;
 }
-#container_login{
-	margin-top: 18px;
-	
+
+#container_login {
+	margin-top: 20px;
 }
 /* ScrollToTop */
 button#myBtn {
-		display: none;
-		position: fixed;
-		bottom: 20px;
-		right: 30px;
-		z-index: 99;
-		font-size: 18px;
-		border: none;
-		outline: none;
-		background-color: #63BBED;
-		color: white;
-		cursor: pointer;
-		padding: 15px;
-		border-radius: 4px;
-	}
-button#myBtn:hover{
-		background-color: #252c41;
-	}
-	#header_inner{
-		width: 100%;
-	    height: 12px;
-	    position: absolute;
-	    background-color: #FFF;
-	    margin-top: -7px;
-	    opacity: 0.5;
-	}
+	display: none;
+	position: fixed;
+	bottom: 20px;
+	right: 30px;
+	z-index: 99;
+	font-size: 18px;
+	border: none;
+	outline: none;
+	background-color: #63BBED;
+	color: white;
+	cursor: pointer;
+	padding: 15px;
+	border-radius: 4px;
+}
 
+button#myBtn:hover {
+	background-color: #252c41;
+}
+
+#header_inner {
+	width: 100%;
+	height: 12px;
+	position: absolute;
+	background-color: #63BBED;
+	margin-top: -7px;
+	opacity: 0.5;
+}
+
+.w3-container{
+	padding: 0!important;
+	
+}
+	

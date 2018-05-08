@@ -137,7 +137,7 @@
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" type="text/css" href="/BigShortWeb/css/header.css?var=2">
+<link rel="stylesheet" type="text/css" href="/BigShortWeb/css/header.css?var=1">
 <link rel="stylesheet" type="text/css" href="/BigShortWeb/css/footer.css?var=1">
 </head>
 <body>
@@ -216,7 +216,7 @@
 						<div id="bigshort_header">
 							<h1>
 								<a id="bigshort_logo" href="#"> <img
-									src="/BigShortWeb/images/LOGO3.png"><span>가방</span>
+									src="/BigShortWeb/images/LOGO6.png"><span>가방</span>
 								</a>
 							</h1>
 						</div>
@@ -235,6 +235,7 @@
 									<div id="login_help">
 										<div id="remember">
 											<a id="member" href="/BigShortWeb/constract.bigshort">회원가입</a>
+											<span class="right_bar"></span>
 										</div>
 
 										<div class="right">
