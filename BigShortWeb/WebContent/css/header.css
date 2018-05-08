@@ -125,7 +125,7 @@ a:link, a:visited {
 }
 
 #header {
-	height: 116px;
+	height: 50px;
 	min-width: 100%;
 	position: absolute;
 	z-index: 1;
@@ -815,12 +815,12 @@ h1 {
 	margin-left: 8px;
 }
 #logo{
-	position: relative;
+	position: absolute;
     z-index: 2;
-    left: 335px;
-    top: 23px;
-    width: 130px;
-    height: 60px;
+    left: 401px;
+    top: 6px;
+    width: 27px;
+    height: 30px;
 }
 #logo_span {
 	position: relative;
@@ -916,16 +916,16 @@ h1 {
 /* 로그인 모달 스타일 끝 */
 
 #logo_a {
-	display: block; 
+	display: inline-block;
+	float: left;
 }
 
 .logo_a {
-	position: relative;
-   	left: -743px;
-    	top: 35px;
-    	font-size: 55px;
-	font-family: 'Jeju Hallasan', serif;
-	color: white;
+	left: -750px;
+    top: 3px;
+    font-size: 41px;
+    font-family: 'Jeju Hallasan', serif;
+    color: white;
 }
 #container_login{
 	margin-top: 18px;

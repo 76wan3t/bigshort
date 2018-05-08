@@ -7,7 +7,7 @@
 
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" type="text/css" href="../css/footer.css">
+<link rel="stylesheet" type="text/css" href="/BigShortWeb/css/footer.css">
 </head>
 <body>
 	<div id="footer">
