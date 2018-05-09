@@ -419,14 +419,14 @@
 						<ul class = "pagination">
 							<c:if test="${pageMaker.prev}">
 							<li>
-								<a href="boardlist.bizpoll?page=${pageMaker.startPage - 1}">&laquo;</a>
+								<a href="listAll.bigshort?page=${pageMaker.startPage - 1}">&laquo;</a>
 							</li>
 							</c:if>
 							
 							<!--c아웃은 버튼을 눌렀을때 호버 상태가 되어있게 해주는것  -->
 							<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
 								<li <c:out value="${pageMaker.criDto.page == idx? 'class=active':''}"/>>
-									<a href="boardlist.bizpoll?page=${idx}">${idx}</a>
+									<a href="listAll.bigshort?page=${idx}">${idx}</a>
 								</li>							
 							</c:forEach>
 							
@@ -434,7 +434,7 @@
 							
 							<c:if test="${pageMaker.next}">
 							<li>
-								<a href="boardlist.bizpoll?page=${pageMaker.endPage + 1}">&raquo;</a>
+								<a href="listAll.bigshort?page=${pageMaker.endPage + 1}">&raquo;</a>
 							</li>
 							</c:if>
 						</ul>
@@ -454,7 +454,7 @@
 							<!--c아웃은 버튼을 눌렀을때 호버 상태가 되어있게 해주는것  -->
 							<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
 								<li <c:out value="${pageMaker.criDto.page == idx? 'class=active':''}"/>>
-									<a href="boardlist.bizpoll?page=${idx}&sfl=${sfl}&stx=${stx}">${idx}</a>
+									<a href="listAll.bigshort?page=${idx}&sfl=${sfl}&stx=${stx}">${idx}</a>
 								</li>							
 							</c:forEach>
 							
@@ -462,7 +462,7 @@
 							
 							<c:if test="${pageMaker.next}">
 							<li>
-								<a href="boardlist.bizpoll?page=${pageMaker.endPage + 1}">&raquo;</a>
+								<a href="listAll.bigshort?page=${pageMaker.endPage + 1}">&raquo;</a>
 							</li>
 							</c:if>
 						</ul>
@@ -475,9 +475,10 @@
 										<div class="form_field">
 											<div class="sel_box">
 												<select id="sfl" name="sfl">
-													<option value="subject" selected="">제목</option>
-													<option value="content">내용</option>
-													<option value="all">제목+내용</option>
+													<option value="제목" selected="">제목</option>
+													<option value="내용">내용</option>
+													<option value="제목내용">제목+내용</option>
+													<option value="아이디">아이디</option>
 												</select>
 											</div>
 										</div>

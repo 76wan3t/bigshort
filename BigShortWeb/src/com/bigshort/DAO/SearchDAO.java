@@ -32,7 +32,6 @@ public class SearchDAO {
 				
 				list = sqlSession.selectList("searchTitle", cDto);
 				
-				System.out.println(cDto.getSearch());
 				
 			} catch (Exception e) {
 				

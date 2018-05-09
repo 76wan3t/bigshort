@@ -56,5 +56,41 @@
 	 	
 	 
 	 </select>
+	 
+	 
+	 <select id="searchTitle" resultType="bDto" >
+ 		
+ 		
+ 		SELECT * 
+ 		FROM (
+ 			SELECT rownum rnum,
+ 			a.*
+ 			FROM( 
+ 				SELECT * 
+ 				FROM tblboard
+ 				<![CDATA[
+ 				WHERE bno > 0 AND
+ 					]]>
+ 	<choose>
+    	<when test="select.equals('제목')">
+ 				 title LIKE '%'||#{search}||'%'
+ 		</when>
+ 		<when test="select.equals('내용')">
+ 				 content LIKE '%'||#{search}||'%'
+ 		</when>
+ 		<when test="select.equals('제목내용')">
+ 				 content LIKE '%'||#{search}||'%' OR title LIKE '%'||#{search}||'%'
+ 		</when>
+ 		<when test="select.equals('아이디')">
+ 				 writer = #{search}
+ 		</when>
+ 	</choose>
+ 				ORDER BY bno desc
+ 				) a
+ 		)
+ 		WHERE rnum BETWEEN #{pageStart} AND #{perPageNum}
+ 
+ 		
+ 	</select>
   
 </mapper>
