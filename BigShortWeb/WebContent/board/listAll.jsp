@@ -318,6 +318,12 @@
 				
 				} 
 		});
+		
+		$(".btn_srch").on("click", function(){
+			
+		 	$("#fsearch").submit();
+		 	
+		});
 	
 	});
 </script>
@@ -385,7 +391,7 @@
 				
 				<c:choose>
 					<c:when test="${today2 == regdate2}">
-					<fmt:formatDate pattern="yyyy-MM-dd-HH:mm" value="${bDto.regdate}"/>
+					<fmt:formatDate pattern="HH:mm" value="${bDto.regdate}"/>
 					</c:when>
 					<c:otherwise>
 						<fmt:formatDate pattern="yyyy-MM-dd" value="${bDto.regdate}"/>
@@ -407,7 +413,9 @@
              						 <input type="hidden" value="${sessionScope.loginUser.mid }" name="mid">
         						</form>
         						<br>
-        						<div class="text-center">
+        						
+        		<c:if test="${flag eq '0' }">
+        			<div class="text-center">
 						<ul class = "pagination">
 							<c:if test="${pageMaker.prev}">
 							<li>
@@ -432,11 +440,41 @@
 						</ul>
 					
 				</div>
+			</c:if>
+			
+			<c:if test="${flag eq '1' }">
+        			<div class="text-center">
+						<ul class = "pagination">
+							<c:if test="${pageMaker.prev}">
+							<li>
+								<a href="boardlist.bizpoll?page=${pageMaker.startPage - 1}">&laquo;</a>
+							</li>
+							</c:if>
+							
+							<!--c아웃은 버튼을 눌렀을때 호버 상태가 되어있게 해주는것  -->
+							<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+								<li <c:out value="${pageMaker.criDto.page == idx? 'class=active':''}"/>>
+									<a href="boardlist.bizpoll?page=${idx}&sfl=${sfl}&stx=${stx}">${idx}</a>
+								</li>							
+							</c:forEach>
+							
+							
+							
+							<c:if test="${pageMaker.next}">
+							<li>
+								<a href="boardlist.bizpoll?page=${pageMaker.endPage + 1}">&raquo;</a>
+							</li>
+							</c:if>
+						</ul>
+					
+				</div>
+			</c:if>
         					<br>	
+        					<form name="fsearch" id ="fsearch" action="search.bigshort" method="get">
         						<div class="form_group" style="width:530px;">
 										<div class="form_field">
 											<div class="sel_box">
-												<select id="search" name="search">
+												<select id="sfl" name="sfl">
 													<option value="subject" selected="">제목</option>
 													<option value="content">내용</option>
 													<option value="all">제목+내용</option>
@@ -445,7 +483,7 @@
 										</div>
 										<div class="form_field">
 											<div class="form_item">
-												<input type="text" id="conditionTemp" name="conditionTemp" class="i_text" value="">
+												<input type="text" id="stx" name="stx" class="i_text" value="">
 												<input type="hidden" id="condition" name="condition" class="i_text" value="">
 											</div>
 										</div>
@@ -453,6 +491,7 @@
 											<a href="#" class="btn btn_srch"><span class="btn_txt">검색</span></a>
 										</div>
 									</div>
+								</form>
         						
         	
         						
