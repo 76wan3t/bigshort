@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 
 import com.bigshort.mybatis.SqlMapConfig;
+import com.bigshort.DTO.CriteriaDTO;
 import com.bigshort.DTO.BoardDTO;
 
 public class BoardDAO {
@@ -23,7 +24,39 @@ public class BoardDAO {
 					return instance;
 				}
 
+				public List<BoardDTO> listAll(CriteriaDTO criDto) {
+					
+					sqlSession = sqlSessionFactory.openSession();
+					
+					List<BoardDTO> list = null;
 				
+					
+					try {
+						
+						list = sqlSession.selectList("listCriteria", criDto);
+						
+						for (BoardDTO boardDTO : list) {
+							System.out.print(boardDTO.getBno()+" , ");
+							System.out.print(boardDTO.getTitle()+" , ");
+							System.out.print(boardDTO.getWriter()+" , ");
+							System.out.print(boardDTO.getRegdate()+" , ");
+							System.out.print(boardDTO.getViewcnt()+" , ");
+							System.out.println();
+							
+						}
+						
+						
+					} catch (Exception e) {
+						
+						e.printStackTrace();
+						
+					}finally {
+						
+						sqlSession.close();
+						
+					}
+					return list;
+				}
 				
 				public int insertBoard(BoardDTO bDto) {
 					
@@ -132,4 +165,30 @@ public class BoardDAO {
 					}
 					return rusult;
 				}
+					
+					public int totalCount(CriteriaDTO criDto) {
+						
+						sqlSession = sqlSessionFactory.openSession();
+						
+						
+						int result = 0;
+						
+						try {
+							
+							result = sqlSession.selectOne("countPaging",criDto);
+							
+							
+						} catch (Exception e) {
+							
+							e.printStackTrace();
+							
+						}finally {
+							
+							sqlSession.close();
+							
+						}
+						
+						return result;
+						
+					}
 }

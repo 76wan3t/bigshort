@@ -42,7 +42,7 @@ $(document).ready(function() {
 <body>
 	<div>
 		<div class="container">
-	      <form id ="insert" name="insert" action="../boardinsertsave.bigshort" method="post" enctype="multipart/form-data" >
+	      <form id ="insert" name="insert" action="boardinsertsave.bigshort" method="post" enctype="multipart/form-data" >
 			<table class="table table-bordered">
 			
 			   <thead>

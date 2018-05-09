@@ -349,6 +349,7 @@
 									<input type="hidden" id="pageNo" name="pageNo" value="1">
 									
 								</form>
+
 								<p class="srch_result">게시글수:<span>1</span>건</p>
 								<table class="tbl_lst">
 									<colgroup>
@@ -367,27 +368,20 @@
 										</tr>
 									</thead>
 									<tbody>
-									<c:forEach items="${boardlist}" var="bDto">
+								<c:forEach items="${boardlist}" var="bDto">
+								<fmt:formatDate value="${today}" pattern="yyyy-MM-dd" var="today2"/>
+								<fmt:formatDate value="${bDto.regdate}" pattern="yyyy-MM-dd" var="regdate2"/>
 			<tr>
 				<td>${bDto.bno}</td>
-				<td><a href="boarddetail.bizpoll?bno=${bDto.bno}">
-				<!-- 답글 들여쓰기  -->
-				<c:forEach var = "i" begin = "1" end = "${bDto.re_level}">
-				&nbsp;&nbsp;
-				</c:forEach>
-				${bDto.title} </a></td>
+				<td><a href="boarddetail.bizpoll?bno=${bDto.bno}">${bDto.title} </a></td>
 			
-			<c:if test="${bDto.replycnt ne 0}">
+<%-- 			<c:if test="${bDto.replycnt ne 0}">
 				[${bDto.replycnt}"]
-			</c:if>
+			</c:if> --%>
 				
 				
 				<td>${bDto.writer}</td>
 				<td class="text_center">
-				
-				
-				<fmt:formatDate value="${today}" pattern="yyyy-MM-dd" var="today2"/>
-				<fmt:formatDate value="${bDto.regdate}" pattern="yyyy-MM-dd" var="regdate2"/>
 				
 				<c:choose>
 					<c:when test="${today2 == regdate2}">
@@ -405,8 +399,7 @@
 				<td>${bDto.viewcnt}</td>
 			</tr>
 		</c:forEach>
-											
-									</tbody>
+	</tbody>
 								</table>
 								<br>
 							<form id="insert" name="insert" action="/BigShortWeb/boardInsertView.bigshort"  method="post">

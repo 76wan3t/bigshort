@@ -6,6 +6,24 @@
 
 <mapper namespace="com/bigshort/mybatis/BoardMapper.xml">
 
+<select id="listCriteria" resultType="bDto">
+ 	
+ 		SELECT * 
+ 		FROM (
+ 			SELECT rownum rnum,
+ 			a.*
+ 			FROM( 
+ 				SELECT * 
+ 				FROM tblboard
+ 				<![CDATA[
+ 				WHERE bno > 0 ORDER BY bno DESC
+ 				]]>
+ 				) a
+ 		)
+ 		WHERE rnum BETWEEN #{pageStart} AND #{perPageNum}
+ 	
+ </select>
+
  	<insert id="insertBoard" >
   	
 	  		INSERT INTO tblboard (bno, title, content, writer, filename, filesize) 
@@ -25,5 +43,18 @@
 	  		WHERE bno = #{bno}
 	  		
 	 </update>
+	 
+	  <!-- <![CDATA[]]> 쓰는 이유는 ">" 를 텍스트 파일로 인식하는 것을 방지 하기 위해서 사용 한다.  -->
+	 <select id="countPaging" resultType="int">
+	 
+	 		SELECT count(bno)
+	 		FROM tblboard
+	 		
+	 	<![CDATA[
+	 		WHERE bno > 0 
+	 	]]>
+	 	
+	 
+	 </select>
   
 </mapper>
