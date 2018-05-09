@@ -123,7 +123,7 @@ public class BigshortFrontController extends HttpServlet {
 			}else if(command.equals("/meminsert.bigshort")) { // 수정 누르면 타는 액션
 				action = new MemberInsertAction();
 				forward = action.excute(request, respnse);
-			}else if(command.equals("/boardbody.bigshort")) {
+			}else if(command.equals("/boardbody.bigshort")) { // 상세 페이지 타는 액션
 				action = new BoardBodyAction();
 				forward = action.excute(request, respnse); 
 				

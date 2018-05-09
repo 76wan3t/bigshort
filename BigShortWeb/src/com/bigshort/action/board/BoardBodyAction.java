@@ -36,6 +36,7 @@ public class BoardBodyAction implements Action{
 		
 		
 		//등록된 게시글을 본문에 출력하기
+		//
 		BoardDAO bDao = BoardDAO.getInstance();
 		list = bDao.bodylist(num);
 		list2 = bDao.bodyNextBody(num);

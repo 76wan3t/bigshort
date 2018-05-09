@@ -89,7 +89,7 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
  .comment_write .write_append .wrap_btn{float:right;}
  .comment_write .write_append .btn_default{width:56px;height:30px;margin-left:5px; border:1px solid #bbb;border-radius:32px; line-height:28px;color:#666;}
  .brunch_comment ._mention_list{overflow:hidden; overflow-y:auto; position:absolute; width:238px; max-height:334px; border:1px solid #d9d9d9;background-color:#fff;z-index:11;}
- 
+ /* 미완성  */
  </style>
  </head>
  <body>

@@ -377,10 +377,10 @@
 								<c:forEach items="${boardlist}" var="bDto">
 								<fmt:formatDate value="${today}" pattern="yyyy-MM-dd" var="today2"/>
 								<fmt:formatDate value="${bDto.regdate}" pattern="yyyy-MM-dd" var="regdate2"/>
-			<tr>
+			<tr><!-- 상세페이지 이동  -->
 				<td>${bDto.bno}</td>
 				<td><a href="boardbody.bigshort?bno=${bDto.bno}">${bDto.title} </a></td>
-			
+				
 <%-- 			<c:if test="${bDto.replycnt ne 0}">
 				[${bDto.replycnt}"]
 			</c:if> --%>
