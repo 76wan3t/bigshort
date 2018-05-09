@@ -101,6 +101,11 @@
 			mname.css("display","block").css("margin-bottom","0");
 			$("#nameck").css("display","block").css("margin-left","20px");
 			return false;
+		}else if($.isNumeric(name) == true){
+			mname.focus();
+			mname.css("display","block").css("margin-bottom","0");
+			$("#nameck").text("한글만 입력해주세요").css("display","block").css("margin-left","20px");
+			return false;
 		}else{
 			$("#nameck").css("display","none");
 			mphone.focus();
@@ -153,9 +158,7 @@
 		
 	/* 사업자정보 */
 		/* brn */
-		
-		/* sname */
-		
+		/* sname 상호명 */
 		/* sphone */
 		$("#joinfrm").submit();
 	});
