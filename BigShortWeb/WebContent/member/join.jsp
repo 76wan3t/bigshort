@@ -11,6 +11,47 @@
 <title>Bigshort_join</title>
 <link rel="stylesheet" type="text/css" href="/BigShortWeb/css/join.css?var=1"/>
 <script type="text/javascript">
+	/* blur했을 경우 */
+	$(document).ready(function(){
+		var mid = $("#id");
+
+		/* id중복체크 ajax */
+		mid.blur(function(){
+			var id = $(this).val();
+			if(id == ""){
+				mid.focus();
+				mid.css("display","block").css("margin-bottom","0");
+				$("#idck").css("display","block");
+			}else if(id != ""){
+				$("#idck").css("display","none");
+				$.ajax({
+					url:"memajax.bigshort",
+					type:"POST",
+					dataType:"json",
+					data:"id="+id,
+					success:function(data){
+						if(data.flag == "0"){
+							mid.css("display","block").css("margin-bottom","0");
+							$("#idck").text("중복된 ID입니다.").css("display","block").css("color","red");
+							$("#idckval").val("0")
+						}else{
+							mid.css("display","block").css("margin-bottom","0")
+							$("#idck").text("멋진 ID입니다.").css("display","block").css("color","green");
+							$("#idckval").val("1")
+						}
+					},
+					error: function(){
+						alert("system error");
+					}
+				});
+			}
+		});
+		
+		
+	});
+	
+	
+	/* 회원가입 버튼을 눌렀을 경우 */
 	$(document).on("click","#frm_submit",function(){
 		var mid = $("#id"),
 		 	mpw = $("#pass"),
@@ -54,12 +95,12 @@
 		if(id == ""){
 			mid.focus();
 			mid.css("display","block").css("margin-bottom","0");
-			$("#idck").css("display","block").css("margin-left","20px");
+			$("#idck").css("display","block");
 			return false;
 		}else if(!regId.test(id)){
 			mid.select();
 			mid.css("display","block").css("margin-bottom","0");
-			$("#idck").text("4~20자 이내 숫자,영문만 사용하세요.").css("display","block").css("margin-left","20px");
+			$("#idck").text("4~20자 이내 숫자,영문만 사용하세요.").css("display","block");
 			return false;
 		}else{
 			mpw.focus();
@@ -71,23 +112,23 @@
 		if(pw == ""){
 			mpw.focus();
 			mpw.css("display","block").css("margin-bottom","0");
-			$("#pwck").css("display","block").css("margin-left","20px");
+			$("#pwck").css("display","block");
 			return false;
 		}else if(!regPass.test(pw)){
 			mpw.select();
 			mpw.css("display","block").css("margin-bottom","0");
-			$("#pwck").text("6~20자 이내 숫자,영문만 사용하세요.").css("display","block").css("margin-left","20px");
+			$("#pwck").text("6~20자 이내 숫자,영문만 사용하세요.").css("display","block");
 			return false;
 		}else if(pw2 == ""){
 			mpw2.focus();
 			$("#pwck").css("display","none");
 			mpw2.css("display","block").css("margin-bottom","0");
-			$("#pw2ck").css("display","block").css("margin-left","20px");
+			$("#pw2ck").css("display","block");
 			return false;
 		}else if(pw != pw2){
 			mpw2.focus();
 			mpw2.css("display","block").css("margin-bottom","0");
-			$("#pw2ck").text("다시 입력해주세요.").css("display","block").css("margin-left","20px");
+			$("#pw2ck").text("다시 입력해주세요.").css("display","block");
 			return false;
 		}else{
 			mname.focus();
@@ -99,12 +140,12 @@
 		if(name == ""){
 			mname.focus();
 			mname.css("display","block").css("margin-bottom","0");
-			$("#nameck").css("display","block").css("margin-left","20px");
+			$("#nameck").css("display","block");
 			return false;
 		}else if($.isNumeric(name) == true){
 			mname.focus();
 			mname.css("display","block").css("margin-bottom","0");
-			$("#nameck").text("한글만 입력해주세요").css("display","block").css("margin-left","20px");
+			$("#nameck").text("한글만 입력해주세요").css("display","block");
 			return false;
 		}else{
 			$("#nameck").css("display","none");
@@ -116,18 +157,18 @@
 		if(phone == ""){
 			mphone.focus();
 			mphone.css("display","block").css("margin-bottom","0");
-			$("#phoneck").css("display","block").css("margin-left","20px");
+			$("#phoneck").css("display","block");
 			return false
 		}else if($.isNumeric(phone)==false){
 			mphone.focus();
             mphone.val("");
             mphone.css("display","block").css("margin-bottom","0");
-            $("#phoneck").text("숫자만 입력하세요.").css("display","block").css("margin-left","20px");
+            $("#phoneck").text("숫자만 입력하세요.").css("display","block");
             return false;
 		}else if(!regPhone.test(phone)){
 			mphone.focus();
 			mphone.css("display","block").css("margin-bottom","0");
-            $("#phoneck").text("정확한 값을 입력하세요.").css("display","block").css("margin-left","20px");
+            $("#phoneck").text("정확한 값을 입력하세요.").css("display","block");
             return false;
 		}else{
 			mmail.focus();
@@ -140,61 +181,34 @@
 		if(mail == ""){
 			mmail.focus();
 			mmail.css("display","block").css("margin-bottom","0");
-            $("#mailck").text("정확한 값을 입력하세요.").css("display","block").css("margin-left","20px");
+            $("#mailck").text("정확한 값을 입력하세요.").css("display","block");
 			return false;
 		}else if(mail2 == ""){
 			mmail2.focus();
 			mmail.css("display","block").css("margin-bottom","0");
-            $("#mailck").text("정확한 값을 입력하세요.").css("display","block").css("margin-left","20px");
+            $("#mailck").text("정확한 값을 입력하세요.").css("display","block");
 			return false;
 		}else if(!regEmail.test(allmail)){
 			mmail.focus();
 			mmail.css("display","block").css("margin-bottom","0");
-            $("#mailck").text("정확한 값을 입력하세요.").css("display","block").css("margin-left","20px");
+            $("#mailck").text("정확한 값을 입력하세요.").css("display","block");
 			return false;
 		}else{
 			$("#mailck").css("display","none");
 		}
 		
-	/* 사업자정보 */
+		/* 사업자정보 */
 		/* brn */
+		if($.isNumeric($(".brn_input"))==false){
+			$(".brn_input").css("margin-bottom","0");
+			$("#seleck1").css("display","block").text("숫자를 입력해주세요.");
+			return false;
+		}
 		/* sname 상호명 */
 		/* sphone */
+	
 		$("#joinfrm").submit();
 	});
-	
-	/* id중복체크 ajax */
-	$(document).on("blur","#id",function(){
-		var id = $(this).val();
-		if(id == ""){
-			$("#id").focus();
-			$("#id").css("display","block").css("margin-bottom","0");
-			$("#idck").css("display","block").css("margin-left","20px");
-		}else if(id != ""){
-			$("#idck").css("display","none");
-			$.ajax({
-				url:"memajax.bigshort",
-				type:"POST",
-				dataType:"json",
-				data:"id="+id,
-				success:function(data){
-					if(data.flag == "0"){
-						$("#id").css("display","block").css("margin-bottom","0");
-						$("#idck").text("중복된 ID입니다.").css("display","block").css("margin-left","20px").css("color","red");
-						$("#idckval").val("0")
-					}else{
-						$("#id").css("display","block").css("margin-bottom","0")
-						$("#idck").text("멋진 ID입니다.").css("display","block").css("margin-left","20px").css("color","green");
-						$("#idckval").val("1")
-					}
-				},
-				error: function(){
-					alert("system error");
-				}
-			});
-		}
-	});
-	
 	
 	/* mail select */
 	$(document).on("change","#selemail",function(){
@@ -293,6 +307,7 @@
 					- <input class="info_input brn_input" id="brn2" name="brn2" placeholder="**" maxlength="2"> 
 					- <input class="info_input brn_input" id="brn3" name="brn3" placeholder="*****" maxlength="5">
 				</span>
+				<span id="seleck1" class="ck"></span>
 			</div>
 		<!-- 중개소 명 -->
 			<div class="info selinfo" id="sname_div">
@@ -311,6 +326,7 @@
 					</select>
 					<input class="info_input" type="text" id="sphone" name="sphone" placeholder="중개소 전화번호" maxlength="11">
 				</span>
+				<span id="seleck2" class="ck"></span>
 			</div>
 		<!-- 중개소 주소 다음 api 활용 -->
 			<div class="info_input" id="address_wrap">
@@ -364,7 +380,9 @@
 						</script>
 			</div>
 		</div>
+	
 	</div>
+	
 	<div id="submit_wrap"><a href="#" id="frm_submit" class="join_btn">회원가입</a></div>	
 </form>
 </body>

@@ -7,12 +7,13 @@ body{
 span.ck{
 	color: red;
 	font-size: 13px;
+	margin-left:20px;
 	display: none; 
 }
 /* 전체를 감싸는 div */
 #join_wrap{
 	width: 500px;
-	margin: 100px auto 15px;
+	margin: 100px auto 20px;
 }
 /* 각 영역을 나누고 있는 div? */
 .info_wrap{
@@ -46,8 +47,13 @@ span.ck{
 /* 사업자 번호 */
 .brn_input{
 	width: 20%;
+	height: 33px;
+	display: inline-block;
 	border: 1px solid gray;
 	text-align: center;
+}
+#brn_div{
+	height: 60px;
 }
 /* 중개소 전화번호 */
 #sphone{
@@ -70,6 +76,10 @@ select{
 }
 .addr_input{
 	width: 100%;	
+}
+.addr_input:last-child{
+	display: block;	
+	margin-bottom: 20px;
 }
 #addr_button{
 	height: 33px;
