@@ -9,10 +9,26 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.bigshort.action.*;
-import com.bigshort.action.board.*;
-import com.bigshort.action.member.*;
-import com.bigshort.action.zone.*;
+import com.bigshort.action.Action;
+import com.bigshort.action.ActionForward;
+import com.bigshort.action.IndexAction;
+import com.bigshort.action.LoginCkAction;
+import com.bigshort.action.LoginOutAction;
+import com.bigshort.action.board.BoardBodyAction;
+import com.bigshort.action.board.BoardInsertSaveAction;
+import com.bigshort.action.board.BoardInsertViewAction;
+import com.bigshort.action.board.BoardUpdateAction;
+import com.bigshort.action.board.ListAllAction;
+import com.bigshort.action.board.ModifyViewAction;
+import com.bigshort.action.member.ConstractAction;
+import com.bigshort.action.member.JoinAction;
+import com.bigshort.action.member.MemberAjaxAction;
+import com.bigshort.action.member.MemberInsertAction;
+import com.bigshort.action.zone.BukGuDetailAction;
+import com.bigshort.action.zone.DongGuDetailAction;
+import com.bigshort.action.zone.GwangSanDetailAction;
+import com.bigshort.action.zone.NamGuDetailAction;
+import com.bigshort.action.zone.SeoGuDetailAction;
 
 
 /**
@@ -107,6 +123,11 @@ public class BigshortFrontController extends HttpServlet {
 			}else if(command.equals("/meminsert.bigshort")) { // 수정 누르면 타는 액션
 				action = new MemberInsertAction();
 				forward = action.excute(request, respnse);
+			}else if(command.equals("/boardbody.bigshort")) {
+				action = new BoardBodyAction();
+				forward = action.excute(request, respnse); 
+				
+				
 			}
 			
 			

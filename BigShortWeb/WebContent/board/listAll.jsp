@@ -356,7 +356,7 @@
 									
 								</form>
 
-								<p class="srch_result">게시글수:<span>${bodycount }</span>건</p>
+								<p class="srch_result">게시글수:<span>${bodycount}</span>건</p>
 								<table class="tbl_lst">
 									<colgroup>
 										<col width="100px">
@@ -379,7 +379,7 @@
 								<fmt:formatDate value="${bDto.regdate}" pattern="yyyy-MM-dd" var="regdate2"/>
 			<tr>
 				<td>${bDto.bno}</td>
-				<td><a href="boarddetail.bizpoll?bno=${bDto.bno}">${bDto.title} </a></td>
+				<td><a href="boardbody.bigshort?bno=${bDto.bno}">${bDto.title} </a></td>
 			
 <%-- 			<c:if test="${bDto.replycnt ne 0}">
 				[${bDto.replycnt}"]

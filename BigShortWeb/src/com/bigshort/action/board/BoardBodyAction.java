@@ -23,7 +23,7 @@ public class BoardBodyAction implements Action{
 		
 		List<BoardDTO> list = null;
 		List<NextPreDTO> list2 = null;
-		String url = "board/substance.jsp";
+		String url = "board/read.jsp";
 		
 		String bno = request.getParameter("bno");
 		

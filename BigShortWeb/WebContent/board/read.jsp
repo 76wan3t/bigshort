@@ -105,32 +105,36 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
          <tbody>
              <tr>
                  <th scope="row">글 번호</th>
-                 <td>${map.IDX }</td>
+                 <td>${bDto.bno}</td>
+                 <c:forEach items="${bodylist}" var="bDto">
                  <th scope="row">조회수</th>
-                 <td>${map.HIT_CNT }</td>
+                 <td>${bDto.viewcnt}</td>
+                 </c:forEach>
              </tr>
              <tr>
                  <th scope="row">작성자</th>
-                 <td>${boardview.writer}</td>
+                 <td>${bDto.writer}</td>
                  <th scope="row">작성시간</th>
-                 <td>${bDto.regdate}</td>
+                 <td><fmt:formatDate
+					pattern="yyyy-MM-dd HH:mm" value="${bDto.regdate}" /></td>
              </tr>
              <tr>
                  <th scope="row">제목</th>
-                 <td colspan="3">${boardview.title}</td>
+                 <td colspan="3">${bDto.title}</td>
              </tr>
              <tr>
                  <td colspan="4">${boardview.content}</td>
              </tr>
-             <tr>
-                 <th scope="row">첨부파일</th>
+             <tr><c:if test="${bDto.filename != '-'}">
+                 <th scope="row">첨부파일(내려받는 횟수 : ${bDto.downloadcnt } )</th>
                  <td colspan="3">
-                     <c:forEach var="row" items="${list }">
-                         <input type="hidden" id="IDX" value="${row.IDX }">
-                         <a href="download.bizpoll?bno=${boardview.bno}" name="file">${boardview.filename}</a>
-                         ${boardview.filename}kb)
-                     </c:forEach>
+                     
+                         <input type="file" id="IDX" style="display:none">
+                         <a href="download.bizpoll?bno=${bDto.bno}"><i class="fa fa-save"></i></a>
+						 <a href="download.bizpoll?bno=${bDto.bno}">${bDto.filename }</a>
+                    
                  </td>
+                  </c:if>
              </tr>
          </tbody>
      </table>
@@ -142,7 +146,7 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
             <a name="comments" class="screen_out">댓글</a>
 
 			
-            <div class="comment_head"><strong class="tit_comment">댓글<span class="txt_num">${replyview.size()}</span></strong>
+            <div class="comment_head"><strong class="tit_comment">댓글<span class="txt_num"> ${count}</span></strong>
 </div>
             <div class="comment_content">
                 <div class="list_comment_more" style="display: none;">
@@ -220,36 +224,250 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
      
      
  <script type="text/javascript">
-         $(document).ready(function(){
-             $("#list").on("click", function(e){ //목록으로 버튼
-                 e.preventDefault();
-                 fn_openBoardList();
-             });
-              
-             $("#update").on("click", function(e){ //수정하기 버튼
-                 e.preventDefault();
-                 fn_openBoardUpdate();
-             });
-              
-             $("a[name='file']").on("click", function(e){ //파일 이름
-                 e.preventDefault();
-             });
-         });
-          
-         function fn_openBoardList(){
-             var comSubmit = new ComSubmit();
-             comSubmit.setUrl("<c:url value='/sample/openBoardList.do' />");
-             comSubmit.submit();
-         }
-          
-         function fn_openBoardUpdate(){
-             var idx = "${map.IDX}";
-             var comSubmit = new ComSubmit();
-             comSubmit.setUrl("<c:url value='/sample/openBoardUpdate.do' />");
-             comSubmit.addParam("IDX", idx);
-             comSubmit.submit();
-         }
- 
-     </script>
+
+function comment_list(){
+	
+	var bno = $("#hidden").val();
+	
+	$.ajax({
+		type : "POST",
+		url : "commentlist.bizpoll",
+		data : "bno=" + bno,
+		success : function(result) {
+
+			$("#commentlist").html(result);
+
+		}
+	});
+} 
+	
+	
+	function sweet_count(){
+		var bno = $("#hidden").val();
+		
+		$.ajax({
+			type : "POST",
+			url : "sweetcount.bizpoll",
+			data : "bno=" + bno,
+			success : function(result) {
+
+				$("#cafe-menu").html(result);
+
+			}
+		});
+		
+	}
+
+
+	$(document).ready(function(){
+		
+		comment_list();
+		sweet_count();
+		
+		
+		
+		var comment2 = $("#comment2").val();
+		
+		if(comment2 == 'ture' ){
+			
+			$('html, body').animate({
+				
+				scrollTop: $('#commentlist').offset().top
+				
+			});
+		
+			
+		}
+		
+		$("#answer_bnt").on("click", function(){
+			
+			
+			var bno = $("#hidden").val();
+			var dd = "<%=session.getAttribute("loginUser")%>"
+			
+			
+			
+			if (dd != "null") {
+				
+				location.href="answer.bizpoll?bno="+bno;
+
+			} else {
+				
+				alert("로그인 하셔야 답글을 달 수 있습니다.")
+				$("#id01").css("display", "block");
+
+			}
+		});
+		
+	
+	
+		// 게시글 등록 버튼을 클릭하면 이벤트 처리
+		 $("#btn_submit").on("click", function() {
+			
+			var dd = "<%=session.getAttribute("loginUser")%>"
+	
+				if (dd != "null") {
+	
+					$("#insert").submit();
+	
+				} else {
+					alert("로그인 해주세요!!!!!!")
+					$("#id01").css("display", "block");
+	
+				}
+			});
+		
+		
+			$("#list").on("click", function(){
+				
+				$("#boardlist").submit();
+			});
+	
+	
+	});
+
+		// 댓글 등록하기 위한 이벤트
+		$(document).on("click", "#_submitCmt",function() {
+			
+			
+		var bno = $("#bno").val();
+		var mid = $("#mid2").val();
+		var comment = $("#comment_text").val();
+			
+			 $.ajax({
+				url : "replyadd.bizpoll",
+				type : "POST",
+				dataType : "json",
+				data : "bno=" + bno +"&mid=" + mid +"&comment_text=" + comment,
+				success : function(data) {
+
+					$("#comment_text").val("");// 댓글 등록후 내용 초기화 하는 코드
+					comment_list(); // 댓글을 다시 불러드리기 위한 호출 함수
+
+				},
+
+				error : function() {
+					alert("System Error!!!");
+
+				}
+			}); 
+			return false; // false를 하면 등록할때 스크롤이 맨위로 올라가지 않는다.
+
+		});
+	
+	
+	
+		$(document).on("click", ".delUrl2", function() {
+			
+				var Del = confirm("삭제 하시겠습니까?") // 클릭시 삭제할 것인지 물어보는 코드
+
+				if (Del == true) {
+
+					var rno = $(this).attr("data_num"); // 해당 댓글 값을 가져오는 코드
+
+					 $.ajax({
+						url : "replydel.bizpoll",
+						type : "POST",
+						dataType : "json",
+						data : "rno=" + rno,
+						success : function(data) {
+
+							comment_list(); // 삭제 완료하면 댓글을 다시 불러드리기 위한 함수 호출
+
+						},
+
+						error : function() {
+							alert("System Error!!!");
+
+						}
+					}); 
+					return false; // 리턴 false를 안하게 되면 스크롤이 맨위로 향하게 됨 그걸 방지하기 위함
+
+				} else {
+
+					alert("취소 되었습니다.");
+					return false;
+
+				}
+
+			}); 
+		
+		$(document).on("click", "#likeItMemberBtn", function() {
+			
+			var bno = $("#hidden").val();
+			var id = "<%=session.getAttribute("loginUser")%>";4
+			var mid = $("#mid2").val();
+			
+			if (id != "null") {
+
+				$.ajax({
+					
+					url : "sweetadd.bizpoll",
+					type : "POST",
+					dataType : "json",
+					data : "bno=" + bno +"&mid=" + mid,
+					success : function(data) {
+
+						sweet_count(); // 좋아요를 누르면 올라가고 다시 생성 되게 한다.
+
+					},
+
+					error : function() {
+						alert("System Error!!!");
+
+					}
+				});
+				
+				return false;
+
+			} else {
+				
+				alert("로그인을 하셔야 '좋아요'를 올리수 있습니다.");
+				$("#id01").css("display", "block");
+
+			}
+			
+			
+			
+			
+		});
+		
+		
+		$(document).on("click", "#bodydel", function() {
+			
+			var Del = confirm("삭제 하시겠습니까?") // 클릭시 삭제할 것인지 물어보는 코드
+
+			if (Del == true) {
+
+				var bno = $("#hidden").val(); 
+
+				 $.ajax({
+					url : "modifydelete.bizpoll",
+					type : "POST",
+					dataType : "json",
+					data : "bno=" + bno,
+					success : function(data) {
+
+						location.href="boardlist.bizpoll";
+						
+
+					},
+
+					error : function() {
+						alert("System Error!!!");
+
+					}
+				}); 
+
+			} else {
+
+				alert("취소 되었습니다.");
+				return false;
+
+			}
+
+		}); 
+		
+</script>
  </body>
  </html>
