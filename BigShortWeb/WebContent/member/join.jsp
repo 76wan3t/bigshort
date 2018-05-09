@@ -50,7 +50,7 @@
 		/* id/pw/pw2/name/phone/mail */
 
 		/* idck */
-		var regId = /^.*(?=.{4,20})(?=.*[0-9])(?=.*[a-zA-Z]).*$/;
+		var regId = /^[a-zA-Z0-9]{4,12}$/;
 		if(id == ""){
 			mid.focus();
 			mid.css("display","block").css("margin-bottom","0");
@@ -157,7 +157,7 @@
 		/* sname */
 		
 		/* sphone */
-		
+		$("#joinfrm").submit();
 	});
 	
 	/* id중복체크 ajax */
@@ -198,8 +198,9 @@
 		var selemail = $("#selemail").val();
 		if(selemail == "self"){
 			$("#mail2").focus();
+			$("#mail2").val("");
 		}else{
-			$("#mail2").val(selemail).css("text-align","right");
+			$("#mail2").val(selemail).css("text-align","left").css("padding-left","5px");
 		}
 	});
 	
@@ -217,13 +218,13 @@
 </script>
 </head>
 <body>
-<form action="" method="POST" id="joinfrm" name="joinfrm">
+<form action="meminsert.bigshort" method="POST" id="joinfrm" name="joinfrm">
 	<div id="join_wrap">
 		<div class="info_wrap" id="info_wrap1">
 		<!-- 아이디 (필수) -->
 			<div class="info" id="id_div">
 				<span>
-					<input class="info_input " type="text" id="id" name="id" placeholder="아이디">
+					<input class="info_input " type="text" id="id" name="id" placeholder="아이디(필수)">
 					<input type="hidden" id="idckval" name="idckval" value="0">
 				</span>
 				<span id="idck" class="ck">필수정보 입니다.</span>
@@ -231,14 +232,14 @@
 		<!-- 비번 (필수) -->
 			<div class="info" id="pw_div">	
 				<span>
-					<input class="info_input" type="password" id="pass" name="pass" placeholder="비밀번호">
+					<input class="info_input" type="password" id="pass" name="pass" placeholder="비밀번호(필수)">
 				</span>
 				<span id="pwck" class="ck">필수정보 입니다.</span>
 			</div>
 		<!-- 비번 확인 (필수) -->
 			<div class="info" id="pw2_div">
 				<span>
-					<input class="info_input" type="password" id="pass2" name="pass2" placeholder="비밀번호 재확인">
+					<input class="info_input" type="password" id="pass2" name="pass2" placeholder="비밀번호 재확인(필수)">
 				</span>
 				<span id="pw2ck" class="ck">입력해주세요.</span>
 			</div>
@@ -248,21 +249,21 @@
 		<!-- 이름	 (필수) -->
 			<div class="info" id="name_div">
 				<span>
-					<input class="info_input" type="text" id="name" name="name" maxlength="4" placeholder="이름">
+					<input class="info_input" type="text" id="name" name="name" maxlength="4" placeholder="이름(필수)">
 				</span>
 				<span id="nameck" class="ck">필수정보 입니다.</span>
 			</div>
 		<!-- 전화번호 (필수) -->
 			<div class="info" id="phone_div">
 				<span>
-					<input class="info_input" type="text" id="phone" name="phone" maxlength="11" placeholder="핸드폰 번호 (숫자만 입력)">
+					<input class="info_input" type="text" id="phone" name="phone" maxlength="11" placeholder="핸드폰 번호 (숫자만 입력)(필수)">
 				</span>
 				<span id="phoneck" class="ck">필수정보 입니다.</span>
 			</div>
 		<!-- 이메일 (필수) -->	
 			<div id="mail_div" class="info">
 				<span class="mail_span">
-					<input class="info_input mail_input" type="text" id="mail" name="mail" placeholder="이메일">
+					<input class="info_input mail_input" type="text" id="mail" name="mail" placeholder="이메일(필수)">
 					@<input class="info_input mail_input" type="text" id="mail2" name="mail2">
 				</span>
 				<span>
@@ -283,15 +284,15 @@
 		<!-- 사업자 등록 번호 ***-**-***** 10자리 형식 --> 
 			<div id="brn_div" class="info selinfo">
 				<span>
-					<input class="info_input brn_input" id="brn1" name="brn" placeholder="사업자 번호" maxlength="3"> 
-					- <input class="info_input brn_input" id="brn2" placeholder="**" maxlength="2"> 
-					- <input class="info_input brn_input" id="brn3" placeholder="*****" maxlength="5">
+					<input class="info_input brn_input" id="brn1" name="brn1" placeholder="사업자 번호" maxlength="3"> 
+					- <input class="info_input brn_input" id="brn2" name="brn2" placeholder="**" maxlength="2"> 
+					- <input class="info_input brn_input" id="brn3" name="brn3" placeholder="*****" maxlength="5">
 				</span>
 			</div>
 		<!-- 중개소 명 -->
 			<div class="info selinfo" id="sname_div">
 				<span>
-					<input class="info_input" type="text"  id="sname" name="sname" placeholder="중개소 이름">
+					<input class="info_input" type="text"  id="sname" name="sname" placeholder="중개소 이름 ">
 				</span>
 			</div>
 		<!-- 중개소 전화번호 -->
@@ -308,10 +309,10 @@
 			</div>
 		<!-- 중개소 주소 다음 api 활용 -->
 			<div class="info_input" id="address_wrap">
-				<input type="text" class="join" id="postcode" placeholder="우편번호">
+				<input type="text" class="join" id="postcode" name="postcode" placeholder="우편번호">
 						<input type="button" id="addr_button" class="join_btn" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-						<input type="text" class="join addr_input" id="address" placeholder="주소">
-						<input type="text" class="join addr_input" id="address2" placeholder="상세주소">
+						<input type="text" class="join addr_input" id="address" name="address" placeholder="주소">
+						<input type="text" class="join addr_input" id="address2" name="address2" placeholder="상세주소">
 						<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 						<script>
 						    function sample6_execDaumPostcode() {

@@ -6,21 +6,22 @@
 
 <mapper namespace="com/bigshort/mybatis/MemberMapper.xml">
 
- <select id="memlogin" resultType="mDto" parameterType="String">
-
-  			SELECT * FROM member WHERE mid = #{mid} and mpw = #{mpw}
-  			
-  </select>
+	<select id="memlogin" resultType="mDto" parameterType="String">
+		SELECT * FROM member WHERE mid = #{mid} and mpw = #{mpw}
+	</select>
   
-  <select id="sessionLogin" resultType="mDto">
+  	<select id="sessionLogin" resultType="mDto">
+  		SELECT * FROM member WHERE mid = #{mid} AND mpw = #{mpw}
+  	</select>
   
-  			SELECT * FROM member WHERE mid = #{mid} AND mpw = #{mpw}
-  		
-  </select>
+  	<select id="memidck" resultType="mDto" parameterType="String">
+	  	SELECT mid FROM member
+	  	WHERE mid = #{memberid}
+  	</select>
   
-  <select id="memidck" resultType="mDto" parameterType="String">
-  	SELECT mid FROM member
-  	WHERE mid = #{memberid}
-  </select>
+  	<insert id="meminsert" parameterType="mDto">
+  		INSERT INTO member(mid, mpw, mname, mphone, mbisname, mbisnumber, mbisphone, mjusonum, mjuso, mjuso2, memail, memail2)
+  		VALUES(#{mid}, #{mpw}, #{mname}, #{mphone}, #{mbisname}, #{mbisnumber}, #{mbisphone}, #{mjusonum}, #{mjuso}, #{mjuso2}, #{memail}, #{memail2})
+  	</insert>
   
 </mapper>

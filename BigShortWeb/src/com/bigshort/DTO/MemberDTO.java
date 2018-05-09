@@ -9,8 +9,8 @@ public class MemberDTO {
 	private String mphone ;
 	private String mbisname;
 	private String mbisnumber;
-	private String mjusonum;
 	private String mbisphone;
+	private String mjusonum;
 	private String mjuso;
 	private String mjuso2;
 	private String memail;
@@ -18,9 +18,46 @@ public class MemberDTO {
 	private Date regdate;
 	
 	public MemberDTO(){}
+	
+	
+	public MemberDTO(String mid, String mpw, String mname, String mphone, String mbisname, String mbisnumber,
+			String mbisphone, String mjusonum, String mjuso, String mjuso2, String memail, String memail2) {
+		super();
+		this.mid = mid;
+		this.mpw = mpw;
+		this.mname = mname;
+		this.mphone = mphone;
+		this.mbisname = mbisname;
+		this.mbisnumber = mbisnumber;
+		this.mbisphone = mbisphone;
+		this.mjusonum = mjusonum;
+		this.mjuso = mjuso;
+		this.mjuso2 = mjuso2;
+		this.memail = memail;
+		this.memail2 = memail2;
+	}
 
 	public MemberDTO(String mid, String mpw, String mname, String mphone, String mbisname, String mbisnumber,
-			String mjusonum, String mbisphone, String mjuso, String mjuso2, String memail, String memail2, Date regdate) {
+			String mbisphone, String mjusonum, String mjuso, String mjuso2, String memail, String memail2,
+			Date regdate) {
+		super();
+		this.mid = mid;
+		this.mpw = mpw;
+		this.mname = mname;
+		this.mphone = mphone;
+		this.mbisname = mbisname;
+		this.mbisnumber = mbisnumber;
+		this.mbisphone = mbisphone;
+		this.mjusonum = mjusonum;
+		this.mjuso = mjuso;
+		this.mjuso2 = mjuso2;
+		this.memail = memail;
+		this.memail2 = memail2;
+		this.regdate = regdate;
+	}
+
+	public MemberDTO(String mid, String mpw, String mname, String mphone, String mbisname, String mbisnumber,
+			String mjusonum, String mjuso, String mjuso2, String memail, String memail2, Date regdate) {
 		super();
 		this.mid = mid;
 		this.mpw = mpw;
@@ -29,7 +66,6 @@ public class MemberDTO {
 		this.mbisname = mbisname;
 		this.mbisnumber = mbisnumber;
 		this.mjusonum = mjusonum;
-		this.mbisphone = mbisphone;
 		this.mjuso = mjuso;
 		this.mjuso2 = mjuso2;
 		this.memail = memail;
@@ -44,8 +80,6 @@ public class MemberDTO {
 		this.mpw = mpw;
 	}
 	
-	
-
 	public String getMbisphone() {
 		return mbisphone;
 	}
