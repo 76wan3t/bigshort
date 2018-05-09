@@ -42,12 +42,14 @@ public class ListAllAction implements Action {
 		
 		
 		pageMaker.setCriDto(criDto);
-		pageMaker.setTotalCount(bDao.totalCount(criDto)); // 게시글 전체 갯수를 찾아준다.
+		int bodycount = bDao.totalCount(criDto);
+		pageMaker.setTotalCount(bodycount); // 게시글 전체 갯수를 찾아준다.
 		
 		String flag = "0";
 		
 		request.setAttribute("pageMaker", pageMaker);
 		request.setAttribute("flag", flag);
+		request.setAttribute("bodycount", bodycount);
 		
 		//오늘 날짜를 보내준다.
 		

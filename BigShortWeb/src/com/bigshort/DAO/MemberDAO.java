@@ -98,11 +98,12 @@ public MemberDTO sessionLogin(MemberDTO mDto) {
 				String mjuso2 = memberDTO.getMjuso2();
 				String mbisname = memberDTO.getMbisname();
 				String mbisnumber = memberDTO.getMbisnumber();
+				String mbisphone = memberDTO.getMbisphone();
 				String memail = memberDTO.getMemail();
 				String memail2 = memberDTO.getMemail2();
 				Date regdate = memberDTO.getRegdate();
 				
-				mDto = new MemberDTO(mid, mpw, mname, mphone, mbisname, mbisnumber, mjusonum, mjuso, mjuso2, memail, memail2, regdate);
+				mDto = new MemberDTO(mid, mpw, mname, mphone, mbisname, mbisnumber, mbisphone, mjusonum, mjuso, mjuso2, memail, memail2, regdate);
 			
 			
 				System.out.println(" 이름 = " + mname);

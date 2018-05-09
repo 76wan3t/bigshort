@@ -350,7 +350,7 @@
 									
 								</form>
 
-								<p class="srch_result">게시글수:<span>1</span>건</p>
+								<p class="srch_result">게시글수:<span>${bodycount }</span>건</p>
 								<table class="tbl_lst">
 									<colgroup>
 										<col width="100px">

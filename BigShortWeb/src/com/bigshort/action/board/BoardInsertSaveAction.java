@@ -22,7 +22,7 @@ public class BoardInsertSaveAction implements Action {
 	public ActionForward excute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		String url = "boardlist.bigshort";
+		String url = "listAll.bigshort";
 		
 		
 		//파일 업로드 처리

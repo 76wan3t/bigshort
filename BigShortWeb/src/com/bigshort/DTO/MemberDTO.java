@@ -10,6 +10,7 @@ public class MemberDTO {
 	private String mbisname;
 	private String mbisnumber;
 	private String mjusonum;
+	private String mbisphone;
 	private String mjuso;
 	private String mjuso2;
 	private String memail;
@@ -19,7 +20,7 @@ public class MemberDTO {
 	public MemberDTO(){}
 
 	public MemberDTO(String mid, String mpw, String mname, String mphone, String mbisname, String mbisnumber,
-			String mjusonum, String mjuso, String mjuso2, String memail, String memail2, Date regdate) {
+			String mjusonum, String mbisphone, String mjuso, String mjuso2, String memail, String memail2, Date regdate) {
 		super();
 		this.mid = mid;
 		this.mpw = mpw;
@@ -28,6 +29,7 @@ public class MemberDTO {
 		this.mbisname = mbisname;
 		this.mbisnumber = mbisnumber;
 		this.mjusonum = mjusonum;
+		this.mbisphone = mbisphone;
 		this.mjuso = mjuso;
 		this.mjuso2 = mjuso2;
 		this.memail = memail;
@@ -40,6 +42,16 @@ public class MemberDTO {
 		super();
 		this.mid = mid;
 		this.mpw = mpw;
+	}
+	
+	
+
+	public String getMbisphone() {
+		return mbisphone;
+	}
+
+	public void setMbisphone(String mbisphone) {
+		this.mbisphone = mbisphone;
 	}
 
 	public String getMid() {
