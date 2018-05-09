@@ -101,6 +101,9 @@ public class BigshortFrontController extends HttpServlet {
 			}else if(command.equals("/seogudetail.bigshort")) { // 수정 누르면 타는 액션
 				action = new SeoGuDetailAction();
 				forward = action.excute(request, respnse);
+			}else if(command.equals("/memajax.bigshort")) { // 수정 누르면 타는 액션
+				action = new MemberAjaxAction();
+				forward = action.excute(request, respnse);
 			}
 			
 			

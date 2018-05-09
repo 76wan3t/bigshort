@@ -124,7 +124,26 @@ public MemberDTO sessionLogin(MemberDTO mDto) {
 		return mDto;
 	}
 
-	
+	public int memIdCheck(String memberid) {
+		sqlSession = sqlSessionFactory.openSession();
+		try {
+			List<MemberDTO> mid = sqlSession.selectList("memidck",memberid);
+			System.out.println("listSize: " + mid.size());
+			
+			if (mid.size() == 1) {
+				System.out.println("중복된 id입니다.");
+				flag = 0;
+			} else {
+				System.out.println("사용가능한 id입니다.");
+				flag = 1;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		return flag;
+	}
 
 	
 }

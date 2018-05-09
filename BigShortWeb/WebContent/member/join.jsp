@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>  
+  
 <%@ include file="../header.jsp" %>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -156,6 +159,40 @@
 		/* sphone */
 		
 	});
+	
+	/* id중복체크 ajax */
+	$(document).on("blur","#id",function(){
+		var id = $(this).val();
+		if(id == ""){
+			$("#id").focus();
+			$("#id").css("display","block").css("margin-bottom","0");
+			$("#idck").css("display","block").css("margin-left","20px");
+		}else if(id != ""){
+			$("#idck").css("display","none");
+			$.ajax({
+				url:"memajax.bigshort",
+				type:"POST",
+				dataType:"json",
+				data:"id="+id,
+				success:function(data){
+					if(data.flag == "0"){
+						$("#id").css("display","block").css("margin-bottom","0");
+						$("#idck").text("중복된 ID입니다.").css("display","block").css("margin-left","20px").css("color","red");
+						$("#idckval").val("0")
+					}else{
+						$("#id").css("display","block").css("margin-bottom","0")
+						$("#idck").text("멋진 ID입니다.").css("display","block").css("margin-left","20px").css("color","green");
+						$("#idckval").val("1")
+					}
+				},
+				error: function(){
+					alert("system error");
+				}
+			});
+		}
+	});
+	
+	
 	/* mail select */
 	$(document).on("change","#selemail",function(){
 		var selemail = $("#selemail").val();
@@ -187,6 +224,7 @@
 			<div class="info" id="id_div">
 				<span>
 					<input class="info_input " type="text" id="id" name="id" placeholder="아이디">
+					<input type="hidden" id="idckval" name="idckval" value="0">
 				</span>
 				<span id="idck" class="ck">필수정보 입니다.</span>
 			</div>
@@ -309,11 +347,11 @@
 						                }
 						
 						                // 우편번호와 주소 정보를 해당 필드에 넣는다.
-						                document.getElementById('sample6_postcode').value = data.zonecode; //5자리 새우편번호 사용
-						                document.getElementById('sample6_address').value = fullAddr;
+						                document.getElementById('postcode').value = data.zonecode; //5자리 새우편번호 사용
+						                document.getElementById('address').value = fullAddr;
 						
 						                // 커서를 상세주소 필드로 이동한다.
-						                document.getElementById('sample6_address2').focus();
+						                document.getElementById('address2').focus();
 						            }
 						        }).open();
 						    }
