@@ -199,8 +199,10 @@
 		if(selemail == "self"){
 			$("#mail2").focus();
 			$("#mail2").val("");
+			$("input[name='mail2']").attr("readonly",false);
 		}else{
 			$("#mail2").val(selemail).css("text-align","left").css("padding-left","5px");
+			$("input[name='mail2']").attr("readonly",true);
 		}
 	});
 	
