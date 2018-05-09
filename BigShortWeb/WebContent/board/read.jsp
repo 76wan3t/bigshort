@@ -111,24 +111,24 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
              </tr>
              <tr>
                  <th scope="row">작성자</th>
-                 <td>${map.CREA_ID }</td>
+                 <td>${boardview.writer}</td>
                  <th scope="row">작성시간</th>
                  <td>${bDto.regdate}</td>
              </tr>
              <tr>
                  <th scope="row">제목</th>
-                 <td colspan="3">${map.TITLE }</td>
+                 <td colspan="3">${boardview.title}</td>
              </tr>
              <tr>
-                 <td colspan="4">${map.CONTENTS }</td>
+                 <td colspan="4">${boardview.content}</td>
              </tr>
              <tr>
                  <th scope="row">첨부파일</th>
                  <td colspan="3">
                      <c:forEach var="row" items="${list }">
                          <input type="hidden" id="IDX" value="${row.IDX }">
-                         <a href="#this" name="file">${row.ORIGINAL_FILE_NAME }</a>
-                         (${row.FILE_SIZE }kb)
+                         <a href="download.bizpoll?bno=${boardview.bno}" name="file">${boardview.filename}</a>
+                         ${boardview.filename}kb)
                      </c:forEach>
                  </td>
              </tr>
@@ -142,13 +142,14 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
             <a name="comments" class="screen_out">댓글</a>
 
 			
-            <div class="comment_head"><strong class="tit_comment">댓글<span class="txt_num">3</span></strong>
+            <div class="comment_head"><strong class="tit_comment">댓글<span class="txt_num">${replyview.size()}</span></strong>
 </div>
             <div class="comment_content">
                 <div class="list_comment_more" style="display: none;">
                     <button type="button" data-action="moreList" class="btn_preview">이전 댓글 보기</button>
                 </div>
-
+				
+				<c:forEach items="${replyview}" var="replyview">
                 <ul class="list_comment"><li class="item animation_up"><div class="comment">
 		<a href="/@@3jUF" class="link_profile">
 			<img src="//img1.daumcdn.net/thumb/C42x42/?fname=http://t1.daumcdn.net/brunch/service/user/3jUF/image/iSvVjV7XpGc6Ns_2hm8BrIocFj4.jpg" width="42" height="42" class="img_thumb" alt="Vegit 이미지">
@@ -156,7 +157,7 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 	<div class="cont_info">
 		<div class="info_append">
 			<strong class="tit_userid">
-				<a href="/@@3jUF" class="link_userid">Vegit</a>
+				<a href="/@@3jUF" class="link_userid">${replyview.writer}</a>
 			</strong>
 			<span class="ico_dot"></span>
 			<span class="txt_time">May 07. 2018</span>
@@ -170,50 +171,10 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 			</div>
 		</div>
 	</div>
-</div></li><li class="item animation_up"><div class="comment">
-		<a href="/@@1bGJ" class="link_profile">
-			<img src="//img1.daumcdn.net/thumb/C42x42/?fname=http://t1.daumcdn.net/brunch/service/user/1bGJ/image/kd3sYi-62AgGas31xLFYGJ57u3c.jpg" width="42" height="42" class="img_thumb" alt="루퍼트 이미지">
-		</a>
-	<div class="cont_info">
-		<div class="info_append">
-			<strong class="tit_userid">
-				<a href="/@@1bGJ" class="link_userid">루퍼트</a>
-			</strong>
-			<span class="ico_dot"></span>
-			<span class="txt_time">May 07. 2018</span>
-		</div>
-		<p class="desc_comment"><a href="/@@3jUF" class="link_mention" data-id="3jUF">@Vegit</a> 저와 비슷한 경험을 하신분이군요!<br>평소에는 있는줄 모르는 이상한 사람들이 많죠</p>
-
-		<div class="comment_setting">
-			<div class="wrap_comment_menu">
-						<button type="button" class="btn_set" data-action="report" data-commentno="347320">신고</button>
-					
-			</div>
-		</div>
-	</div>
-</div></li><li class="item animation_up"><div class="comment">
-		<a href="/@@3jUF" class="link_profile">
-			<img src="//img1.daumcdn.net/thumb/C42x42/?fname=http://t1.daumcdn.net/brunch/service/user/3jUF/image/iSvVjV7XpGc6Ns_2hm8BrIocFj4.jpg" width="42" height="42" class="img_thumb" alt="Vegit 이미지">
-		</a>
-	<div class="cont_info">
-		<div class="info_append">
-			<strong class="tit_userid">
-				<a href="/@@3jUF" class="link_userid">Vegit</a>
-			</strong>
-			<span class="ico_dot"></span>
-			<span class="txt_time">May 07. 2018</span>
-		</div>
-		<p class="desc_comment">어쩔수없는것 같아요. 기사의 목적에 따라 글을 묘하게 다르게 이해한 사람이 글을 쓰기도 하고, 또 받아들이는 사람이 다르게 받아들이기도 하는것 같더라구요. 유명한 사람들은 그래서 더 행복하고, 더 힘들고 그럴것 같다는 생각을 했었네요.</p>
-
-		<div class="comment_setting">
-			<div class="wrap_comment_menu">
-						<button type="button" class="btn_set" data-action="report" data-commentno="347324">신고</button>
-					
-			</div>
-		</div>
-	</div>
-</div></li></ul>
+</div></ul>
+</c:forEach>
             </div>
+				
 
             <div class="wrap_comment_write">
             <form class="comment_write brunch_login" method="post" novalidate="">
@@ -227,7 +188,9 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 		<div class="box_area">
 			<label for="tfCmt" class="screen_out">댓글 작성</label>
 			<span class="wrap_area">
-					<div contenteditable="" class="editor tf_area"></div><div class="editor_placeholder" style="display: block;">작가와 글에 대해 이야기를 나누어 보세요!</div><textarea class="editor tf_area" name="content" maxlength="1000" placeholder="작가와 글에 대해 이야기를 나누어 보세요!" style="display: none;"></textarea>
+					<!-- <div contenteditable="" class="editor tf_area"></div> -->
+					<div class="editor_placeholder" style="display: none;"></div>
+					<textarea class="editor tf_area" name="content" maxlength="1000" placeholder="작가와 글에 대해 이야기를 나누어 보세요!" ></textarea>
 			</span>
 			<div class="comment_sticker"></div>
 
@@ -247,6 +210,7 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 
 				<div class="wrap_btn">
 						<button type="submit" class="btn_default #submit">확인</button>
+						<input type ="hidden" id="btn44" value="${sessionScope.loginUser.mid}">
 				</div>
 			</div>
 		<ul class="_mention_list" style="display: none;"></ul></div>
