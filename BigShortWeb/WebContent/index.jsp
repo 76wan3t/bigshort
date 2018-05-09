@@ -1,12 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
-    <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
-	<%@ taglib uri = "http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-	<%@ include file = "header.jsp"%>
-	
-	
-<%response.setHeader("Cache-control", "no-store");response.setHeader("Pragma", "no-cache");%>
-	
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ include file="header.jsp"%>
+
+
+<%
+	response.setHeader("Cache-control", "no-store");
+	response.setHeader("Pragma", "no-cache");
+%>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -21,64 +25,83 @@
 <title>Bigshort</title>
 <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 <script type="text/javascript">
- $(document).ready(function(){
-	
-	 $(".gwangsan").hover(function(){
-	    $(".graph-con1").css("display", "block");
-	    
-	    $(".graph-con2").css("display", "none");
-	    $(".graph-con3").css("display", "none");
-	    $(".graph-con4").css("display", "none");
-	    $(".graph-con5").css("display", "none");
+	$(document).ready(function() {
+
+		$(".gwangsan").hover(function() {
+			$(".graph-con1").css("display", "block");
+
+			var scrollPosition = $(".graph-con1").offset().top;
+			$('html, body').animate({
+				scrollTop : 400
+			}, 300);
+
+			$(".graph-con2").css("display", "none");
+			$(".graph-con3").css("display", "none");
+			$(".graph-con4").css("display", "none");
+			$(".graph-con5").css("display", "none");
+		});
+
+		$(".north").hover(function() {
+			$(".graph-con2").css("display", "block");
+
+			var scrollPosition = $(".graph-con2").offset().top;
+			$('html, body').animate({
+				scrollTop : 400
+			}, 300);
+
+			$(".graph-con1").css("display", "none");
+			$(".graph-con3").css("display", "none");
+			$(".graph-con4").css("display", "none");
+			$(".graph-con5").css("display", "none");
+
+		});
+
+		$(".south").hover(function() {
+			$(".graph-con3").css("display", "block");
+
+			var scrollPosition = $(".graph-con3").offset().top;
+			$('html, body').animate({
+				scrollTop : 400
+			}, 300);
+
+			$(".graph-con1").css("display", "none");
+			$(".graph-con2").css("display", "none");
+			$(".graph-con4").css("display", "none");
+			$(".graph-con5").css("display", "none");
+
+		});
+
+		$(".west").hover(function() {
+			$(".graph-con4").css("display", "block");
+
+			var scrollPosition = $(".graph-con4").offset().top;
+			$('html, body').animate({
+				scrollTop : 400
+			}, 300);
+
+			$(".graph-con1").css("display", "none");
+			$(".graph-con2").css("display", "none");
+			$(".graph-con3").css("display", "none");
+			$(".graph-con5").css("display", "none");
+
+		});
+
+		$(".east").hover(function() {
+			$(".graph-con5").css("display", "block");
+
+			var scrollPosition = $(".graph-con5").offset().top;
+			$('html, body').animate({
+				scrollTop : 400
+			}, 300);
+
+			$(".graph-con1").css("display", "none");
+			$(".graph-con2").css("display", "none");
+			$(".graph-con3").css("display", "none");
+			$(".graph-con4").css("display", "none");
+
+		});
+
 	});
-	
-	$(".north").hover(function(){
-	    $(".graph-con2").css("display", "block");
-	   
-	    $(".graph-con1").css("display", "none");
-	    $(".graph-con3").css("display", "none");
-	    $(".graph-con4").css("display", "none");
-	    $(".graph-con5").css("display", "none");
-	});
-	$(".south").hover(function(){
-	    $(".graph-con3").css("display", "block");
-	    
-	    $(".graph-con1").css("display", "none");
-	    $(".graph-con2").css("display", "none");
-	    $(".graph-con4").css("display", "none");
-	    $(".graph-con5").css("display", "none");
-	});
-	$(".west").hover(function(){
-	    $(".graph-con4").css("display", "block");
-	    
-	    $(".graph-con1").css("display", "none");
-	    $(".graph-con2").css("display", "none");
-	    $(".graph-con3").css("display", "none");
-	    $(".graph-con5").css("display", "none");
-	});
-	$(".east").hover(function(){
-	    $(".graph-con5").css("display", "block");
-	    
-	    $(".graph-con1").css("display", "none");
-	    $(".graph-con2").css("display", "none");
-	    $(".graph-con3").css("display", "none");
-	    $(".graph-con4").css("display", "none");
-	});
-	
-	 
-	 
-	 
-	 
-	 
-	
-	
-}); 
-
-
-
-
-
-
 </script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" type="text/css" href="css/style.css?var=2">
@@ -87,7 +110,9 @@
 	<div class="wrap">
 		<div id="container">
 			<div class="top_page">
-				<h3>집 가격을 가방에 담다<br></h3>
+				<h3>
+					집 가격을 가방에 담다<br>
+				</h3>
 			</div>
 			<div class="inner">
 				<div class="local">
@@ -99,8 +124,10 @@
 
 					<!-- 구 -->
 					<ul class="gj">
-						<li id="gwangsan"><a class="gwangsan" href="gwangsandetail.bigshort">광산구</a></li>
-						<li class="li_gj"><a class="north" href="bukgudetail.bigshort">북구</a></li>
+						<li id="gwangsan"><a class="gwangsan"
+							href="gwangsandetail.bigshort">광산구</a></li>
+						<li class="li_gj"><a class="north"
+							href="bukgudetail.bigshort">북구</a></li>
 						<li><a class="south" href="namgudetail.bigshort">남구</a></li>
 						<li><a class="west" href="seogudetail.bigshort">서구</a></li>
 						<li id="east"><a class="east" href="donggudetail.bigshort">동구</a></li>
@@ -108,8 +135,8 @@
 					<!-- 구 end//-->
 
 				</div>
-			 
-				
+
+
 				<!-- 그래프 띄우는 div 시작 -->
 				<div class="graph-con1">
 					<div class="page-path">광주광역시 > 광산구</div>
@@ -259,8 +286,8 @@
 					</div>
 				</div>
 				<!-- 그래프 div 끝 -->
-				
-				
+
+
 				<!-- 그래프 띄우는 div 시작 -->
 				<div class="graph-con2">
 					<div class="page-path">광주광역시 > 북구</div>
