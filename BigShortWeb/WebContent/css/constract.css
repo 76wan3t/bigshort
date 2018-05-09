@@ -84,7 +84,7 @@
 	}
 	
 	.terms_span > input:checked + label {
-		background-image: url('/BigShortWeb/images/check_on2.png');
+		background-image: url('/BigShortWeb/images/check_on3.png');
 	}
 	
 	#terms_ul {
@@ -141,7 +141,7 @@
 	}
 	
 	.ul_li_span > input:checked + label {
-		background-image: url('/BigShortWeb/images/check_on2.png');
+		background-image: url('/BigShortWeb/images/check_on3.png');
 	}
 	
 	.terms_box {

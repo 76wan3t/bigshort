@@ -925,7 +925,18 @@ h1 {
 	font-size: 11.999px;
 	right: -800px;
 	top: 12px;
+	font-family: 'Jeju Gothic', serif;
+	font-size: 15px;
+	margin-top: 2px;
 }
+
+#modal_ul > li {
+	font-family: 'Jeju Gothic', serif;
+	font-size: 15px;
+	
+}
+
+
 /* 로그인 모달 스타일 끝 */
 #logo_a {
 	display: inline-block;
