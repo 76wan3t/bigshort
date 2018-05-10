@@ -1,0 +1,27 @@
+@charset "UTF-8";
+.wrap{
+	width:500px;
+}
+#myckwrap{
+	margin:200px auto 0;
+	font-size: 40px;
+	text-align: center;	
+}
+#myckfrm{
+	border: 1px solid gray;
+}
+#subtitle{
+	font-size: 15px;
+}
+.ckinput{
+	border: 1px solid gray;
+	height: 50px;
+	width: 90%;
+	margin: 20px auto;
+	display: block;
+	font-size: 30px;
+}
+#id{
+	border: none;
+	text-align: center;
+}
