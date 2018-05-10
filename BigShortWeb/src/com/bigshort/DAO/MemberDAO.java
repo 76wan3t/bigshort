@@ -147,9 +147,10 @@ public MemberDTO sessionLogin(MemberDTO mDto) {
 	
 	public int memInsert(MemberDTO mDto) {
 		sqlSession = sqlSessionFactory.openSession();
-		sqlSession.commit();
+		
 		try {
 			result = sqlSession.insert("meminsert", mDto);
+			sqlSession.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
