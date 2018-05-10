@@ -34,32 +34,33 @@
 	
 }
 
-#gwangsan1 {
+#south1{
 	margin-bottom: 20px;
 	display: block;
 	
 }
-#gwangsan2 {
+#south2 {
 	display: block;
 	margin-bottom: 20px;
 	
 }
-#gwangsan3 {
+#south3{
 	display: block;
 	margin-bottom: 20px;
 	
 }
-#gwangsan4 {
-	display: block;
-	margin-bottom: 20px;
-	
-}
-
-#gwangsan5 {
+#south4{
 	display: block;
 	margin-bottom: 50px;
 	
 }
+
+#imdong{
+	padding: 8px 20px 8px 20px;
+	
+}
+
+
 
 table {
 	margin-left: auto;

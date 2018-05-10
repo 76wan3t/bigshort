@@ -34,28 +34,28 @@
 	
 }
 
-#gwangsan1 {
+#east1 {
 	margin-bottom: 20px;
 	display: block;
 	
 }
-#gwangsan2 {
+#east2 {
 	display: block;
 	margin-bottom: 20px;
 	
 }
-#gwangsan3 {
+#east3 {
 	display: block;
 	margin-bottom: 20px;
 	
 }
-#gwangsan4 {
+#east4 {
 	display: block;
 	margin-bottom: 20px;
 	
 }
 
-#gwangsan5 {
+#east5 {
 	display: block;
 	margin-bottom: 50px;
 	
@@ -72,9 +72,15 @@ table {
 	
 }
 
+#hakdong{
+	padding: 8px 20px 8px 20px;
+}
 
-
-
+.toomuch {
+	padding: 8px 6px 8px 6px!important;
+	margin-right: 47px!important;
+	
+}
 
 
 

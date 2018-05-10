@@ -33,7 +33,7 @@
 			var scrollPosition = $(".graph-con1").offset().top;
 			$('html, body').animate({
 				scrollTop : 400
-			}, 300);
+			}, 150);
 
 			$(".graph-con2").css("display", "none");
 			$(".graph-con3").css("display", "none");
@@ -47,7 +47,7 @@
 			var scrollPosition = $(".graph-con2").offset().top;
 			$('html, body').animate({
 				scrollTop : 400
-			}, 300);
+			}, 150);
 
 			$(".graph-con1").css("display", "none");
 			$(".graph-con3").css("display", "none");
@@ -62,7 +62,7 @@
 			var scrollPosition = $(".graph-con3").offset().top;
 			$('html, body').animate({
 				scrollTop : 400
-			}, 300);
+			}, 150);
 
 			$(".graph-con1").css("display", "none");
 			$(".graph-con2").css("display", "none");
@@ -77,7 +77,7 @@
 			var scrollPosition = $(".graph-con4").offset().top;
 			$('html, body').animate({
 				scrollTop : 400
-			}, 300);
+			}, 150);
 
 			$(".graph-con1").css("display", "none");
 			$(".graph-con2").css("display", "none");
@@ -92,7 +92,7 @@
 			var scrollPosition = $(".graph-con5").offset().top;
 			$('html, body').animate({
 				scrollTop : 400
-			}, 300);
+			}, 150);
 
 			$(".graph-con1").css("display", "none");
 			$(".graph-con2").css("display", "none");

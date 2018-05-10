@@ -246,6 +246,7 @@ img.flag {
 .menu-utility-user li {
 	margin-left: 30px;
 	position: relative;
+	font-family: 'Jeju Gothic', serif;
 }
 /* 	.header-search{
 		position: relative;
@@ -312,7 +313,8 @@ button, input[type=button], input[type=reset], input[type=submit] {
 }
 
 .menu-utility-user .help>a, .menu-utility-user .myaccount>a {
-	padding-bottom: 20px;
+	padding-bottom: 10px;
+	margin-top: 3px;
 }
 
 .menu-utility-user .help .popup-box {
