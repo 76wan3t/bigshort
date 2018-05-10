@@ -161,6 +161,7 @@
 										<a
 											onclick="document.getElementById('id01').style.display='block'"
 											style="cursor: pointer;">로그인</a>
+							<li class="myaccount guestuser"><a href="/BigShortWeb/constract.bigshort">회원가입</a>
 									</c:when>
 									<c:otherwise>
 										<ul id=modal_ul>
@@ -170,7 +171,6 @@
 										</ul>
 									</c:otherwise>
 								</c:choose></li>
-							<li class="myaccount guestuser"><a href="/BigShortWeb/constract.bigshort">회원가입</a>
 							</li>				
 							<li class="help"><a href="/BigShortWeb/listAll.bigshort" title="고객센터">고객센터</a></li>
 
