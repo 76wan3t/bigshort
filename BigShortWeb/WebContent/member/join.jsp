@@ -13,7 +13,7 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		var mid = $("#id");
-
+		var regId = /^[a-zA-Z0-9]{4,12}$/;
 		/* id중복체크 ajax */
 		mid.blur(function(){
 			var id = $(this).val();
@@ -34,9 +34,16 @@
 							$("#idck").text("중복된 ID입니다.").css("display","block").css("color","red");
 							$("#idckval").val("0")
 						}else{
-							mid.css("display","block").css("margin-bottom","0")
-							$("#idck").text("멋진 ID입니다.").css("display","block").css("color","green");
-							$("#idckval").val("1")
+							if(!regId.test(id)){
+								mid.select();
+								mid.css("display","block").css("margin-bottom","0");
+								$("#idck").text("4~20자 이내 숫자,영문만 사용하세요.").css("display","block").css("color","red");
+								return false;
+							}else{
+								mid.css("display","block").css("margin-bottom","0")
+								$("#idck").text("멋진 ID입니다.").css("display","block").css("color","green");
+								$("#idckval").val("1")		
+							}
 						}
 					},
 					error: function(){

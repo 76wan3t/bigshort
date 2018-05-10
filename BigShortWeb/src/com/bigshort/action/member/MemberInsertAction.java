@@ -25,7 +25,7 @@ public class MemberInsertAction implements Action{
 		String memail = request.getParameter("mail");
 		String memail2 = request.getParameter("mail2");
 		//선택사항
-		String brn1 = request.getParameter("brn");
+		String brn1 = request.getParameter("brn1");
 		String brn2 = request.getParameter("brn2");
 		String brn3 = request.getParameter("brn3");
 				
