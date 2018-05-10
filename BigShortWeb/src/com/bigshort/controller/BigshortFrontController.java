@@ -19,7 +19,12 @@ import com.bigshort.action.board.BoardInsertSaveAction;
 import com.bigshort.action.board.BoardInsertViewAction;
 import com.bigshort.action.board.BoardUpdateAction;
 import com.bigshort.action.board.ListAllAction;
+import com.bigshort.action.board.ModifyDeleteAction;
 import com.bigshort.action.board.ModifyViewAction;
+import com.bigshort.action.board.ReplyAddAction;
+import com.bigshort.action.board.ReplyDelAction;
+import com.bigshort.action.board.SweetAddAction;
+import com.bigshort.action.board.SweetCountAction;
 import com.bigshort.action.member.ConstractAction;
 import com.bigshort.action.member.JoinAction;
 import com.bigshort.action.member.MemberAjaxAction;
@@ -125,6 +130,24 @@ public class BigshortFrontController extends HttpServlet {
 				forward = action.excute(request, respnse);
 			}else if(command.equals("/boardbody.bigshort")) { // 상세 페이지 타는 액션
 				action = new BoardBodyAction();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/modifydelete.bigshort")) { // 상세글 삭제하는 액션
+				action = new ModifyDeleteAction();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/modifyview.bigshort")) { // 상세글 수정 페이지 액션
+				action = new ModifyViewAction();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/replyadd.bigshort")) { // 리플 다는 액션
+				action = new ReplyAddAction();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/replydel.bigshort")) { // 리플 삭제 하는 액션
+				action = new ReplyDelAction();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/sweetadd.bigshort")) { // 게시판 좋아요 타는 액션
+				action = new SweetAddAction();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/sweetcount.bigshort")) { // 게시판 좋아요 개수
+				action = new SweetCountAction();
 				forward = action.excute(request, respnse); 
 			}
 			
