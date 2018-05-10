@@ -21,7 +21,7 @@ public class BoardUpdateAction implements Action {
 	@Override
 	public ActionForward excute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-String url = null; 
+		String url = null; 
 		
 		//파일 업로드 처리
 		

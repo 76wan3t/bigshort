@@ -12,6 +12,8 @@
 	<typeAliases>
 		<typeAlias type="com.bigshort.DTO.MemberDTO" alias="mDto"/>
 		<typeAlias type="com.bigshort.DTO.BoardDTO" alias="bDto"/>
+		<typeAlias type="com.bigshort.DTO.ReplyDTO" alias="rDto"/>
+		
 		
 
 	</typeAliases>

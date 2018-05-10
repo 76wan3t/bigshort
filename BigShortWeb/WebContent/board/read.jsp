@@ -89,6 +89,7 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
  .comment_write .write_append .wrap_btn{float:right;}
  .comment_write .write_append .btn_default{width:56px;height:30px;margin-left:5px; border:1px solid #bbb;border-radius:32px; line-height:28px;color:#666;}
  .brunch_comment ._mention_list{overflow:hidden; overflow-y:auto; position:absolute; width:238px; max-height:334px; border:1px solid #d9d9d9;background-color:#fff;z-index:11;}
+ #td2{padding: 0; height: 300px;}
  /* 미완성  */
  </style>
  </head>
@@ -103,18 +104,18 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
          </colgroup>
          <caption class="gesi">게시글 상세</caption>
          <tbody>
+                 <c:forEach items="${bodylist}" var="bDto">
              <tr>
                  <th scope="row">글 번호</th>
                  <td>${bDto.bno}</td>
-                 <c:forEach items="${bodylist}" var="bDto">
                  <th scope="row">조회수</th>
                  <td>${bDto.viewcnt}</td>
-                 </c:forEach>
              </tr>
              <tr>
                  <th scope="row">작성자</th>
                  <td>${bDto.writer}</td>
                  <th scope="row">작성시간</th>
+                
                  <td><fmt:formatDate
 					pattern="yyyy-MM-dd HH:mm" value="${bDto.regdate}" /></td>
              </tr>
@@ -122,8 +123,12 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
                  <th scope="row">제목</th>
                  <td colspan="3">${bDto.title}</td>
              </tr>
+            	<c:set var="cmt" value="${fn:replace(bDto.content,crcn,br)}" />
+				<c:set var="cmt" value="${fn:replace(cmt,cr,br)}" />
+				<c:set var="cmt" value="${fn:replace(cmt,cn,br)}" />
+				<c:set var="cmt" value="${fn:replace(cmt,' ',sp)}" />
              <tr>
-                 <td colspan="4">${boardview.content}</td>
+                 <td colspan="4" id="td2"><c:out value="${cmt}" escapeXml="false"/></td>
              </tr>
              <tr><c:if test="${bDto.filename != '-'}">
                  <th scope="row">첨부파일(내려받는 횟수 : ${bDto.downloadcnt } )</th>
@@ -136,6 +141,7 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
                  </td>
                   </c:if>
              </tr>
+          </c:forEach>
          </tbody>
      </table>
      <br>
@@ -143,10 +149,10 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
           
           <div class="brunch_comment #comment" style="display: block;">
 
-            <a name="comments" class="screen_out">댓글</a>
+            <a name="comments" class="screen_out">댓글${replyview.size()}</a>
 
 			
-            <div class="comment_head"><strong class="tit_comment">댓글<span class="txt_num"> ${count}</span></strong>
+            <div class="comment_head"><strong class="tit_comment">댓글<span class="txt_num"></span></strong>
 </div>
             <div class="comment_content">
                 <div class="list_comment_more" style="display: none;">
@@ -164,7 +170,7 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 				<a href="/@@3jUF" class="link_userid">${replyview.writer}</a>
 			</strong>
 			<span class="ico_dot"></span>
-			<span class="txt_time">May 07. 2018</span>
+			<span class="txt_time"></span>
 		</div>
 		<p class="desc_comment">저도 옛날 옛적에 인터뷰를 한번 했다가, 댓글을 보고 깜짝 놀란적이 있죠. 물론 제가 한말이 아닌데 제가 한말로 처리 된 부분도 있었지만, 그와 상관없이 참 이상한 사람들이 많구나.. 라고 생각했던 경험이 있네요.</p>
 
@@ -179,7 +185,7 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 </c:forEach>
             </div>
 				
-
+	<c:if test="${fn:trim(sessionScope.loginUser.mid) ne ''}">
             <div class="wrap_comment_write">
             <form class="comment_write brunch_login" method="post" novalidate="">
 	<input type="hidden" name="sticker" value="">
@@ -218,8 +224,11 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 				</div>
 			</div>
 		<ul class="_mention_list" style="display: none;"></ul></div>
+		
 	</fieldset>
 </form></div>
+</c:if>
+
 		        </div>
      
      
