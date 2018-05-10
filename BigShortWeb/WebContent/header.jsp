@@ -23,7 +23,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<title>Insert title here</title>
+<title>가방</title>
+<link rel="icon" type="image/png" href="/BigShortWeb/images/home.png">
 <style type="text/css">
 .w3-container {
 	z-index: 3;
