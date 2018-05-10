@@ -15,7 +15,7 @@ public class BukGuDetailAction implements Action {
 	public ActionForward excute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		String url = "index.jsp";
+		String url = "sebupage/north.jsp";
 		
 		
 		
@@ -24,7 +24,7 @@ public class BukGuDetailAction implements Action {
 		forward.setPath(url);
 		forward.setRedirect(false); 
 		
-		return null;
+		return forward;
 	}
 
 }

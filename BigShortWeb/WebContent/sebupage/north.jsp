@@ -12,11 +12,8 @@
 <title>가방</title>
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" type="text/css" href="../css/north.css?var=1">
+<link rel="stylesheet" type="text/css" href="/BigShortWeb/css/north.css?var=2">
 </head>
-
-
-
 
 <body>
 

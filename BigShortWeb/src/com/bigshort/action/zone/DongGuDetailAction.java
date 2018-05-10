@@ -15,7 +15,7 @@ public class DongGuDetailAction implements Action{
 	public ActionForward excute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		String url = "index.jsp";
+		String url = "sebupage/east.jsp";
 		
 		
 		
@@ -24,7 +24,7 @@ public class DongGuDetailAction implements Action{
 		forward.setPath(url);
 		forward.setRedirect(false); 
 		
-		return null;
+		return forward;
 	}
 
 }
