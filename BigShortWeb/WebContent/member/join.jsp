@@ -9,9 +9,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Bigshort_join</title>
-<link rel="stylesheet" type="text/css" href="/BigShortWeb/css/join.css?var=1"/>
+<link rel="stylesheet" type="text/css" href="/BigShortWeb/css/join.css?var=1"/><!-- css파일 우선순위 설정  -->
 <script type="text/javascript">
-	/* blur했을 경우 */
 	$(document).ready(function(){
 		var mid = $("#id");
 
@@ -87,9 +86,7 @@
 			address2 = $.trim(maddress2.val()),
 			info_input = $.trim(minfo_input.val());
 		
-		/* 필수 항목 체크 */
-		/* id/pw/pw2/name/phone/mail */
-
+	/* 필수 항목 체크 */
 		/* idck */
 		var regId = /^[a-zA-Z0-9]{4,12}$/;
 		if(id == ""){
@@ -196,7 +193,7 @@
 		}else{
 			$("#mailck").css("display","none");
 		}
-		
+	/* 선택정보 */
 		/* 사업자정보 */
 		/* brn */
 		if($.isNumeric($(".brn_input"))==false){
@@ -215,15 +212,16 @@
 		var selemail = $("#selemail").val();
 		if(selemail == "self"){
 			$("#mail2").focus();
-			$("#mail2").val("");
-			$("input[name='mail2']").attr("readonly",false);
+			$("#mail2").val(""); //원래 있던 값을 없애고 공백으로 
+			$("input[name='mail2']").attr("readonly",false); // readonly 해제
 		}else{
 			$("#mail2").val(selemail).css("text-align","left").css("padding-left","5px");
-			$("input[name='mail2']").attr("readonly",true);
+			$("input[name='mail2']").attr("readonly",true);	// readonly 설정
 		}
 	});
 	
 	/* sphone select */
+	// 가게 전화번호 같은 경우에는 지역번호를 입력후 이어서 쓸수 있도록 설정
 	$(document).on("change","#sphone_num", function(){
 		var sphone = $(this).val();
 		if(sphone == "choi"){
