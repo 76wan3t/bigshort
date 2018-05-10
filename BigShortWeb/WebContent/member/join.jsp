@@ -196,10 +196,12 @@
 	/* 선택정보 */
 		/* 사업자정보 */
 		/* brn */
-		if($.isNumeric($(".brn_input"))==false){
+		if($.isNumeric($(".brn_input"))==true){
 			$(".brn_input").css("margin-bottom","0");
 			$("#seleck1").css("display","block").text("숫자를 입력해주세요.");
 			return false;
+		}else if($.isNumeric($(".brn_input"))==false){
+			$("#seleck1").css("display","none");	
 		}
 		/* sname 상호명 */
 		/* sphone */
