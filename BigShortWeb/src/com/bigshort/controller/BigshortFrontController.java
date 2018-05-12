@@ -128,8 +128,14 @@ public class BigshortFrontController extends HttpServlet {
 			}else if(command.equals("/sweetcount.bigshort")) { // 게시판 좋아요 개수
 				action = new SweetCountAction();
 				forward = action.excute(request, respnse); 
-			}else if(command.equals("/commentlist.bigshort")) { // 게시판 좋아요 개수
+			}else if(command.equals("/commentlist.bigshort")) { // 댓글목록을 보기 위한 액션
 				action = new CommentListAction();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/download.bigshort")) { // 다운로드를 받기 위한 액션
+				action = new DownLoadAction();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/commentsize.bigshort")) { // 댓글 수를 파악하기위한 액션
+				action = new CommentSizeAction();
 				forward = action.excute(request, respnse); 
 			}
 			

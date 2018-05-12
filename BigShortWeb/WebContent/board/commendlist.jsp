@@ -41,7 +41,10 @@
 		
 				<div class="comment_setting">
 					<div class="wrap_comment_menu">
-						<button type="button" class="btn_set" data-action="report" data-commentno="347302">신고</button>
+						<a href="#" class="btn_set" >신고</a>
+						<c:if test="${fn:trim(sessionScope.loginUser.mid) eq fn:trim(replylist.writer) || fn:trim(sessionScope.loginUser.mname) eq '관리자' }">
+							<span class="btn_set"> | <a href="#" class="btn_set rplay_del" href="#" data_num="${bDto.rno }">삭제</a></span>
+						</c:if>
 					</div>
 				</div>
 			</div>

@@ -49,7 +49,7 @@
  button{font-family:"Noto Sans Light","Malgun Gothic",sans-serif;border: 0 none; background-color: transparent; cursor: pointer; outline: none; border-radius: 0px; vertical-align: middle; line-height:1.5;}
  .brunch_comment .list_comment{display:block;width:100%; border-top: 1px solid #eee;}
  ul{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; list-style: none; margin: 0; padding: 0;}
- .list_comment li.item{float: left; padding: 30px 0; border-bottom:1px solid #eee;}
+ .list_comment li.item{float: left; padding: 30px 0; border-bottom:1px solid #eee; width: 700px;}
  .list_comment li.item:hover{background:#f8f8f8;}
  .animation_up{animation: animation_up .2s; transition:opacity 0.2s}
  li{font-family:"Noto Sans Light","Malgun Gothic",sans-serif;list-style: none; margin:0;}
@@ -62,8 +62,8 @@
  .list_comment .info_append .txt_time{float:left;color:#959595;}
  .list_comment .desc_comment{padding:8px 50px 0 0; font-size: 14px; word-wrap:break-word;clear:left;}
  p{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0;}
- .list_comment .comment_setting{display:none; position:absolute; right: 18px; top:-3px;}
- .comment_setting .btn_set{display:inline; float:left; margin-left:8px; font-size:12px; color:#959595;}
+ .list_comment .comment_setting{ position:absolute; right: 18px; top:-3px;}
+ .comment_setting .btn_set{display:inline; margin-left:2px; font-size:12px; color:#959595;}
 .brunch_comment .link_profile .img_thumb{border-radius:42px; background-color:#fff;}
 .img_thumb{display:block; border:0 none;}
 .list_comment  .desc_comment a.link_mention{display:inline-block; padding:0 2px; font-weight:700; background-color:#ddd; text-decoration:none;}
@@ -74,7 +74,7 @@ input{font-family:"Noto Sans Light","Malgun Gothic",sans-serif;font-size:14px;li
 fieldset{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; border:0 none; margin: 0; padding:0;}
 legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padding: 0;}
 .comment_write .link_profile{margin:6px 0 0 10px;}
-.comment_write .box_area{float:right;position:relative;width:624px; border:1px solid #eee; background-color:#fff;}
+.comment_write .box_area{float:left;position:relative; border:1px solid #eee; background-color:#fff;}
 .comment_write .wrap_area{display:block;}
 .comment_write .tf_area{padding:17px 17px 0; width: 590px; min-height:45px;border: none;line-height:22px; color:#666; background:0 0; white-space:pre-wrap; word-wrap:break-word; outline:transparent dotted; z-index:1;}
 .comment_write .editor_placeholder{position:absolute; z-index:0;top:17px; left:17px; line-height:22px; color:silver;}
@@ -147,6 +147,8 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
                  <td colspan="4" id="td2">
 
                  <c:out value="${cmt}" escapeXml="false"/>
+                 
+                 ${fn:trim(sessionScope.loginUser.mid) eq fn:trim(bDto.writer)}
                  </td>
              </tr>
              <tr><c:if test="${bDto.filename != '-'}">
@@ -154,8 +156,8 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
                  <td colspan="3">
                      
                          <input type="file" id="IDX" style="display:none">(내려받는 횟수 : ${bDto.downloadcnt } )
-                         <a href="download.bizpoll?bno=${bDto.bno}"><i class="fa fa-save"></i></a>
-						 <a href="download.bizpoll?bno=${bDto.bno}">${bDto.filename }</a>
+                         <a href="download.bigshort?bno=${bDto.bno}"><i class="fa fa-save"></i></a>
+						 <a href="download.bigshort?bno=${bDto.bno}">${bDto.filename }</a>
                     
                  </td>
                   </c:if>
@@ -170,7 +172,7 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 
 
 			
-            <div class="comment_head"><strong class="tit_comment">댓글  ${replylist.size()}  <span class="txt_num"></span></strong>
+            <div class="comment_head"><strong class="tit_comment"><span class="txt_num"></span></strong>
 </div>
             <div class="comment_content">
                 <div class="list_comment_more" style="display: none;">
@@ -261,24 +263,39 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
      
  <script type="text/javascript">
 
-function comment_list(){
+	function comment_list(){
+		
+		var bno = $("#bno").val();
+		
+		$.ajax({
+			type : "POST",
+			url : "commentlist.bigshort",
+			data : "bno=" + bno,
+			success : function(result) {
 	
-	var bno = $("#bno").val();
+				$(".comment_content").html(result);
 	
-	$.ajax({
-		type : "POST",
-		url : "commentlist.bigshort",
-		data : "bno=" + bno,
-		success : function(result) {
-
-			$(".comment_content").html(result);
-
-		}
-	});
-} 
+			}
+		});
+	} 
+	function comment_size(){
+		
+		var bno = $("#bno").val();
+		
+		$.ajax({
+			type : "POST",
+			url : "commentsize.bigshort",
+			data : "bno=" + bno,
+			success : function(result) {
+	
+				$(".tit_comment").html(result);
+	
+			}
+		});
+	} 
 	
 	
-	function sweet_count(){
+ 	function sweet_count(){
 		var bno = $("#hidden").val();
 		
 		$.ajax({
@@ -292,14 +309,14 @@ function comment_list(){
 			}
 		});
 		
-	}
+	} 
 
 
 	$(document).ready(function(){
 		
 		comment_list();
-		sweet_count();
-		
+		comment_size();
+		 sweet_count(); 
 		
 		
 		var comment2 = $("#comment2").val();
@@ -379,6 +396,7 @@ function comment_list(){
 
 					$("#content").val("");// 댓글 등록후 내용 초기화 하는 코드
 					comment_list(); // 댓글을 다시 불러드리기 위한 호출 함수
+					comment_size(); // 댓글 수를 파악하기위한 호출 함수
 
 				},
 
@@ -392,8 +410,8 @@ function comment_list(){
 		});
 	
 	
-	
-		$(document).on("click", ".delUrl2", function() {
+		// 댓글 삭제 이벤트
+		$(document).on("click", ".rplay_del", function() {
 			
 				var Del = confirm("삭제 하시겠습니까?") // 클릭시 삭제할 것인지 물어보는 코드
 
@@ -402,14 +420,14 @@ function comment_list(){
 					var rno = $(this).attr("data_num"); // 해당 댓글 값을 가져오는 코드
 
 					 $.ajax({
-						url : "replydel.bizpoll",
+						url : "replydel.bigshort",
 						type : "POST",
 						dataType : "json",
 						data : "rno=" + rno,
 						success : function(data) {
 
 							comment_list(); // 삭제 완료하면 댓글을 다시 불러드리기 위한 함수 호출
-
+							comment_size(); // 댓글 수를 파악하기위한 호출 함수
 						},
 
 						error : function() {

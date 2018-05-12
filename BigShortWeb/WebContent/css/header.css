@@ -710,7 +710,7 @@ h1 {
     letter-spacing: -1px;
     background-color: white;
     width: 425px;
-    height: 50px;
+    height: 50px!important;
     border: 1px solid #e5e5e5;
     border-radius: 5px;
     font-weight: normal;
@@ -910,6 +910,8 @@ h1 {
 #span_id {
 	display: none;
 	color: red;
+	margin-left: 86px;
+	width: 220px;
 }
 
 #span_pw {

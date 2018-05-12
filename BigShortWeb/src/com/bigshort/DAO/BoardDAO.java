@@ -405,4 +405,58 @@ public class BoardDAO {
 					}
 					
 					
+					public String getFileName(int bno) { //다운로드를 클릭시 작동이 된다.
+						
+						sqlSession = sqlSessionFactory.openSession();
+						
+						String rusult = "";
+					
+						
+						try {
+							
+							rusult = sqlSession.selectOne("getFileName", bno);
+							
+							
+							
+							
+							
+						} catch (Exception e) {
+							
+							e.printStackTrace();
+							
+						}finally {
+							
+							sqlSession.close();
+							
+						}
+						return rusult;
+					}
+					
+					public int downLoadCount(int bno) { // 다운로드를 할 때 마다 증가한다.
+						
+						sqlSession = sqlSessionFactory.openSession();
+						
+						int rusult = 0;
+					
+						
+						try {
+							
+							rusult = sqlSession.update("downLoadCount", bno);
+							
+							sqlSession.commit();
+							
+							
+							
+						} catch (Exception e) {
+							
+							e.printStackTrace();
+							
+						}finally {
+							
+							sqlSession.close();
+							
+						}
+						return rusult;
+					}
+					
 }

@@ -137,5 +137,20 @@
  		DELETE FROM tblreply WHERE bno = #{bno}
  		
  	</delete>
+ 	
+ 	
+ 	 <select id="getFileName" parameterType="int" resultType="String">
+ 	
+ 	SELECT filename 
+ 	FROM tblboard
+ 	WHERE bno = #{bno}
+ 	
+ 	</select>
+ 	
+ 	 <update id="downLoadCount">
+ 	
+ 		UPDATE tblboard SET downloadcnt = downloadcnt + 1 WHERE bno = #{bno}
+ 	
+ 	</update>
   
 </mapper>
