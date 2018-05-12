@@ -150,10 +150,10 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
                  </td>
              </tr>
              <tr><c:if test="${bDto.filename != '-'}">
-                 <th scope="row">첨부파일(내려받는 횟수 : ${bDto.downloadcnt } )</th>
+                 <th  colspan="1" scope="row">첨부파일</th>
                  <td colspan="3">
                      
-                         <input type="file" id="IDX" style="display:none">
+                         <input type="file" id="IDX" style="display:none">(내려받는 횟수 : ${bDto.downloadcnt } )
                          <a href="download.bizpoll?bno=${bDto.bno}"><i class="fa fa-save"></i></a>
 						 <a href="download.bizpoll?bno=${bDto.bno}">${bDto.filename }</a>
                     

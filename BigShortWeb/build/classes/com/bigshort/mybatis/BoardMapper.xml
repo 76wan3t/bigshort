@@ -13,8 +13,8 @@
  			SELECT rownum rnum,
  			a.*
  			FROM( 
- 				SELECT * 
- 				FROM tblboard
+ 				SELECT b.* , (SELECT count(*) FROM tblreply d WHERE b.bno = d.bno) replycnt
+ 				FROM tblboard b
  				<![CDATA[
  				WHERE bno > 0 ORDER BY bno DESC
  				]]>
@@ -98,15 +98,7 @@
   			SELECT * FROM tblboard WHERE bno = #{bno}
   		
   	</select>
-  	
 
- 	
- 	<update id="countUpdate">
- 	
- 		UPDATE tblboard SET count = #{count}  WHERE bno = #{bno}
- 		
- 	</update>
- 	
  	<update id="bodylistRead">
 	  	
 	   		UPDATE tblboard SET viewcnt = viewcnt + 1 WHERE bno = #{bno}

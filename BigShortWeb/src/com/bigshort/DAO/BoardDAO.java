@@ -44,7 +44,6 @@ public class BoardDAO {
 							System.out.print(boardDTO.getWriter()+" , ");
 							System.out.print(boardDTO.getRegdate()+" , ");
 							System.out.print(boardDTO.getViewcnt()+" , ");
-							System.out.print(boardDTO.getCount()+" , ");
 							System.out.println();
 							
 						}

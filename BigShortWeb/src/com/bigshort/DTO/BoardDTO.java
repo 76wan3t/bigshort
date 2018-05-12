@@ -14,15 +14,10 @@ public class BoardDTO {
 	private String  filename;
 	private int filesize;
 	private int downloadcnt;
-	private int count;
+	private int replycnt;
 	
 	public BoardDTO() {}
 	
-	public BoardDTO(int bno, int count) {
-		super();
-		this.bno = bno;
-		this.count = count;
-	}
 	
 	public BoardDTO( String title, String content, String writer, String filename, int filesize) {
 		super();
@@ -74,14 +69,6 @@ public class BoardDTO {
 
 	public void setFilename(String filename) {
 		this.filename = filename;
-	}
-
-	public int getCount() {
-		return count;
-	}
-
-	public void setCount(int count) {
-		this.count = count;
 	}
 
 	public int getFilesize() {
@@ -158,4 +145,13 @@ public class BoardDTO {
 	public void setSweet(int sweet) {
 		this.sweet = sweet;
 	}
+
+	public int getReplycnt() {
+		return replycnt;
+	}
+
+	public void setReplycnt(int replycnt) {
+		this.replycnt = replycnt;
+	}
+	
 }

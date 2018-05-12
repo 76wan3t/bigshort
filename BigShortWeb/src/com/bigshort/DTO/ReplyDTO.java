@@ -8,7 +8,7 @@ public class ReplyDTO {
 	private String content;
 	private  String writer;
 	private  Date regdata ;
-	private   int bno;
+	private  int bno;
 	private int count;
 	 
 	public ReplyDTO() {}

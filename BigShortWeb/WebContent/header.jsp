@@ -18,6 +18,7 @@
 	pageContext.setAttribute("sp", "&nbsp;");
 	pageContext.setAttribute("br", "<br/>");
 %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,6 +26,7 @@
 
 <title>가방</title>
 <link rel="icon" type="image/png" href="/BigShortWeb/images/home.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style type="text/css">
 .w3-container {
 	z-index: 3;

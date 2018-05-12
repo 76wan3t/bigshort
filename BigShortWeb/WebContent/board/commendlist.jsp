@@ -10,6 +10,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+
+	.writer{
+		text-align: left;
+	}
+	.desc_comment{
+		text-align: left;
+	}
+</style>
 </head>
 <body>
 
@@ -17,19 +26,22 @@
                <ul class="list_comment"><li class="item animation_up">
                 <div class="comment">
 			<div class="cont_info">
-				<div class="info_append">
-					<strong class="tit_userid">
-						<a href="#" class="link_userid">${replylist.writer}</a>
-					</strong>
-					<span class="ico_dot"></span>
-					<span class="txt_time"></span>
+				<div class="writer">
+					${replylist.writer} <fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${replylist.regdata }" />
 				</div>
 				
-				<p class="desc_comment">${replylist.content}</p>
+				
+				<c:set var="cmt" value="${fn:replace(replylist.content,crcn,br)}" />
+				<c:set var="cmt" value="${fn:replace(cmt,cr,br)}" />
+				<c:set var="cmt" value="${fn:replace(cmt,cn,br)}" />
+				<c:set var="cmt" value="${fn:replace(cmt,' ',sp)}" />
+				
+				
+				<div class="desc_comment"><c:out value="${cmt}" escapeXml="false"/></div>
 		
-				<div class="comment_setting">
-					<div class="wrap_comment_menu">
-						<button type="button" class="btn_set" data-action="report" data-commentno="347302">신고</button>
+				<div class="">
+					<div class="">
+						<button type="button" >신고</button>
 					</div>
 				</div>
 			</div>

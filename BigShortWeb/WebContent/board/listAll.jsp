@@ -11,6 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>자유게시판</title>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <style type="text/css">
 	body{
 	font-size: 13px;
@@ -268,10 +269,9 @@
 		margin: 0;
 	}
 	.tbl_lst td>a {
-		display: block;
+		display: inline;
 		overflow: hidden;
 		width: 500px;
-		padding: 0 20px;
 		text-align: left;
 		color: #717171;
 		text-overflow: ellipsis;
@@ -286,6 +286,13 @@
 	
 	#btn1{
 		display: inline-block;
+	}
+	.tbl_name{
+	
+		width: 280px!important;
+	}
+	#new{
+		color: red;
 	}
 	
 </style>
@@ -372,7 +379,21 @@
 								<fmt:formatDate value="${bDto.regdate}" pattern="yyyy-MM-dd" var="regdate2"/>
 			<tr><!-- 상세페이지 이동  -->
 				<td>${bDto.bno}</td>
-				<td><a href="boardbody.bigshort?bno=${bDto.bno}">${bDto.title} </a></td>
+				<td><a href="boardbody.bigshort?bno=${bDto.bno}">${bDto.title} </a> 
+				
+				
+					<c:if test="${bDto.replycnt ne 0}">
+					<span id="detgl_count"><a href="boardbody.bizpoll?bno=${bDto.bno}&comment=ture">[${bDto.replycnt}]</a></span>
+					</c:if>
+					<c:if test="${bDto.filename != '-'}">
+						<a href="#"><i class="fa fa-save"></i></a>
+					</c:if>
+					<c:if test="${today2 == regdate2}">
+						<span id="new">new!</span>
+					</c:if>
+				
+				
+				</td>
 				
 <%-- 			<c:if test="${bDto.replycnt ne 0}">
 				[${bDto.replycnt}"]
