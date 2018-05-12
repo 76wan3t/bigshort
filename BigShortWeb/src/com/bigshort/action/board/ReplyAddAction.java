@@ -22,7 +22,7 @@ public class ReplyAddAction implements Action{
 		
 		String mid = request.getParameter("mid");
 		int bno = Integer.parseInt(request.getParameter("bno"));
-		String comment = request.getParameter("comment_text");
+		String comment = request.getParameter("content");
 		
 		System.out.println( mid + " , " + bno + " , " + comment);
 		

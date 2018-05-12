@@ -18,7 +18,7 @@ public class CommentListAction implements Action {
 	public ActionForward excute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		String url = "board/commentlist.jsp";
+		String url = "board/commendlist.jsp";
 		
 		String bno = request.getParameter("bno");
 		

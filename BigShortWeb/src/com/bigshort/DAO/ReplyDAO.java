@@ -47,35 +47,7 @@ public class ReplyDAO {
 		return list;
 	}
 	
-	public int replyCount(int bno) {
-		
-		sqlSession = sqlSessionFactory.openSession();
-		
-		List<ReplyDTO> list = null;
 	
-		int count = 0;
-		try {
-			
-			list = sqlSession.selectList("replycount", bno);
-			
-			
-			for (ReplyDTO replyDTO : list) {
-				count = replyDTO.getCount();
-			}
-
-			System.out.println(count);
-			
-		} catch (Exception e) {
-			
-			e.printStackTrace();
-			
-		}finally {
-			
-			sqlSession.close();
-			
-		}
-		return count;
-	}
 	
 	
 		public int replyInsert(int bno, String connect, String mid) {

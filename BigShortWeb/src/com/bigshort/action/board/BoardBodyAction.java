@@ -12,6 +12,7 @@ import com.bigshort.DAO.BoardDAO;
 import com.bigshort.DAO.ReplyDAO;
 import com.bigshort.DTO.BoardDTO;
 import com.bigshort.DTO.NextPreDTO;
+import com.bigshort.DTO.ReplyDTO;
 import com.bigshort.action.Action;
 import com.bigshort.action.ActionForward;
 
@@ -51,17 +52,13 @@ public class BoardBodyAction implements Action{
 		bDao.bodylistRead(num, session); 
 		
 		
-		
 		// 상세페이지에서 댓글 갯수 구하기
+		
+		List<ReplyDTO> list3 = null;
 		ReplyDAO rDao = ReplyDAO.getInstance();
-		int count = rDao.replyCount(num);
-		BoardDTO bDto = new BoardDTO(num, count);
-		bDao.countUpdate(bDto);
+		list3 = rDao.replyList(num);
+		request.setAttribute("replylist", list3);
 		
-		request.setAttribute("count", count);
-		
-		
-	
 		ActionForward forward = new ActionForward();
 	
 		forward.setPath(url);

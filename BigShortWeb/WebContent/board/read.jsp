@@ -36,7 +36,7 @@
  	    margin-left: 5px;
  }
  /* 댓글 디자인  */
- .brunch_comment{padding:0 0 80px; background-color:#fbfbfb;}
+ .brunch_comment{padding:0 0 80px; background-color:#fbfbfb; text-align: center;}
  .brunch_comment .wrap_comment_facebook{position:relative;}
  div{font-family: "Noto Sans Light","Malgun Gothic",sans-serif;margin:0;padding: 0;}
  .screen_out{overflow: hidden;position: absolute;width: 0;height: 0;line-height: 0;text-indent: -9999px;}
@@ -91,6 +91,10 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
  .brunch_comment ._mention_list{overflow:hidden; overflow-y:auto; position:absolute; width:238px; max-height:334px; border:1px solid #d9d9d9;background-color:#fff;z-index:11;}
  #td2{padding: 0; height: 300px;}
  /* 미완성  */
+ 
+ 	#login_reple{
+ 		background-color: white;
+ 	}
  </style>
  </head>
  <body>
@@ -105,6 +109,7 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
          <caption class="gesi">게시글 상세</caption>
          <tbody>
                  <c:forEach items="${bodylist}" var="bDto">
+                 <input type="hidden" name="bno" id="bno" value="${bDto.bno }" />
              <tr>
                  <th scope="row">글 번호</th>
                  <td>${bDto.bno}</td>
@@ -149,58 +154,28 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
           
           <div class="brunch_comment #comment" style="display: block;">
 
-            <a name="comments" class="screen_out">댓글${replyview.size()}</a>
 
 			
-            <div class="comment_head"><strong class="tit_comment">댓글<span class="txt_num"></span></strong>
+            <div class="comment_head"><strong class="tit_comment">댓글  ${replylist.size()}  <span class="txt_num"></span></strong>
 </div>
             <div class="comment_content">
                 <div class="list_comment_more" style="display: none;">
-                    <button type="button" data-action="moreList" class="btn_preview">이전 댓글 보기</button>
                 </div>
 				
-				<c:forEach items="${replyview}" var="replyview">
-                <ul class="list_comment"><li class="item animation_up"><div class="comment">
-		<a href="/@@3jUF" class="link_profile">
-			<img src="//img1.daumcdn.net/thumb/C42x42/?fname=http://t1.daumcdn.net/brunch/service/user/3jUF/image/iSvVjV7XpGc6Ns_2hm8BrIocFj4.jpg" width="42" height="42" class="img_thumb" alt="Vegit 이미지">
-		</a>
-	<div class="cont_info">
-		<div class="info_append">
-			<strong class="tit_userid">
-				<a href="/@@3jUF" class="link_userid">${replyview.writer}</a>
-			</strong>
-			<span class="ico_dot"></span>
-			<span class="txt_time"></span>
-		</div>
-		<p class="desc_comment">저도 옛날 옛적에 인터뷰를 한번 했다가, 댓글을 보고 깜짝 놀란적이 있죠. 물론 제가 한말이 아닌데 제가 한말로 처리 된 부분도 있었지만, 그와 상관없이 참 이상한 사람들이 많구나.. 라고 생각했던 경험이 있네요.</p>
 
-		<div class="comment_setting">
-			<div class="wrap_comment_menu">
-						<button type="button" class="btn_set" data-action="report" data-commentno="347302">신고</button>
-					
-			</div>
-		</div>
-	</div>
-</div></ul>
-</c:forEach>
             </div>
-				
-	<c:if test="${fn:trim(sessionScope.loginUser.mid) ne ''}">
-            <div class="wrap_comment_write">
-            <form class="comment_write brunch_login" method="post" novalidate="">
-	<input type="hidden" name="sticker" value="">
+<c:if test="${fn:trim(sessionScope.loginUser.mid) ne ''}">
+     <div class="wrap_comment_write">
+      <form id="replyadd" class="comment_write brunch_login" method="post" action="replyadd.bigshort">
 
 	<fieldset>
 		<legend class="screen_out">댓글 작성 폼</legend>
 		<div class="link_profile">
-					<img src="//img1.daumcdn.net/thumb/C42x42/?fname=http://t1.daumcdn.net/brunch/service/guest/image/05yccYvwPPjX61Yi9Q1qeS99Esc.jpg" width="42" height="42" class="img_thumb" alt="이미지 정보">
 		</div>
 		<div class="box_area">
 			<label for="tfCmt" class="screen_out">댓글 작성</label>
 			<span class="wrap_area">
-					<!-- <div contenteditable="" class="editor tf_area"></div> -->
-					<div class="editor_placeholder" style="display: none;"></div>
-					<textarea class="editor tf_area" name="content" maxlength="1000" placeholder="작가와 글에 대해 이야기를 나누어 보세요!" ></textarea>
+					<textarea class="editor tf_area" id="content" name="content" maxlength="1000" placeholder="작가와 글에 대해 이야기를 나누어 보세요!" ></textarea>
 			</span>
 			<div class="comment_sticker"></div>
 
@@ -219,16 +194,54 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 				</div>
 
 				<div class="wrap_btn">
-						<button type="submit" class="btn_default #submit">확인</button>
-						<input type ="hidden" id="btn44" value="${sessionScope.loginUser.mid}">
+						<input type="button" id="login_reple" class="btn_default #submit" value="확인">
+						<input type ="hidden" id="mid" name="mid" value="${sessionScope.loginUser.mid}">
 				</div>
 			</div>
 		<ul class="_mention_list" style="display: none;"></ul></div>
 		
 	</fieldset>
-</form></div>
+</form>
+</div>
 </c:if>
+<c:if test="${fn:trim(sessionScope.loginUser.mid) eq ''}">
+	<div class="wrap_comment_write">
+      		<form class="comment_write brunch_login" action="#" method="post" >
+	<fieldset>
+		<legend class="screen_out">댓글 작성 폼</legend>
+		<div class="link_profile">
+		</div>
+		<div class="box_area">
+			<label for="tfCmt" class="screen_out">댓글 작성</label>
+			<span class="wrap_area">
+					<textarea class="editor tf_area" name="content" readonly="readonly" maxlength="1000" placeholder="로그인하셔야 댓글을 작성 할 수 있어요" ></textarea>
+			</span>
+			<div class="comment_sticker"></div>
 
+			<div class="write_append">
+
+				<div class="select_sticker">
+					<div class="layer_sticker">
+						<strong class="screen_out">스티커 카테고리 선택</strong>
+						<ul class="tab_sticker">
+							<li>
+								<a href="#none" class="link_tab"></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="wrap_btn">
+						<input type="button" id="login_reple" class="btn_default #submit" value="로그인" onclick="document.getElementById('id01').style.display='block'" >
+				</div>
+			</div>
+		<ul class="_mention_list" style="display: none;"></ul></div>
+		
+	</fieldset>
+</form>
+</div>
+						
+					</c:if>
 		        </div>
      
      
@@ -236,15 +249,15 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 
 function comment_list(){
 	
-	var bno = $("#hidden").val();
+	var bno = $("#bno").val();
 	
 	$.ajax({
 		type : "POST",
-		url : "commentlist.bizpoll",
+		url : "commentlist.bigshort",
 		data : "bno=" + bno,
 		success : function(result) {
 
-			$("#commentlist").html(result);
+			$(".comment_content").html(result);
 
 		}
 	});
@@ -336,21 +349,21 @@ function comment_list(){
 	});
 
 		// 댓글 등록하기 위한 이벤트
-		$(document).on("click", "#_submitCmt",function() {
+		$(document).on("click", "#login_reple",function() {
 			
 			
 		var bno = $("#bno").val();
-		var mid = $("#mid2").val();
-		var comment = $("#comment_text").val();
+		var mid = $("#mid").val();
+		var comment = $("#content").val();
 			
 			 $.ajax({
-				url : "replyadd.bizpoll",
+				url : "replyadd.bigshort",
 				type : "POST",
 				dataType : "json",
-				data : "bno=" + bno +"&mid=" + mid +"&comment_text=" + comment,
+				data : "bno=" + bno +"&mid=" + mid +"&content=" + comment,
 				success : function(data) {
 
-					$("#comment_text").val("");// 댓글 등록후 내용 초기화 하는 코드
+					$("#content").val("");// 댓글 등록후 내용 초기화 하는 코드
 					comment_list(); // 댓글을 다시 불러드리기 위한 호출 함수
 
 				},

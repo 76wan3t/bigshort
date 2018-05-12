@@ -9,31 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.bigshort.action.Action;
-import com.bigshort.action.ActionForward;
-import com.bigshort.action.IndexAction;
-import com.bigshort.action.LoginCkAction;
-import com.bigshort.action.LoginOutAction;
-import com.bigshort.action.board.BoardBodyAction;
-import com.bigshort.action.board.BoardInsertSaveAction;
-import com.bigshort.action.board.BoardInsertViewAction;
-import com.bigshort.action.board.BoardUpdateAction;
-import com.bigshort.action.board.ListAllAction;
-import com.bigshort.action.board.ModifyDeleteAction;
-import com.bigshort.action.board.ModifyViewAction;
-import com.bigshort.action.board.ReplyAddAction;
-import com.bigshort.action.board.ReplyDelAction;
-import com.bigshort.action.board.SweetAddAction;
-import com.bigshort.action.board.SweetCountAction;
-import com.bigshort.action.member.ConstractAction;
-import com.bigshort.action.member.JoinAction;
-import com.bigshort.action.member.MemberAjaxAction;
-import com.bigshort.action.member.MemberInsertAction;
-import com.bigshort.action.zone.BukGuDetailAction;
-import com.bigshort.action.zone.DongGuDetailAction;
-import com.bigshort.action.zone.GwangSanDetailAction;
-import com.bigshort.action.zone.NamGuDetailAction;
-import com.bigshort.action.zone.SeoGuDetailAction;
+import com.bigshort.action.*;
+import com.bigshort.action.board.*;
+import com.bigshort.action.member.*;
+import com.bigshort.action.zone.*;
 
 
 /**
@@ -148,6 +127,9 @@ public class BigshortFrontController extends HttpServlet {
 				forward = action.excute(request, respnse); 
 			}else if(command.equals("/sweetcount.bigshort")) { // 게시판 좋아요 개수
 				action = new SweetCountAction();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/commentlist.bigshort")) { // 게시판 좋아요 개수
+				action = new CommentListAction();
 				forward = action.excute(request, respnse); 
 			}
 			

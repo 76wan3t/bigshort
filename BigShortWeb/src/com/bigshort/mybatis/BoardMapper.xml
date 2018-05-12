@@ -99,9 +99,7 @@
   		
   	</select>
   	
-  	<select id="replycount" resultType="rDto">
- 		SELECT count(*) AS count FROM tblreply WHERE bno=#{bno}
- 	</select>
+
  	
  	<update id="countUpdate">
  	
@@ -117,7 +115,7 @@
 	 
 	 <insert id="replyinsert">
  		 INSERT INTO tblreply (rno, content, writer, bno)
- 		VALUES (seq_tblreply_rno.NEXTVAL, #{content}, #{writer} , #{bno})
+ 		VALUES ((select nvl(max(rno)+1, 1) FROM tblreply), #{content}, #{writer} , #{bno})
  	</insert>
  	
  	<delete id="replydelete">
@@ -131,6 +129,9 @@
 	   		UPDATE tblboard SET sweet = sweet + 1 WHERE bno = #{bno}
 	  		
 	 </update>
- 	
+	 
+ 	 <select id="replyList" resultType="rDTO">
+ 		SELECT * FROM tblreply WHERE bno=#{bno}
+ 	</select>
   
 </mapper>
