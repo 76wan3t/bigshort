@@ -39,9 +39,9 @@
 				
 				<div class="desc_comment"><c:out value="${cmt}" escapeXml="false"/></div>
 		
-				<div class="">
-					<div class="">
-						<button type="button" >신고</button>
+				<div class="comment_setting">
+					<div class="wrap_comment_menu">
+						<button type="button" class="btn_set" data-action="report" data-commentno="347302">신고</button>
 					</div>
 				</div>
 			</div>
