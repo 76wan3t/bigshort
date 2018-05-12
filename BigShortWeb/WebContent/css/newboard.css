@@ -1,5 +1,21 @@
+
+/* 스마트폰 (가로/세로): */
+@media screen and (max-device-width : 480px) {
+/* Styles */
+	th{
+		width: 14%;
+		padding-top: 10px;
+		text-align: right;
+		}
+	.upload-name {
+    	width: 80%;
+	}
+
+}
+
+
 th{
-		width: 72px;
+		width: 14%;
 		padding-top: 10px;
 		text-align: right;
 	}
@@ -8,7 +24,7 @@ th{
 		width: 700px;
 	}
 	.form-control{
-		width: 700px!important;
+		width: 100%!important;
 		margin-top: 15px;
 		margin-left: 5px;
 	}
@@ -40,8 +56,8 @@ th{
 	
 		float: right;
 		color: #fff;
-    		background-color: #63BBED;
-    		border-color: #398439;
+    	background-color: #63BBED;
+    	border-color: #398439;
 		border: none;
 		text-align: center;
 		text-decoration: none;
@@ -94,7 +110,7 @@ th{
 				0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	}
 	.upload-name { 
-		width : 614px;
+		width : 80%;
 		display: inline-block; 
 		padding: 5px 5px; /* label의 패딩값과 일치 */ 
 		font-size: inherit; 
@@ -134,6 +150,7 @@ th{
 		margin-top: 15px;
 	}
 	.table-bordered{
+		width:700px;
 		border-color: #ddd;
 		margin-bottom: 20px;
    		background-color: #fff;

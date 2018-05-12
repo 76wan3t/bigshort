@@ -140,10 +140,10 @@
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" type="text/css" href="/BigShortWeb/css/header.css?var=1">
+<link rel="stylesheet" type="text/css" href="/BigShortWeb/css/header.css?var=2">
 <link rel="stylesheet" type="text/css" href="/BigShortWeb/css/footer.css?var=1">
 </head>
-<body>
+<body >
 
 	
 	<div id="wrapper">
@@ -158,11 +158,9 @@
 						<ul class="menu-utility-user">
 							<li class="search"></li>
 							<!-- <li class="logo_a">가방</li> -->
-							<li><c:choose>
+							<li id="login_line" class="myaccount guestuser"><c:choose>
 									<c:when test="${empty sessionScope.loginUser}">
-										<a
-											onclick="document.getElementById('id01').style.display='block'"
-											style="cursor: pointer;">로그인</a>
+										<a onclick="document.getElementById('id01').style.display='block'"style="cursor: pointer;">로그인</a>
 							<li class="myaccount guestuser"><a href="/BigShortWeb/constract.bigshort">회원가입</a>
 									</c:when>
 									<c:otherwise>
@@ -172,7 +170,7 @@
 											<li><a href="#" id="mypage">마이페이지</a></li>
 										</ul>
 									</c:otherwise>
-								</c:choose></li>
+								</c:choose>
 							</li>				
 							<li class="help"><a href="/BigShortWeb/listAll.bigshort" title="고객센터">고객센터</a></li>
 

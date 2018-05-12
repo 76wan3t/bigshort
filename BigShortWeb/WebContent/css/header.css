@@ -13,6 +13,10 @@
 	box-sizing: border-box;
 	word-wrap: break-word;
 }
+html{
+	
+	overflow: auto!important;
+}
 /*HEAD */
 .w3-modal-content {
 	width: 600px !important;
@@ -101,7 +105,7 @@ blockquote, body, dd, div, dl, dt, fieldset, figure, form, h1, h2, h3,
 body {
 	font-size: 13px;
 	color: #777;
-	font-family: 'Jeju Gothic'
+	font-family: 'Jeju Gothic';
 }
 
 ol, ul { /* ul 태그에 기본적으로 해야 할 것 */
@@ -637,13 +641,13 @@ h1 {
 }
 
 #bigshort_logo>img {
-	width: 50px;
+    width: 50px;
     height: 45px;
     float: left;
     margin-right: 10px;
-    top: -12px;
+    top: 6px;
     position: absolute;
-    left: 213px;
+    left: 219px;
 }
 
 #bigshort_logo>span {
@@ -1003,4 +1007,7 @@ button#myBtn:hover {
 	position: absolute;
     right: 0;
     top: 0;
+ }
+ #login_line{
+ 	line-height: 22px;
  }

@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="/BigShortWeb/css/newboard.css?var=1">
+<link rel="stylesheet" type="text/css" href="/BigShortWeb/css/newboard.css?var=3">
 <style type="text/css">
 
 	#header a{
