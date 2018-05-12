@@ -83,22 +83,22 @@ public class BigshortFrontController extends HttpServlet {
 			}else if(command.equals("/boardupdate.bigshort")) { // 수정 누르면 타는 액션
 				action = new BoardUpdateAction();
 				forward = action.excute(request, respnse);
-			}else if(command.equals("/join.bigshort")) { // 수정 누르면 타는 액션
+			}else if(command.equals("/join.bigshort")) { // 회원가입 액션
 				action = new JoinAction();
 				forward = action.excute(request, respnse);
-			}else if(command.equals("/gwangsandetail.bigshort")) { // 수정 누르면 타는 액션
+			}else if(command.equals("/gwangsandetail.bigshort")) { // 광산구 세부페이지 액션
 				action = new GwangSanDetailAction();
 				forward = action.excute(request, respnse);
-			}else if(command.equals("/bukgudetail.bigshort")) { // 수정 누르면 타는 액션
+			}else if(command.equals("/bukgudetail.bigshort")) { // 북구 세부페이지 액션
 				action = new BukGuDetailAction();
 				forward = action.excute(request, respnse);
-			}else if(command.equals("/namgudetail.bigshort")) { // 수정 누르면 타는 액션
+			}else if(command.equals("/namgudetail.bigshort")) { // 남구 세부페이지 액션
 				action = new NamGuDetailAction();
 				forward = action.excute(request, respnse);
-			}else if(command.equals("/donggudetail.bigshort")) { // 수정 누르면 타는 액션
+			}else if(command.equals("/donggudetail.bigshort")) { // 동구 세부페이지 액션
 				action = new DongGuDetailAction();
 				forward = action.excute(request, respnse);
-			}else if(command.equals("/seogudetail.bigshort")) { // 수정 누르면 타는 액션
+			}else if(command.equals("/seogudetail.bigshort")) { // 서구 세부페이지 액션
 				action = new SeoGuDetailAction();
 				forward = action.excute(request, respnse);
 			}else if(command.equals("/memajax.bigshort")) { // 수정 누르면 타는 액션
@@ -113,7 +113,7 @@ public class BigshortFrontController extends HttpServlet {
 			}else if(command.equals("/modifydelete.bigshort")) { // 상세글 삭제하는 액션
 				action = new ModifyDeleteAction();
 				forward = action.excute(request, respnse); 
-			}else if(command.equals("/modifyview.bigshort")) { // 상세글 수정 페이지 액션
+			}else if(command.equals("/modifyview.bigshort")) { // 상세글 수정에서 필요한 데이더를 가져오는 액션
 				action = new ModifyViewAction();
 				forward = action.excute(request, respnse); 
 			}else if(command.equals("/replyadd.bigshort")) { // 리플 다는 액션

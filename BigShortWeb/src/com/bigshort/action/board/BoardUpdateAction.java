@@ -91,12 +91,12 @@ public class BoardUpdateAction implements Action {
 		if(ruselt >0) {
 			
 			System.out.println("수정 성공");
-			url = "boardbody.bizpoll?bno="+bno;
+			url = "boardbody.bigshort?bno="+bno;
 			
 		}else {
 			
 			System.out.println("수정 실패");
-			url = "boardbody.bizpoll?bno="+bno;
+			url = "boardbody.bigshort?bno="+bno;
 			
 		}
 		

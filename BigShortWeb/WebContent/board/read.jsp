@@ -110,14 +110,19 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
         
          <tbody>
                  <c:forEach items="${bodylist}" var="bDto">
-                 <input type="hidden" name="bno" id="bno" value="${bDto.bno }" />
+                 <form action="modifyview.bigshort" id="bodyupdate_go" method="get">
+                 	<input type="hidden" name="bno" id="bno" value="${bDto.bno }" />
+                 </form>
              <tr>
                  <th scope="row">글 번호</th>
                  <td>${bDto.bno}</td>
                  <th scope="row">조회수</th>
                  <td>${bDto.viewcnt}           
                  	<c:if test="${fn:trim(sessionScope.loginUser.mid) eq fn:trim(bDto.writer) || fn:trim(sessionScope.loginUser.mname) eq '관리자' }">        
-                 		<input type="button" value="수정" class="btn pull-right">
+                 		<input type="button" value="수정" class="btn pull-right" id="bodyupdate">
+                 	
+                 		
+                 		
         	 		<input type="button" value="삭제" class="btn pull-right" id="bodydel">
         	 	</c:if>
         	 </td>
@@ -462,6 +467,25 @@ function comment_list(){
 			
 			
 		});
+		
+		//게시판 수정 이벤트
+		
+		$(document).on("click", "#bodyupdate", function() {
+			
+			var Del = confirm("수정 하시겠습니까?") // 클릭시 삭제할 것인지 물어보는 코드
+
+			if (Del == true) {
+
+				$("#bodyupdate_go").submit();
+
+			} else {
+
+				alert("취소 되었습니다.");
+				return false;
+
+			}
+
+		}); 
 		
 		//게시판 삭제 이벤트
 		$(document).on("click", "#bodydel", function() {

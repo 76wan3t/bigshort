@@ -3,7 +3,7 @@ package com.bigshort.common;
 public class Constants {
 	
 	// 파일이 업로드 되는 디렉토리
-	public final static String UPLOAD_PATH = "d:\\upload\\";
+	public final static String UPLOAD_PATH = "f:\\upload\\";
 	
 	
 	// 파일 업로드 제한 용량(10MB)

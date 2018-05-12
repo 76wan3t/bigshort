@@ -282,15 +282,8 @@
 		text-align: center;
 	}
 
-	.pagination > .active > a {
-		background-color: #B7F0B1;
-		border-color: #B7F0B1;
-	}
+
 	
-	.pagination > .active > a:hover {
-		background-color: #A5DE9F;
-		border-color: #A5DE9F;
-	}
 	#btn1{
 		display: inline-block;
 	}
