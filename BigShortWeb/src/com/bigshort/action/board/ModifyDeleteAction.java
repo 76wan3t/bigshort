@@ -34,12 +34,12 @@ public class ModifyDeleteAction implements Action{
 		if (result > 0) {
 			
 			System.out.println("삭제 성공");
-			url = "listAll.bigshort";
+			url = "listAll.bigshort?bno="+num;
 			
 		}else {
 			
 			System.out.println("삭제 실패");
-			url = "boardbody.bigshort";
+			url = "boardbody.bigshort?bno="+num;
 			
 		}
 		
@@ -55,7 +55,7 @@ public class ModifyDeleteAction implements Action{
 		forward.setPath(url);
 		forward.setRedirect(false); 
 	
-		return forward;
+		return null;
 		
 	}
 
