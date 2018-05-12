@@ -133,5 +133,17 @@
  	 <select id="replyList" resultType="rDTO">
  		SELECT * FROM tblreply WHERE bno=#{bno}
  	</select>
+ 	
+ 	<delete id="modifDelete" parameterType="Integer">
+	  	
+	  		DELETE FROM tblboard WHERE bno = #{bno}
+	  	
+	 </delete>
+	 
+	  <delete id="replyAllDelete">
+ 	
+ 		DELETE FROM tblreply WHERE bno = #{bno}
+ 		
+ 	</delete>
   
 </mapper>

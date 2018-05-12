@@ -30,7 +30,7 @@
  .board_view tbody th.th_file {padding:0 0 0 15px; vertical-align:middle}
  .gesi{font-size: 30px; color:black; font-family:Verdana,sans-serif;}
  .wdp_90 {width:90%}
- .btn {border-radius:3px;padding:5px 11px;color:#fff !important; display:inline-block; background-color:#6b9ab8; border:1px solid #56819d;vertical-align:middle}
+ .btn {border-radius:3px;padding:5px 11px;color:#fff !important; display:inline-block; background-color:#6b9ab8; border:1px solid #56819d;vertical-align:middle; float: right; margin-right: 7px;}
  #button2{margin-left: 405px;}
  #navigation{
  	    margin-left: 5px;
@@ -107,6 +107,7 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
              <col width="35%"/>
          </colgroup>
          <caption class="gesi">게시글 상세</caption>
+        
          <tbody>
                  <c:forEach items="${bodylist}" var="bDto">
                  <input type="hidden" name="bno" id="bno" value="${bDto.bno }" />
@@ -114,7 +115,12 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
                  <th scope="row">글 번호</th>
                  <td>${bDto.bno}</td>
                  <th scope="row">조회수</th>
-                 <td>${bDto.viewcnt}</td>
+                 <td>${bDto.viewcnt}           
+                 	<c:if test="${fn:trim(sessionScope.loginUser.mid) eq fn:trim(bDto.writer) || fn:trim(sessionScope.loginUser.mname) eq '관리자' }">        
+                 		<input type="button" value="수정" class="btn pull-right">
+        	 		<input type="button" value="삭제" class="btn pull-right" id="bodydel">
+        	 	</c:if>
+        	 </td>
              </tr>
              <tr>
                  <th scope="row">작성자</th>
@@ -133,7 +139,10 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 				<c:set var="cmt" value="${fn:replace(cmt,cn,br)}" />
 				<c:set var="cmt" value="${fn:replace(cmt,' ',sp)}" />
              <tr>
-                 <td colspan="4" id="td2"><c:out value="${cmt}" escapeXml="false"/></td>
+                 <td colspan="4" id="td2">
+
+                 <c:out value="${cmt}" escapeXml="false"/>
+                 </td>
              </tr>
              <tr><c:if test="${bDto.filename != '-'}">
                  <th scope="row">첨부파일(내려받는 횟수 : ${bDto.downloadcnt } )</th>
@@ -454,23 +463,23 @@ function comment_list(){
 			
 		});
 		
-		
+		//게시판 삭제 이벤트
 		$(document).on("click", "#bodydel", function() {
 			
 			var Del = confirm("삭제 하시겠습니까?") // 클릭시 삭제할 것인지 물어보는 코드
 
 			if (Del == true) {
 
-				var bno = $("#hidden").val(); 
+				var bno = $("#bno").val(); 
 
 				 $.ajax({
-					url : "modifydelete.bizpoll",
+					url : "modifydelete.bigshort",
 					type : "POST",
 					dataType : "json",
 					data : "bno=" + bno,
 					success : function(data) {
 
-						location.href="boardlist.bizpoll";
+						location.href="listAll.bigshort";
 						
 
 					},

@@ -34,12 +34,12 @@ public class ModifyDeleteAction implements Action{
 		if (result > 0) {
 			
 			System.out.println("삭제 성공");
-			url = "boardlist.bizpoll";
+			url = "listAll.bigshort";
 			
 		}else {
 			
 			System.out.println("삭제 실패");
-			url = "boardbody.bizpoll";
+			url = "boardbody.bigshort";
 			
 		}
 		
