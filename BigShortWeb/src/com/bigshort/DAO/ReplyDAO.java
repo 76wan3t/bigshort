@@ -1,14 +1,24 @@
 package com.bigshort.DAO;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.bigshort.DTO.ReplyDTO;
+import com.bigshort.common.DBManager;
 import com.bigshort.mybatis.SqlMapConfig;
 
 public class ReplyDAO {
+	
+	Connection conn = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
 	
 	// MyBatis 세팅값 호출
 	SqlSessionFactory sqlSessionFactory = SqlMapConfig.getSqlSession();
@@ -22,16 +32,37 @@ public class ReplyDAO {
 		return instance;
 	}
 	
-	public List<ReplyDTO> replyList(int bno) {
+	public ArrayList<ReplyDTO> replyList(int bno) {
 		
-		sqlSession = sqlSessionFactory.openSession();
+		/*sqlSession = sqlSessionFactory.openSession();*/
 		
-		List<ReplyDTO> list = null;
+		ArrayList<ReplyDTO> list = new ArrayList<>();
+		 
 	
 		
 		try {
 			
-			list = sqlSession.selectList("replyList", bno);
+		/*	list = sqlSession.selectList("replyList", bno);*/
+			
+			conn = DBManager.getConnection();
+			
+			String sql=" SELECT * FROM tblreply WHERE bno = ? ";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, bno);
+    		
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				 int rno = rs.getInt("rno");
+				 String content = rs.getString("content");
+				 String writer = rs.getString("writer");
+				 Date regdata = rs.getDate("regdata");
+				 bno = rs.getInt("bno");
+				 
+				 ReplyDTO rDto = new ReplyDTO(rno, content, writer, regdata, bno);
+				 list.add(rDto);
+				
+			}
 
 			
 			
@@ -41,7 +72,8 @@ public class ReplyDAO {
 			
 		}finally {
 			
-			sqlSession.close();
+			//sqlSession.close();
+			DBManager.close(conn, pstmt, rs);
 			
 		}
 		return list;
