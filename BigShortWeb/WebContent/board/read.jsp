@@ -309,7 +309,7 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 			}
 		});
 		
-	}  */
+	} */
 
 
 	$(document).ready(function(){
