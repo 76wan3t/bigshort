@@ -1011,3 +1011,8 @@ button#myBtn:hover {
  #login_line{
  	line-height: 22px;
  }
+.menu-utility-user > li > a {
+    color: white;
+    font-size: 15px;
+    font-family: 'Jeju Gothic', serif;
+}
