@@ -295,7 +295,7 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 	} 
 	
 	
- 	function sweet_count(){
+/*  	function sweet_count(){
 		var bno = $("#hidden").val();
 		
 		$.ajax({
@@ -309,14 +309,14 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 			}
 		});
 		
-	} 
+	}  */
 
 
 	$(document).ready(function(){
 		
 		comment_list();
 		comment_size();
-		 sweet_count(); 
+		// sweet_count(); 
 		
 		
 		var comment2 = $("#comment2").val();
