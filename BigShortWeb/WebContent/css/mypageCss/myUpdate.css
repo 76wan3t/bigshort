@@ -1,1 +1,113 @@
 @charset "UTF-8";
+body{
+	padding: 0;
+	margin: 0;
+}
+/* 경고문 */
+span.ck{
+	color: red;
+	font-size: 13px;
+	margin-left:20px;
+	display: none; 
+}
+/* 전체를 감싸는 div */
+#join_wrap{
+	width: 500px;
+	margin: 100px auto 20px;
+}
+/* 각 영역을 나누고 있는 div? */
+.info_wrap{
+	width: 500px;
+	border: 1px solid gray;
+}
+/* input영역을 감싸는 div */
+.info{
+	width: 100%;
+	height:50px;
+	border-bottom: 1px solid gray;
+}
+.info:last-child{
+	border-bottom: none;
+}
+#info_wrap3{
+	height: 280px;
+}
+/* input태그 */
+#id_div{
+	border: 1px solid gray;
+}
+.info_input{
+	width: 90%;
+	height: 60%;
+	border: none;
+	margin: 10px 20px;
+}
+.mail_input{
+	display: inline-block;
+	width:20%;
+	margin-bottom:20px;
+}
+/* 사업자 번호 */
+.brn_input{
+	width: 20%;
+	height: 33px;
+	display: inline-block;
+	border: 1px solid gray;
+	text-align: center;
+}
+#brn_div{
+	height: 60px;
+}
+/* 중개소 전화번호 */
+#sphone{
+	width: 68%;
+}
+select{
+	height: 90%;
+	border: none;
+	outline: none;
+}
+/* 중개소 주소 */
+.join{
+	height: 30px;
+	margin: 3px;
+	border: 1px solid gray;
+	padding-left: 10px;
+}
+#address_wrap{
+	width: 83%;
+}
+.addr_input{
+	width: 100%;	
+}
+.addr_input:last-child{
+	display: block;	
+	margin-bottom: 20px;
+}
+#addr_button{
+	height: 33px;
+	color: white;
+	font-size: 12px;
+	padding: 5px 5px 0;
+}
+/* 회원가입 버튼 */
+#frm_submit{
+	display: block;
+	width: 100%;
+	height: 60px;
+	font-size: 20px;
+	text-align: center;
+	text-decoration: none;
+	padding-top: 10px;
+	font-weight: bold;
+	color: white;
+}
+#submit_wrap{
+	width: 500px;
+	margin: 15px auto 60px;
+}
+/* 버튼 */
+.join_btn{
+	background-color: #63BBED;
+	border: 1px solid #dadada;
+}
