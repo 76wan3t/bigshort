@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+#index_wrap{
+	width: 600px;
+	margin: 100px auto;
+}
+.info_wrap{
+	width: 250px;
+	height: 250px;
+	float: left;
+	margin: 10px;
+	border: 1px solid black;
+}
+#profile{
+	height: 520px;
+}

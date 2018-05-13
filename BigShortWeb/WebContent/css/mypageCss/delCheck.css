@@ -3,7 +3,7 @@
 	width:500px;
 }
 #myckwrap{
-	margin:200px auto 133px;
+	margin:200px auto 100px;
 	font-size: 40px;
 	text-align: center;	
 }
@@ -11,7 +11,9 @@
 	border: 1px solid gray;
 }
 #title{
-	margin-bottom: 20px;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #dadada;
+	padding-bottom: 10px;
 }
 #subtitle{
 	font-size: 15px;
@@ -27,4 +29,12 @@
 #id{
 	border: none;
 	text-align: center;
+}
+#cksubmit{
+	border:none;
+	border-radius: 5px;
+}
+#cksubmit:hover{
+	background-color: #63BBED;
+	opacity: 0.7;
 }
