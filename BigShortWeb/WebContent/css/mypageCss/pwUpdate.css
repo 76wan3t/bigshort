@@ -21,8 +21,7 @@
 	float: left;
 }
 .ckinput{
-	border: 1px solid gray;
-	border-radius: 4px;
+	border: 1px solid #dadada;
 	outline: none;
 	height: 50px;
 	width: 87%;
@@ -37,7 +36,6 @@
 	font-size: 30px;
 	width: 43%;
 	height: 50px;
-	border-radius: 4px;
 	margin: 10px 0;
 }
 #cksubmit{
