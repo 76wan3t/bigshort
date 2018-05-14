@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.bigshort.action.*;
 import com.bigshort.action.board.*;
 import com.bigshort.action.member.*;
+import com.bigshort.action.mypage.MyIndexAction;
 import com.bigshort.action.zone.*;
 
 
@@ -136,6 +137,9 @@ public class BigshortFrontController extends HttpServlet {
 				forward = action.excute(request, respnse); 
 			}else if(command.equals("/commentsize.bigshort")) { // 댓글 수를 파악하기위한 액션
 				action = new CommentSizeAction();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/myIndex.bigshort")) { // 마이페이지를 가기위한 액션
+				action = new MyIndexAction();
 				forward = action.excute(request, respnse); 
 			}
 			

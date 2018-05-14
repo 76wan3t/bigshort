@@ -6,6 +6,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="/BigShortWeb/css/mypageCss/myIndex.css?var=1"/><!-- css파일 우선순위 설정  -->
+<script type="text/javascript">
+	$(document).on("click","#up", function(){
+		location.href="myUpdate.bigshort";
+	});
+</script>
 </head>
 <body>
 <div id="index_wrap">

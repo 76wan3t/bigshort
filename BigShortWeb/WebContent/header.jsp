@@ -167,7 +167,7 @@
 										<ul id=modal_ul>
 											<li>${sessionScope.loginUser.mname}(${sessionScope.loginUser.mid})</li>
 											<li><a href="#" id="logout_btn">로그아웃</a></li>
-											<li><a href="#" id="mypage">마이페이지</a></li>
+											<li><a href="myIndex.bigshort" id="mypage">마이페이지</a></li>
 										</ul>
 									</c:otherwise>
 								</c:choose>

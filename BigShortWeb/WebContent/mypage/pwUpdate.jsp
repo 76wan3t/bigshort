@@ -7,6 +7,9 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="/BigShortWeb/css/mypageCss/pwUpdate.css?var=1"/><!-- css파일 우선순위 설정  -->
+<script type="text/javascript">
+
+</script>
 </head>
 <body>
 	<div id="myckwrap" class="wrap">
