@@ -12,33 +12,36 @@
 <!-- 회원프로필 -->
 	<div id="profile" class="info_wrap">
 		<div id="profile_in">
-			<div id="img_wrap"><img id="user_logo" src="/BigShortWeb/images/user.png"></div>
-			<div id="user_info">
-				<ul>
-					<li>아이디</li>
-					<li>$</li>
-					<li>이름</li>
-					<li>$</li>
-					<li></li>
-					<li></li>
-				</ul>
+			<div id="img_wrap">
+				<img class="my_logo" src="/BigShortWeb/images/user.png">
+				<div id="user_info">
+					<span>ID</span>
+				</div>
 			</div>
 		</div>
 	</div>
 <!-- 정보 수정 -->	
 	<div id="profile_up" class="info_wrap wrap">
 		<div id="up" class="info_div">
-		<img class="my_logo" src="/BigShortWeb/images/fix.png">
-		<div>정보 수정</div>
+			<img class="my_logo" src="/BigShortWeb/images/fix.png">
+			<div>정보 수정</div>
 		</div>
 	</div>
-<!-- 탈퇴 -->	
-	<div id="profile_del" class="info_wrap wrap">
+<!-- 비밀번호 변경 -->
+	<div id="pw_up" class="info_wrap wrap">
+		<div id="pwup" class="info_div">
+			<img class="my_logo" src="/BigShortWeb/images/password.png"">
+			<div>비밀번호 변경</div>
+		</div>
+	</div>	
+<!-- 탈퇴 -->
+	<div id="profile_del" class="info_wrap  wrap">
 		<div id="del" class="info_div">
-		<img class="my_logo" src="/BigShortWeb/images/delete-cross.png">
-		<div>회원 탈퇴</div>
+			<img class="my_logo" src="/BigShortWeb/images/del.png">
+			<div>회원 탈퇴</div>
 		</div>
-	</div>
+	</div>	
+	
 </div>
 </body>
 </html>
