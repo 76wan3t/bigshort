@@ -23,5 +23,10 @@
   		INSERT INTO member(mid, mpw, mname, mphone, mbisname, mbisnumber, mbisphone, mjusonum, mjuso, mjuso2, memail, memail2)
   		VALUES(#{mid}, #{mpw}, #{mname}, #{mphone}, #{mbisname}, #{mbisnumber}, #{mbisphone}, #{mjusonum}, #{mjuso}, #{mjuso2}, #{memail}, #{memail2})
   	</insert>
+  	
+  	<delete id="memdelete">
+  		DELETE FROM member
+  		WHERE mid = #{mid}
+  	</delete>
   
 </mapper>

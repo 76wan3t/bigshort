@@ -13,6 +13,7 @@ import com.bigshort.action.*;
 import com.bigshort.action.board.*;
 import com.bigshort.action.member.*;
 import com.bigshort.action.mypage.DelCheckAction;
+import com.bigshort.action.mypage.MemberDeleteAction;
 import com.bigshort.action.mypage.MyIndexAction;
 import com.bigshort.action.mypage.MyUpdateAction;
 import com.bigshort.action.mypage.PwUpdateAction;
@@ -152,6 +153,9 @@ public class BigshortFrontController extends HttpServlet {
 				forward = action.excute(request, respnse); 
 			}else if(command.equals("/delCheck.bigshort")) { // 마이페이지_비밀번호 변경을 가기위한 액션
 				action = new DelCheckAction();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/memdelete.bigshort")) { // 멤버 삭제를 위한 액션
+				action = new MemberDeleteAction();
 				forward = action.excute(request, respnse); 
 			}
 			
