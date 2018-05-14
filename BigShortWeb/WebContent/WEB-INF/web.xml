@@ -4,13 +4,7 @@
   <welcome-file-list>
   
   <!-- 페이지를 못찾을 경우 이순서대로 페이지를 출력 -->
-  	<welcome-file>index.bigshort</welcome-file>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>start.jsp</welcome-file>
   </welcome-file-list>
   
   <!-- .Bigshort로 시작된 페이지면 모두 BzipollFrontController로 작동 -->
