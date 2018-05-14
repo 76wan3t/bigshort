@@ -40,10 +40,10 @@ public class BoardBodyAction implements Action{
 		//
 		BoardDAO bDao = BoardDAO.getInstance();
 		list = bDao.bodylist(num);
-	/*	list2 = bDao.bodyNextBody(num);*/
+		list2 = bDao.bodyNextBody(num);
 		
 		request.setAttribute("bodylist", list);
-	/*	request.setAttribute("bodynext", list2);*/
+		request.setAttribute("bodynext", list2);
 /*		request.setAttribute("comment", comment);*/
 		
 		// 조회수 1 증가
