@@ -6,7 +6,7 @@
 <%@ include file="../header.jsp" %>    
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="/BigShortWeb/css/mypageCss/myCheck.css?var=1"/><!-- css파일 우선순위 설정  -->
+<link rel="stylesheet" type="text/css" href="/BigShortWeb/css/mypageCss/delCheck.css?var=1"/><!-- css파일 우선순위 설정  -->
 </head>
 <body>
 	<div id="myckwrap" class="wrap">
