@@ -246,6 +246,7 @@
 <body>
 <form action="meminsert.bigshort" method="POST" id="joinfrm" name="joinfrm">
 	<div id="join_wrap">
+		<div id="title">회원 가입</div>
 		<div class="info_wrap" id="info_wrap1">
 		<!-- 아이디 (필수) -->
 			<div class="info" id="id_div">

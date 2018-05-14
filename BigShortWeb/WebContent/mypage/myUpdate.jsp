@@ -78,6 +78,22 @@
 			$("#pw2ck").css("display","none");
 		}
 		
+		/* nameck */
+		if(name == ""){
+			mname.focus();
+			mname.css("display","block").css("margin-bottom","0");
+			$("#nameck").css("display","block");
+			return false;
+		}else if($.isNumeric(name) == true){
+			mname.focus();
+			mname.css("display","block").css("margin-bottom","0");
+			$("#nameck").text("한글만 입력해주세요").css("display","block");
+			return false;
+		}else{
+			$("#nameck").css("display","none");
+			mphone.focus();
+		}
+		
 		/* phoneck */
 		var regPhone = /^(?:(010\d{4})|(01[1|6|7|8|9]\d{3,4}))(\d{4})$/;
 		if(phone == ""){
@@ -168,6 +184,7 @@
 <body>
 <form action="" method="POST" id="joinfrm" name="joinfrm">
 	<div id="join_wrap">
+	<div id="title">정보 수정</div>
 		<div id="info_wrap1">
 		<!-- 아이디 (필수) -->
 			<div class="info" id="id_div">
@@ -181,7 +198,7 @@
 		<!-- 이름	 (필수) -->
 			<div class="info" id="name_div">
 				<span>
-					<input class="info_input" type="text" id="name" name="name" maxlength="4" value="이름" readonly="readonly">
+					<input class="info_input" type="text" id="name" name="name" maxlength="4" placeholder="이름(필수)">
 				</span>
 				<span id="nameck" class="ck">필수정보 입니다.</span>
 			</div>
@@ -296,7 +313,10 @@
 	
 	</div>
 	
-	<div id="submit_wrap"><a href="#" id="frm_submit" class="join_btn">정보 변경</a></div>	
+	<div id="submit_wrap">
+		<a href="#" id="frm_submit" class="join_btn">수정</a>
+		<a href="#" id="frm_cancle" class="join_btn">취소</a>
+	</div>	
 </form>
 </body>
 </html>
