@@ -27,8 +27,8 @@
 			<div id="img_wrap">
 				<img class="my_logo" src="/BigShortWeb/images/user.png">
 				<div id="user_info">
-					<div>ID : ${sessionScope.loginUser.mid} </div>
-					<div>${sessionScope.loginUser.mname} </div>
+					<div>${sessionScope.loginUser.mid} </div>
+					<div>(${sessionScope.loginUser.mname})</div>
 				</div>
 			</div>
 		</div>
