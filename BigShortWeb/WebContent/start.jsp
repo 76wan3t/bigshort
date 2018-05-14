@@ -10,7 +10,7 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	
-	location.href = "index.bigshort";
+	location.href = "/BigshortWeb/index.bigshort";
 	
 });
 </script>
