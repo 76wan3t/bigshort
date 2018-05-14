@@ -16,7 +16,7 @@
 			<!-- 기존 pw확인 -->
 			<!-- pw(데이터값과 맞는지 확인) -->
 			<input id="pw" class="ckinput" name="pw" type="password">
-			
+
 			<!-- 새로운 비밀번호 -->
 			<span class="subtitle">새로운 비밀번호</span>
 			<input id="newpw" class="ckinput" name="newpw" type="password">
