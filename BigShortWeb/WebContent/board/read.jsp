@@ -11,6 +11,10 @@
  /* 헤더 겹침 수정  */
   #header{
     position: static;
+    min-width: 1180px!important;
+ }
+ #footer{
+ 	min-width: 1180px!important;
  }
 	body{
 	font-family:Verdana,sans-serif;
@@ -105,9 +109,11 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
  #listbtn{width: 80px;margin:0 auto;}
  #btnall{text-align: center;}
  .w3-button:hover{background-color: #63BBED!important; opacity:0.7; color:#ffffff!important;}
-
-
-
+#modal_ul > li > a{
+	color: white;
+    font-size: 15px;
+    font-family: 'Jeju Gothic', serif;
+}
  </style>
  </head>
  <body>
@@ -618,3 +624,5 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 </script>
  </body>
  </html>
+ 
+ <%@ include file="../footer.jsp" %>

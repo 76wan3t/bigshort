@@ -21,6 +21,8 @@
 	}
 	#container{
 		margin-top:200px;
+		width: 100%;
+		min-width: 1020px;
 	}
 	#navigation{
 		margin-left: 5px;
@@ -37,6 +39,7 @@
 		width: 1000px;
 		margin: 0 auto;
 		padding: 22px 0 100px;
+		margin: 150px auto 200px;
 	}
 	.sub_title{
 		position: relative;
@@ -520,3 +523,5 @@
 
 </body>
 </html>
+
+<%@ include file="../footer.jsp" %>

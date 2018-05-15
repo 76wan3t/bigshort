@@ -319,7 +319,7 @@ button, input[type=button], input[type=reset], input[type=submit] {
 
 .menu-utility-user .help>a, .menu-utility-user .myaccount>a {
 	padding-bottom: 10px;
-	margin-top: 3px;
+	margin-top: 5px;
 }
 
 .menu-utility-user .help .popup-box {
