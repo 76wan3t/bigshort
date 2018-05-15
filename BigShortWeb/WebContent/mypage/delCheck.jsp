@@ -22,14 +22,12 @@
 		$("#cksubmit").click(function(){
 			var mpw = $.trim($("#pw").val());
 			var mpw2 = $.trim($("#pw2").val());
-			var mid = $.trim($("#id").val())
 			
 			if(mpw != mpw2){
 				return false;
-			}else if(mid == ""){
-				return false;
+			}else{
+				$("#myckfrm").submit();	
 			}
-			$("#myckfrm").submit();
 		});
 	});
 </script>
