@@ -22,21 +22,24 @@
  .board_list tbody tr:first-child td {border:none}
  .board_list tbody td.title {text-align:left; padding-left:20px}
  .board_list tbody td a {display:inline-block}
-  
- .board_view {width:35%;border-top:2px solid #252525;border-bottom:1px solid #ccc;border-right:1px solid #252525;border-left:1px solid #252525; margin: 0 auto;}
+
+ .board_view {width:35%;border-top:2px solid #252525; border-bottom:1px solid #ccc; border-right:1px solid #252525;border-left:1px solid #252525; margin: 0 auto;}
  .board_view tbody th {text-align:left;background:#f7f7f7;color:#3b3a3a}
  .board_view tbody th.list_tit {font-size:13px;color:#000;letter-spacing:0.1px}
  .board_view tbody .no_line_b th, .board_view tbody .no_line_b td {border-bottom:none}
- .board_view tbody th, .board_view tbody td {padding:15px 0 16px 16px;border-bottom:1px solid #ccc}
+ .board_view tbody th {padding:15px 0 16px 16px;border-bottom:1px solid #ccc}
+ .board_view tbody td {padding:15px 0 16px 16px;border-bottom:1px solid #ccc}
+ .
  .board_view tbody td.view_text {border-top:1px solid #ccc; border-bottom:1px solid #ccc;padding:45px 18px 45px 18px}
  .board_view tbody th.th_file {padding:0 0 0 15px; vertical-align:middle}
- .gesi{font-size: 30px; color:black; font-family:Verdana,sans-serif;}
+ .gesi{font-size: 50px; color:black; font-family:Verdana,sans-serif;margin-bottom:10px;}
  .wdp_90 {width:90%}
  .btn {border-radius:3px;padding:5px 11px;color:#fff !important; display:inline-block; background-color:#6b9ab8; border:1px solid #56819d;vertical-align:middle; float: right; margin-right: 7px;}
  #button2{margin-left: 405px;}
  #navigation{
  	    margin-left: 5px;
  }
+ 
  /* 댓글 디자인  */
  .brunch_comment{padding:0 0 80px; background-color:#fbfbfb; text-align: center;}
  .brunch_comment .wrap_comment_facebook{position:relative;}
@@ -91,17 +94,20 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
  .comment_write .write_append .wrap_btn{float:right;}
  .comment_write .write_append .btn_default{width:56px;height:30px;margin-left:5px; border:1px solid #bbb;border-radius:32px; line-height:28px;color:#666;}
  .brunch_comment ._mention_list{overflow:hidden; overflow-y:auto; position:absolute; width:238px; max-height:334px; border:1px solid #d9d9d9;background-color:#fff;z-index:11;}
- #td2{padding: 0; height: 300px;}
+ #td2{margin:5px 10px 5px 10px; border-bottom: 0px;}
  .all_regdate {float: right;margin-right: 15px;}
  #nextpage {margin:0 auto; width:800px;}
  #nextprvtable {width: 100%; display: inline-block}
- .all_tile {width: 500px;}
  #nextprvtable a:hover {text-decoration: underline;}
  img {margin: 0px 4px 2px 0px;} 
  #login_reple{background-color: white;}
  .all_tile {width: 500px;}
  #listbtn{width: 80px;margin:0 auto;}
  #btnall{text-align: center;}
+ .w3-button:hover{background-color: #63BBED!important; opacity:0.7; color:#ffffff!important;}
+
+
+
  </style>
  </head>
  <body>
@@ -113,25 +119,7 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
              <col width="15%"/>
              <col width="35%"/>
          </colgroup>
-         
-	   <div id="btnall">
-         <c:forEach items="${bodynext}" var="bDto">
-			<!--  <input type="button" id="prev" value="이전"> -->
-			
-			<c:if test="${fn:trim(bDto.pre_title) ne '이전글없음'}">
-				<a href="boardbody.bigshort?bno=${bDto.pre_article_bno}" id="prev" class="w3-button w3-white w3-border w3-round-large">이전</a>
-			</c:if>
-			
-			<a href="listAll.bigshort"id="listbtn"class="w3-button w3-white w3-border w3-round-large">목록<i class="w3-margin-right fa fa-home"></i></a>
-			
-			<!-- <input type="button" id="list_btn" value="목록" class="w3-button w3-white w3-border w3-round-large"> -->
-			<!-- <input type="button" id="next" value="다음"> -->
-			<c:if test="${fn:trim(bDto.next_title) ne '다음글 없음'}">
-				<a href="boardbody.bigshort?bno=${bDto.next_article_bno}" id="next" class="w3-button w3-white w3-border w3-round-large">다음</a>
-			</c:if>
-		</c:forEach>
-	 </div> 
-	
+    
          
          
          <caption class="gesi">게시글 상세</caption>
@@ -143,9 +131,9 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
                  </form>
              <tr>
                  <th scope="row">글 번호</th>
-                 <td>${bDto.bno}</td>
+                 <td class="line2">${bDto.bno}</td>
                  <th scope="row">조회수</th>
-                 <td>${bDto.viewcnt}           
+                 <td class="line2">${bDto.viewcnt}           
                  	<c:if test="${fn:trim(sessionScope.loginUser.mid) eq fn:trim(bDto.writer) || fn:trim(sessionScope.loginUser.mname) eq '관리자' }">        
                  		<input type="button" value="수정" class="btn pull-right" id="bodyupdate">
                  	
@@ -193,6 +181,26 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
           </c:forEach>
          </tbody>
      </table>
+     <br>
+      <div id="btnall2">
+	   <div id="btnall">
+         <c:forEach items="${bodynext}" var="bDto">
+			<!--  <input type="button" id="prev" value="이전"> -->
+			
+			<c:if test="${fn:trim(bDto.pre_title) ne '이전글없음'}">
+				<a href="boardbody.bigshort?bno=${bDto.pre_article_bno}" id="prev" class="w3-button w3-white w3-border">이전</a>
+			</c:if>
+			
+			<a href="listAll.bigshort"id="listbtn"class="w3-button w3-white w3-border">목록</a>
+			
+			<!-- <input type="button" id="list_btn" value="목록" class="w3-button w3-white w3-border w3-round-large"> -->
+			<!-- <input type="button" id="next" value="다음"> -->
+			<c:if test="${fn:trim(bDto.next_title) ne '다음글 없음'}">
+				<a href="boardbody.bigshort?bno=${bDto.next_article_bno}" id="next" class="w3-button w3-white w3-border">다음</a>
+			</c:if>
+		</c:forEach>
+	 </div> 
+	</div>
      <br>
       
           
@@ -287,6 +295,7 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 						
 					</c:if>
 		        </div>
+		        <br>
 		        <div id="nextpage">
 			<table id="nextprvtable" class="w3-table w3-striped">
 				<c:forEach items="${bodynext}" var="bDto">
@@ -298,7 +307,7 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 							<td class="all_tile"><a
 								href="boardbody.bigshort?bno=${bDto.pre_article_bno} " id="">
 									${bDto.pre_title}</a></td>
-							<td class="all_writer"><i class="w3-margin-left fa fa-cloud"></i>${bDto.pre_writer}</td>
+							<td class="all_writer">${bDto.pre_writer}</td>
 							<td class="all_regdate"><fmt:formatDate pattern="yyyy-MM-dd"
 									value="${bDto.pre_regdate}" /></td>
 						</c:if>
@@ -310,7 +319,7 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 									다음글</a><i class="fa fa-arrow-right"></i></td>
 							<td class="all_tile"><a
 								href="boardbody.bigshort?bno=${bDto.next_article_bno} " id="">${bDto.next_title}</a></td>
-							<td class="all_writer"><i class="w3-margin-left fa fa-cloud"></i>${bDto.next_writer}</td>
+							<td class="all_writer">${bDto.next_writer}</td>
 							<td class="all_regdate"><fmt:formatDate pattern="yyyy-MM-dd"
 									value="${bDto.next_regdate}" /></td>
 						</c:if>
@@ -318,7 +327,6 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 				</c:forEach>
 
 			</table>
-			<input type="hidden" value="${comment_reply }" id="comment_reply">
 		</div>
      
      
@@ -380,13 +388,13 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 		// sweet_count(); 
 		
 		
-		var comment_reply = $("#comment_reply").val();
+		var comment2 = $("#comment2").val();
 		
-		if(comment_reply == 'ture' ){
+		if(comment2 == 'ture' ){
 			
 			$('html, body').animate({
 				
-				scrollTop: $('.comment_content').offset().top
+				scrollTop: $('#commentlist').offset().top
 				
 			});
 		
