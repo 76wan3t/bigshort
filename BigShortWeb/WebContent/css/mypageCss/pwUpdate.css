@@ -45,3 +45,8 @@
 #ckcancle{
 	background-color: #dadada;
 }
+#ck{
+	display: none;
+	color: red;
+	font-size: 12px;
+}
