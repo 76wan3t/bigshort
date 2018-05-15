@@ -19,6 +19,10 @@ public class LoginOutAction implements Action {
 		
 		HttpSession session = request.getSession(false); // 그냥 널 값을 반환시켜주고, ture면 생성해준다.
 		
+		String myindex = request.getParameter("myindex");
+		
+		System.out.println("myindex = " + myindex);
+		
 		if(session != null) {
 			
 			session.invalidate();
@@ -34,6 +38,7 @@ public class LoginOutAction implements Action {
 		JSONObject jjb = new JSONObject();
 		
 		jjb.put("flag", flag);
+		jjb.put("myindex", myindex);
 		
 		response.setContentType("application/x-json; charset=UTF-8");
 		response.getWriter().println(jjb);

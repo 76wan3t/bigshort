@@ -53,13 +53,24 @@
 				            </tr>
 				            <tr>
 						<th >첨부파일 : </th>
-						<td id="file_td">
-							<span class="filter-50">
-								<input class="upload-name" value="파일선택" disabled="disabled">
-								<input type="file" name="files" id="files" style="display: none">
-								<label for="files" id="label" class="btn">파일 첨부</label>
-							</span>
-						</td>
+						<c:if test="${bDto.filename == '-'}">
+							<td id="file_td">
+								<span class="filter-50">
+									<input class="upload-name" value="파일선택" disabled="disabled">
+									<input type="file" name="files" id="files" style="display: none">
+									<label for="files" id="label" class="btn">파일 첨부</label>
+								</span>
+							</td>
+						</c:if>
+						<c:if test="${bDto.filename != '-'}">
+							<td id="file_td">
+								<span class="filter-50">
+									<input class="upload-name" value="파일선택" disabled="disabled">
+									<input type="file" name="files" id="files" style="display: none">
+									<label for="files" id="label" class="btn">파일 첨부</label>
+								</span>
+							</td>
+						</c:if>
 					    </tr>
 				            <tr>
 				                <th>내용 : </th>

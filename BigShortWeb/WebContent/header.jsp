@@ -111,21 +111,33 @@
 	
 	$("#logout_btn").on("click", function(){
 		
+		var myindex = $("#myindex").val();
+		
+		
 		$.ajax({
 			url:"logout.bigshort",
 			type: "POST",
 			dataType :"JSON",
+			data : "myindex=" + myindex,
 			success : function(data){				
 				if(data.flag == "0" ){
 					
 					alert("로그아웃 실패");
 					
 				}else{
+					if(data.myindex == "mypage"){
+						
+						alert("로그아웃 성공");
+						location.href = "index.bigshort";
+						
+					}else{
+						
+						alert("로그아웃 성공");
+						location.reload();
+						
+					}
 					
-					alert("로그아웃 성공");
-					//location.href = "index.bizpoll";
-					//$("#frm_memeber").submit();
-					location.reload();
+					
 				} 
 			},
 			
@@ -133,7 +145,7 @@
 				alert("System Error!!!");
 				
 				}
-			});
+			}); 
 		});
 	});
 

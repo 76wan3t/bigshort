@@ -318,6 +318,7 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 				</c:forEach>
 
 			</table>
+			<input type="hidden" value="${comment_reply }" id="comment_reply">
 		</div>
      
      
@@ -379,13 +380,13 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 		// sweet_count(); 
 		
 		
-		var comment2 = $("#comment2").val();
+		var comment_reply = $("#comment_reply").val();
 		
-		if(comment2 == 'ture' ){
+		if(comment_reply == 'ture' ){
 			
 			$('html, body').animate({
 				
-				scrollTop: $('#commentlist').offset().top
+				scrollTop: $('.comment_content').offset().top
 				
 			});
 		

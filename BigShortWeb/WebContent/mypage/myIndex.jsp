@@ -20,6 +20,8 @@
 </script>
 </head>
 <body>
+
+<input type="hidden" id="myindex" value="mypage">
 <div id="index_wrap">
 <!-- 회원프로필 -->
 	<div id="profile" class="info_wrap">
