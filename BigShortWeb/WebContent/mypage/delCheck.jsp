@@ -13,7 +13,9 @@
 			var mpw = $.trim($("#pw").val());
 			var mpw2 = $.trim($("#pw2").val());
 			if(mpw != mpw2){
-				$("#ck").css("display","none").text("일치하지 않습니다. 다시 한 번 입력해주십시오.");
+				$("#ck").css("display","block").text("일치하지 않습니다. 다시 한 번 입력해주십시오.");
+			}else{
+				$("#ck").css("display","none");
 			}
 		});
 		
