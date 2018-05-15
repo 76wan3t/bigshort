@@ -383,7 +383,7 @@
 				
 				
 					<c:if test="${bDto.replycnt ne 0}">
-					<span id="detgl_count"><a href="boardbody.bizpoll?bno=${bDto.bno}&comment=ture">[${bDto.replycnt}]</a></span>
+					<span id="detgl_count"><a href="boardbody.bigshort?bno=${bDto.bno}&comment=ture">[${bDto.replycnt}]</a></span>
 					</c:if>
 					<c:if test="${bDto.filename != '-'}">
 						<a href="#"><i class="fa fa-save"></i></a>
