@@ -7,6 +7,8 @@
 	background: url('../images/main5.jpg') no-repeat center top;
 	opacity: 0.93;
 	margin-top: 50px;
+	width: 100%;
+	min-width: 1300px;
 }
 
 .inner {
@@ -152,7 +154,8 @@
 
 #header {
 	height: 50px;
-	min-width: 100%;
+	width : 100%;
+	min-width:1300px;
 	position: absolute;
 	z-index: 1;
 	top: 0;
@@ -178,6 +181,13 @@
     margin-top: -7px;
     opacity: 0.5;
 		
+}
+
+#footer{
+	
+	width: 100%;
+	min-width: 1300px;
+	
 }
 
 
