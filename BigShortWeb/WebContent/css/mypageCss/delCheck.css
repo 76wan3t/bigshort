@@ -43,3 +43,8 @@
 #ckcancle{
 	background-color: #dadada;
 }
+#ck{
+	color: red;
+	font-size: 12px;
+	display: none;
+}
