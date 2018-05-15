@@ -151,7 +151,7 @@ public class BigshortFrontController extends HttpServlet {
 			}else if(command.equals("/pwUpdate.bigshort")) { // 마이페이지_비밀번호 변경을 가기위한 액션
 				action = new PwUpdateAction();
 				forward = action.excute(request, respnse); 
-			}else if(command.equals("/delCheck.bigshort")) { // 마이페이지_비밀번호 변경을 가기위한 액션
+			}else if(command.equals("/delCheck.bigshort")) { // 마이페이지_탈퇴를 가기위한 액션
 				action = new DelCheckAction();
 				forward = action.excute(request, respnse); 
 			}else if(command.equals("/memdelete.bigshort")) { // 멤버 삭제를 위한 액션

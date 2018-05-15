@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.bigshort.DAO.MemberDAO;
+import com.bigshort.DTO.MemberDTO;
 import com.bigshort.action.Action;
 import com.bigshort.action.ActionForward;
 
@@ -21,15 +22,16 @@ public class MemberDeleteAction implements Action{
 		String mid = request.getParameter("id");
 		String mpw = request.getParameter("pw");
 		String url;
-
+		System.out.println(mid + "," + mpw);
 		MemberDAO mDao = MemberDAO.getInstance();
-		int result = mDao.memdelet(mid, mpw);
+		MemberDTO mDto = new MemberDTO(mid, mpw);
+		int result = mDao.memdelet(mDto);
 		
 		if(result > 0) {
-			session.removeAttribute("loginUser");
 			url = "index.bigshort";
+			session.removeAttribute("loginUser");
 		}else {
-			url = "/memdelete.bigshort";
+			url = "delCheck.bigshort";
 		}
 		ActionForward forward = new ActionForward();
 		

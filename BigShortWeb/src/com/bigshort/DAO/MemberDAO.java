@@ -162,10 +162,9 @@ public MemberDTO sessionLogin(MemberDTO mDto) {
 	
 		// 멤버 삭제
 	
-	public int memdelet(String mpw, String mid) {
+	public int memdelet(MemberDTO mDto) {
 		sqlSession = sqlSessionFactory.openSession();
 		try {
-			MemberDTO mDto = new MemberDTO(mid, mpw);
 			result = sqlSession.delete("memdelete", mDto);
 			System.out.println("result: " + result);
 			
