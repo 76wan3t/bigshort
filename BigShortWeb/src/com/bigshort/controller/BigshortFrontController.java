@@ -17,6 +17,7 @@ import com.bigshort.action.mypage.MemberDeleteAction;
 import com.bigshort.action.mypage.MyIndexAction;
 import com.bigshort.action.mypage.MyUpdateAction;
 import com.bigshort.action.mypage.PwUpdateAction;
+import com.bigshort.action.mypage.UpdatePwAction;
 import com.bigshort.action.zone.*;
 
 
@@ -156,6 +157,9 @@ public class BigshortFrontController extends HttpServlet {
 				forward = action.excute(request, respnse); 
 			}else if(command.equals("/memdelete.bigshort")) { // 멤버 삭제를 위한 액션
 				action = new MemberDeleteAction();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/updatePw.bigshort")) { // 비밀먼호 변경을 위한 액션
+				action = new UpdatePwAction();
 				forward = action.excute(request, respnse); 
 			}
 			

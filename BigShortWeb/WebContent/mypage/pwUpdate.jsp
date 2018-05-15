@@ -47,7 +47,7 @@
 <body>
 	<div id="myckwrap" class="wrap">
 		<div id="title">비밀번호 변경</div>
-		<form action="updatePw" method="POST" id="myckfrm"  class="wrap">
+		<form action="updatePw.bigshort" method="POST" id="myckfrm"  class="wrap">
 			<span class="subtitle">기존의 비밀번호를 입력해주세요.</span>
 			<input id="id" name="id" value="${sessionScope.loginUser.mid}" type="hidden">
 			<!-- 기존 pw확인 -->
