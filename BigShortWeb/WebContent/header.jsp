@@ -237,7 +237,7 @@
 									</c:otherwise>
 								</c:choose>
 							</li>				
-							<li class="help"><a href="/BigShortWeb/listAll.bigshort" title="고객센터">고객센터</a></li>
+							<li class="help"><a href="/BigShortWeb/listAll.bigshort" title="묻고답하기">Q&A</a></li>
 
 						</ul>
 					</div>

@@ -27,7 +27,7 @@
  .board_list tbody td.title {text-align:left; padding-left:20px}
  .board_list tbody td a {display:inline-block}
 
- .board_view {width:35%;border-top:2px solid #252525; border-bottom:1px solid #ccc; border-right:1px solid #252525;border-left:1px solid #252525; margin: 0 auto;}
+ .board_view {width:50%;border-top:2px solid #252525; border-bottom:1px solid #ccc; border-right:1px solid #252525;border-left:1px solid #252525; margin: 0 auto;}
  .board_view tbody th {text-align:left;background:#f7f7f7;color:#3b3a3a}
  .board_view tbody th.list_tit {font-size:13px;color:#000;letter-spacing:0.1px}
  .board_view tbody .no_line_b th, .board_view tbody .no_line_b td {border-bottom:none}
@@ -36,7 +36,7 @@
  .
  .board_view tbody td.view_text {border-top:1px solid #ccc; border-bottom:1px solid #ccc;padding:45px 18px 45px 18px}
  .board_view tbody th.th_file {padding:0 0 0 15px; vertical-align:middle}
- .gesi{font-size: 50px; color:black; font-family:Verdana,sans-serif;margin-bottom:10px;}
+ .gesi{font-size: 34px; font-weight:500; color:#767067; font-family:Verdana,sans-serif;margin-bottom:10px;}
  .wdp_90 {width:90%}
  .btn {border-radius:3px;padding:5px 11px;color:#fff !important; display:inline-block; background-color:#6b9ab8; border:1px solid #56819d;vertical-align:middle; float: right; margin-right: 7px;}
  #button2{margin-left: 405px;}
@@ -50,15 +50,15 @@
  div{font-family: "Noto Sans Light","Malgun Gothic",sans-serif;margin:0;padding: 0;}
  .screen_out{overflow: hidden;position: absolute;width: 0;height: 0;line-height: 0;text-indent: -9999px;}
  a{color:#333; text-decoration: none;}	
- .brunch_comment .comment_head{width: 700px; height: 30px; margin: 0 auto 12px;}
+ .brunch_comment .comment_head{width: 1020px; height: 30px; margin: 0 auto 12px;}
  .comment_head .tit_comment{float: left; padding-top: 3px; font-weight: 400; font-size: 16px;}
  .comment_head .tit_comment .txt_num{padding-left: 5px; color: #00c3bd;}
- .brunch_comment .comment_content{width: 700px; margin: 0 auto;}
+ .brunch_comment .comment_content{width: 1020px; margin: 0 auto;}
  .brunch_comment .btn_preview{width: 100%; height:47px;border-top:1px solid #ddd; font-size: 12px; line-height: 47px;color: #959595;}
  button{font-family:"Noto Sans Light","Malgun Gothic",sans-serif;border: 0 none; background-color: transparent; cursor: pointer; outline: none; border-radius: 0px; vertical-align: middle; line-height:1.5;}
  .brunch_comment .list_comment{display:block;width:100%; border-top: 1px solid #eee;}
  ul{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; list-style: none; margin: 0; padding: 0;}
- .list_comment li.item{float: left; padding: 30px 0; border-bottom:1px solid #eee; width: 700px;}
+ .list_comment li.item{float: left; padding: 30px 0; border-bottom:1px solid #eee; width: 1020px;}
  .list_comment li.item:hover{background:#f8f8f8;}
  .animation_up{animation: animation_up .2s; transition:opacity 0.2s}
  li{font-family:"Noto Sans Light","Malgun Gothic",sans-serif;list-style: none; margin:0;}
@@ -77,7 +77,7 @@
 .img_thumb{display:block; border:0 none;}
 .list_comment  .desc_comment a.link_mention{display:inline-block; padding:0 2px; font-weight:700; background-color:#ddd; text-decoration:none;}
 .wrap_comment_write{clear:both;}
-.brunch_comment .comment_write{position:relative; width:700px; padding-top:27px; margin:0 auto;}
+.brunch_comment .comment_write{position:relative; width:1020px; padding-top:27px; margin:0 auto;}
 form{font-family:"Noto Sans Light","Malgun Gothic",sans-serif;padding:0;}
 input{font-family:"Noto Sans Light","Malgun Gothic",sans-serif;font-size:14px;line-height:1.5; vertical-align:middle; margin:0; padding:0;}
 fieldset{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; border:0 none; margin: 0; padding:0;}
@@ -109,11 +109,12 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
  #listbtn{width: 80px;margin:0 auto;}
  #btnall{text-align: center;}
  .w3-button:hover{background-color: #63BBED!important; opacity:0.7; color:#ffffff!important;}
-#modal_ul > li > a{
+ #modal_ul > li > a{
 	color: white;
     font-size: 15px;
     font-family: 'Jeju Gothic', serif;
 }
+ 
  </style>
  </head>
  <body>
@@ -128,7 +129,7 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
     
          
          
-         <caption class="gesi">게시글 상세</caption>
+         <caption class="gesi">묻고 답하기</caption>
         
          <tbody>
                  <c:forEach items="${bodylist}" var="bDto">
