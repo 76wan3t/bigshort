@@ -33,6 +33,7 @@
 </script>
 </head>
 <body>
+<input type="hidden" id="myindex" value="mypage">
 	<div id="myckwrap" class="wrap">
 		<div id="title">탈퇴 확인</div>
 		<form action="memdelete.bigshort" method="POST" id="myckfrm"  class="wrap">

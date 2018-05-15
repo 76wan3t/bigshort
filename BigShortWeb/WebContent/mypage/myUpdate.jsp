@@ -182,6 +182,7 @@
 </script>
 </head>
 <body>
+<input type="hidden" id="myindex" value="mypage">
 <form action="" method="POST" id="joinfrm" name="joinfrm">
 	<div id="join_wrap">
 	<div id="title">정보 수정</div>
@@ -320,4 +321,5 @@
 </form>
 </body>
 </html>
+
 <%@ include file="../footer.jsp" %>

@@ -47,6 +47,7 @@
 </script>
 </head>
 <body>
+<input type="hidden" id="myindex" value="mypage">
 	<div id="myckwrap" class="wrap">
 		<div id="title">비밀번호 변경</div>
 		<form action="updatePw.bigshort" method="POST" id="mypwfrm" class="wrap">
