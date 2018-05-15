@@ -28,7 +28,7 @@
 			
 			<!-- 버튼 -->
 			<a href="#" id="cksubmit" class="ckbtn">확인</a>
-			<a href="#" id="ckcancle" class="ckbtn">취소</a>
+			<a href="myIndex.bigshort" id="ckcancle" class="ckbtn">취소</a>
 		</form>
 	</div>
 </body>

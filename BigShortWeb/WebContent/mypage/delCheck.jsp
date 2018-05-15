@@ -14,10 +14,12 @@
 		<form action="" method="POST" id="myckfrm"  class="wrap">
 			<div id="subtitle">본인 확인을 위해 비밀번호를 입력해 주십시오</div>
 			<!-- id(로그인값 받아오기 수정불가) -->
-			<input id="id" class="ckinput" name="id" type="text" readonly="readonly" value="$">
+			<input id="id" class="ckinput" name="id" type="text" readonly="readonly" value="${sessionScope.loginUser.mid}">
 			<!-- pw(데이터값과 맞는지 확인) -->
 			<input id="pw" class="ckinput" name="pw" type="password">
-			<input id="cksubmit" class="ckinput"  type="submit" value="확인">
+			
+			<a href="#" id="cksubmit" class="ckbtn">확인</a>
+			<a href="myIndex.bigshort" id="ckcancle" class="ckbtn">취소</a>
 		</form>
 	</div>
 </body>

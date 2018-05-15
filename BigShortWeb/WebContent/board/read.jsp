@@ -3,6 +3,8 @@
  <!DOCTYPE html>
  <html lang="ko">
  <head>
+ <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
  <style type="text/css">
  
  a:link, a:visited {text-decoration: none; color: #656565;}
@@ -90,11 +92,16 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
  .comment_write .write_append .btn_default{width:56px;height:30px;margin-left:5px; border:1px solid #bbb;border-radius:32px; line-height:28px;color:#666;}
  .brunch_comment ._mention_list{overflow:hidden; overflow-y:auto; position:absolute; width:238px; max-height:334px; border:1px solid #d9d9d9;background-color:#fff;z-index:11;}
  #td2{padding: 0; height: 300px;}
- /* 미완성  */
- 
- 	#login_reple{
- 		background-color: white;
- 	}
+ .all_regdate {float: right;margin-right: 15px;}
+ #nextpage {margin:0 auto; width:800px;}
+ #nextprvtable {width: 100%; display: inline-block}
+ .all_tile {width: 500px;}
+ #nextprvtable a:hover {text-decoration: underline;}
+ img {margin: 0px 4px 2px 0px;} 
+ #login_reple{background-color: white;}
+ .all_tile {width: 500px;}
+ #listbtn{width: 80px;margin:0 auto;}
+ #btnall{text-align: center;}
  </style>
  </head>
  <body>
@@ -106,6 +113,27 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
              <col width="15%"/>
              <col width="35%"/>
          </colgroup>
+         
+	   <div id="btnall">
+         <c:forEach items="${bodynext}" var="bDto">
+			<!--  <input type="button" id="prev" value="이전"> -->
+			
+			<c:if test="${fn:trim(bDto.pre_title) ne '이전글없음'}">
+				<a href="boardbody.bigshort?bno=${bDto.pre_article_bno}" id="prev" class="w3-button w3-white w3-border w3-round-large">이전</a>
+			</c:if>
+			
+			<a href="listAll.bigshort"id="listbtn"class="w3-button w3-white w3-border w3-round-large">목록<i class="w3-margin-right fa fa-home"></i></a>
+			
+			<!-- <input type="button" id="list_btn" value="목록" class="w3-button w3-white w3-border w3-round-large"> -->
+			<!-- <input type="button" id="next" value="다음"> -->
+			<c:if test="${fn:trim(bDto.next_title) ne '다음글 없음'}">
+				<a href="boardbody.bigshort?bno=${bDto.next_article_bno}" id="next" class="w3-button w3-white w3-border w3-round-large">다음</a>
+			</c:if>
+		</c:forEach>
+	 </div> 
+	
+         
+         
          <caption class="gesi">게시글 상세</caption>
         
          <tbody>
@@ -259,6 +287,38 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 						
 					</c:if>
 		        </div>
+		        <div id="nextpage">
+			<table id="nextprvtable" class="w3-table w3-striped">
+				<c:forEach items="${bodynext}" var="bDto">
+					<tr>
+						<c:if test="${fn:trim(bDto.pre_title) ne '이전글없음'}">
+							<td><i class="fa fa-arrow-left"></i><a
+								href="boardbody.bigshort?bno=${bDto.pre_article_bno} " id="">
+									이전글</a></td>
+							<td class="all_tile"><a
+								href="boardbody.bigshort?bno=${bDto.pre_article_bno} " id="">
+									${bDto.pre_title}</a></td>
+							<td class="all_writer"><i class="w3-margin-left fa fa-cloud"></i>${bDto.pre_writer}</td>
+							<td class="all_regdate"><fmt:formatDate pattern="yyyy-MM-dd"
+									value="${bDto.pre_regdate}" /></td>
+						</c:if>
+					</tr>
+					<tr>
+						<c:if test="${fn:trim(bDto.next_title) ne '다음글 없음'}">
+							<td><a
+								href="boardbody.bigshort?bno=${bDto.next_article_bno} " id="">
+									다음글</a><i class="fa fa-arrow-right"></i></td>
+							<td class="all_tile"><a
+								href="boardbody.bigshort?bno=${bDto.next_article_bno} " id="">${bDto.next_title}</a></td>
+							<td class="all_writer"><i class="w3-margin-left fa fa-cloud"></i>${bDto.next_writer}</td>
+							<td class="all_regdate"><fmt:formatDate pattern="yyyy-MM-dd"
+									value="${bDto.next_regdate}" /></td>
+						</c:if>
+					</tr>
+				</c:forEach>
+
+			</table>
+		</div>
      
      
  <script type="text/javascript">
@@ -352,7 +412,12 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 			}
 		});
 		
-	
+		/* // 게시물 목록으로 넘어가는 버튼
+		$("#list_btn").on("click", function(){
+			
+			location.href="listAll.bigshort";
+			
+		}); */
 	
 		// 게시글 등록 버튼을 클릭하면 이벤트 처리
 		 $("#btn_submit").on("click", function() {

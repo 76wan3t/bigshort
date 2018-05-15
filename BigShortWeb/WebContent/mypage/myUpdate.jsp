@@ -189,7 +189,7 @@
 		<!-- 아이디 (필수) -->
 			<div class="info" id="id_div">
 				<span>
-					<input class="info_input " type="text" id="id" name="id" readonly="readonly" value="id">
+					<input class="info_input " type="text" id="id" name="id" readonly="readonly" value="${sessionScope.loginUser.mid}">
 				</span>
 				<span id="idck" class="ck">필수정보 입니다.</span>
 			</div>
@@ -315,7 +315,7 @@
 	
 	<div id="submit_wrap">
 		<a href="#" id="frm_submit" class="join_btn">수정</a>
-		<a href="#" id="frm_cancle" class="join_btn">취소</a>
+		<a href="myIndex.bigshort" id="frm_cancle" class="join_btn">취소</a>
 	</div>	
 </form>
 </body>

@@ -19,7 +19,7 @@
 	font-size: 15px;
 }
 .ckinput{
-	border: 1px solid gray;
+	border: 1px solid #dadada;
 	height: 50px;
 	width: 90%;
 	margin: 20px auto;
@@ -30,11 +30,16 @@
 	border: none;
 	text-align: center;
 }
-#cksubmit{
-	border:none;
-	border-radius: 5px;
+.ckbtn{
+	font-size: 30px;
+	width: 43%;
+	height: 50px;
+	margin: 10px 0;
 }
-#cksubmit:hover{
+#cksubmit{
 	background-color: #63BBED;
-	opacity: 0.7;
+	color: white;
+}
+#ckcancle{
+	background-color: #dadada;
 }

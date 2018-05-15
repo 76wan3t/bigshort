@@ -160,19 +160,31 @@ public MemberDTO sessionLogin(MemberDTO mDto) {
 		return result;
 	}
 	
+		// 멤버 삭제
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	public int memdelet(String mpw, String mid) {
+		sqlSession = sqlSessionFactory.openSession();
+		try {
+			MemberDTO mDto = new MemberDTO(mid, mpw);
+			result = sqlSession.delete("memdelete", mDto);
+			System.out.println("result: " + result);
+			
+			sqlSession.commit();
+			
+			if(result > 0) {
+				System.out.println("삭제 성공");
+			}else {
+				System.out.println("삭제 실패");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		
+		
+		return result;
+	}
 	
 }

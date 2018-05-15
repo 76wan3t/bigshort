@@ -10,6 +10,13 @@
 	$(document).on("click","#up", function(){
 		location.href="myUpdate.bigshort";
 	});
+	$(document).on("click","#pwup", function(){
+		location.href="pwUpdate.bigshort";
+	});
+	$(document).on("click","#del", function(){
+		location.href="delCheck.bigshort";
+	});
+
 </script>
 </head>
 <body>
@@ -20,7 +27,8 @@
 			<div id="img_wrap">
 				<img class="my_logo" src="/BigShortWeb/images/user.png">
 				<div id="user_info">
-					<span>ID</span>
+					<div>${sessionScope.loginUser.mid} </div>
+					<div>(${sessionScope.loginUser.mname})</div>
 				</div>
 			</div>
 		</div>
