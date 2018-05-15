@@ -22,24 +22,26 @@
 			}
 		});
 		
-		$("#cksubmit").on("click",function(){
-			var pw = $.trim($("#pw").val());
-			var pw2 = $.trim($("#pw2").val());
-			var newpw = $.trim($("#newpw").val());
-			var newpw2 = $.trim($("#newpw2").val());
-			var ck = $("#ck");
-			
-			var regPass = /^.*(?=.{6,20})(?=.*[0-9])(?=.*[a-zA-Z]).*$/;
-			if(pw != pw2){
-				return false;
-			}else if(!regaPass.text(newpw)){
-				$("#ck").text("6~20자 이내 숫자,영문만 사용하세요.").css("display","block");
-				return false;
-			}else{
-				ck.css("display","none");
-				$("#myckfrm").submit();
-			}
-		});
+	});
+	
+	$(document).on("click","#cksubmit",function(){
+		var pw = $.trim($("#pw").val());
+		var pw2 = $.trim($("#pw2").val());
+		var newpw = $.trim($("#newpw").val());
+		var newpw2 = $.trim($("#newpw2").val());
+		var ck = $("#ck");
+		
+		var regPass = /^.*(?=.{6,20})(?=.*[0-9])(?=.*[a-zA-Z]).*$/;
+		if(pw != pw2){
+			return false;
+		}else if(!regPass.test(newpw)){
+			ck.text("6~20자 이내 숫자,영문만 사용하세요.").css("display","block");
+			return false;
+		}else{
+			ck.css("display","none");
+			$("#mypwfrm").submit();
+		}
+		
 	});
 	
 </script>
@@ -47,9 +49,10 @@
 <body>
 	<div id="myckwrap" class="wrap">
 		<div id="title">비밀번호 변경</div>
-		<form action="updatePw.bigshort" method="POST" id="myckfrm"  class="wrap">
+		<form action="updatePw.bigshort" method="POST" id="mypwfrm" class="wrap">
 			<span class="subtitle">기존의 비밀번호를 입력해주세요.</span>
 			<input id="id" name="id" value="${sessionScope.loginUser.mid}" type="hidden">
+			
 			<!-- 기존 pw확인 -->
 			<!-- pw(데이터값과 맞는지 확인) -->
 			<input id="pw" class="ckinput" name="pw" type="password">
@@ -61,6 +64,7 @@
 			<span class="subtitle">새로운 비밀번호 확인</span>
 			<input id="newpw2" class="ckinput" name="newpw2" type="password">
 			<div id="ck"></div>
+			
 			<!-- 버튼 -->
 			<a href="#" id="cksubmit" class="ckbtn">확인</a>
 			<a href="myIndex.bigshort" id="ckcancle" class="ckbtn">취소</a>

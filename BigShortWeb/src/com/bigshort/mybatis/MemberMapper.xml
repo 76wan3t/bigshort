@@ -28,5 +28,10 @@
   		DELETE FROM member
   		WHERE mid = #{mid}
   	</delete>
-  
+  	
+  	<update id="pwUpdate">
+  		UPDATE member SET
+  		mpw = #{mpw}
+  		WHERE mid = #{mid}
+  	</update>
 </mapper>

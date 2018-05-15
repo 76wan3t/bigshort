@@ -186,4 +186,19 @@ public MemberDTO sessionLogin(MemberDTO mDto) {
 		return result;
 	}
 	
+	//멤버 비밀번호 변경
+	
+	public int memPwUpdate(MemberDTO mDto) {
+		sqlSession = sqlSessionFactory.openSession();
+		try {
+			result = sqlSession.update("pwUpdate", mDto);
+			System.out.println("result: " + result);
+			sqlSession.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		return result;
+	}
 }
