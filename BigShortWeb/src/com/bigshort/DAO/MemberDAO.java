@@ -160,4 +160,19 @@ public MemberDTO sessionLogin(MemberDTO mDto) {
 		return result;
 	}
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
