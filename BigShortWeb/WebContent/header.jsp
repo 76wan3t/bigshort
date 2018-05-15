@@ -148,6 +148,59 @@
 			}); 
 		});
 	});
+	
+	function onEnterSubmit(){
+
+		var keyCode = window.event.keyCode;
+		
+		if(keyCode==13){ 
+			
+				var id =$("#login_id").val();
+	 			var pw = $("#login_pw").val();
+	 			
+					
+				if(id == ""){
+					 $("#login_id").focus();
+	             	 $("#span_id").text("아이디를 입력해주세요").css("display", "block");
+	             	 return false;
+	             	
+				}else if(pw == ""){
+					 $("#login_pw").focus();
+	             	 $("#span_id").text("비밀번호를 입력해주세요").css("display", "block");
+	             	 return false;
+	             	
+				}else {
+					
+					$("#span_id").css("display", "none");
+					
+					$.ajax({
+						url:"/BigShortWeb/loginck.bigshort",
+						type: "POST",
+						dataType :"json",
+						data : "id=" +id +"&"+ "pw=" +  pw,
+						success : function(data){
+							
+							if(data.flag == 0 ){
+								
+								alert("로그인 실패");
+								$("#loginid").select();
+								$("#span_id").text(" 아이디 또는 패스워드가 틀렸습니다. ").css("display", "block");
+								
+							}else{
+								
+								alert("로그인성공");
+								location.reload();
+							} 
+						},
+						
+						error : function(){
+							alert("System Error!!!");
+							
+						}
+					});
+				}
+			}
+		}
 
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -237,10 +290,9 @@
 							<div id="login_content">
 								<div id="login_area">
 									<div id="container_login">
-										<form action="loginck.bizpoll" method="POST" id="frm_login"
-											name="frm_login">
+										<form action="loginck.bizpoll" method="POST" id="frm_login"	name="frm_login">
 											<input class="idpw" type="text" id="login_id" name="login_id" placeholder="아이디를 입력 해 주세요"></input> 
-											<input class="idpw" type="password" id="login_pw" name="login_pw" placeholder="비밀번호(4~16자리)"></input>
+											<input class="idpw" type="password" id="login_pw" name="login_pw" placeholder="비밀번호(4~16자리)" onkeydown='javascript:onEnterSubmit()'></input>
 											<span id="span_id">아이디 또는 비밀번호가 틀렸습니다</span> 
 											<a href="#" id="btn_login" name="btn_login"><span> 로그인 </span></a>
 										</form>
