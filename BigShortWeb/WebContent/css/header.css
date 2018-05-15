@@ -140,7 +140,8 @@ a:link, a:visited {
 
 #header {
 	height: 50px;
-	min-width: 100%;
+	width: 100%;
+	min-width: 1300px;
 	position: absolute;
 	z-index: 1;
 	top: 0;
