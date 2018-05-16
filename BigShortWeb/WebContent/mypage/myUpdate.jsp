@@ -199,22 +199,22 @@
 		<!-- 이름	 (필수) -->
 			<div class="info" id="name_div">
 				<span>
-					<input class="info_input" type="text" id="name" name="name" maxlength="4" placeholder="이름(필수)">
+					<input class="info_input" type="text" id="name" name="name" maxlength="4" value="${member.mname}">
 				</span>
 				<span id="nameck" class="ck">필수정보 입니다.</span>
 			</div>
 		<!-- 전화번호 (필수) -->
 			<div class="info" id="phone_div">
 				<span>
-					<input class="info_input" type="text" id="phone" name="phone" maxlength="11" placeholder="핸드폰 번호 (숫자만 입력)(필수)">
+					<input class="info_input" type="text" id="phone" name="phone" maxlength="11"  value="${member.mphone}">
 				</span>
 				<span id="phoneck" class="ck">필수정보 입니다.</span>
 			</div>
 		<!-- 이메일 (필수) -->	
 			<div id="mail_div" class="info">
 				<span class="mail_span">
-					<input class="info_input mail_input" type="text" id="mail" name="mail" placeholder="이메일(필수)">
-					@<input class="info_input mail_input" type="text" id="mail2" name="mail2">
+					<input class="info_input mail_input" type="text" id="mail" name="mail" value="${member.memail}">
+					@<input class="info_input mail_input" type="text" id="mail2" name="mail2"  value="${member.memail2}">
 				</span>
 				<span>
 					<select id="selemail">
@@ -234,7 +234,7 @@
 		<!-- 사업자 등록 번호 ***-**-***** 10자리 형식 --> 
 			<div id="brn_div" class="info selinfo">
 				<span>
-					<input class="info_input brn_input" id="brn1" name="brn1" placeholder="사업자 번호" maxlength="3"> 
+					<input class="info_input brn_input" id="brn1" name="brn1" placeholder="사업자 번호" maxlength="3" > 
 					- <input class="info_input brn_input" id="brn2" name="brn2" placeholder="**" maxlength="2"> 
 					- <input class="info_input brn_input" id="brn3" name="brn3" placeholder="*****" maxlength="5">
 				</span>
@@ -243,7 +243,7 @@
 		<!-- 중개소 명 -->
 			<div class="info selinfo" id="sname_div">
 				<span>
-					<input class="info_input" type="text"  id="sname" name="sname" placeholder="중개소 이름 ">
+					<input class="info_input" type="text"  id="sname" name="sname" placeholder="중개소 이름 " value="${member.mbisname}">
 				</span>
 			</div>
 		<!-- 중개소 전화번호 -->
@@ -255,16 +255,16 @@
 						<option value="061)">061</option>
 						<option value="063)">063</option>
 					</select>
-					<input class="info_input" type="text" id="sphone" name="sphone" placeholder="중개소 전화번호" maxlength="11">
+					<input class="info_input" type="text" id="sphone" name="sphone" placeholder="중개소 전화번호" maxlength="11"  value="${member.mbisphone}">
 				</span>
 				<span id="seleck2" class="ck"></span>
 			</div>
 		<!-- 중개소 주소 다음 api 활용 -->
 			<div class="info_input" id="address_wrap">
-				<input type="text" class="join" id="postcode" name="postcode" placeholder="우편번호">
+				<input type="text" class="join" id="postcode" name="postcode" placeholder="우편번호" value="${member.mjusonum}">
 						<input type="button" id="addr_button" class="join_btn" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-						<input type="text" class="join addr_input" id="address" name="address" placeholder="주소">
-						<input type="text" class="join addr_input" id="address2" name="address2" placeholder="상세주소">
+						<input type="text" class="join addr_input" id="address" name="address" placeholder="주소"  value="${member.mjuso}">
+						<input type="text" class="join addr_input" id="address2" name="address2" placeholder="상세주소" value="${member.mjuso2}">
 						<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 						<script>
 						    function sample6_execDaumPostcode() {
@@ -321,5 +321,3 @@
 </form>
 </body>
 </html>
-
-<%@ include file="../footer.jsp" %>

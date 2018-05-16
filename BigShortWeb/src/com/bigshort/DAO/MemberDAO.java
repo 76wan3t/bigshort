@@ -201,4 +201,32 @@ public MemberDTO sessionLogin(MemberDTO mDto) {
 		}
 		return result;
 	}
+	
+	public MemberDTO memselect(String mid) {
+		sqlSession = sqlSessionFactory.openSession();
+		MemberDTO mDto = null;
+		try {
+			System.out.println("mDto mid : " + mid);
+			mDto = sqlSession.selectOne("memberselect", mid);
+			
+			System.out.println(mDto.getMid());
+			System.out.println(mDto.getMname());
+			System.out.println(mDto.getMphone());
+			System.out.println(mDto.getMemail());
+			System.out.println(mDto.getMemail2());
+			System.out.println(mDto.getMbisnumber());
+			System.out.println(mDto.getMbisname());
+			System.out.println(mDto.getMbisphone());
+			System.out.println(mDto.getMjusonum());
+			System.out.println(mDto.getMjuso());
+			System.out.println(mDto.getMjuso2());
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		
+		return mDto;
+	}
 }

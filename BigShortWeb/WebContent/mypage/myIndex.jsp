@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="/BigShortWeb/css/mypageCss/myIndex.css?var=1"/><!-- css파일 우선순위 설정  -->
 <script type="text/javascript">
 	$(document).on("click","#up", function(){
-		location.href="myUpdate.bigshort";
+		location.href="myUpdate.bigshort?mid=${sessionScope.loginUser.mid}";
 	});
 	$(document).on("click","#pwup", function(){
 		location.href="pwUpdate.bigshort";
@@ -45,7 +45,7 @@
 <!-- 비밀번호 변경 -->
 	<div id="pw_up" class="info_wrap wrap">
 		<div id="pwup" class="info_div">
-			<img class="my_logo" src="/BigShortWeb/images/password.png"">
+			<img class="my_logo" src="/BigShortWeb/images/password.png">
 			<div>비밀번호 변경</div>
 		</div>
 	</div>	

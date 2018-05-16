@@ -34,4 +34,8 @@
   		mpw = #{mpw}
   		WHERE mid = #{mid}
   	</update>
+  	
+  	<select id="memberselect" resultType="mDto">
+  		SELECT * FROM member WHERE mid = #{mid}
+  	</select>
 </mapper>
