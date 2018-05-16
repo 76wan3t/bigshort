@@ -12,6 +12,10 @@
 <title>가방</title>
 <script type="text/javascript">
 	$(document).ready(function() {
+		
+		
+		
+		
 		$("#td1").on("click", function() {
 
 			$(".graph").css("display", "none");
@@ -90,6 +94,14 @@
 			$(".graph-con14").css("display", "block");
 
 		});
+		
+		setTimeout(function() {
+			
+			$(".graph").css("display", "none");
+			$(".graph-con1").css("display", "block");
+			
+		}, 1000);
+		
 
 	});
 </script>
