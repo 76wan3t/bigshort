@@ -38,4 +38,19 @@
   	<select id="memberselect" resultType="mDto">
   		SELECT * FROM member WHERE mid = #{mid}
   	</select>
+  	
+  	<update id="memupdate">
+  		UPDATE member SET
+  			mname = #{mname},
+  			mphone = #{mphone},
+  			mbisname = #{mbisname},
+  			mbisnumber = #{mbisnumber},
+  			mbisphone = #{mbisphone},
+  			mjusonum = #{mjusonum},
+  			mjuso = #{mjuso},
+  			mjuso2 = #{mjuso2},
+  			memail = #{memail},
+  			memail2 = #{memail2}
+  		WHERE mid = #{mid}
+  	</update>
 </mapper>

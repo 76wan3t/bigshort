@@ -47,37 +47,8 @@
 			address = $.trim(maddress.val()),
 			address2 = $.trim(maddress2.val()),
 			info_input = $.trim(minfo_input.val());
-		
 	/* 필수 항목 체크 */
 		/* pwck */
-		var regPass = /^.*(?=.{6,20})(?=.*[0-9])(?=.*[a-zA-Z]).*$/;
-		if(pw == ""){
-			mpw.focus();
-			mpw.css("display","block").css("margin-bottom","0");
-			$("#pwck").css("display","block");
-			return false;
-		}else if(!regPass.test(pw)){
-			mpw.select();
-			mpw.css("display","block").css("margin-bottom","0");
-			$("#pwck").text("6~20자 이내 숫자,영문만 사용하세요.").css("display","block");
-			return false;
-		}else if(pw2 == ""){
-			mpw2.focus();
-			$("#pwck").css("display","none");
-			mpw2.css("display","block").css("margin-bottom","0");
-			$("#pw2ck").css("display","block");
-			return false;
-		}else if(pw != pw2){
-			mpw2.focus();
-			mpw2.css("display","block").css("margin-bottom","0");
-			$("#pw2ck").text("다시 입력해주세요.").css("display","block");
-			return false;
-		}else{
-			mphone.focus();
-			$("#pwck").css("display","none");
-			$("#pw2ck").css("display","none");
-		}
-		
 		/* nameck */
 		if(name == ""){
 			mname.focus();
@@ -151,7 +122,7 @@
 		/* sname 상호명 */
 		/* sphone */
 	
-		$("#joinfrm").submit();
+		$("#updatefrm").submit();
 	});
 	
 	/* mail select */
@@ -183,7 +154,7 @@
 </head>
 <body>
 <input type="hidden" id="myindex" value="mypage">
-<form action="" method="POST" id="joinfrm" name="joinfrm">
+<form action="memUpdate.bigshort" method="POST" id="updatefrm" name="updatefrm">
 	<div id="join_wrap">
 	<div id="title">정보 수정</div>
 		<div id="info_wrap1">
@@ -234,9 +205,7 @@
 		<!-- 사업자 등록 번호 ***-**-***** 10자리 형식 --> 
 			<div id="brn_div" class="info selinfo">
 				<span>
-					&nbsp;사업자번호:<input class="info_input brn_input" id="brn1" name="brn1" maxlength="3" > 
-					- <input class="info_input brn_input" id="brn2" name="brn2" placeholder="**" maxlength="2"> 
-					- <input class="info_input brn_input" id="brn3" name="brn3" placeholder="*****" maxlength="5">
+					&nbsp;사업자번호:<input class="info_input brn_input" id="brn1" name="brn" maxlength="10" value="${member.mbisnumber}"> 
 				</span>
 				<span id="seleck1" class="ck"></span>
 			</div>
@@ -313,7 +282,7 @@
 		</div>
 	
 	</div>
-	
+	</div>
 	<div id="submit_wrap">
 		<a href="#" id="frm_submit" class="join_btn">수정</a>
 		<a href="myIndex.bigshort" id="frm_cancle" class="join_btn">취소</a>

@@ -80,6 +80,23 @@ public class MemberDTO {
 		this.mpw = mpw;
 	}
 	
+	public MemberDTO(String mid, String mname, String mphone, String mbisname, String mbisnumber, String mbisphone,
+			String mjusonum, String mjuso, String mjuso2, String memail, String memail2) {
+		super();
+		this.mid = mid;
+		this.mname = mname;
+		this.mphone = mphone;
+		this.mbisname = mbisname;
+		this.mbisnumber = mbisnumber;
+		this.mbisphone = mbisphone;
+		this.mjusonum = mjusonum;
+		this.mjuso = mjuso;
+		this.mjuso2 = mjuso2;
+		this.memail = memail;
+		this.memail2 = memail2;
+	}
+
+
 	public String getMbisphone() {
 		return mbisphone;
 	}

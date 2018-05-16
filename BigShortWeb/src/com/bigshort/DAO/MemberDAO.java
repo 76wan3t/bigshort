@@ -229,4 +229,19 @@ public MemberDTO sessionLogin(MemberDTO mDto) {
 		
 		return mDto;
 	}
+	
+	public int memUpdate(MemberDTO mDto) {
+		sqlSession = sqlSessionFactory.openSession();
+		try {
+			result = sqlSession.update("memupdate", mDto);
+			sqlSession.commit();
+			System.out.println("result : " + result);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		
+		return result;
+	}
 }

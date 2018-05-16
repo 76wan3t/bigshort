@@ -13,6 +13,7 @@ import com.bigshort.action.*;
 import com.bigshort.action.board.*;
 import com.bigshort.action.member.*;
 import com.bigshort.action.mypage.DelCheckAction;
+import com.bigshort.action.mypage.MemUpdateAction;
 import com.bigshort.action.mypage.MemberDeleteAction;
 import com.bigshort.action.mypage.MyIndexAction;
 import com.bigshort.action.mypage.MyUpdateAction;
@@ -160,6 +161,9 @@ public class BigshortFrontController extends HttpServlet {
 				forward = action.excute(request, respnse); 
 			}else if(command.equals("/updatePw.bigshort")) { // 비밀먼호 변경을 위한 액션
 				action = new UpdatePwAction();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/memUpdate.bigshort")) { // 정보수정을 위한 액션
+				action = new MemUpdateAction();
 				forward = action.excute(request, respnse); 
 			}
 			

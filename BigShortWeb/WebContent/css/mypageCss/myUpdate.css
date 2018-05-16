@@ -54,7 +54,6 @@ span.ck{
 }
 /* 사업자 번호 */
 .brn_input{
-	width: 18%;
 	height: 33px;
 	display: inline-block;
 	border: 1px solid gray;
