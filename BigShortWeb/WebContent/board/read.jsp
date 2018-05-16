@@ -63,7 +63,7 @@
  .animation_up{animation: animation_up .2s; transition:opacity 0.2s}
  li{font-family:"Noto Sans Light","Malgun Gothic",sans-serif;list-style: none; margin:0;}
  .brunch_comment .link_profile{overflow:visible;float:left;position:relative;width:42px;height:42px;margin-left:10px;}
- .list_comment .cont_info{float:left;position:relative;width:628px;padding-left:20px;}
+ .list_comment .cont_info{float:left;position:relative;width:1020px;padding-left:20px;}
  .list_comment .info_append{width:100%;font-size: 12px;line-height:14px;}
  .list_comment .info_append .tit_userid{float:left;}
  .list_comment .info_append .link_userid{font-weight: 400;}
@@ -80,12 +80,12 @@
 .brunch_comment .comment_write{position:relative; width:1020px; padding-top:27px; margin:0 auto;}
 form{font-family:"Noto Sans Light","Malgun Gothic",sans-serif;padding:0;}
 input{font-family:"Noto Sans Light","Malgun Gothic",sans-serif;font-size:14px;line-height:1.5; vertical-align:middle; margin:0; padding:0;}
-fieldset{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; border:0 none; margin: 0; padding:0;}
+fieldset{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; border:0 none; margin: 2px!important; padding:0!important;}
 legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padding: 0;}
 .comment_write .link_profile{margin:6px 0 0 10px;}
-.comment_write .box_area{float:left;position:relative; border:1px solid #eee; background-color:#fff;}
+.comment_write .box_area{float:left;position:relative; border:1px solid #eee; background-color:#fff;width:900px}
 .comment_write .wrap_area{display:block;}
-.comment_write .tf_area{padding:17px 17px 0; width: 590px; min-height:45px;border: none;line-height:22px; color:#666; background:0 0; white-space:pre-wrap; word-wrap:break-word; outline:transparent dotted; z-index:1;}
+.comment_write .tf_area{padding:17px 17px 0; width: 854px; min-height:45px;border: none;line-height:22px; color:#666; background:0 0; white-space:pre-wrap; word-wrap:break-word; outline:transparent dotted; z-index:1;}
 .comment_write .editor_placeholder{position:absolute; z-index:0;top:17px; left:17px; line-height:22px; color:silver;}
  textarea{font-family:"Noto Sans Light","Malgun Gothic",sans-serif;font-size:14px;vertical-align:middle; margin:0;}
  .comment_write .comment_sticker{display:none; width:64px; margin:0 0 13px 17px;}
@@ -100,11 +100,11 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
  .brunch_comment ._mention_list{overflow:hidden; overflow-y:auto; position:absolute; width:238px; max-height:334px; border:1px solid #d9d9d9;background-color:#fff;z-index:11;}
  #td2{margin:5px 10px 5px 10px; border-bottom: 0px;}
  .all_regdate {float: right;margin-right: 15px;}
- #nextpage {margin:0 auto; width:800px;}
+ #nextpage {margin:0 auto; width:1020px;}
  #nextprvtable {width: 100%; display: inline-block}
  #nextprvtable a:hover {text-decoration: underline;}
  img {margin: 0px 4px 2px 0px;} 
- #login_reple{background-color: white;}
+ #login_reple{background-color:#fbfbfb; height: 105px; width:114px;border:1px solid #c0c0c0}
  .all_tile {width: 500px;}
  #listbtn{width: 80px;margin:0 auto;}
  #btnall{text-align: center;}
@@ -112,8 +112,11 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
  #modal_ul > li > a{
 	color: white;
     font-size: 15px;
+    
     font-family: 'Jeju Gothic', serif;
 }
+.w3-table td{padding: 8px 50px!important;}
+
  
  </style>
  </head>
@@ -226,11 +229,9 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 <c:if test="${fn:trim(sessionScope.loginUser.mid) ne ''}">
      <div class="wrap_comment_write">
       <form id="replyadd" class="comment_write brunch_login" method="post" action="replyadd.bigshort">
-
+	<div id="chat">
 	<fieldset>
 		<legend class="screen_out">댓글 작성 폼</legend>
-		<div class="link_profile">
-		</div>
 		<div class="box_area">
 			<label for="tfCmt" class="screen_out">댓글 작성</label>
 			<span class="wrap_area">
@@ -252,24 +253,26 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 					</div>
 				</div>
 
-				<div class="wrap_btn">
+
+				
+			</div>
+		<ul class="_mention_list" style="display: none;"></ul></div>
+		<div class="wrap_btn">
 						<input type="button" id="login_reple" class="btn_default #submit" value="확인">
 						<input type ="hidden" id="mid" name="mid" value="${sessionScope.loginUser.mid}">
 				</div>
-			</div>
-		<ul class="_mention_list" style="display: none;"></ul></div>
-		
 	</fieldset>
+		</div>
+		
 </form>
 </div>
 </c:if>
 <c:if test="${fn:trim(sessionScope.loginUser.mid) eq ''}">
 	<div class="wrap_comment_write">
       		<form class="comment_write brunch_login" action="#" method="post" >
+   <div id="chat2">
 	<fieldset>
 		<legend class="screen_out">댓글 작성 폼</legend>
-		<div class="link_profile">
-		</div>
 		<div class="box_area">
 			<label for="tfCmt" class="screen_out">댓글 작성</label>
 			<span class="wrap_area">
@@ -290,13 +293,14 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 					</div>
 				</div>
 
-				<div class="wrap_btn">
-						<input type="button" id="login_reple" class="btn_default #submit" value="로그인" onclick="document.getElementById('id01').style.display='block'" >
-				</div>
+				
 			</div>
 		<ul class="_mention_list" style="display: none;"></ul></div>
-		
+			<div class="wrap_btn">
+					<input type="button" id="login_reple" class="btn_default #submit" value="로그인" onclick="document.getElementById('id01').style.display='block'" >
+				</div>
 	</fieldset>
+		</div>
 </form>
 </div>
 						
