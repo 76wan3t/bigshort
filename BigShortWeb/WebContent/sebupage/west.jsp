@@ -405,9 +405,9 @@ href="/BigShortWeb/css/west.css?var=1">
 								}
 							};
 
-							options["width"] = 1200;
+							options["width"] = 900;
 
-							options["height"] = 500;
+							options["height"] = 438;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -512,7 +512,7 @@ href="/BigShortWeb/css/west.css?var=1">
 
 
 
-					<div id="ComboChartIDb189423f23" style="width: 1200; height: 500;">
+					<div id="ComboChartIDb189423f23" style="width: 900; height: 438;">
 
 					</div>
 
@@ -971,6 +971,10 @@ href="/BigShortWeb/css/west.css?var=1">
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							
+							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -1222,6 +1226,10 @@ href="/BigShortWeb/css/west.css?var=1">
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							
+							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -1460,6 +1468,10 @@ href="/BigShortWeb/css/west.css?var=1">
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							
+							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -1686,6 +1698,10 @@ href="/BigShortWeb/css/west.css?var=1">
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							
+							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -1901,6 +1917,10 @@ href="/BigShortWeb/css/west.css?var=1">
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							
+							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -2091,6 +2111,10 @@ href="/BigShortWeb/css/west.css?var=1">
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							
+							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -2592,6 +2616,10 @@ href="/BigShortWeb/css/west.css?var=1">
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							
+							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -2866,6 +2894,10 @@ href="/BigShortWeb/css/west.css?var=1">
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							
+							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -3092,6 +3124,10 @@ href="/BigShortWeb/css/west.css?var=1">
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							
+							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -3498,6 +3534,10 @@ href="/BigShortWeb/css/west.css?var=1">
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							
+							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -3929,6 +3969,10 @@ href="/BigShortWeb/css/west.css?var=1">
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							
+							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -4563,6 +4607,10 @@ href="/BigShortWeb/css/west.css?var=1">
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							
+							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 

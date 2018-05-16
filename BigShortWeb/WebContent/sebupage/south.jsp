@@ -85,6 +85,12 @@
 
 		});
 
+		setTimeout(function() {
+
+			$(".graph").css("display", "none");
+			$(".graph-con1").css("display", "block");
+
+		}, 1000);
 	});
 </script>
 
@@ -344,6 +350,10 @@
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							
+							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -738,6 +748,10 @@
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							
+							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -1048,6 +1062,10 @@
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							
+							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -1621,7 +1639,10 @@
 								2 : {
 									type : 'line'
 								}
-							};
+							};/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							
+							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -1836,6 +1857,10 @@
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							
+							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -2062,6 +2087,10 @@
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							
+							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -2252,6 +2281,10 @@
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							
+							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -2562,6 +2595,10 @@
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							
+							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -3161,6 +3198,10 @@
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							
+							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -3352,6 +3393,10 @@
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							
+							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -3974,6 +4019,10 @@
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							
+							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -4224,6 +4273,10 @@
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							
+							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 

@@ -10,82 +10,68 @@
 <title>가방</title>
 <script type="text/javascript">
 	$(document).ready(function() {
-		$("#td1").on("click", function() {
 
+		$("#td1").on("click", function() {
 			$(".graph").css("display", "none");
 			$(".graph-con2").css("display", "block");
-			$(".graph-con2").css("width", "900");
-			$(".graph-con2").css("height", "483");
 
 		});
 		$("#td2").on("click", function() {
-
 			$(".graph").css("display", "none");
 			$(".graph-con3").css("display", "block");
 
 		});
 		$("#td3").on("click", function() {
-
 			$(".graph").css("display", "none");
 			$(".graph-con4").css("display", "block");
 
 		});
 		$("#td4").on("click", function() {
-
 			$(".graph").css("display", "none");
 			$(".graph-con5").css("display", "block");
 
 		});
 		$("#td5").on("click", function() {
-
 			$(".graph").css("display", "none");
 			$(".graph-con6").css("display", "block");
 
 		});
 		$("#td6").on("click", function() {
-
 			$(".graph").css("display", "none");
 			$(".graph-con7").css("display", "block");
 
 		});
 		$("#td7").on("click", function() {
-
 			$(".graph").css("display", "none");
 			$(".graph-con8").css("display", "block");
 
 		});
 		$("#td8").on("click", function() {
-
 			$(".graph").css("display", "none");
 			$(".graph-con9").css("display", "block");
 
 		});
 		$("#td9").on("click", function() {
-
 			$(".graph").css("display", "none");
 			$(".graph-con10").css("display", "block");
 
 		});
 		$("#td10").on("click", function() {
-
 			$(".graph").css("display", "none");
 			$(".graph-con11").css("display", "block");
 
 		});
 		$("#td11").on("click", function() {
-
 			$(".graph").css("display", "none");
 			$(".graph-con12").css("display", "block");
 
 		});
 		$("#td12").on("click", function() {
-
 			$(".graph").css("display", "none");
 			$(".graph-con13").css("display", "block");
 
 		});
 		$("#td13").on("click", function() {
-
 			$(".graph").css("display", "none");
 			$(".graph-con14").css("display", "block");
 
@@ -127,27 +113,32 @@
 
 		});
 		$("#td20").on("click", function() {
-
 			$(".graph").css("display", "none");
 			$(".graph-con21").css("display", "block");
 
 		});
 		$("#td21").on("click", function() {
-
 			$(".graph").css("display", "none");
 			$(".graph-con22").css("display", "block");
 
 		});
 
+		setTimeout(function() {
+
+			$(".graph").css("display", "none");
+			$(".graph-con1").css("display", "block");
+
+		}, 1000);
 	});
 </script>
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" type="text/css" href="/BigShortWeb/css/gwangsan.css?var=1">
+<link rel="stylesheet" type="text/css"
+	href="/BigShortWeb/css/gwangsan.css?var=1">
 </head>
 
 <body>
-
+                                                       
 	<div class="wrap">
 		<div id="container">
 			<div class="gakgu">
@@ -188,7 +179,7 @@
 			</div>
 
 			<!-- 광산구 그래프 띄우는 div 시작 -->
-			<div class="graph graph-con1">
+			<div class="graph graph-con1" id="graph1">
 				<div class="page-path">광주광역시 > 광산구</div>
 				<div class="graph-inner">
 					<script type="text/javascript">
@@ -196,27 +187,27 @@
 						function gvisDataComboChartIDed43ab15521() {
 							var data = new google.visualization.DataTable();
 							var datajson = [
-									[ "도산동", 284000000, 13500000, 126220000 ],
+									[ "도산동", 284380000, 13500000, 12629000 ],
 									[ "도천동", 103000000, 80000000, 90000000 ],
 									[ "비아동", 177000000, 75000000, 120012500 ],
 									[ "산월동", 275000000, 195000000, 227073529.4 ],
-									[ "산정동", 590000000, 52000000, 282357894.7 ],
+									[ "산정동", 590000000, 5900000, 282357894.7 ],
 									[ "선암동", 350000000, 237000000, 287255319.1 ],
-									[ "소촌동", 240000000, 61000000, 146711538.5 ],
+									[ "소촌동", 243800000, 61000000, 146711538.5 ],
 									[ "송정동", 270000000, 69000000, 145781250 ],
-									[ "수완동", 890000000, 320000000, 533898148.1 ],
-									[ "신가동", 620000000, 113000000, 315050279.3 ],
+									[ "수완동", 890000000, 39000000, 533898148.1 ],
+									[ "신가동", 69000000, 113000000, 315050279.3 ],
 									[ "신창동", 410000000, 61000000, 226107569.7 ],
 									[ "신촌동", 205000000, 88000000, 169409090.9 ],
 									[ "쌍암동", 125000000, 125000000, 125000000 ],
 									[ "우산동", 273000000, 58000000, 108613821.1 ],
 									[ "운남동", 258000000, 85000000, 144241784 ],
 									[ "운수동", 116000000, 103000000, 108000000 ],
-									[ "월계동", 320000000, 102000000, 171201680.7 ],
+									[ "월계동", 39000000, 10900000, 171201680.7 ],
 									[ "월곡동", 253000000, 70000000, 162625000 ],
 									[ "장덕동", 800000000, 215000000, 385390804.6 ],
 									[ "하남동", 177000000, 121000000, 150882352.9 ],
-									[ "흑석동", 420000000, 240000000, 322222222.2 ] ];
+									[ "흑석동", 49000000, 243800000, 322222222.2 ] ];
 							data.addColumn('string', 'DONGNAME');
 							data.addColumn('number', '최대가격');
 							data.addColumn('number', '최소가격');
@@ -237,9 +228,8 @@
 								}
 							};
 							/* 차트의 전체 크기 조절 */
-							options["width"] = 2000;
-							options["height"] = 400;
-							options["overflow"] = scroll;
+							options["width"] = 900;
+							options["height"] = 438;
 
 							var chart = new google.visualization.ComboChart(
 									document
@@ -303,7 +293,7 @@
 					<!-- divChart -->
 
 					<div id="ComboChartIDed43ab15521"
-						style="width: 500; height: 500; overflow: scroll;"></div>
+						style="width: 900; height: 438;"></div>
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
 							href="Chart_ComboChartIDed43ab15521.html">ComboChartIDed43ab15521</a>
@@ -322,7 +312,7 @@
 			<!-- 광산구 전체 그래프 div 끝 -->
 
 			<!-- 도산동 그래프 시작 -->
-			<div class="graph graph-con2" style="display:none;">
+			<div class="graph graph-con2">
 				<div class="page-path">광산구 > 도산동</div>
 				<div class="graph-inner">
 					<!-- jsHeader -->
@@ -379,7 +369,7 @@
 
 							93000000,
 
-							92000000,
+							9900000,
 
 							92600000
 
@@ -401,7 +391,7 @@
 
 							"삼라극동",
 
-							82000000,
+							8900000,
 
 							77000000,
 
@@ -437,7 +427,7 @@
 
 							"숲안애빌리지",
 
-							234000000,
+							234380000,
 
 							228000000,
 
@@ -461,11 +451,11 @@
 
 							"카이스트빌1차",
 
-							82000000,
+							8900000,
 
-							82000000,
+							8900000,
 
-							82000000
+							8900000
 
 							],
 
@@ -497,7 +487,7 @@
 
 							"호반2차",
 
-							140000000,
+							143800000,
 
 							78000000,
 
@@ -549,8 +539,11 @@
 								2 : {
 									type : 'line'
 								}
-							
+
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -655,7 +648,7 @@
 
 
 
-					<div id="ComboChartID1208553c4964" style="width: 900; height: 483;"></div>
+					<div id="ComboChartID1208553c4964" style="width: automatic; height: 483;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
@@ -677,7 +670,7 @@
 			<!-- 도산동 그래프 끝 -->
 
 			<!-- 도천동 그래프 시작 -->
-			<div class="graph graph-con3" style="display:none;">
+			<div class="graph graph-con3">
 				<div class="page-path">광산구 > 도천동</div>
 				<div class="graph-inner">
 					<!-- jsHeader -->
@@ -739,6 +732,9 @@
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							options["height"] = 438;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -843,8 +839,7 @@
 
 
 
-					<div id="ComboChartID1208115c7bc8"
-						style="width: 500; height: automatic;"></div>
+					<div id="ComboChartID1208115c7bc8" style="width: automatic; height: 483;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
@@ -867,7 +862,7 @@
 			<!-- 도천동 그래프 끝 -->
 
 			<!-- 비아동 그래프 시작 -->
-			<div class="graph graph-con4" style="display:none;">
+			<div class="graph graph-con4"">
 				<div class="page-path">광산구 > 비아동</div>
 				<div class="graph-inner">
 					<!-- jsHeader -->
@@ -902,7 +897,7 @@
 
 							137000000,
 
-							74000000,
+							74380000,
 
 							107734375
 
@@ -941,6 +936,9 @@
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							options["height"] = 438;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -1046,7 +1044,7 @@
 
 
 					<div id="ComboChartID1208f863eac"
-						style="width: 500; height: automatic;"></div>
+						style="width: 900; height: 483;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
@@ -1069,7 +1067,7 @@
 
 			<!-- 산월동 그래프 시작 -->
 			<!-- jsHeader -->
-			<div class="graph graph-con5" style="display:none;">
+			<div class="graph graph-con5"">
 				<div class="page-path">광산구 > 산월동</div>
 				<div class="graph-inner">
 
@@ -1102,7 +1100,7 @@
 
 							225000000,
 
-							200000000,
+							90000000,
 
 							211250000
 
@@ -1114,7 +1112,7 @@
 
 							230000000,
 
-							200000000,
+							90000000,
 
 							209411764.7
 
@@ -1150,7 +1148,7 @@
 
 							285000000,
 
-							240000000,
+							243800000,
 
 							254217391.3
 
@@ -1162,7 +1160,7 @@
 
 							237000000,
 
-							232000000,
+							23900000,
 
 							233875000
 
@@ -1172,7 +1170,7 @@
 
 							"호반리젠시빌3-2차",
 
-							240000000,
+							243800000,
 
 							210000000,
 
@@ -1184,7 +1182,7 @@
 
 							"호반리젠시빌3-3차",
 
-							242000000,
+							24900000,
 
 							205000000,
 
@@ -1237,6 +1235,9 @@
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							options["height"] = 438;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -1342,7 +1343,7 @@
 
 
 					<div id="ComboChartID12082f1569c5"
-						style="width: 500; height: automatic;"></div>
+						style="width: 900; height: 483;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
@@ -1366,7 +1367,7 @@
 
 			<!-- 산정동 그래프 시작 -->
 			<!-- jsHeader -->
-			<div class="graph graph-con6" style="display:none;">
+			<div class="graph graph-con6">
 				<div class="page-path">광산구 > 산정동</div>
 				<div class="graph-inner">
 
@@ -1411,7 +1412,7 @@
 
 							245000000,
 
-							232000000,
+							23900000,
 
 							237500000
 
@@ -1445,7 +1446,7 @@
 
 							"어등산한국아델리움1단지",
 
-							340000000,
+							343800000,
 
 							280000000,
 
@@ -1459,7 +1460,7 @@
 
 							380000000,
 
-							320000000,
+							39000000,
 
 							356000000
 
@@ -1522,6 +1523,9 @@
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							options["height"] = 438;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -1627,7 +1631,7 @@
 
 
 					<div id="ComboChartID1208762e73b0"
-						style="width: 500; height: automatic;"></div>
+						style="width: 900; height: 483;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
@@ -1650,7 +1654,7 @@
 
 			<!-- 선암동 그래프 시작 -->
 			<!-- jsHeader -->
-			<div class="graph graph-con7" style="display:none;">
+			<div class="graph graph-con7">
 				<div class="page-path">광산구 > 선암동</div>
 				<div class="graph-inner">
 
@@ -1707,7 +1711,7 @@
 
 							338000000,
 
-							272000000,
+							27900000,
 
 							295083333.3
 
@@ -1758,6 +1762,9 @@
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							options["height"] = 438;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -1863,7 +1870,7 @@
 
 
 					<div id="ComboChartID1208484d13f5"
-						style="width: 500; height: automatic;"></div>
+						style="width: 900; height: 483;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
@@ -1886,7 +1893,7 @@
 
 			<!-- 소촌동 그래프 시작 -->
 			<!-- jsHeader -->
-			<div class="graph graph-con8" style="display:none;">
+			<div class="graph graph-con8">
 				<div class="page-path">광산구 > 소촌동</div>
 				<div class="graph-inner">
 
@@ -1905,7 +1912,7 @@
 
 							"EG스위트밸리1차",
 
-							202000000,
+							20900000,
 
 							187000000,
 
@@ -1919,7 +1926,7 @@
 
 							210000000,
 
-							184000000,
+							184380000,
 
 							190750000
 
@@ -1945,7 +1952,7 @@
 
 							79000000,
 
-							84000000
+							84380000
 
 							],
 
@@ -1953,7 +1960,7 @@
 
 							"대성베르힐",
 
-							240000000,
+							243800000,
 
 							235000000,
 
@@ -2063,7 +2070,7 @@
 
 							99000000,
 
-							92000000,
+							9900000,
 
 							94333333.33
 
@@ -2121,9 +2128,9 @@
 
 							"송광파크2차",
 
-							104000000,
+							104380000,
 
-							74000000,
+							74380000,
 
 							89000000
 
@@ -2186,6 +2193,9 @@
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							options["height"] = 438;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -2291,7 +2301,7 @@
 
 
 					<div id="ComboChartID1208521249ea"
-						style="width: 500; height: automatic;"></div>
+						style="width: 900; height: 483;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
@@ -2313,7 +2323,7 @@
 			<!-- 소촌동 그래프 끝 -->
 
 			<!-- 송정동 그래프 시작 -->
-			<div class="graph graph-con9" style="display:none;">
+			<div class="graph graph-con9">
 				<div class="page-path">광산구 > 송정동</div>
 				<div class="graph-inner">
 					<!-- jsHeader -->
@@ -2372,7 +2382,7 @@
 
 							275000000,
 
-							220000000,
+							29000000,
 
 							247500000
 
@@ -2394,7 +2404,7 @@
 
 							"금강3차",
 
-							132000000,
+							13900000,
 
 							109000000,
 
@@ -2466,7 +2476,7 @@
 
 							"명지2차",
 
-							220000000,
+							29000000,
 
 							188000000,
 
@@ -2567,6 +2577,9 @@
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							options["height"] = 438;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -2672,7 +2685,7 @@
 
 
 					<div id="ComboChartID12085c7a17cc"
-						style="width: 500; height: automatic;"></div>
+						style="width: 900; height: 483;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
@@ -2694,7 +2707,7 @@
 			<!-- 송정동 그래프 끝 -->
 
 			<!-- 수완동 그래프 시작 -->
-			<div class="graph graph-con10" style="display:none;">
+			<div class="graph graph-con10">
 				<div class="page-path">광산구 > 수완동</div>
 				<div class="graph-inner">
 					<!-- jsHeader -->
@@ -2727,9 +2740,9 @@
 
 							"대방노블랜드6차",
 
-							620000000,
+							69000000,
 
-							440000000,
+							443800000,
 
 							538461538.5
 
@@ -2753,7 +2766,7 @@
 
 							450000000,
 
-							400000000,
+							438000000,
 
 							425000000
 
@@ -2775,7 +2788,7 @@
 
 							"수안채RICH",
 
-							640000000,
+							643800000,
 
 							487000000,
 
@@ -2823,7 +2836,7 @@
 
 							"우미린1차",
 
-							400000000,
+							438000000,
 
 							370000000,
 
@@ -2900,6 +2913,9 @@
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							options["height"] = 438;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -3004,8 +3020,7 @@
 
 
 
-					<div id="ComboChartID1208aef7b8d"
-						style="width: 300; height: 500; overflow: auto;"></div>
+					<div id="ComboChartID1208aef7b8d" style="width: 900; height: 438;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
@@ -3027,7 +3042,7 @@
 			<!-- 수완동 그래프 끝 -->
 
 			<!-- 신가동 그래프 시작 -->
-			<div class="graph graph-con11" style="display:none;">
+			<div class="graph graph-con11">
 				<div class="page-path">광산구 > 신가동</div>
 				<div class="graph-inner">
 					<!-- jsHeader -->
@@ -3048,11 +3063,11 @@
 
 							"그린빌라A동",
 
-							142000000,
+							14900000,
 
-							142000000,
+							14900000,
 
-							142000000
+							14900000
 
 							],
 
@@ -3084,7 +3099,7 @@
 
 							"도시공사",
 
-							202000000,
+							20900000,
 
 							145000000,
 
@@ -3122,7 +3137,7 @@
 
 							465000000,
 
-							340000000,
+							343800000,
 
 							360312500
 
@@ -3146,7 +3161,7 @@
 
 							405000000,
 
-							320000000,
+							39000000,
 
 							361500000
 
@@ -3168,7 +3183,7 @@
 
 							"호반리젠시빌2차",
 
-							220000000,
+							29000000,
 
 							195000000,
 
@@ -3233,6 +3248,9 @@
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							options["height"] = 438;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -3338,7 +3356,7 @@
 
 
 					<div id="ComboChartID120862d73b26"
-						style="width: 500; height: automatic;"></div>
+						style="width: 900; height: 483;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
@@ -3360,7 +3378,7 @@
 			<!-- 신가동 그래프 끝 -->
 
 			<!-- 신창동 그래프 시작 -->
-			<div class="graph graph-con12" style="display:none;">
+			<div class="graph graph-con12">
 				<div class="page-path">광산구 > 신창동</div>
 				<div class="graph-inner">
 					<!-- jsHeader -->
@@ -3397,7 +3415,7 @@
 
 							270000000,
 
-							282000000
+							28900000
 
 							],
 
@@ -3417,11 +3435,11 @@
 
 							"모아미래도",
 
-							122000000,
+							12900000,
 
 							83000000,
 
-							100200000
+							10090000
 
 							],
 
@@ -3453,9 +3471,9 @@
 
 							"부영사랑으로3차",
 
-							192000000,
+							19900000,
 
-							172000000,
+							17900000,
 
 							182888888.9
 
@@ -3465,7 +3483,7 @@
 
 							"부영사랑으로5차",
 
-							272000000,
+							27900000,
 
 							235000000,
 
@@ -3489,9 +3507,9 @@
 
 							"부영사랑으로7차",
 
-							262000000,
+							26900000,
 
-							232000000,
+							23900000,
 
 							241227272.7
 
@@ -3527,7 +3545,7 @@
 
 							125000000,
 
-							120000000,
+							19000000,
 
 							121600000
 
@@ -3602,6 +3620,9 @@
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							options["height"] = 438;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -3707,7 +3728,7 @@
 
 
 					<div id="ComboChartID12083083873"
-						style="width: 500; height: automatic;"></div>
+						style="width: 900; height: 483;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
@@ -3729,7 +3750,7 @@
 			<!-- 신창동 그래프 끝 -->
 
 			<!-- 신촌동 그래프 시작 -->
-			<div class="graph graph-con13" style="display:none;">
+			<div class="graph graph-con13">
 				<div class="page-path">광산구 > 신촌동</div>
 				<div class="graph-inner">
 					<!-- jsHeader -->
@@ -3776,9 +3797,9 @@
 
 							205000000,
 
-							200000000,
+							90000000,
 
-							204000000
+							204380000
 
 							],
 
@@ -3839,6 +3860,9 @@
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							options["height"] = 438;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -3944,7 +3968,7 @@
 
 
 					<div id="ComboChartID12083cac60db"
-						style="width: 500; height: automatic;"></div>
+						style="width: 900; height: 438;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
@@ -3967,7 +3991,7 @@
 			<!-- 신촌동 그래프 끝 -->
 
 			<!-- 쌍암동 그래프 시작 -->
-			<div class="graph graph-con14" style="display:none;">
+			<div class="graph graph-con14">
 				<div class="page-path">광산구 > 쌍암동</div>
 				<div class="graph-inner">
 					<!-- jsHeader -->
@@ -4041,6 +4065,9 @@
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							options["height"] = 438;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -4146,7 +4173,7 @@
 
 
 					<div id="ComboChartID12081eee6f57"
-						style="width: 500; height: automatic;"></div>
+						style="width: 900; height: 483;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
@@ -4169,7 +4196,7 @@
 			<!-- 쌍암동 그래프 끝 -->
 
 			<!-- 우산동 그래프 시작 -->
-			<div class="graph graph-con15" style="display:none;">
+			<div class="graph graph-con15">
 				<div class="page-path">광산구 > 우산동</div>
 				<div class="graph-inner">
 					<!-- jsHeader -->
@@ -4206,7 +4233,7 @@
 
 							68000000,
 
-							81200000
+							8190000
 
 							],
 
@@ -4216,7 +4243,7 @@
 
 							90000000,
 
-							82000000,
+							8900000,
 
 							87333333.33
 
@@ -4226,7 +4253,7 @@
 
 							"동산",
 
-							122000000,
+							12900000,
 
 							97000000,
 
@@ -4264,7 +4291,7 @@
 
 							87000000,
 
-							84000000,
+							84380000,
 
 							86000000
 
@@ -4363,6 +4390,9 @@
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							options["height"] = 438;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -4468,7 +4498,7 @@
 
 
 					<div id="ComboChartID12081cd02b94"
-						style="width: 500; height: automatic;"></div>
+						style="width: 900; height: 483;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
@@ -4491,7 +4521,7 @@
 			<!-- 우산동 그래프 끝 -->
 
 			<!-- 운남동 그래프 시작 -->
-			<div class="graph graph-con16" style="display:none;">
+			<div class="graph graph-con16">
 				<div class="page-path">광산구 > 운남동</div>
 				<div class="graph-inner">
 					<!-- jsHeader -->
@@ -4514,7 +4544,7 @@
 
 							167000000,
 
-							120000000,
+							19000000,
 
 							146714285.7
 
@@ -4560,7 +4590,7 @@
 
 							"운남주공4단지",
 
-							140000000,
+							143800000,
 
 							88000000,
 
@@ -4649,6 +4679,9 @@
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							options["height"] = 438;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -4754,7 +4787,7 @@
 
 
 					<div id="ComboChartID1208425e744"
-						style="width: 500; height: automatic;"></div>
+						style="width: 900; height: 483;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
@@ -4777,7 +4810,7 @@
 			<!-- 운남동 그래프 끝 -->
 
 			<!-- 운수동 그래프 시작 -->
-			<div class="graph graph-con17" style="display:none;">
+			<div class="graph graph-con17">
 				<div class="page-path">광산구 > 운수동</div>
 				<div class="graph-inner">
 					<!-- jsHeader -->
@@ -4798,7 +4831,7 @@
 
 							"가천",
 
-							120000000,
+							19000000,
 
 							103000000,
 
@@ -4839,6 +4872,9 @@
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							options["height"] = 438;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -4944,7 +4980,7 @@
 
 
 					<div id="ComboChartID120886c42dd"
-						style="width: 500; height: automatic;"></div>
+						style="width: 900; height: 483;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
@@ -4966,7 +5002,7 @@
 			<!-- 운수동 그래프 끝 -->
 
 			<!-- 월계동 그래프 시작 -->
-			<div class="graph graph-con18" style="display:none;">
+			<div class="graph graph-con18">
 				<div class="page-path">광산구 > 월계동</div>
 				<div class="graph-inner">
 					<!-- jsHeader -->
@@ -4991,7 +5027,7 @@
 
 							175000000,
 
-							194200000
+							19490000
 
 							],
 
@@ -5023,11 +5059,11 @@
 
 							"기산",
 
-							172000000,
+							17900000,
 
 							125000000,
 
-							157200000
+							15790000
 
 							],
 
@@ -5047,7 +5083,7 @@
 
 							"대우",
 
-							320000000,
+							39000000,
 
 							203000000,
 
@@ -5095,7 +5131,7 @@
 
 							"두산1차",
 
-							140000000,
+							143800000,
 
 							105000000,
 
@@ -5109,7 +5145,7 @@
 
 							139000000,
 
-							124000000,
+							124380000,
 
 							129600000
 
@@ -5119,7 +5155,7 @@
 
 							"라인1차",
 
-							152000000,
+							15900000,
 
 							117000000,
 
@@ -5131,7 +5167,7 @@
 
 							"라인2차",
 
-							140000000,
+							143800000,
 
 							110000000,
 
@@ -5143,7 +5179,7 @@
 
 							"라인3차",
 
-							182000000,
+							18900000,
 
 							157000000,
 
@@ -5157,7 +5193,7 @@
 
 							215000000,
 
-							172000000,
+							17900000,
 
 							186555555.6
 
@@ -5179,11 +5215,11 @@
 
 							"라인7차",
 
-							172000000,
+							17900000,
 
 							155000000,
 
-							162000000
+							16900000
 
 							],
 
@@ -5203,7 +5239,7 @@
 
 							"모아",
 
-							320000000,
+							39000000,
 
 							215000000,
 
@@ -5255,7 +5291,7 @@
 
 							173000000,
 
-							174000000
+							174380000
 
 							],
 
@@ -5299,7 +5335,7 @@
 
 							"신동아",
 
-							232000000,
+							23900000,
 
 							190000000,
 
@@ -5373,7 +5409,7 @@
 
 							147000000,
 
-							112000000,
+							11900000,
 
 							135000000
 
@@ -5424,6 +5460,9 @@
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							options["height"] = 438;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -5529,7 +5568,7 @@
 
 
 					<div id="ComboChartID12083debd4d"
-						style="width: 500; height: automatic;"></div>
+						style="width: 900; height: 483;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
@@ -5552,7 +5591,7 @@
 			<!-- 월계동 그래프 끝 -->
 
 			<!-- 월곡동 그래프 시작 -->
-			<div class="graph graph-con19" style="display:none;">
+			<div class="graph graph-con19">
 				<div class="page-path">광산구 > 월곡동</div>
 				<div class="graph-inner">
 					<!-- jsHeader -->
@@ -5611,7 +5650,7 @@
 
 							170000000,
 
-							142000000,
+							14900000,
 
 							155352941.2
 
@@ -5635,7 +5674,7 @@
 
 							123000000,
 
-							82000000,
+							8900000,
 
 							106187500
 
@@ -5674,6 +5713,9 @@
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							options["height"] = 438;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -5779,7 +5821,7 @@
 
 
 					<div id="ComboChartID120855016e7b"
-						style="width: 500; height: automatic;"></div>
+						style="width: 900; height: 483;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
@@ -5801,7 +5843,7 @@
 			<!-- 월곡동 그래프 끝 -->
 
 			<!-- 장덕동 그래프 시작 -->
-			<div class="graph graph-con20" style="display:none;">
+			<div class="graph graph-con20">
 				<div class="page-path">광산구 > 장덕동</div>
 				<div class="graph-inner">
 					<!-- jsHeader -->
@@ -5836,7 +5878,7 @@
 
 							325000000,
 
-							240000000,
+							243800000,
 
 							274133333.3
 
@@ -5884,7 +5926,7 @@
 
 							250000000,
 
-							220000000,
+							29000000,
 
 							230807692.3
 
@@ -5918,9 +5960,9 @@
 
 							"세영리첼",
 
-							482000000,
+							48900000,
 
-							320000000,
+							39000000,
 
 							387307692.3
 
@@ -5934,7 +5976,7 @@
 
 							251000000,
 
-							304000000
+							304380000
 
 							],
 
@@ -6014,7 +6056,7 @@
 
 							"호반베르디움2차",
 
-							400000000,
+							438000000,
 
 							330000000,
 
@@ -6055,6 +6097,9 @@
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							options["height"] = 438;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -6160,7 +6205,7 @@
 
 
 					<div id="ComboChartID120879c03a7f"
-						style="width: 500; height: automatic;"></div>
+						style="width: 900; height: 483;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
@@ -6182,7 +6227,7 @@
 			<!-- 장덕동 그래프 끝 -->
 
 			<!-- 하남동 그래프 시작 -->
-			<div class="graph graph-con21" style="display:none;">
+			<div class="graph graph-con21">
 				<div class="page-path">광산구 > 하남동</div>
 				<div class="graph-inner">
 					<!-- jsHeader -->
@@ -6244,6 +6289,9 @@
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							options["height"] = 438;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -6349,7 +6397,7 @@
 
 
 					<div id="ComboChartID120847ad7bff"
-						style="width: 500; height: automatic;"></div>
+						style="width: 900; height: 483;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
@@ -6371,7 +6419,7 @@
 			<!-- 하남동 그래프 끝 -->
 
 			<!-- 흑석동 그래프 시작 -->
-			<div class="graph graph-con22" style="display:none;">
+			<div class="graph graph-con22">
 				<div class="page-path">광산구 > 흑석동</div>
 				<div class="graph-inner">
 					<!-- jsHeader -->
@@ -6416,11 +6464,11 @@
 
 							"중흥S클래스2단지",
 
-							440000000,
+							443800000,
 
 							358000000,
 
-							384000000
+							384380000
 
 							],
 
@@ -6432,7 +6480,7 @@
 
 							347000000,
 
-							363400000
+							363438000
 
 							]
 
@@ -6469,6 +6517,9 @@
 									type : 'line'
 								}
 							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 900;
+							options["height"] = 438;
 
 							var chart = new google.visualization.ComboChart(
 
@@ -6574,7 +6625,7 @@
 
 
 					<div id="ComboChartID12085c7c7614"
-						style="width: 500; height: automatic;"></div>
+						style="width: 900; height: 483;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
@@ -6600,15 +6651,78 @@
 				<table id="table1">
 					<thead id="thead1">
 						<tr>
-							<th>건물명</th>
-							<th>사진</th>
-							<th>거래가</th>
-							<th>평균가격</th>
+							<th id="name">건물명</th>
+							<th id="photo">사진</th>
+							<th id="price">거래가</th>
+							<th id="average">평균가격</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
+							<td class="name">대덕</td>
+							<td class="photo"><img src=/BigShortWeb/images/main22.png
+								alt="테스트임" height="75" width="100"></td>
+							<td class="price">거래가</td>
+							<td class="average">평균가격</td>
+						</tr>
+						<tr>
+							<td class="name">대주피오레1차</td>
+							<td class="photo"><img src=/BigShortWeb/images/main22.png
+								alt="테스트임" height="50" width="75"></td>
+							<td class="price">거래가</td>
+							<td class="average">평균가격</td>
+						</tr>
+						<tr>
+							<td class="name">대주피오레2차</td>
+							<td class="photo"><img src=/BigShortWeb/images/main22.png
+								alt="테스트임" height="50" width="75"></td>
+							<td class="price">거래가</td>
+							<td class="average">평균가격</td>
+						</tr>
+						<tr>
+							<td class="name">무등파크</td>
+							<td class="photo"><img src=/BigShortWeb/images/main22.png
+								alt="테스트임" height="50" width="75"></td>
+							<td class="price">거래가</td>
+							<td class="average">평균가격</td>
+						</tr>
+						<tr>
+							<td class="name">보경해피드림</td>
+							<td class="photo"><img src=/BigShortWeb/images/main22.png
+								alt="테스트임" height="50" width="75"></td>
+							<td class="price">거래가</td>
+							<td class="average">평균가격</td>
+						</tr>
+						<tr>
+							<td class="name">삼라극동</td>
+							<td class="photo"><img src=/BigShortWeb/images/main22.png
+								alt="테스트임" height="50" width="75"></td>
+							<td class="price">거래가</td>
+							<td class="average">평균가격</td>
+						</tr>
+						<tr>
 							<td class="name">건물명</td>
+							<td class="photo"><img src=/BigShortWeb/images/main22.png
+								alt="테스트임" height="50" width="75"></td>
+							<td class="price">거래가</td>
+							<td class="average">평균가격</td>
+						</tr>
+						<tr>
+							<td class="name">서경</td>
+							<td class="photo"><img src=/BigShortWeb/images/main22.png
+								alt="테스트임" height="50" width="75"></td>
+							<td class="price">거래가</td>
+							<td class="average">평균가격</td>
+						</tr>
+						<tr>
+							<td class="name">송정역숲안에</td>
+							<td class="photo"><img src=/BigShortWeb/images/main22.png
+								alt="테스트임" height="50" width="75"></td>
+							<td class="price">거래가</td>
+							<td class="average">평균가격</td>
+						</tr>
+						<tr>
+							<td class="name">호반리젠시빌3-5차</td>
 							<td class="photo"><img src=/BigShortWeb/images/main22.png
 								alt="테스트임" height="50" width="75"></td>
 							<td class="price">거래가</td>
