@@ -48,12 +48,13 @@
 <style type="text/css">
 
 div#constract_header {
-	    height: 169px;
-	    padding-top: 62px;
+	    height: 200px;
+	   /*  padding-top: 62px; */
 	    position: relative;
-	    width: 786px;
+	    width: 700px;
 	    margin: 0 auto;
 	    box-sizing: border-box;
+	    margin-top: -27px;
 }
 </style>
 </head>
@@ -66,7 +67,11 @@ div#constract_header {
 			</select>
 		</div> -->
 		
-		<div id="constract_header">
+		
+		
+		
+	<div id="body_wrap">
+	<div id="constract_header">
 			<div class="lang">
 				<select id="langselect">
 					<option>한국어</option>
@@ -76,9 +81,6 @@ div#constract_header {
 				</select>
 			</div>
 		</div>
-		
-		
-	<div id="body_wrap">
 		<div id="constract_container">
 			<form id="join_content" action="join.bigshort" method="get">
 				<div class="terms">
