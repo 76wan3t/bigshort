@@ -12,7 +12,11 @@
 	#header a{
 		text-decoration: none;
 	}
-	
+	#span_title{
+		color: red;
+		display: none;
+		margin-left: 5px;
+	}
 
 	
 </style>
@@ -30,12 +34,38 @@ $(document).ready(function() {
 	// 게시글 등록 버튼을 클릭하면 이벤트 처리
 	$(".pull-right").on("click", function() {
 			
-			$("#insert").submit();
+     	 var form = $('#insert'),
+      	 title = $('#title');
+      	 
+      	var form2 = $.trim(form.val());
+      	
+        if(form2 == ""){
+       	 
+              	var tile2 = $.trim(title.val());
+
+               
+                if (tile2 == ""){
+                	title.focus();
+              	 $("#span_title").css("display", "block");
+              	 return false;
+              	 
+              	 }
+               
+               $("#insert").submit();
+        	}
 	});	
 	$(".pull-left").on("click", function() {
 		
 		location.href = "/BigShortWeb/listAll.bigshort"
 	});	
+	
+	 $("#title").blur(function(){
+       	var title = $('#reg_mb_month').val();
+			if(title != ""){
+				$("#span_title").css("display", "none");
+			}
+       });
+
 });
 </script>
 </head>
@@ -50,7 +80,10 @@ $(document).ready(function() {
 				    <tbody>
 				            <tr>
 				                <th>제목 : </th>
-				                <td><input type="text" placeholder="제목을 입력하세요." name="title" id="title" class="form-control"/></td>
+				                <td>
+				                	<input type="text" placeholder="제목을 입력하세요." name="title" id="title" class="form-control"/>
+				                	<span id="span_title">제목을 입력해주세요</span>
+				                </td>
 				            </tr>
 				            <tr>
 				                <th>작성자 : </th>
