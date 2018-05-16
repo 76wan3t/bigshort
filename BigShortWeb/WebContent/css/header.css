@@ -141,7 +141,7 @@ a:link, a:visited {
 #header {
 	height: 50px;
 	width: 100%;
-	min-width: 1300px;
+	/* min-width: 1300px; */
 	position: absolute;
 	z-index: 1;
 	top: 0;
@@ -183,9 +183,9 @@ div.logo {
 	visibility: hidden;
 }
 
-.clearfix {
+/* .clearfix {
 	display: inline-block;
-}
+} */
 
 #header .primary-logo {
 	line-height: 0;
@@ -205,7 +205,8 @@ h1 {
 
 .utility-menu {
 	top: 0;
-	width: 1180px;
+	/* width: 1180px; */
+	margin: 0 100px;
 }
 
 .menu-utility, .menu-utility-user {
