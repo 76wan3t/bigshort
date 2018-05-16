@@ -297,6 +297,9 @@
 	#new{
 		color: red;
 	}
+	#td_title{
+		text-align: left;
+	}
 	
 </style>
 
@@ -382,7 +385,10 @@
 								<fmt:formatDate value="${bDto.regdate}" pattern="yyyy-MM-dd" var="regdate2"/>
 			<tr><!-- 상세페이지 이동  -->
 				<td>${bDto.bno}</td>
-				<td><a href="boardbody.bigshort?bno=${bDto.bno}">${bDto.title} </a> 
+				<td id="td_title" style=" " >
+					<nobr>
+						<a style="max-width:250px; text-overflow:ellipsis; overflow:hidden; line-height: 13px;" href="boardbody.bigshort?bno=${bDto.bno}">${bDto.title}</a>
+					</nobr>
 				
 				
 					<c:if test="${bDto.replycnt ne 0}">
