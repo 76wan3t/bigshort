@@ -42,7 +42,7 @@ span.ck{
 }
 /* input태그 */
 .info_input{
-	width: 90%;
+	width: 75%;
 	height: 60%;
 	border: none;
 	margin: 10px 20px;
@@ -54,7 +54,7 @@ span.ck{
 }
 /* 사업자 번호 */
 .brn_input{
-	width: 20%;
+	width: 18%;
 	height: 33px;
 	display: inline-block;
 	border: 1px solid gray;
@@ -65,7 +65,7 @@ span.ck{
 }
 /* 중개소 전화번호 */
 #sphone{
-	width: 68%;
+	width: 60%;
 }
 select{
 	height: 90%;

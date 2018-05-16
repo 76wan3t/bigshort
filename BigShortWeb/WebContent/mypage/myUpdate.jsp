@@ -190,7 +190,7 @@
 		<!-- 아이디 (필수) -->
 			<div class="info" id="id_div">
 				<span>
-					<input class="info_input " type="text" id="id" name="id" readonly="readonly" value="${sessionScope.loginUser.mid}">
+					&nbsp;&nbsp;*아이디:<input class="info_input " type="text" id="id" name="id" readonly="readonly" value="${sessionScope.loginUser.mid}">
 				</span>
 				<span id="idck" class="ck">필수정보 입니다.</span>
 			</div>
@@ -199,21 +199,21 @@
 		<!-- 이름	 (필수) -->
 			<div class="info" id="name_div">
 				<span>
-					<input class="info_input" type="text" id="name" name="name" maxlength="4" value="${member.mname}">
+					&nbsp;&nbsp;*이름:<input class="info_input" type="text" id="name" name="name" maxlength="4" value="${member.mname}">
 				</span>
 				<span id="nameck" class="ck">필수정보 입니다.</span>
 			</div>
 		<!-- 전화번호 (필수) -->
 			<div class="info" id="phone_div">
 				<span>
-					<input class="info_input" type="text" id="phone" name="phone" maxlength="11"  value="${member.mphone}">
+					&nbsp;&nbsp;*전화번호:<input class="info_input" type="text" id="phone" name="phone" maxlength="11"  value="${member.mphone}">
 				</span>
 				<span id="phoneck" class="ck">필수정보 입니다.</span>
 			</div>
 		<!-- 이메일 (필수) -->	
 			<div id="mail_div" class="info">
 				<span class="mail_span">
-					<input class="info_input mail_input" type="text" id="mail" name="mail" value="${member.memail}">
+					&nbsp;&nbsp;*이메일:<input class="info_input mail_input" type="text" id="mail" name="mail" value="${member.memail}">
 					@<input class="info_input mail_input" type="text" id="mail2" name="mail2"  value="${member.memail2}">
 				</span>
 				<span>
@@ -234,7 +234,7 @@
 		<!-- 사업자 등록 번호 ***-**-***** 10자리 형식 --> 
 			<div id="brn_div" class="info selinfo">
 				<span>
-					<input class="info_input brn_input" id="brn1" name="brn1" placeholder="사업자 번호" maxlength="3" > 
+					&nbsp;사업자번호:<input class="info_input brn_input" id="brn1" name="brn1" maxlength="3" > 
 					- <input class="info_input brn_input" id="brn2" name="brn2" placeholder="**" maxlength="2"> 
 					- <input class="info_input brn_input" id="brn3" name="brn3" placeholder="*****" maxlength="5">
 				</span>
@@ -243,7 +243,7 @@
 		<!-- 중개소 명 -->
 			<div class="info selinfo" id="sname_div">
 				<span>
-					<input class="info_input" type="text"  id="sname" name="sname" placeholder="중개소 이름 " value="${member.mbisname}">
+					&nbsp;&nbsp;중개소이름:<input class="info_input" type="text"  id="sname" name="sname" value="${member.mbisname}">
 				</span>
 			</div>
 		<!-- 중개소 전화번호 -->
