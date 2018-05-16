@@ -190,13 +190,32 @@
 	
 }
 
+/* 광산구 그래프 위치지정 */
+#ComboChartIDed43ab15521 {
+	position: relative;
+	left: -60px;
+}
 
+/* 북구 그래프 위치지정 */
+#ComboChartIDed4622566b8{
+	position: relative;
+	left: -60px;
+}
 
+/* 남구 그래프 위치지정 */
+#ComboChartIDed43cc1148f {
+	position: relative;
+	left: -60px;
+}
 
+/* 서구 그래프 위치지정 */
+#ComboChartIDed443272950 {
+	position: relative;
+	left: -60px;
+}
 
-
-
-
-
-
-
+/* 동구 그래프 위치지정 */
+#ComboChartIDed474ab435b {
+	position: relative;
+	left: -60px;
+}

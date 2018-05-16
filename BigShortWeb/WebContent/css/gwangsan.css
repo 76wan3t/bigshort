@@ -89,6 +89,7 @@ table {
 
 .name {
 	width: 20%;
+	border-bottom: 1px solid #CCC;
 }
 .photo {
 	width: 15%;
