@@ -179,7 +179,7 @@
 	}
 	.form_item .i_text{
 		position: relative;
-		z-index: 5;
+		/* z-index: 5; */
 		border: 1px solid #bebebe;
 		
 	}
