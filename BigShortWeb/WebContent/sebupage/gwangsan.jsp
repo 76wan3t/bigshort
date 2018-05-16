@@ -228,9 +228,9 @@
 								}
 							};
 							/* 차트의 전체 크기 조절 */
-							options["width"] = 900;
+							options["width"] = 2000;
 							options["height"] = 438;
-
+							
 							var chart = new google.visualization.ComboChart(
 									document
 											.getElementById('ComboChartIDed43ab15521'));
@@ -293,7 +293,7 @@
 					<!-- divChart -->
 
 					<div id="ComboChartIDed43ab15521"
-						style="width: 900; height: 438;"></div>
+						style="width: 900; height: 438; overflow: scroll;"></div>
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
 							href="Chart_ComboChartIDed43ab15521.html">ComboChartIDed43ab15521</a>

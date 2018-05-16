@@ -5,7 +5,11 @@
 	bottom: 0;
 	text-align: center;
 	padding: 15px;
-	background: #e3e5e9;
+	background: #A4D2ED;
 	min-width: 1300px;
 	width: 100%;
+}
+.inner2 {
+	color: white;
+	
 }
