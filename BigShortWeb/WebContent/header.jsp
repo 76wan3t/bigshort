@@ -71,13 +71,11 @@
 								
 								if(data.flag == 0 ){
 									
-									alert("로그인 실패");
 									$("#loginid").select();
 									$("#span_id").text(" 아이디 또는 패스워드가 틀렸습니다. ").css("display", "block");
 									
 								}else{
 									
-									alert("로그인성공");
 									location.reload();
 								} 
 							},

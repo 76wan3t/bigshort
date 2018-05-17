@@ -27,7 +27,14 @@
  .board_list tbody td.title {text-align:left; padding-left:20px}
  .board_list tbody td a {display:inline-block}
 
- .board_view {width:50%;border-top:2px solid #252525; border-bottom:1px solid #ccc; border-right:1px solid #252525;border-left:1px solid #252525; margin: 0 auto;}
+ .board_view {
+ 	width:50%;
+ 	min-width : 800px;
+ 	border-top:2px solid #252525; 
+ 	border-bottom:1px solid #ccc; 
+ 	border-right:1px solid #252525;
+ 	border-left:1px solid #252525; 
+ 	margin: 0 auto;}
  .board_view tbody th {text-align:left;background:#f7f7f7;color:#3b3a3a}
  .board_view tbody th.list_tit {font-size:13px;color:#000;letter-spacing:0.1px}
  .board_view tbody .no_line_b th, .board_view tbody .no_line_b td {border-bottom:none}
@@ -98,7 +105,7 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
  .comment_write .write_append .wrap_btn{float:right;}
  .comment_write .write_append .btn_default{width:56px;height:30px;margin-left:5px; border:1px solid #bbb;border-radius:32px; line-height:28px;color:#666;}
  .brunch_comment ._mention_list{overflow:hidden; overflow-y:auto; position:absolute; width:238px; max-height:334px; border:1px solid #d9d9d9;background-color:#fff;z-index:11;}
- #td2{margin:5px 10px 5px 10px; border-bottom: 0px;}
+ #td2{margin:5px 10px 5px 10px; border-bottom: 0px; height: 200px;}
  .all_regdate {float: right;margin-right: 15px;}
  #nextpage {margin:0 auto; width:1020px;}
  #nextprvtable {width: 100%; display: inline-block}
