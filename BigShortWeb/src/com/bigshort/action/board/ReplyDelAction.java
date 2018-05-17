@@ -38,7 +38,7 @@ public class ReplyDelAction implements Action {
 		}*/
 		
 		
-		String url = "boardbody.bizpoll";
+		String url = "boardbody.bigshort";
 		
 		int rno = Integer.parseInt(request.getParameter("rno"));
 		

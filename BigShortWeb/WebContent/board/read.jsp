@@ -116,6 +116,7 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
     font-family: 'Jeju Gothic', serif;
 }
 .w3-table td{padding: 8px 50px!important;}
+.w3-table td a{text-overflow: ellipsis;overflow: hidden; max-width:408px; height:19px;}
 
  
  </style>
@@ -311,12 +312,12 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 				<c:forEach items="${bodynext}" var="bDto">
 					<tr>
 						<c:if test="${fn:trim(bDto.pre_title) ne '이전글없음'}">
-							<td><i class="fa fa-arrow-left"></i><a
+							<td><!-- <i class="fa fa-arrow-left"></i> --><a
 								href="boardbody.bigshort?bno=${bDto.pre_article_bno} " id="">
 									이전글</a></td>
-							<td class="all_tile"><a
+							<td class="all_tile"><nobr><a
 								href="boardbody.bigshort?bno=${bDto.pre_article_bno} " id="">
-									${bDto.pre_title}</a></td>
+									${bDto.pre_title}</a></nobr></td>
 							<td class="all_writer">${bDto.pre_writer}</td>
 							<td class="all_regdate"><fmt:formatDate pattern="yyyy-MM-dd"
 									value="${bDto.pre_regdate}" /></td>
@@ -324,11 +325,11 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 					</tr>
 					<tr>
 						<c:if test="${fn:trim(bDto.next_title) ne '다음글 없음'}">
-							<td><a
+							<td>
+							<a
 								href="boardbody.bigshort?bno=${bDto.next_article_bno} " id="">
-									다음글</a><i class="fa fa-arrow-right"></i></td>
-							<td class="all_tile"><a
-								href="boardbody.bigshort?bno=${bDto.next_article_bno} " id="">${bDto.next_title}</a></td>
+									다음글</a><!-- <i class="fa fa-arrow-right"></i> --></td>
+							<td class="all_tile"><nobr><a href="boardbody.bigshort?bno=${bDto.next_article_bno} " id="">${bDto.next_title}</a></nobr></td>
 							<td class="all_writer">${bDto.next_writer}</td>
 							<td class="all_regdate"><fmt:formatDate pattern="yyyy-MM-dd"
 									value="${bDto.next_regdate}" /></td>
