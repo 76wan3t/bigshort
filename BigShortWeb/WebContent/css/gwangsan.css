@@ -69,7 +69,7 @@ table {
 
 .graph-con1 {
 	margin-top: 30px;
-	margin-bottom: 100px;
+	margin-bottom: 50px;
 	display: block;
 }
 
@@ -107,15 +107,67 @@ td {
 	border-bottom: 1px solid #CCC;
 }
 
-#name {
-	padding-top: 15px;
-	padding-bottom: 15px;
+#aptserch {
+	width: 94%;
+    height: auto;
+    border: 2px solid #CCC;
+    border-radius: 0%;
+    padding: 25px 50px 25px 50px;
+    margin-bottom: 50px!important;
+    margin: 0 auto;
+}
+#aptserch1 > td {
+	border: 1px solid #CCC;
+	padding: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+	border-radius: 10%;
+	display: inline-block;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	cursor: pointer;
 }
 
+#board {
+    width: 100%;
+    height: auto;
+}
 
+.product {
+	border: 2px solid #CCC;
+    width: 23%;
+    height: 220px;
+    border-radius: 10%;
+    text-align: center;
+    display: inline-block;
+    margin-right: 14px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
 
+.product > span {
+	text-align: center;
+	font-size: 16px;
+	font-family: 'Jeju Gothic', serif;
+	display: block;
+}
 
-
+.aptname {
+	margin-top: 20px;
+    padding-bottom: 15px;
+}
+.standard {
+	margin-top: 15px;
+    padding-bottom: 10px;
+}
+.average {
+	margin-top: 15px;
+    padding-bottom: 10px;
+}
+.price {
+	margin-top: 15px;
+    padding-bottom: 10px;
+}
 
 
 

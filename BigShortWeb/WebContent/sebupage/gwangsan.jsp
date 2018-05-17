@@ -6646,90 +6646,87 @@
 			</div>
 			<!-- 흑석동 그래프 끝 -->
 
-			<!-- 상품게시페이지 시작 -->
-			<div id="board">
-				<table id="table1">
-					<thead id="thead1">
-						<tr>
-							<th id="name">건물명</th>
-							<th id="photo">사진</th>
-							<th id="price">거래가</th>
-							<th id="average">평균가격</th>
+
+			<!-- 아파트별 검색 버튼 시작 -->
+			<div id="aptserch">
+				<table>
+					<thead>
+						<tr id="aptserch1">
+							<td>대덕</td>
+							<td>대주피오레1차</td>
+							<td>대주피오레2차</td>
+							<td>무등파크</td>
+							<td>보경해피드림</td>
+							<td>삼라극동</td>
+							<td>서경</td>
+							<td>송정역숲안애</td>
+							<td>숲안애빌리지</td>
+							<td>우미</td>
+							<td>카이스트빌1차</td>
+							<td>카이스트빌2차</td>
+							<td>호반1차</td>
+							<td>호반2차</td>
+							<td>호반청암빌라트</td>
 						</tr>
 					</thead>
-					<tbody>
-						<tr>
-							<td class="name">대덕</td>
-							<td class="photo"><img src=/BigShortWeb/images/main22.png
-								alt="테스트임" height="75" width="100"></td>
-							<td class="price">거래가</td>
-							<td class="average">평균가격</td>
-						</tr>
-						<tr>
-							<td class="name">대주피오레1차</td>
-							<td class="photo"><img src=/BigShortWeb/images/main22.png
-								alt="테스트임" height="50" width="75"></td>
-							<td class="price">거래가</td>
-							<td class="average">평균가격</td>
-						</tr>
-						<tr>
-							<td class="name">대주피오레2차</td>
-							<td class="photo"><img src=/BigShortWeb/images/main22.png
-								alt="테스트임" height="50" width="75"></td>
-							<td class="price">거래가</td>
-							<td class="average">평균가격</td>
-						</tr>
-						<tr>
-							<td class="name">무등파크</td>
-							<td class="photo"><img src=/BigShortWeb/images/main22.png
-								alt="테스트임" height="50" width="75"></td>
-							<td class="price">거래가</td>
-							<td class="average">평균가격</td>
-						</tr>
-						<tr>
-							<td class="name">보경해피드림</td>
-							<td class="photo"><img src=/BigShortWeb/images/main22.png
-								alt="테스트임" height="50" width="75"></td>
-							<td class="price">거래가</td>
-							<td class="average">평균가격</td>
-						</tr>
-						<tr>
-							<td class="name">삼라극동</td>
-							<td class="photo"><img src=/BigShortWeb/images/main22.png
-								alt="테스트임" height="50" width="75"></td>
-							<td class="price">거래가</td>
-							<td class="average">평균가격</td>
-						</tr>
-						<tr>
-							<td class="name">건물명</td>
-							<td class="photo"><img src=/BigShortWeb/images/main22.png
-								alt="테스트임" height="50" width="75"></td>
-							<td class="price">거래가</td>
-							<td class="average">평균가격</td>
-						</tr>
-						<tr>
-							<td class="name">서경</td>
-							<td class="photo"><img src=/BigShortWeb/images/main22.png
-								alt="테스트임" height="50" width="75"></td>
-							<td class="price">거래가</td>
-							<td class="average">평균가격</td>
-						</tr>
-						<tr>
-							<td class="name">송정역숲안에</td>
-							<td class="photo"><img src=/BigShortWeb/images/main22.png
-								alt="테스트임" height="50" width="75"></td>
-							<td class="price">거래가</td>
-							<td class="average">평균가격</td>
-						</tr>
-						<tr>
-							<td class="name">호반리젠시빌3-5차</td>
-							<td class="photo"><img src=/BigShortWeb/images/main22.png
-								alt="테스트임" height="50" width="75"></td>
-							<td class="price">거래가</td>
-							<td class="average">평균가격</td>
-						</tr>
-					</tbody>
 				</table>
+			</div>
+			
+			
+			<!-- 아파트별 검색 버튼 끝 -->
+
+
+
+			<!-- 상품게시페이지 시작 -->
+			<div id="board">
+				<div class="product">
+				<span class="aptname">아파트이름</span>
+				<span class="standard">평수</span>
+				<span class="average">평균가</span>
+				<span class="price">매매가</span>
+				</div>
+				<div class="product">
+				<span class="aptname">아파트이름</span>
+				<span class="standard">평수</span>
+				<span class="average">평균가</span>
+				<span class="price">매매가</span>
+				</div>
+				<div class="product">
+				<span class="aptname">아파트이름</span>
+				<span class="standard">평수</span>
+				<span class="average">평균가</span>
+				<span class="price">매매가</span>
+				</div>
+				<div class="product">
+				<span class="aptname">아파트이름</span>
+				<span class="standard">평수</span>
+				<span class="average">평균가</span>
+				<span class="price">매매가</span>
+				</div>
+				<div class="product">
+				<span class="aptname">아파트이름</span>
+				<span class="standard">평수</span>
+				<span class="average">평균가</span>
+				<span class="price">매매가</span>
+				</div>
+				<div class="product">
+				<span class="aptname">아파트이름</span>
+				<span class="standard">평수</span>
+				<span class="average">평균가</span>
+				<span class="price">매매가</span>
+				</div>
+				<div class="product">
+				<span class="aptname">아파트이름</span>
+				<span class="standard">평수</span>
+				<span class="average">평균가</span>
+				<span class="price">매매가</span>
+				</div>
+				<div class="product">
+				<span class="aptname">아파트이름</span>
+				<span class="standard">평수</span>
+				<span class="average">평균가</span>
+				<span class="price">매매가</span>
+				</div>
 			</div>
 			<!-- 상품게시페이지 끝 -->
 
