@@ -57,20 +57,20 @@
  div{font-family: "Noto Sans Light","Malgun Gothic",sans-serif;margin:0;padding: 0;}
  .screen_out{overflow: hidden;position: absolute;width: 0;height: 0;line-height: 0;text-indent: -9999px;}
  a{color:#333; text-decoration: none;}	
- .brunch_comment .comment_head{width: 1020px; height: 30px; margin: 0 auto 12px;}
+ .brunch_comment .comment_head{min-width:801px; width: 801px; height: 30px; margin: 0 auto 12px;}
  .comment_head .tit_comment{float: left; padding-top: 3px; font-weight: 400; font-size: 16px;}
  .comment_head .tit_comment .txt_num{padding-left: 5px; color: #00c3bd;}
- .brunch_comment .comment_content{width: 1020px; margin: 0 auto;}
+ .brunch_comment .comment_content{min-width:801px;width: 801px; margin: 0 auto;}
  .brunch_comment .btn_preview{width: 100%; height:47px;border-top:1px solid #ddd; font-size: 12px; line-height: 47px;color: #959595;}
  button{font-family:"Noto Sans Light","Malgun Gothic",sans-serif;border: 0 none; background-color: transparent; cursor: pointer; outline: none; border-radius: 0px; vertical-align: middle; line-height:1.5;}
  .brunch_comment .list_comment{display:block;width:100%; border-top: 1px solid #eee;}
  ul{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; list-style: none; margin: 0; padding: 0;}
- .list_comment li.item{float: left; padding: 30px 0; border-bottom:1px solid #eee; width: 1020px;}
+ .list_comment li.item{float: left; padding: 30px 0; border-bottom:1px solid #eee; width: 801px; min-width:801px;}
  .list_comment li.item:hover{background:#f8f8f8;}
  .animation_up{animation: animation_up .2s; transition:opacity 0.2s}
  li{font-family:"Noto Sans Light","Malgun Gothic",sans-serif;list-style: none; margin:0;}
  .brunch_comment .link_profile{overflow:visible;float:left;position:relative;width:42px;height:42px;margin-left:10px;}
- .list_comment .cont_info{float:left;position:relative;width:1020px;padding-left:20px;}
+ .list_comment .cont_info{float:left;position:relative;min-width:801px;width:801px;padding-left:20px;}
  .list_comment .info_append{width:100%;font-size: 12px;line-height:14px;}
  .list_comment .info_append .tit_userid{float:left;}
  .list_comment .info_append .link_userid{font-weight: 400;}
@@ -84,15 +84,15 @@
 .img_thumb{display:block; border:0 none;}
 .list_comment  .desc_comment a.link_mention{display:inline-block; padding:0 2px; font-weight:700; background-color:#ddd; text-decoration:none;}
 .wrap_comment_write{clear:both;}
-.brunch_comment .comment_write{position:relative; width:1020px; padding-top:27px; margin:0 auto;}
+.brunch_comment .comment_write{position:relative; width:802px; padding-top:27px; margin:0 auto;}
 form{font-family:"Noto Sans Light","Malgun Gothic",sans-serif;padding:0;}
 input{font-family:"Noto Sans Light","Malgun Gothic",sans-serif;font-size:14px;line-height:1.5; vertical-align:middle; margin:0; padding:0;}
 fieldset{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; border:0 none; margin: 2px!important; padding:0!important;}
 legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padding: 0;}
 .comment_write .link_profile{margin:6px 0 0 10px;}
-.comment_write .box_area{float:left;position:relative; border:1px solid #eee; background-color:#fff;width:900px}
+.comment_write .box_area{float:left;position:relative; border:1px solid #eee; background-color:#fff;width:682px}
 .comment_write .wrap_area{display:block;}
-.comment_write .tf_area{padding:17px 17px 0; width: 854px; min-height:45px;border: none;line-height:22px; color:#666; background:0 0; white-space:pre-wrap; word-wrap:break-word; outline:transparent dotted; z-index:1;}
+.comment_write .tf_area{padding:17px 17px 0; width:676px; min-height:45px;border: none;line-height:22px; color:#666; background:0 0; white-space:pre-wrap; word-wrap:break-word; outline:transparent dotted; z-index:1;}
 .comment_write .editor_placeholder{position:absolute; z-index:0;top:17px; left:17px; line-height:22px; color:silver;}
  textarea{font-family:"Noto Sans Light","Malgun Gothic",sans-serif;font-size:14px;vertical-align:middle; margin:0;}
  .comment_write .comment_sticker{display:none; width:64px; margin:0 0 13px 17px;}
@@ -107,7 +107,7 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
  .brunch_comment ._mention_list{overflow:hidden; overflow-y:auto; position:absolute; width:238px; max-height:334px; border:1px solid #d9d9d9;background-color:#fff;z-index:11;}
  #td2{margin:5px 10px 5px 10px; border-bottom: 0px; height: 200px;}
  .all_regdate {float: right;margin-right: 15px;}
- #nextpage {margin:0 auto; width:1020px;}
+ #nextpage {margin:0 auto; width:801px;}
  #nextprvtable {width: 100%; display: inline-block}
  #nextprvtable a:hover {text-decoration: underline;}
  img {margin: 0px 4px 2px 0px;} 
@@ -122,7 +122,7 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
     
     font-family: 'Jeju Gothic', serif;
 }
-.w3-table td{padding: 8px 50px!important;}
+.w3-table td{padding: 8px 17px!important;}
 .w3-table td a{text-overflow: ellipsis;overflow: hidden; max-width:408px; height:19px;}
 
  
@@ -242,7 +242,7 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 		<div class="box_area">
 			<label for="tfCmt" class="screen_out">댓글 작성</label>
 			<span class="wrap_area">
-					<textarea class="editor tf_area" id="content" name="content" maxlength="1000" placeholder="작가와 글에 대해 이야기를 나누어 보세요!" ></textarea>
+					<textarea class="editor tf_area" id="content" name="content" maxlength="1000" placeholder="댓글은 작성자에게 가장 큰 힘이 됩니다.!!" ></textarea>
 			</span>
 			<div class="comment_sticker"></div>
 
