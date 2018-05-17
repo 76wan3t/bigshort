@@ -104,7 +104,7 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
  #nextprvtable {width: 100%; display: inline-block}
  #nextprvtable a:hover {text-decoration: underline;}
  img {margin: 0px 4px 2px 0px;} 
- #login_reple{background-color:#fbfbfb; height: 105px; width:114px;border:1px solid #c0c0c0}
+ #login_reple{background-color:#fbfbfb; height: 106px; width:114px;border:1px solid #c0c0c0}
  .all_tile {width: 500px;}
  #listbtn{width: 80px;margin:0 auto;}
  #btnall{text-align: center;}
