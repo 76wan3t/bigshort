@@ -174,7 +174,6 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 
                  <c:out value="${cmt}" escapeXml="false"/>
                  
-                 ${fn:trim(sessionScope.loginUser.mid) eq fn:trim(bDto.writer)}
                  </td>
              </tr>
              <tr><c:if test="${bDto.filename != '-'}">
