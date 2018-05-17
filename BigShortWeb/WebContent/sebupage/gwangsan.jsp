@@ -6647,36 +6647,6 @@
 			<!-- 흑석동 그래프 끝 -->
 
 
-			<!-- 아파트별 검색 버튼 시작 -->
-			<div id="aptserch">
-				<table>
-					<thead>
-						<tr id="aptserch1">
-							<td>대덕</td>
-							<td>대주피오레1차</td>
-							<td>대주피오레2차</td>
-							<td>무등파크</td>
-							<td>보경해피드림</td>
-							<td>삼라극동</td>
-							<td>서경</td>
-							<td>송정역숲안애</td>
-							<td>숲안애빌리지</td>
-							<td>우미</td>
-							<td>카이스트빌1차</td>
-							<td>카이스트빌2차</td>
-							<td>호반1차</td>
-							<td>호반2차</td>
-							<td>호반청암빌라트</td>
-						</tr>
-					</thead>
-				</table>
-			</div>
-			
-			
-			<!-- 아파트별 검색 버튼 끝 -->
-
-
-
 			<!-- 상품게시페이지 시작 -->
 			<div id="board">
 				<div class="product">
