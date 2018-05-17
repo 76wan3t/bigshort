@@ -7,9 +7,7 @@
 <mapper namespace="com/bigshort/mybatis/SebuPageMapper.xml">
 
 	<select id="gwangsanlist" resultType="pDto" parameterType="String">
-	
-	
-	
+		
 	
 	</select>
 
