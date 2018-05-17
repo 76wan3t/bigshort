@@ -6650,52 +6650,76 @@
 			<!-- 상품게시페이지 시작 -->
 			<div id="board">
 				<div class="product">
-				<span class="aptname">아파트이름</span>
-				<span class="standard">평수</span>
-				<span class="average">평균가</span>
-				<span class="price">매매가</span>
+					<span class="aptname">아파트이름</span>
+					<span class="standard">평수</span>
+					<span class="average">평균가</span>
+					<span class="price">매매가</span>
 				</div>
 				<div class="product">
-				<span class="aptname">아파트이름</span>
-				<span class="standard">평수</span>
-				<span class="average">평균가</span>
-				<span class="price">매매가</span>
+					<span class="aptname">아파트이름</span>
+					<span class="standard">평수</span>
+					<span class="average">평균가</span>
+					<span class="price">매매가</span>
 				</div>
 				<div class="product">
-				<span class="aptname">아파트이름</span>
-				<span class="standard">평수</span>
-				<span class="average">평균가</span>
-				<span class="price">매매가</span>
+					<span class="aptname">아파트이름</span>
+					<span class="standard">평수</span>
+					<span class="average">평균가</span>
+					<span class="price">매매가</span>
 				</div>
 				<div class="product">
-				<span class="aptname">아파트이름</span>
-				<span class="standard">평수</span>
-				<span class="average">평균가</span>
-				<span class="price">매매가</span>
+					<span class="aptname">아파트이름</span>
+					<span class="standard">평수</span>
+					<span class="average">평균가</span>
+					<span class="price">매매가</span>
 				</div>
 				<div class="product">
-				<span class="aptname">아파트이름</span>
-				<span class="standard">평수</span>
-				<span class="average">평균가</span>
-				<span class="price">매매가</span>
+					<span class="aptname">아파트이름</span>
+					<span class="standard">평수</span>
+					<span class="average">평균가</span>
+					<span class="price">매매가</span>
 				</div>
 				<div class="product">
-				<span class="aptname">아파트이름</span>
-				<span class="standard">평수</span>
-				<span class="average">평균가</span>
-				<span class="price">매매가</span>
+					<span class="aptname">아파트이름</span>
+					<span class="standard">평수</span>
+					<span class="average">평균가</span>
+					<span class="price">매매가</span>
 				</div>
 				<div class="product">
-				<span class="aptname">아파트이름</span>
-				<span class="standard">평수</span>
-				<span class="average">평균가</span>
-				<span class="price">매매가</span>
+					<span class="aptname">아파트이름</span>
+					<span class="standard">평수</span>
+					<span class="average">평균가</span>
+					<span class="price">매매가</span>
 				</div>
 				<div class="product">
-				<span class="aptname">아파트이름</span>
-				<span class="standard">평수</span>
-				<span class="average">평균가</span>
-				<span class="price">매매가</span>
+					<span class="aptname">아파트이름</span>
+					<span class="standard">평수</span>
+					<span class="average">평균가</span>
+					<span class="price">매매가</span>
+				</div>
+				<div class="product">
+					<span class="aptname">아파트이름</span>
+					<span class="standard">평수</span>
+					<span class="average">평균가</span>
+					<span class="price">매매가</span>
+				</div>
+				<div class="product">
+					<span class="aptname">아파트이름</span>
+					<span class="standard">평수</span>
+					<span class="average">평균가</span>
+					<span class="price">매매가</span>
+				</div>
+				<div class="product">
+					<span class="aptname">아파트이름</span>
+					<span class="standard">평수</span>
+					<span class="average">평균가</span>
+					<span class="price">매매가</span>
+				</div>
+				<div class="product">
+					<span class="aptname">아파트이름</span>
+					<span class="standard">평수</span>
+					<span class="average">평균가</span>
+					<span class="price">매매가</span>
 				</div>
 			</div>
 			<!-- 상품게시페이지 끝 -->

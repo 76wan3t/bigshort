@@ -73,6 +73,30 @@ public class ProductDAO {
 			return instance;
 		}
 
+		public List<ProductDTO> gwangsanList() {
+		
+			List<ProductDTO> list = new ArrayList<>();
+			sqlSession = sqlSessionFactory.openSession();
+			
+			
+			try {
+				list = sqlSession.selectList("gwangsanlist");
+						
+						
+			
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				sqlSession.close();
+			}
+			
+			return list;
+			
+		}
+		
+		
+		
 		
 
 }
