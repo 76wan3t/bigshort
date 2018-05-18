@@ -17,6 +17,15 @@
 	
 	</select>
 
+	<select id="gwangsanmean" resultType="pDto" parameterType="String">
+		SELECT  ROUND(AVG(PRICE)) AS mean_price 
+		FROM gwangsan 
+		WHERE deal='매매' AND DONGNAME=#{dongname}
+		
+	
+	</select>
+
+
 
 
 </mapper>

@@ -55,6 +55,7 @@ public class ProductDAO {
 			
 			try {
 				list = sqlSession.selectList("gwangsanlist", dongname);
+				
 						
 					System.out.println(list.size());	
 			
@@ -69,7 +70,29 @@ public class ProductDAO {
 			
 		}
 		
-		
+		public ProductDTO gwangsanMean(String dongname) {
+			ProductDTO pDto = new ProductDTO();
+			
+			sqlSession = sqlSessionFactory.openSession();
+			
+			try {
+				
+				pDto = sqlSession.selectOne("gwangsanmean",dongname);
+				
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				sqlSession.close();
+			}
+			
+			
+			
+			
+			
+			return pDto;
+			
+		}
 		
 		
 

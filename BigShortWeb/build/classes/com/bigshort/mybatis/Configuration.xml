@@ -43,7 +43,7 @@
 	
 	
 	<!-- Mapper.xml 파일 설정 -->
-	<mappers>
+	<mappers> 
 		<mapper resource="com/bigshort/mybatis/MemberMapper.xml"/>
 		<mapper resource="com/bigshort/mybatis/BoardMapper.xml"/>
 		<mapper resource="com/bigshort/mybatis/SebuPageMapper.xml"/>

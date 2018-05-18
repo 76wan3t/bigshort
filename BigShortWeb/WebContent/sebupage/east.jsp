@@ -12,77 +12,104 @@
 <title>가방</title>
 <script type="text/javascript">
 	$(document).ready(function() {
+		
+		function product(dongname) {
+			var dongname;
+			
+			$.ajax({
+				type:"POST",
+				url:"gwangsandetail2.bigshort",
+				data:"dongname=" + dongname,
+				success:function(result){
+					$("#board").html(result);
+				}
+			});
+		}
+		
+		
 		$("#td1").on("click", function() {
 
 			$(".graph").css("display", "none");
 			$(".graph-con2").css("display", "block");
-
+			var dongname = $(".dongname1").val();
+			product(dongname);
 		});
 		$("#td2").on("click", function() {
 
 			$(".graph").css("display", "none");
 			$(".graph-con3").css("display", "block");
-
+			var dongname = $(".dongname2").val();
+			product(dongname);
 		});
 		$("#td3").on("click", function() {
 
 			$(".graph").css("display", "none");
 			$(".graph-con4").css("display", "block");
-
+			var dongname = $(".dongname3").val();
+			product(dongname);
 		});
 		$("#td4").on("click", function() {
 
 			$(".graph").css("display", "none");
 			$(".graph-con5").css("display", "block");
-
+			var dongname = $(".dongname4").val();
+			product(dongname);
 		});
 		$("#td5").on("click", function() {
 
 			$(".graph").css("display", "none");
 			$(".graph-con6").css("display", "block");
-
+			var dongname = $(".dongname5").val();
+			product(dongname);
 		});
 		$("#td6").on("click", function() {
 
 			$(".graph").css("display", "none");
 			$(".graph-con7").css("display", "block");
-
+			var dongname = $(".dongname6").val();
+			product(dongname);
 		});
 		$("#td7").on("click", function() {
 
 			$(".graph").css("display", "none");
 			$(".graph-con8").css("display", "block");
-
+			var dongname = $(".dongname7").val();
+			product(dongname);
 		});
 		$("#td8").on("click", function() {
 
 			$(".graph").css("display", "none");
 			$(".graph-con9").css("display", "block");
-
+			var dongname = $(".dongname8").val();
+			product(dongname);
 		});
 		$("#td9").on("click", function() {
 
 			$(".graph").css("display", "none");
 			$(".graph-con10").css("display", "block");
-
+			var dongname = $(".dongname9").val();
+			product(dongname);
 		});
 		$("#td10").on("click", function() {
 
 			$(".graph").css("display", "none");
 			$(".graph-con11").css("display", "block");
-
+			var dongname = $(".dongname10").val();
+			product(dongname);
 		});
 		$("#td11").on("click", function() {
 
 			$(".graph").css("display", "none");
 			$(".graph-con12").css("display", "block");
-
+			var dongname = $(".dongname11").val();
+			product(dongname);
 		});
 		$("#td12").on("click", function() {
 
 			$(".graph").css("display", "none");
 			$(".graph-con13").css("display", "block");
-
+			var dongname = $(".dongname12").val();
+			product(dongname);
 		});
 		setTimeout(function() {
 
@@ -110,22 +137,22 @@
 				<table>
 					<thead>
 						<tr id="east1">
-							<td id="td1">계림동</td>
-							<td id="td2" class="toomuch">금남로2가</td>
-							<td id="td3" class="toomuch">금남로3가</td>
-							<td id="td4">동명동</td>
-							<td id="td5">산수동</td>
+							<td id="td1"><a href="#">계림동<input type="hidden" value="계림동" class="dongname1"></a></td>
+							<td id="td2" class="toomuch"><a href="#">금남로2가<input type="hidden" value="금남로2가" class="dongname2"></a></td>
+							<td id="td3" class="toomuch"><a href="#">금남로3가<input type="hidden" value="금남로3가" class="dongname3"></a></td>
+							<td id="td4"><a href="#">동명동<input type="hidden" value="동명동" class="dongname4"></a></td>
+							<td id="td5"><a href="#">산수동<input type="hidden" value="산수동" class="dongname5"></a></td>
 						</tr>
 						<tr id="east2">
-							<td id="td6">소태동</td>
-							<td id="td7">용산동</td>
-							<td id="td8">운림동</td>
-							<td id="td9">월남동</td>
-							<td id="td10">지산동</td>
+							<td id="td6"><a href="#">소태동<input type="hidden" value="소태동" class="dongname6"></a></td>
+							<td id="td7"><a href="#">용산동<input type="hidden" value="용산동" class="dongname7"></a></td>
+							<td id="td8"><a href="#">운림동<input type="hidden" value="운림동" class="dongname8"></a></td>
+							<td id="td9"><a href="#">월남동<input type="hidden" value="월남동" class="dongname9"></a></td>
+							<td id="td10"><a href="#">지산동<input type="hidden" value="지산동" class="dongname10"></a></td>
 						</tr>
 						<tr id="east3">
-							<td id="td11" class="toomuch">충장로4가</td>
-							<td id="td12" class="hakdong">학동</td>
+							<td id="td11" class="toomuch"><a href="#">충장로4가<input type="hidden" value="충장로4가" class="dongname11"></a></td>
+							<td id="td12" class="hakdong"><a href="#">학동<input type="hidden" value="학동" class="dongname12"></a></td>
 					</thead>
 				</table>
 			</div>
@@ -3301,7 +3328,9 @@
 			</div>
 
 			<!-- 학동 그래프 끝 -->
-
+			<div id="board">
+			
+			</div>
 
 		</div>
 	</div>

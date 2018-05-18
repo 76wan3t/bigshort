@@ -17,7 +17,7 @@ public class gwangsandetail2Action implements Action{
 	@Override
 	public ActionForward excute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String url = "sebupage/gwangsan.jsp";
+		String url = "sebupage/product.jsp";
 		
 		String dongname = request.getParameter("dongname");
 		
@@ -28,11 +28,12 @@ public class gwangsandetail2Action implements Action{
 		ProductDAO pDao = ProductDAO.getInstance();
 		List<ProductDTO> list = pDao.gwangsanList(dongname);
 		
+		
 		request.setAttribute("gwangsan", list);
 		
+		pDto = pDao.gwangsanMean(dongname);
 		
-		
-		
+		request.setAttribute("pDto", pDto);
 		
 		
 		ActionForward forward = new ActionForward();
