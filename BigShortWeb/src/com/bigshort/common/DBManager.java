@@ -12,8 +12,8 @@ public class DBManager {
 
                     private final static String DRIVER = "oracle.jdbc.driver.OracleDriver";
                     private final static String URL = "jdbc:oracle:thin:@bigshort.homedns.tv:1521:XE";
-                    private final static String USER = "bigwep";
-                    private final static String PASSWORD ="web4800";
+                    private final static String USER = "bigshort";
+                    private final static String PASSWORD ="bigshort4800";
                     //teno.homedns.tv
                     //192.168.123.103
                     private DBManager(){

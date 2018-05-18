@@ -15,7 +15,7 @@ import com.bigshort.mybatis.SqlMapConfig;
 public class ProductDAO {
 	
 		// MyBatis 세팅값 호출
-		SqlSessionFactory sqlSessionFactory = SqlMapConfig.getSqlSession2();
+		SqlSessionFactory sqlSessionFactory = SqlMapConfig.getSqlSession();
 	
 		//mapper에 접근하기 위한 SqlSession
 		SqlSession sqlSession;
