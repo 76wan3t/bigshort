@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>회원가입 동의페이지</title>
-<link rel="stylesheet" type="text/css" href="/BigShortWeb/css/constract.css?var=1">
+<link rel="stylesheet" type="text/css" href="/BigShortWeb/css/constract.css?var=2">
 <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -45,18 +45,42 @@
 		});
 	});
 </script>
+<style type="text/css">
+
+div#constract_header {
+	    height: 200px;
+	   /*  padding-top: 62px; */
+	    position: relative;
+	    width: 700px;
+	    margin: 0 auto;
+	    box-sizing: border-box;
+	    margin-top: -27px;
+}
+</style>
 </head>
 <body>
 
-		<div class="lang">
+<!-- 		<div class="lang">
 			<select id="langselect">
 				<option>한국어</option>
 				<option>English</option>
 			</select>
-		</div>
+		</div> -->
+		
+		
 		
 		
 	<div id="body_wrap">
+	<div id="constract_header">
+			<div class="lang">
+				<select id="langselect">
+					<option>한국어</option>
+					<option>English</option>
+					<option>中文(简体)</option>
+					<option>中文(台灣)</option>
+				</select>
+			</div>
+		</div>
 		<div id="constract_container">
 			<form id="join_content" action="join.bigshort" method="get">
 				<div class="terms">

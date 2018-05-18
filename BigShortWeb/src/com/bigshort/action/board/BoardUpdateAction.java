@@ -21,7 +21,7 @@ public class BoardUpdateAction implements Action {
 	@Override
 	public ActionForward excute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-String url = null; 
+		String url = null; 
 		
 		//파일 업로드 처리
 		
@@ -91,12 +91,12 @@ String url = null;
 		if(ruselt >0) {
 			
 			System.out.println("수정 성공");
-			url = "boardbody.bizpoll?bno="+bno;
+			url = "boardbody.bigshort?bno="+bno;
 			
 		}else {
 			
 			System.out.println("수정 실패");
-			url = "boardbody.bizpoll?bno="+bno;
+			url = "boardbody.bigshort?bno="+bno;
 			
 		}
 		

@@ -26,7 +26,7 @@
 <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
-
+		
 		$(".gwangsan").hover(function() {
 			$(".graph-con1").css("display", "block");
 
@@ -104,9 +104,9 @@
 	});
 </script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" type="text/css" href="css/style.css?var=2">
+<link rel="stylesheet" type="text/css" href="css/style.css?var=1">
 </head>
-<body>
+<body >
 	<div class="wrap">
 		<div id="container">
 			<div class="top_page">
@@ -202,9 +202,8 @@
 									}
 								};
 								/* 차트의 전체 크기 조절 */
-								options["width"] = 2000;
+								options["width"] = 1500;
 								options["height"] = 400;
-								options["overflow"] = scroll;
 
 								var chart = new google.visualization.ComboChart(
 										document
@@ -269,10 +268,10 @@
 						<!-- divChart -->
 
 						<div id="ComboChartIDed43ab15521"
-							style="width: 500; height: 500; overflow: scroll;"></div>
+							style="width: 500; height: 500;"></div>
 						<div>
 							<span>Data: data &#8226; Chart ID: <a
-								href="Chart_ComboChartIDed43ab15521.html">ComboChartIDed43ab15521</a>
+								href="Chart_ComboChartIDed43ab15521.html">gwangsan-chart</a>
 								&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 							<!-- htmlFooter -->
 							<span> R version 3.4.4 (2018-03-15) &#8226; <a
@@ -350,9 +349,8 @@
 									}
 								};
 								/* 차트의 전체 크기 조절 */
-								options["width"] = 2000;
+								options["width"] = 1500;
 								options["height"] = 400;
-								options["overflow"] = scroll;
 
 								var chart = new google.visualization.ComboChart(
 										document
@@ -417,10 +415,10 @@
 						<!-- divChart -->
 
 						<div id="ComboChartIDed4622566b8"
-							style="width: 500; height: 500; overflow: scroll;"></div>
+							style="width: 500; height: 500;"></div>
 						<div>
 							<span>Data: data &#8226; Chart ID: <a
-								href="Chart_ComboChartIDed4622566b8.html">ComboChartIDed4622566b8</a>
+								href="Chart_ComboChartIDed4622566b8.html">bukgu-chart</a>
 								&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 							<!-- htmlFooter -->
 							<span> R version 3.4.4 (2018-03-15) &#8226; <a
@@ -487,7 +485,7 @@
 									}
 								};
 								/* 차트의 전체 크기 조절 */
-								options["width"] = 2000;
+								options["width"] = 1500;
 								options["height"] = 400;
 								options["overflow"] = scroll;
 
@@ -554,10 +552,10 @@
 						<!-- divChart -->
 
 						<div id="ComboChartIDed43cc1148f"
-							style="width: 500; height: 500; overflow: scroll;"></div>
+							style="width: 500; height: 500;"></div>
 						<div>
 							<span>Data: data &#8226; Chart ID: <a
-								href="Chart_ComboChartIDed43cc1148f.html">ComboChartIDed43cc1148f</a>
+								href="Chart_ComboChartIDed43cc1148f.html">namgu-chart</a>
 								&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 							<!-- htmlFooter -->
 							<span> R version 3.4.4 (2018-03-15) &#8226; <a
@@ -626,9 +624,8 @@
 									}
 								};
 								/* 차트의 전체 크기 조절 */
-								options["width"] = 2000;
+								options["width"] = 1500;
 								options["height"] = 400;
-								options["overflow"] = scroll;
 
 								var chart = new google.visualization.ComboChart(
 										document
@@ -693,10 +690,10 @@
 						<!-- divChart -->
 
 						<div id="ComboChartIDed443272950"
-							style="width: 500; height: 500; overflow: scroll;"></div>
+							style="width: 500; height: 500;"></div>
 						<div>
 							<span>Data: data &#8226; Chart ID: <a
-								href="Chart_ComboChartIDed443272950.html">ComboChartIDed443272950</a>
+								href="Chart_ComboChartIDed443272950.html">seogu-chart</a>
 								&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 							<!-- htmlFooter -->
 							<span> R version 3.4.4 (2018-03-15) &#8226; <a
@@ -764,9 +761,8 @@
 									}
 								};
 								/* 차트의 전체 크기 조절 */
-								options["width"] = 2000;
+								options["width"] = 1500;
 								options["height"] = 400;
-								options["overflow"] = scroll;
 
 								var chart = new google.visualization.ComboChart(
 										document
@@ -831,10 +827,10 @@
 						<!-- divChart -->
 
 						<div id="ComboChartIDed474ab435b"
-							style="width: 500; height: 500; overflow: scroll;"></div>
+							style="width: 500; height: 500;"></div>
 						<div>
 							<span>Data: data &#8226; Chart ID: <a
-								href="Chart_ComboChartIDed474ab435b.html">ComboChartIDed474ab435b</a>
+								href="Chart_ComboChartIDed474ab435b.html">donggu-chart</a>
 								&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 							<!-- htmlFooter -->
 							<span> R version 3.4.4 (2018-03-15) &#8226; <a

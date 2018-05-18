@@ -9,26 +9,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.bigshort.action.Action;
-import com.bigshort.action.ActionForward;
-import com.bigshort.action.IndexAction;
-import com.bigshort.action.LoginCkAction;
-import com.bigshort.action.LoginOutAction;
-import com.bigshort.action.board.BoardBodyAction;
-import com.bigshort.action.board.BoardInsertSaveAction;
-import com.bigshort.action.board.BoardInsertViewAction;
-import com.bigshort.action.board.BoardUpdateAction;
-import com.bigshort.action.board.ListAllAction;
-import com.bigshort.action.board.ModifyViewAction;
-import com.bigshort.action.member.ConstractAction;
-import com.bigshort.action.member.JoinAction;
-import com.bigshort.action.member.MemberAjaxAction;
-import com.bigshort.action.member.MemberInsertAction;
-import com.bigshort.action.zone.BukGuDetailAction;
-import com.bigshort.action.zone.DongGuDetailAction;
-import com.bigshort.action.zone.GwangSanDetailAction;
-import com.bigshort.action.zone.NamGuDetailAction;
-import com.bigshort.action.zone.SeoGuDetailAction;
+import com.bigshort.action.*;
+import com.bigshort.action.board.*;
+import com.bigshort.action.member.*;
+import com.bigshort.action.mypage.DelCheckAction;
+import com.bigshort.action.mypage.MemUpdateAction;
+import com.bigshort.action.mypage.MemberDeleteAction;
+import com.bigshort.action.mypage.MyIndexAction;
+import com.bigshort.action.mypage.MyUpdateAction;
+import com.bigshort.action.mypage.PwUpdateAction;
+import com.bigshort.action.mypage.UpdatePwAction;
+import com.bigshort.action.sebupage.gwangsandetail2Action;
+import com.bigshort.action.zone.*;
 
 
 /**
@@ -99,22 +91,22 @@ public class BigshortFrontController extends HttpServlet {
 			}else if(command.equals("/boardupdate.bigshort")) { // 수정 누르면 타는 액션
 				action = new BoardUpdateAction();
 				forward = action.excute(request, respnse);
-			}else if(command.equals("/join.bigshort")) { // 수정 누르면 타는 액션
+			}else if(command.equals("/join.bigshort")) { // 회원가입 액션
 				action = new JoinAction();
 				forward = action.excute(request, respnse);
-			}else if(command.equals("/gwangsandetail.bigshort")) { // 수정 누르면 타는 액션
+			}else if(command.equals("/gwangsandetail.bigshort")) { // 광산구 세부페이지 액션
 				action = new GwangSanDetailAction();
 				forward = action.excute(request, respnse);
-			}else if(command.equals("/bukgudetail.bigshort")) { // 수정 누르면 타는 액션
+			}else if(command.equals("/bukgudetail.bigshort")) { // 북구 세부페이지 액션
 				action = new BukGuDetailAction();
 				forward = action.excute(request, respnse);
-			}else if(command.equals("/namgudetail.bigshort")) { // 수정 누르면 타는 액션
+			}else if(command.equals("/namgudetail.bigshort")) { // 남구 세부페이지 액션
 				action = new NamGuDetailAction();
 				forward = action.excute(request, respnse);
-			}else if(command.equals("/donggudetail.bigshort")) { // 수정 누르면 타는 액션
+			}else if(command.equals("/donggudetail.bigshort")) { // 동구 세부페이지 액션
 				action = new DongGuDetailAction();
 				forward = action.excute(request, respnse);
-			}else if(command.equals("/seogudetail.bigshort")) { // 수정 누르면 타는 액션
+			}else if(command.equals("/seogudetail.bigshort")) { // 서구 세부페이지 액션
 				action = new SeoGuDetailAction();
 				forward = action.excute(request, respnse);
 			}else if(command.equals("/memajax.bigshort")) { // 수정 누르면 타는 액션
@@ -126,8 +118,57 @@ public class BigshortFrontController extends HttpServlet {
 			}else if(command.equals("/boardbody.bigshort")) { // 상세 페이지 타는 액션
 				action = new BoardBodyAction();
 				forward = action.excute(request, respnse); 
-				
-				
+			}else if(command.equals("/modifydelete.bigshort")) { // 상세글 삭제하는 액션
+				action = new ModifyDeleteAction();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/modifyview.bigshort")) { // 상세글 수정에서 필요한 데이더를 가져오는 액션
+				action = new ModifyViewAction();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/replyadd.bigshort")) { // 리플 다는 액션
+				action = new ReplyAddAction();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/replydel.bigshort")) { // 리플 삭제 하는 액션
+				action = new ReplyDelAction();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/sweetadd.bigshort")) { // 게시판 좋아요 타는 액션
+				action = new SweetAddAction();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/sweetcount.bigshort")) { // 게시판 좋아요 개수
+				action = new SweetCountAction();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/commentlist.bigshort")) { // 댓글목록을 보기 위한 액션
+				action = new CommentListAction();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/download.bigshort")) { // 다운로드를 받기 위한 액션
+				action = new DownLoadAction();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/commentsize.bigshort")) { // 댓글 수를 파악하기위한 액션
+				action = new CommentSizeAction();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/myIndex.bigshort")) { // 마이페이지를 가기위한 액션
+				action = new MyIndexAction();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/myUpdate.bigshort")) { // 마이페이지_정보수정을 가기위한 액션
+				action = new MyUpdateAction();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/pwUpdate.bigshort")) { // 마이페이지_비밀번호 변경을 가기위한 액션
+				action = new PwUpdateAction();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/delCheck.bigshort")) { // 마이페이지_탈퇴를 가기위한 액션
+				action = new DelCheckAction();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/memdelete.bigshort")) { // 멤버 삭제를 위한 액션
+				action = new MemberDeleteAction();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/updatePw.bigshort")) { // 비밀먼호 변경을 위한 액션
+				action = new UpdatePwAction();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/memUpdate.bigshort")) { // 정보수정을 위한 액션
+				action = new MemUpdateAction();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/gwangsandetail2.bigshort")) { // 광산구 세부페이지 데이터 출력을 위한 액션
+				action = new gwangsandetail2Action();
+				forward = action.excute(request, respnse); 
 			}
 			
 			

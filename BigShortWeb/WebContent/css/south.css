@@ -46,17 +46,6 @@
 }
 #south3 {
 	display: block;
-	margin-bottom: 20px;
-	
-}
-#south4 {
-	display: block;
-	margin-bottom: 20px;
-	
-}
-
-#south5 {
-	display: block;
 	margin-bottom: 50px;
 	
 }
@@ -69,13 +58,16 @@ table {
 
 .graph-con1 {
 	margin-top: 30px;
-	
+	margin-bottom: 100px;
+	display: block;
 }
 
 #serdong {
 	padding: 8px 20px 8px 20px;
 	
 }
+
+
 
 
 

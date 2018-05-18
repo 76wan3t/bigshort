@@ -12,6 +12,11 @@
 	<typeAliases>
 		<typeAlias type="com.bigshort.DTO.MemberDTO" alias="mDto"/>
 		<typeAlias type="com.bigshort.DTO.BoardDTO" alias="bDto"/>
+		<typeAlias type="com.bigshort.DTO.ReplyDTO" alias="rDto"/>
+		<typeAlias type="com.bigshort.DTO.NextPreDTO" alias="nDto"/>
+		<typeAlias type="com.bigshort.DTO.ProductDTO" alias="pDto"/>
+		
+		
 		
 
 	</typeAliases>
@@ -25,6 +30,13 @@
 				<property name="url" value="${url}"/>
 				<property name="username" value="${username}"/>
 				<property name="password" value="${password}"/>
+				 <property name="poolMaximumActiveConnections" value="100"/>
+            	<property name="poolMaximumIdleConnections" value="100"/>
+           	 	<property name="poolMaximumCheckoutTime" value="10000"/>
+            	<property name="poolPingEnabled" value="false"/>
+            	<!-- <property name="poolPingQuery" value="select 1"/> -->
+            	<property name="poolPingConnectionsNotUsedFor" value="10000"/>
+            	<property name="poolTimeToWait" value="10000"/> 
 			</dataSource>
 		</environment>
 	</environments>
@@ -34,6 +46,7 @@
 	<mappers>
 		<mapper resource="com/bigshort/mybatis/MemberMapper.xml"/>
 		<mapper resource="com/bigshort/mybatis/BoardMapper.xml"/>
+		<mapper resource="com/bigshort/mybatis/SebuPageMapper.xml"/>
 	</mappers>
 	
 </configuration>

@@ -1,6 +1,7 @@
 package com.bigshort.action.board;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -18,7 +19,7 @@ public class CommentListAction implements Action {
 	public ActionForward excute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		String url = "board/commentlist.jsp";
+		String url = "board/commendlist.jsp";
 		
 		String bno = request.getParameter("bno");
 		
@@ -30,7 +31,7 @@ public class CommentListAction implements Action {
 		
 		//상세페이지 댓글 출력하기
 		
-				List<ReplyDTO> list = null;
+				ArrayList<ReplyDTO> list = new ArrayList<>();
 				ReplyDAO rDao = ReplyDAO.getInstance();
 				list = rDao.replyList(num);
 				request.setAttribute("replylist", list);

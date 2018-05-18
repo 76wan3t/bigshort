@@ -23,5 +23,34 @@
   		INSERT INTO member(mid, mpw, mname, mphone, mbisname, mbisnumber, mbisphone, mjusonum, mjuso, mjuso2, memail, memail2)
   		VALUES(#{mid}, #{mpw}, #{mname}, #{mphone}, #{mbisname}, #{mbisnumber}, #{mbisphone}, #{mjusonum}, #{mjuso}, #{mjuso2}, #{memail}, #{memail2})
   	</insert>
-  
+  	
+  	<delete id="memdelete">
+  		DELETE FROM member
+  		WHERE mid = #{mid}
+  	</delete>
+  	
+  	<update id="pwUpdate">
+  		UPDATE member SET
+  		mpw = #{mpw}
+  		WHERE mid = #{mid}
+  	</update>
+  	
+  	<select id="memberselect" resultType="mDto">
+  		SELECT * FROM member WHERE mid = #{mid}
+  	</select>
+  	
+  	<update id="memupdate">
+  		UPDATE member SET
+  			mname = #{mname},
+  			mphone = #{mphone},
+  			mbisname = #{mbisname},
+  			mbisnumber = #{mbisnumber},
+  			mbisphone = #{mbisphone},
+  			mjusonum = #{mjusonum},
+  			mjuso = #{mjuso},
+  			mjuso2 = #{mjuso2},
+  			memail = #{memail},
+  			memail2 = #{memail2}
+  		WHERE mid = #{mid}
+  	</update>
 </mapper>

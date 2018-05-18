@@ -13,6 +13,10 @@
 	box-sizing: border-box;
 	word-wrap: break-word;
 }
+html{
+	
+	overflow: auto!important;
+}
 /*HEAD */
 .w3-modal-content {
 	width: 600px !important;
@@ -101,7 +105,7 @@ blockquote, body, dd, div, dl, dt, fieldset, figure, form, h1, h2, h3,
 body {
 	font-size: 13px;
 	color: #777;
-	font-family: 'Jeju Gothic'
+	font-family: 'Jeju Gothic';
 }
 
 ol, ul { /* ul 태그에 기본적으로 해야 할 것 */
@@ -136,7 +140,8 @@ a:link, a:visited {
 
 #header {
 	height: 50px;
-	min-width: 100%;
+	width: 100%;
+	/* min-width: 1300px; */
 	position: absolute;
 	z-index: 1;
 	top: 0;
@@ -178,9 +183,9 @@ div.logo {
 	visibility: hidden;
 }
 
-.clearfix {
+/* .clearfix {
 	display: inline-block;
-}
+} */
 
 #header .primary-logo {
 	line-height: 0;
@@ -200,7 +205,8 @@ h1 {
 
 .utility-menu {
 	top: 0;
-	width: 1180px;
+	/* width: 1180px; */
+	margin: 0 70px;
 }
 
 .menu-utility, .menu-utility-user {
@@ -314,7 +320,7 @@ button, input[type=button], input[type=reset], input[type=submit] {
 
 .menu-utility-user .help>a, .menu-utility-user .myaccount>a {
 	padding-bottom: 10px;
-	margin-top: 3px;
+	margin-top: 5px;
 }
 
 .menu-utility-user .help .popup-box {
@@ -637,13 +643,13 @@ h1 {
 }
 
 #bigshort_logo>img {
-	width: 50px;
+    width: 50px;
     height: 45px;
     float: left;
     margin-right: 10px;
-    top: -12px;
+    top: 6px;
     position: absolute;
-    left: 213px;
+    left: 219px;
 }
 
 #bigshort_logo>span {
@@ -710,7 +716,7 @@ h1 {
     letter-spacing: -1px;
     background-color: white;
     width: 425px;
-    height: 50px;
+    height: 50px!important;
     border: 1px solid #e5e5e5;
     border-radius: 5px;
     font-weight: normal;
@@ -910,6 +916,8 @@ h1 {
 #span_id {
 	display: none;
 	color: red;
+	margin-left: 86px;
+	width: 260px;
 }
 
 #span_pw {
@@ -1002,3 +1010,11 @@ button#myBtn:hover {
     right: 0;
     top: 0;
  }
+ #login_line{
+ 	line-height: 28px;
+ }
+.menu-utility-user > li > a {
+    color: white;
+    font-size: 15px;
+    font-family: 'Jeju Gothic', serif;
+}

@@ -15,6 +15,11 @@ span.ck{
 	width: 500px;
 	margin: 100px auto 20px;
 }
+#title{
+	font-size: 30px;
+	text-align: center;
+	padding-bottom: 5px;
+}
 /* 각 영역을 나누고 있는 div? */
 .info_wrap{
 	width: 500px;

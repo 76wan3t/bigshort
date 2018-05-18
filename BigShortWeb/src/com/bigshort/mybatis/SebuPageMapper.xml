@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com/bigshort/mybatis/SebuPageMapper.xml">
+
+	<select id="gwangsanlist" resultType="pDto" parameterType="String">
+		<![CDATA[
+		SELECT dongname, APTNAME, PRICE, dongextent, donglevel, nameprice, url
+		FROM gwangsan
+		WHERE deal='매매' AND DONGNAME=#{dongname}
+		group by dongname, APTNAME, PRICE, dongextent, donglevel, nameprice, url
+		HAVING PRICE  <= ]]><![CDATA[(SELECT ROUND(AVG(PRICE)) FROM gwangsan WHERE deal='매매' AND DONGNAME=#{dongname})]]>
+			
+	
+	</select>
+
+
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

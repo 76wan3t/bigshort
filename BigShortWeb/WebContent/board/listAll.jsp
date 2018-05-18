@@ -11,6 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>자유게시판</title>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <style type="text/css">
 	body{
 	font-size: 13px;
@@ -20,6 +21,8 @@
 	}
 	#container{
 		margin-top:200px;
+		width: 100%;
+		min-width: 1020px;
 	}
 	#navigation{
 		margin-left: 5px;
@@ -36,6 +39,7 @@
 		width: 1000px;
 		margin: 0 auto;
 		padding: 22px 0 100px;
+		margin: 150px auto 200px;
 	}
 	.sub_title{
 		position: relative;
@@ -175,7 +179,7 @@
 	}
 	.form_item .i_text{
 		position: relative;
-		z-index: 5;
+		/* z-index: 5; */
 		border: 1px solid #bebebe;
 		
 	}
@@ -268,10 +272,9 @@
 		margin: 0;
 	}
 	.tbl_lst td>a {
-		display: block;
+		display: inline;
 		overflow: hidden;
 		width: 500px;
-		padding: 0 20px;
 		text-align: left;
 		color: #717171;
 		text-overflow: ellipsis;
@@ -282,17 +285,20 @@
 		text-align: center;
 	}
 
-	.pagination > .active > a {
-		background-color: #B7F0B1;
-		border-color: #B7F0B1;
-	}
+
 	
-	.pagination > .active > a:hover {
-		background-color: #A5DE9F;
-		border-color: #A5DE9F;
-	}
 	#btn1{
 		display: inline-block;
+	}
+	.tbl_name{
+	
+		width: 280px!important;
+	}
+	#new{
+		color: red;
+	}
+	#td_title{
+		text-align: left;
 	}
 	
 </style>
@@ -379,7 +385,24 @@
 								<fmt:formatDate value="${bDto.regdate}" pattern="yyyy-MM-dd" var="regdate2"/>
 			<tr><!-- 상세페이지 이동  -->
 				<td>${bDto.bno}</td>
-				<td><a href="boardbody.bigshort?bno=${bDto.bno}">${bDto.title} </a></td>
+				<td id="td_title" style=" " >
+					<nobr>
+						<a style="max-width:250px; text-overflow:ellipsis; overflow:hidden; line-height: 13px;" href="boardbody.bigshort?bno=${bDto.bno}">${bDto.title}</a>
+					</nobr>
+				
+				
+					<c:if test="${bDto.replycnt ne 0}">
+					<span id="detgl_count"><a href="boardbody.bigshort?bno=${bDto.bno}&comment=ture">[${bDto.replycnt}]</a></span>
+					</c:if>
+					<c:if test="${bDto.filename != '-'}">
+						<a href="#"><i class="fa fa-save"></i></a>
+					</c:if>
+					<c:if test="${today2 == regdate2}">
+						<span id="new">new!</span>
+					</c:if>
+				
+				
+				</td>
 				
 <%-- 			<c:if test="${bDto.replycnt ne 0}">
 				[${bDto.replycnt}"]
@@ -506,3 +529,5 @@
 
 </body>
 </html>
+
+<%@ include file="../footer.jsp" %>

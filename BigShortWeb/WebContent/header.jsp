@@ -18,6 +18,7 @@
 	pageContext.setAttribute("sp", "&nbsp;");
 	pageContext.setAttribute("br", "<br/>");
 %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,6 +26,7 @@
 
 <title>가방</title>
 <link rel="icon" type="image/png" href="/BigShortWeb/images/home.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style type="text/css">
 .w3-container {
 	z-index: 3;
@@ -69,13 +71,11 @@
 								
 								if(data.flag == 0 ){
 									
-									alert("로그인 실패");
 									$("#loginid").select();
 									$("#span_id").text(" 아이디 또는 패스워드가 틀렸습니다. ").css("display", "block");
 									
 								}else{
 									
-									alert("로그인성공");
 									location.reload();
 								} 
 							},
@@ -109,21 +109,33 @@
 	
 	$("#logout_btn").on("click", function(){
 		
+		var myindex = $("#myindex").val();
+		
+		
 		$.ajax({
 			url:"logout.bigshort",
 			type: "POST",
 			dataType :"JSON",
+			data : "myindex=" + myindex,
 			success : function(data){				
 				if(data.flag == "0" ){
 					
 					alert("로그아웃 실패");
 					
 				}else{
+					if(data.myindex == "mypage"){
+						
+						alert("로그아웃 성공");
+						location.href = "index.bigshort";
+						
+					}else{
+						
+						alert("로그아웃 성공");
+						location.reload();
+						
+					}
 					
-					alert("로그아웃 성공");
-					//location.href = "index.bizpoll";
-					//$("#frm_memeber").submit();
-					location.reload();
+					
 				} 
 			},
 			
@@ -131,17 +143,70 @@
 				alert("System Error!!!");
 				
 				}
-			});
+			}); 
 		});
 	});
+	
+	function onEnterSubmit(){
+
+		var keyCode = window.event.keyCode;
+		
+		if(keyCode==13){ 
+			
+				var id =$("#login_id").val();
+	 			var pw = $("#login_pw").val();
+	 			
+					
+				if(id == ""){
+					 $("#login_id").focus();
+	             	 $("#span_id").text("아이디를 입력해주세요").css("display", "block");
+	             	 return false;
+	             	
+				}else if(pw == ""){
+					 $("#login_pw").focus();
+	             	 $("#span_id").text("비밀번호를 입력해주세요").css("display", "block");
+	             	 return false;
+	             	
+				}else {
+					
+					$("#span_id").css("display", "none");
+					
+					$.ajax({
+						url:"/BigShortWeb/loginck.bigshort",
+						type: "POST",
+						dataType :"json",
+						data : "id=" +id +"&"+ "pw=" +  pw,
+						success : function(data){
+							
+							if(data.flag == 0 ){
+								
+								alert("로그인 실패");
+								$("#loginid").select();
+								$("#span_id").text(" 아이디 또는 패스워드가 틀렸습니다. ").css("display", "block");
+								
+							}else{
+								
+								alert("로그인성공");
+								location.reload();
+							} 
+						},
+						
+						error : function(){
+							alert("System Error!!!");
+							
+						}
+					});
+				}
+			}
+		}
 
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" type="text/css" href="/BigShortWeb/css/header.css?var=2">
+<link rel="stylesheet" type="text/css" href="/BigShortWeb/css/header.css?var=1">
 <link rel="stylesheet" type="text/css" href="/BigShortWeb/css/footer.css?var=1">
 </head>
-<body>
+<body >
 
 	
 	<div id="wrapper">
@@ -156,23 +221,21 @@
 						<ul class="menu-utility-user">
 							<li class="search"></li>
 							<!-- <li class="logo_a">가방</li> -->
-							<li><c:choose>
+							<li id="login_line" class="myaccount guestuser"><c:choose>
 									<c:when test="${empty sessionScope.loginUser}">
-										<a
-											onclick="document.getElementById('id01').style.display='block'"
-											style="cursor: pointer;">로그인</a>
+										<a onclick="document.getElementById('id01').style.display='block'"style="cursor: pointer;">로그인</a>
 							<li class="myaccount guestuser"><a href="/BigShortWeb/constract.bigshort">회원가입</a>
 									</c:when>
 									<c:otherwise>
 										<ul id=modal_ul>
 											<li>${sessionScope.loginUser.mname}(${sessionScope.loginUser.mid})</li>
 											<li><a href="#" id="logout_btn">로그아웃</a></li>
-											<li><a href="#" id="mypage">마이페이지</a></li>
+											<li><a href="myIndex.bigshort" id="mypage">마이페이지</a></li>
 										</ul>
 									</c:otherwise>
-								</c:choose></li>
+								</c:choose>
 							</li>				
-							<li class="help"><a href="/BigShortWeb/listAll.bigshort" title="고객센터">고객센터</a></li>
+							<li class="help"><a href="/BigShortWeb/listAll.bigshort" title="묻고답하기">Q&A</a></li>
 
 						</ul>
 					</div>
@@ -225,10 +288,9 @@
 							<div id="login_content">
 								<div id="login_area">
 									<div id="container_login">
-										<form action="loginck.bizpoll" method="POST" id="frm_login"
-											name="frm_login">
+										<form action="loginck.bizpoll" method="POST" id="frm_login"	name="frm_login">
 											<input class="idpw" type="text" id="login_id" name="login_id" placeholder="아이디를 입력 해 주세요"></input> 
-											<input class="idpw" type="password" id="login_pw" name="login_pw" placeholder="비밀번호(4~16자리)"></input>
+											<input class="idpw" type="password" id="login_pw" name="login_pw" placeholder="비밀번호(4~16자리)" onkeydown='javascript:onEnterSubmit()'></input>
 											<span id="span_id">아이디 또는 비밀번호가 틀렸습니다</span> 
 											<a href="#" id="btn_login" name="btn_login"><span> 로그인 </span></a>
 										</form>

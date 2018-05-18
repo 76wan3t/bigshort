@@ -15,7 +15,7 @@ public class NamGuDetailAction implements Action {
 	public ActionForward excute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		String url = "index.jsp";
+		String url = "sebupage/south.jsp";
 		
 		
 		
@@ -24,7 +24,7 @@ public class NamGuDetailAction implements Action {
 		forward.setPath(url);
 		forward.setRedirect(false); 
 		
-		return null;
+		return forward;
 	}
 
 }

@@ -160,4 +160,88 @@ public MemberDTO sessionLogin(MemberDTO mDto) {
 		return result;
 	}
 	
+		// 멤버 삭제
+	
+	public int memdelet(MemberDTO mDto) {
+		sqlSession = sqlSessionFactory.openSession();
+		try {
+			result = sqlSession.delete("memdelete", mDto);
+			System.out.println("result: " + result);
+			
+			sqlSession.commit();
+			
+			if(result > 0) {
+				System.out.println("삭제 성공");
+			}else {
+				System.out.println("삭제 실패");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		
+		
+		return result;
+	}
+	
+	//멤버 비밀번호 변경
+	
+	public int memPwUpdate(MemberDTO mDto) {
+		sqlSession = sqlSessionFactory.openSession();
+		try {
+			result = sqlSession.update("pwUpdate", mDto);
+			System.out.println("result: " + result);
+			sqlSession.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		return result;
+	}
+	
+	public MemberDTO memselect(String mid) {
+		sqlSession = sqlSessionFactory.openSession();
+		MemberDTO mDto = null;
+		try {
+			System.out.println("mDto mid : " + mid);
+			mDto = sqlSession.selectOne("memberselect", mid);
+			
+			System.out.println(mDto.getMid());
+			System.out.println(mDto.getMname());
+			System.out.println(mDto.getMphone());
+			System.out.println(mDto.getMemail());
+			System.out.println(mDto.getMemail2());
+			System.out.println(mDto.getMbisnumber());
+			System.out.println(mDto.getMbisname());
+			System.out.println(mDto.getMbisphone());
+			System.out.println(mDto.getMjusonum());
+			System.out.println(mDto.getMjuso());
+			System.out.println(mDto.getMjuso2());
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		
+		return mDto;
+	}
+	
+	public int memUpdate(MemberDTO mDto) {
+		sqlSession = sqlSessionFactory.openSession();
+		try {
+			result = sqlSession.update("memupdate", mDto);
+			sqlSession.commit();
+			System.out.println("result : " + result);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		
+		return result;
+	}
 }

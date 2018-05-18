@@ -46,20 +46,10 @@
 }
 #east3 {
 	display: block;
-	margin-bottom: 20px;
-	
-}
-#east4 {
-	display: block;
-	margin-bottom: 20px;
-	
-}
-
-#east5 {
-	display: block;
 	margin-bottom: 50px;
 	
 }
+	
 
 table {
 	margin-left: auto;
@@ -72,7 +62,7 @@ table {
 	
 }
 
-#hakdong{
+.hakdong{
 	padding: 8px 20px 8px 20px;
 }
 

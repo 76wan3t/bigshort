@@ -19,8 +19,7 @@ public class SqlMapConfig {
 			
 			if(sqlSessionFactory == null) {
 				
-				sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
-				
+				sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader,"development");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -32,4 +31,5 @@ public class SqlMapConfig {
 		public static SqlSessionFactory getSqlSession() {
 			return sqlSessionFactory;
 		}
+		
 }

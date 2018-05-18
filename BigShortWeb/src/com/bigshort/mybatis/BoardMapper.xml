@@ -13,8 +13,8 @@
  			SELECT rownum rnum,
  			a.*
  			FROM( 
- 				SELECT * 
- 				FROM tblboard
+ 				SELECT b.* , (SELECT count(*) FROM tblreply d WHERE b.bno = d.bno) replycnt
+ 				FROM tblboard b
  				<![CDATA[
  				WHERE bno > 0 ORDER BY bno DESC
  				]]>
@@ -92,5 +92,88 @@
  
  		
  	</select>
+ 	
+ 	 <select id="bodylist" resultType="bDto" >
+  
+  			SELECT * FROM tblboard WHERE bno = #{bno}
+  		
+  	</select>
+
+ 	<update id="bodylistRead">
+	  	
+	   		UPDATE tblboard SET viewcnt = viewcnt + 1 WHERE bno = #{bno}
+	  		
+	 </update>
+	 
+	  <select id="bodynext" resultType="nDTO" >
+  <![CDATA[
+  SELECT * FROM (
+					SELECT
+						bno
+					    , TITLE
+					    , writer
+					    , regdate 
+					    , LEAD(bno, 1 ) OVER (ORDER BY bno DESC) AS next_article_bno
+					    , LEAD(TITLE, 1 , '다음글 없음') OVER (ORDER BY bno DESC) AS next_title
+					    , LEAD(writer, 1 , '') OVER (ORDER BY bno DESC) AS next_writer
+					    , LEAD(regdate, 1 , '') OVER (ORDER BY bno DESC) AS next_regdate
+					    , LAG(bno, 1) OVER (ORDER BY bno DESC ) AS  pre_article_bno
+					    , LAG(TITLE, 1 , '이전글없음') OVER (ORDER BY bno DESC ) pre_title
+					    , LAG(writer, 1) OVER (ORDER BY bno DESC ) AS  pre_writer
+					    , LAG(regdate, 1) OVER (ORDER BY bno DESC ) AS pre_regdate
+					FROM
+					tblboard
+				) WHERE bno= #{bno}
+	]]>
+ </select>
+ 
+	 
+	 <insert id="replyinsert">
+ 		 INSERT INTO tblreply (rno, content, writer, bno)
+ 		VALUES ((select nvl(max(rno)+1, 1) FROM tblreply), #{content}, #{writer} , #{bno})
+ 	</insert>
+ 	
+ 	<delete id="replydelete">
+ 	
+ 		DELETE FROM tblreply WHERE rno = #{rno}
+ 		
+ 	</delete>
+ 	
+ 	<update id="bodyseetadd">
+	  	
+	   		UPDATE tblboard SET sweet = sweet + 1 WHERE bno = #{bno}
+	  		
+	 </update>
+	 
+ 	 <select id="replyList" resultType="rDTO">
+ 		SELECT * FROM tblreply WHERE bno=#{bno}
+ 	</select>
+ 	
+ 	<delete id="modifDelete" parameterType="Integer">
+	  	
+	  		DELETE FROM tblboard WHERE bno = #{bno}
+	  	
+	 </delete>
+	 
+	  <delete id="replyAllDelete">
+ 	
+ 		DELETE FROM tblreply WHERE bno = #{bno}
+ 		
+ 	</delete>
+ 	
+ 	
+ 	 <select id="getFileName" parameterType="int" resultType="String">
+ 	
+ 	SELECT filename 
+ 	FROM tblboard
+ 	WHERE bno = #{bno}
+ 	
+ 	</select>
+ 	
+ 	 <update id="downLoadCount">
+ 	
+ 		UPDATE tblboard SET downloadcnt = downloadcnt + 1 WHERE bno = #{bno}
+ 	
+ 	</update>
   
 </mapper>

@@ -3,12 +3,18 @@
  <!DOCTYPE html>
  <html lang="ko">
  <head>
+ <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
  <style type="text/css">
  
  a:link, a:visited {text-decoration: none; color: #656565;}
  /* 헤더 겹침 수정  */
   #header{
     position: static;
+    min-width: 1180px!important;
+ }
+ #footer{
+ 	min-width: 1180px!important;
  }
 	body{
 	font-family:Verdana,sans-serif;
@@ -20,41 +26,51 @@
  .board_list tbody tr:first-child td {border:none}
  .board_list tbody td.title {text-align:left; padding-left:20px}
  .board_list tbody td a {display:inline-block}
-  
- .board_view {width:35%;border-top:2px solid #252525;border-bottom:1px solid #ccc;border-right:1px solid #252525;border-left:1px solid #252525; margin: 0 auto;}
+
+ .board_view {
+ 	width:50%;
+ 	min-width : 800px;
+ 	border-top:2px solid #252525; 
+ 	border-bottom:1px solid #ccc; 
+ 	border-right:1px solid #252525;
+ 	border-left:1px solid #252525; 
+ 	margin: 0 auto;}
  .board_view tbody th {text-align:left;background:#f7f7f7;color:#3b3a3a}
  .board_view tbody th.list_tit {font-size:13px;color:#000;letter-spacing:0.1px}
  .board_view tbody .no_line_b th, .board_view tbody .no_line_b td {border-bottom:none}
- .board_view tbody th, .board_view tbody td {padding:15px 0 16px 16px;border-bottom:1px solid #ccc}
+ .board_view tbody th {padding:15px 0 16px 16px;border-bottom:1px solid #ccc}
+ .board_view tbody td {padding:15px 0 16px 16px;border-bottom:1px solid #ccc}
+ .
  .board_view tbody td.view_text {border-top:1px solid #ccc; border-bottom:1px solid #ccc;padding:45px 18px 45px 18px}
  .board_view tbody th.th_file {padding:0 0 0 15px; vertical-align:middle}
- .gesi{font-size: 30px; color:black; font-family:Verdana,sans-serif;}
+ .gesi{font-size: 34px; font-weight:500; color:#767067; font-family:Verdana,sans-serif;margin-bottom:10px;}
  .wdp_90 {width:90%}
- .btn {border-radius:3px;padding:5px 11px;color:#fff !important; display:inline-block; background-color:#6b9ab8; border:1px solid #56819d;vertical-align:middle}
+ .btn {border-radius:3px;padding:5px 11px;color:#fff !important; display:inline-block; background-color:#6b9ab8; border:1px solid #56819d;vertical-align:middle; float: right; margin-right: 7px;}
  #button2{margin-left: 405px;}
  #navigation{
  	    margin-left: 5px;
  }
+ 
  /* 댓글 디자인  */
- .brunch_comment{padding:0 0 80px; background-color:#fbfbfb;}
+ .brunch_comment{padding:0 0 80px; background-color:#fbfbfb; text-align: center;}
  .brunch_comment .wrap_comment_facebook{position:relative;}
  div{font-family: "Noto Sans Light","Malgun Gothic",sans-serif;margin:0;padding: 0;}
  .screen_out{overflow: hidden;position: absolute;width: 0;height: 0;line-height: 0;text-indent: -9999px;}
  a{color:#333; text-decoration: none;}	
- .brunch_comment .comment_head{width: 700px; height: 30px; margin: 0 auto 12px;}
+ .brunch_comment .comment_head{min-width:801px; width: 801px; height: 30px; margin: 0 auto 12px;}
  .comment_head .tit_comment{float: left; padding-top: 3px; font-weight: 400; font-size: 16px;}
  .comment_head .tit_comment .txt_num{padding-left: 5px; color: #00c3bd;}
- .brunch_comment .comment_content{width: 700px; margin: 0 auto;}
+ .brunch_comment .comment_content{min-width:801px;width: 801px; margin: 0 auto;}
  .brunch_comment .btn_preview{width: 100%; height:47px;border-top:1px solid #ddd; font-size: 12px; line-height: 47px;color: #959595;}
  button{font-family:"Noto Sans Light","Malgun Gothic",sans-serif;border: 0 none; background-color: transparent; cursor: pointer; outline: none; border-radius: 0px; vertical-align: middle; line-height:1.5;}
  .brunch_comment .list_comment{display:block;width:100%; border-top: 1px solid #eee;}
  ul{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; list-style: none; margin: 0; padding: 0;}
- .list_comment li.item{float: left; padding: 30px 0; border-bottom:1px solid #eee;}
+ .list_comment li.item{float: left; padding: 30px 0; border-bottom:1px solid #eee; width: 801px; min-width:801px;}
  .list_comment li.item:hover{background:#f8f8f8;}
  .animation_up{animation: animation_up .2s; transition:opacity 0.2s}
  li{font-family:"Noto Sans Light","Malgun Gothic",sans-serif;list-style: none; margin:0;}
  .brunch_comment .link_profile{overflow:visible;float:left;position:relative;width:42px;height:42px;margin-left:10px;}
- .list_comment .cont_info{float:left;position:relative;width:628px;padding-left:20px;}
+ .list_comment .cont_info{float:left;position:relative;min-width:801px;width:801px;padding-left:20px;}
  .list_comment .info_append{width:100%;font-size: 12px;line-height:14px;}
  .list_comment .info_append .tit_userid{float:left;}
  .list_comment .info_append .link_userid{font-weight: 400;}
@@ -62,21 +78,21 @@
  .list_comment .info_append .txt_time{float:left;color:#959595;}
  .list_comment .desc_comment{padding:8px 50px 0 0; font-size: 14px; word-wrap:break-word;clear:left;}
  p{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0;}
- .list_comment .comment_setting{display:none; position:absolute; right: 18px; top:-3px;}
- .comment_setting .btn_set{display:inline; float:left; margin-left:8px; font-size:12px; color:#959595;}
+ .list_comment .comment_setting{ position:absolute; right: 18px; top:-3px;}
+ .comment_setting .btn_set{display:inline; margin-left:2px; font-size:12px; color:#959595;}
 .brunch_comment .link_profile .img_thumb{border-radius:42px; background-color:#fff;}
 .img_thumb{display:block; border:0 none;}
 .list_comment  .desc_comment a.link_mention{display:inline-block; padding:0 2px; font-weight:700; background-color:#ddd; text-decoration:none;}
 .wrap_comment_write{clear:both;}
-.brunch_comment .comment_write{position:relative; width:700px; padding-top:27px; margin:0 auto;}
+.brunch_comment .comment_write{position:relative; width:802px; padding-top:27px; margin:0 auto;}
 form{font-family:"Noto Sans Light","Malgun Gothic",sans-serif;padding:0;}
 input{font-family:"Noto Sans Light","Malgun Gothic",sans-serif;font-size:14px;line-height:1.5; vertical-align:middle; margin:0; padding:0;}
-fieldset{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; border:0 none; margin: 0; padding:0;}
+fieldset{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; border:0 none; margin: 2px!important; padding:0!important;}
 legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padding: 0;}
 .comment_write .link_profile{margin:6px 0 0 10px;}
-.comment_write .box_area{float:right;position:relative;width:624px; border:1px solid #eee; background-color:#fff;}
+.comment_write .box_area{float:left;position:relative; border:1px solid #eee; background-color:#fff;width:682px}
 .comment_write .wrap_area{display:block;}
-.comment_write .tf_area{padding:17px 17px 0; width: 590px; min-height:45px;border: none;line-height:22px; color:#666; background:0 0; white-space:pre-wrap; word-wrap:break-word; outline:transparent dotted; z-index:1;}
+.comment_write .tf_area{padding:17px 17px 0; width:676px; min-height:45px;border: none;line-height:22px; color:#666; background:0 0; white-space:pre-wrap; word-wrap:break-word; outline:transparent dotted; z-index:1;}
 .comment_write .editor_placeholder{position:absolute; z-index:0;top:17px; left:17px; line-height:22px; color:silver;}
  textarea{font-family:"Noto Sans Light","Malgun Gothic",sans-serif;font-size:14px;vertical-align:middle; margin:0;}
  .comment_write .comment_sticker{display:none; width:64px; margin:0 0 13px 17px;}
@@ -89,7 +105,27 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
  .comment_write .write_append .wrap_btn{float:right;}
  .comment_write .write_append .btn_default{width:56px;height:30px;margin-left:5px; border:1px solid #bbb;border-radius:32px; line-height:28px;color:#666;}
  .brunch_comment ._mention_list{overflow:hidden; overflow-y:auto; position:absolute; width:238px; max-height:334px; border:1px solid #d9d9d9;background-color:#fff;z-index:11;}
- /* 미완성  */
+ #td2{margin:5px 10px 5px 10px; border-bottom: 0px; height: 200px;}
+ .all_regdate {float: right;margin-right: 15px;}
+ #nextpage {margin:0 auto; width:801px;}
+ #nextprvtable {width: 100%; display: inline-block}
+ #nextprvtable a:hover {text-decoration: underline;}
+ img {margin: 0px 4px 2px 0px;} 
+ #login_reple{background-color:#fbfbfb; height: 106px; width:114px;border:1px solid #c0c0c0}
+ .all_tile {width: 500px;}
+ #listbtn{width: 80px;margin:0 auto;}
+ #btnall{text-align: center;}
+ .w3-button:hover{background-color: #63BBED!important; opacity:0.7; color:#ffffff!important;}
+ #modal_ul > li > a{
+	color: white;
+    font-size: 15px;
+    
+    font-family: 'Jeju Gothic', serif;
+}
+.w3-table td{padding: 8px 17px!important;}
+.w3-table td a{text-overflow: ellipsis;overflow: hidden; max-width:408px; height:19px;}
+
+ 
  </style>
  </head>
  <body>
@@ -101,20 +137,35 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
              <col width="15%"/>
              <col width="35%"/>
          </colgroup>
-         <caption class="gesi">게시글 상세</caption>
+    
+         
+         
+         <caption class="gesi">묻고 답하기</caption>
+        
          <tbody>
+                 <c:forEach items="${bodylist}" var="bDto">
+                 <form action="modifyview.bigshort" id="bodyupdate_go" method="get">
+                 	<input type="hidden" name="bno" id="bno" value="${bDto.bno }" />
+                 </form>
              <tr>
                  <th scope="row">글 번호</th>
-                 <td>${bDto.bno}</td>
-                 <c:forEach items="${bodylist}" var="bDto">
+                 <td class="line2">${bDto.bno}</td>
                  <th scope="row">조회수</th>
-                 <td>${bDto.viewcnt}</td>
-                 </c:forEach>
+                 <td class="line2">${bDto.viewcnt}           
+                 	<c:if test="${fn:trim(sessionScope.loginUser.mid) eq fn:trim(bDto.writer) || fn:trim(sessionScope.loginUser.mname) eq '관리자' }">        
+                 		<input type="button" value="수정" class="btn pull-right" id="bodyupdate">
+                 	
+                 		
+                 		
+        	 		<input type="button" value="삭제" class="btn pull-right" id="bodydel">
+        	 	</c:if>
+        	 </td>
              </tr>
              <tr>
                  <th scope="row">작성자</th>
                  <td>${bDto.writer}</td>
                  <th scope="row">작성시간</th>
+                
                  <td><fmt:formatDate
 					pattern="yyyy-MM-dd HH:mm" value="${bDto.regdate}" /></td>
              </tr>
@@ -122,79 +173,76 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
                  <th scope="row">제목</th>
                  <td colspan="3">${bDto.title}</td>
              </tr>
+            	<c:set var="cmt" value="${fn:replace(bDto.content,crcn,br)}" />
+				<c:set var="cmt" value="${fn:replace(cmt,cr,br)}" />
+				<c:set var="cmt" value="${fn:replace(cmt,cn,br)}" />
+				<c:set var="cmt" value="${fn:replace(cmt,' ',sp)}" />
              <tr>
-                 <td colspan="4">${boardview.content}</td>
+                 <td colspan="4" id="td2">
+
+                 <c:out value="${cmt}" escapeXml="false"/>
+                 
+                 </td>
              </tr>
              <tr><c:if test="${bDto.filename != '-'}">
-                 <th scope="row">첨부파일(내려받는 횟수 : ${bDto.downloadcnt } )</th>
+                 <th  colspan="1" scope="row">첨부파일</th>
                  <td colspan="3">
                      
-                         <input type="file" id="IDX" style="display:none">
-                         <a href="download.bizpoll?bno=${bDto.bno}"><i class="fa fa-save"></i></a>
-						 <a href="download.bizpoll?bno=${bDto.bno}">${bDto.filename }</a>
+                         <input type="file" id="IDX" style="display:none">(내려받는 횟수 : ${bDto.downloadcnt } )
+                         <a href="download.bigshort?bno=${bDto.bno}"><i class="fa fa-save"></i></a>
+						 <a href="download.bigshort?bno=${bDto.bno}">${bDto.filename }</a>
                     
                  </td>
                   </c:if>
              </tr>
+          </c:forEach>
          </tbody>
      </table>
+     <br>
+      <div id="btnall2">
+	   <div id="btnall">
+         <c:forEach items="${bodynext}" var="bDto">
+			<!--  <input type="button" id="prev" value="이전"> -->
+			
+			<c:if test="${fn:trim(bDto.pre_title) ne '이전글없음'}">
+				<a href="boardbody.bigshort?bno=${bDto.pre_article_bno}" id="prev" class="w3-button w3-white w3-border">이전</a>
+			</c:if>
+			
+			<a href="listAll.bigshort"id="listbtn"class="w3-button w3-white w3-border">목록</a>
+			
+			<!-- <input type="button" id="list_btn" value="목록" class="w3-button w3-white w3-border w3-round-large"> -->
+			<!-- <input type="button" id="next" value="다음"> -->
+			<c:if test="${fn:trim(bDto.next_title) ne '다음글 없음'}">
+				<a href="boardbody.bigshort?bno=${bDto.next_article_bno}" id="next" class="w3-button w3-white w3-border">다음</a>
+			</c:if>
+		</c:forEach>
+	 </div> 
+	</div>
      <br>
       
           
           <div class="brunch_comment #comment" style="display: block;">
 
-            <a name="comments" class="screen_out">댓글</a>
 
 			
-            <div class="comment_head"><strong class="tit_comment">댓글<span class="txt_num"> ${count}</span></strong>
+            <div class="comment_head"><strong class="tit_comment"><span class="txt_num"></span></strong>
 </div>
             <div class="comment_content">
                 <div class="list_comment_more" style="display: none;">
-                    <button type="button" data-action="moreList" class="btn_preview">이전 댓글 보기</button>
                 </div>
 				
-				<c:forEach items="${replyview}" var="replyview">
-                <ul class="list_comment"><li class="item animation_up"><div class="comment">
-		<a href="/@@3jUF" class="link_profile">
-			<img src="//img1.daumcdn.net/thumb/C42x42/?fname=http://t1.daumcdn.net/brunch/service/user/3jUF/image/iSvVjV7XpGc6Ns_2hm8BrIocFj4.jpg" width="42" height="42" class="img_thumb" alt="Vegit 이미지">
-		</a>
-	<div class="cont_info">
-		<div class="info_append">
-			<strong class="tit_userid">
-				<a href="/@@3jUF" class="link_userid">${replyview.writer}</a>
-			</strong>
-			<span class="ico_dot"></span>
-			<span class="txt_time">May 07. 2018</span>
-		</div>
-		<p class="desc_comment">저도 옛날 옛적에 인터뷰를 한번 했다가, 댓글을 보고 깜짝 놀란적이 있죠. 물론 제가 한말이 아닌데 제가 한말로 처리 된 부분도 있었지만, 그와 상관없이 참 이상한 사람들이 많구나.. 라고 생각했던 경험이 있네요.</p>
 
-		<div class="comment_setting">
-			<div class="wrap_comment_menu">
-						<button type="button" class="btn_set" data-action="report" data-commentno="347302">신고</button>
-					
-			</div>
-		</div>
-	</div>
-</div></ul>
-</c:forEach>
             </div>
-				
-
-            <div class="wrap_comment_write">
-            <form class="comment_write brunch_login" method="post" novalidate="">
-	<input type="hidden" name="sticker" value="">
-
+<c:if test="${fn:trim(sessionScope.loginUser.mid) ne ''}">
+     <div class="wrap_comment_write">
+      <form id="replyadd" class="comment_write brunch_login" method="post" action="replyadd.bigshort">
+	<div id="chat">
 	<fieldset>
 		<legend class="screen_out">댓글 작성 폼</legend>
-		<div class="link_profile">
-					<img src="//img1.daumcdn.net/thumb/C42x42/?fname=http://t1.daumcdn.net/brunch/service/guest/image/05yccYvwPPjX61Yi9Q1qeS99Esc.jpg" width="42" height="42" class="img_thumb" alt="이미지 정보">
-		</div>
 		<div class="box_area">
 			<label for="tfCmt" class="screen_out">댓글 작성</label>
 			<span class="wrap_area">
-					<!-- <div contenteditable="" class="editor tf_area"></div> -->
-					<div class="editor_placeholder" style="display: none;"></div>
-					<textarea class="editor tf_area" name="content" maxlength="1000" placeholder="작가와 글에 대해 이야기를 나누어 보세요!" ></textarea>
+					<textarea class="editor tf_area" id="content" name="content" maxlength="1000" placeholder="댓글은 작성자에게 가장 큰 힘이 됩니다.!!" ></textarea>
 			</span>
 			<div class="comment_sticker"></div>
 
@@ -212,37 +260,129 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 					</div>
 				</div>
 
-				<div class="wrap_btn">
-						<button type="submit" class="btn_default #submit">확인</button>
-						<input type ="hidden" id="btn44" value="${sessionScope.loginUser.mid}">
-				</div>
+
+				
 			</div>
 		<ul class="_mention_list" style="display: none;"></ul></div>
+		<div class="wrap_btn">
+						<input type="button" id="login_reple" class="btn_default #submit" value="확인">
+						<input type ="hidden" id="mid" name="mid" value="${sessionScope.loginUser.mid}">
+				</div>
 	</fieldset>
-</form></div>
+		</div>
+		
+</form>
+</div>
+</c:if>
+<c:if test="${fn:trim(sessionScope.loginUser.mid) eq ''}">
+	<div class="wrap_comment_write">
+      		<form class="comment_write brunch_login" action="#" method="post" >
+   <div id="chat2">
+	<fieldset>
+		<legend class="screen_out">댓글 작성 폼</legend>
+		<div class="box_area">
+			<label for="tfCmt" class="screen_out">댓글 작성</label>
+			<span class="wrap_area">
+					<textarea class="editor tf_area" name="content" readonly="readonly" maxlength="1000" placeholder="로그인하셔야 댓글을 작성 할 수 있어요" ></textarea>
+			</span>
+			<div class="comment_sticker"></div>
+
+			<div class="write_append">
+
+				<div class="select_sticker">
+					<div class="layer_sticker">
+						<strong class="screen_out">스티커 카테고리 선택</strong>
+						<ul class="tab_sticker">
+							<li>
+								<a href="#none" class="link_tab"></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				
+			</div>
+		<ul class="_mention_list" style="display: none;"></ul></div>
+			<div class="wrap_btn">
+					<input type="button" id="login_reple" class="btn_default #submit" value="로그인" onclick="document.getElementById('id01').style.display='block'" >
+				</div>
+	</fieldset>
+		</div>
+</form>
+</div>
+						
+					</c:if>
 		        </div>
+		        <br>
+		        <div id="nextpage">
+			<table id="nextprvtable" class="w3-table w3-striped">
+				<c:forEach items="${bodynext}" var="bDto">
+					<tr>
+						<c:if test="${fn:trim(bDto.pre_title) ne '이전글없음'}">
+							<td><!-- <i class="fa fa-arrow-left"></i> --><a
+								href="boardbody.bigshort?bno=${bDto.pre_article_bno} " id="">
+									이전글</a></td>
+							<td class="all_tile"><nobr><a
+								href="boardbody.bigshort?bno=${bDto.pre_article_bno} " id="">
+									${bDto.pre_title}</a></nobr></td>
+							<td class="all_writer">${bDto.pre_writer}</td>
+							<td class="all_regdate"><fmt:formatDate pattern="yyyy-MM-dd"
+									value="${bDto.pre_regdate}" /></td>
+						</c:if>
+					</tr>
+					<tr>
+						<c:if test="${fn:trim(bDto.next_title) ne '다음글 없음'}">
+							<td>
+							<a
+								href="boardbody.bigshort?bno=${bDto.next_article_bno} " id="">
+									다음글</a><!-- <i class="fa fa-arrow-right"></i> --></td>
+							<td class="all_tile"><nobr><a href="boardbody.bigshort?bno=${bDto.next_article_bno} " id="">${bDto.next_title}</a></nobr></td>
+							<td class="all_writer">${bDto.next_writer}</td>
+							<td class="all_regdate"><fmt:formatDate pattern="yyyy-MM-dd"
+									value="${bDto.next_regdate}" /></td>
+						</c:if>
+					</tr>
+				</c:forEach>
+
+			</table>
+		</div>
      
      
  <script type="text/javascript">
 
-function comment_list(){
+	function comment_list(){
+		
+		var bno = $("#bno").val();
+		
+		$.ajax({
+			type : "POST",
+			url : "commentlist.bigshort",
+			data : "bno=" + bno,
+			success : function(result) {
 	
-	var bno = $("#hidden").val();
+				$(".comment_content").html(result);
 	
-	$.ajax({
-		type : "POST",
-		url : "commentlist.bizpoll",
-		data : "bno=" + bno,
-		success : function(result) {
-
-			$("#commentlist").html(result);
-
-		}
-	});
-} 
+			}
+		});
+	} 
+	function comment_size(){
+		
+		var bno = $("#bno").val();
+		
+		$.ajax({
+			type : "POST",
+			url : "commentsize.bigshort",
+			data : "bno=" + bno,
+			success : function(result) {
+	
+				$(".tit_comment").html(result);
+	
+			}
+		});
+	} 
 	
 	
-	function sweet_count(){
+/*  	function sweet_count(){
 		var bno = $("#hidden").val();
 		
 		$.ajax({
@@ -256,14 +396,14 @@ function comment_list(){
 			}
 		});
 		
-	}
+	} */
 
 
 	$(document).ready(function(){
 		
 		comment_list();
-		sweet_count();
-		
+		comment_size();
+		// sweet_count(); 
 		
 		
 		var comment2 = $("#comment2").val();
@@ -299,7 +439,12 @@ function comment_list(){
 			}
 		});
 		
-	
+		/* // 게시물 목록으로 넘어가는 버튼
+		$("#list_btn").on("click", function(){
+			
+			location.href="listAll.bigshort";
+			
+		}); */
 	
 		// 게시글 등록 버튼을 클릭하면 이벤트 처리
 		 $("#btn_submit").on("click", function() {
@@ -327,22 +472,23 @@ function comment_list(){
 	});
 
 		// 댓글 등록하기 위한 이벤트
-		$(document).on("click", "#_submitCmt",function() {
+		$(document).on("click", "#login_reple",function() {
 			
 			
 		var bno = $("#bno").val();
-		var mid = $("#mid2").val();
-		var comment = $("#comment_text").val();
+		var mid = $("#mid").val();
+		var comment = $("#content").val();
 			
 			 $.ajax({
-				url : "replyadd.bizpoll",
+				url : "replyadd.bigshort",
 				type : "POST",
 				dataType : "json",
-				data : "bno=" + bno +"&mid=" + mid +"&comment_text=" + comment,
+				data : "bno=" + bno +"&mid=" + mid +"&content=" + comment,
 				success : function(data) {
 
-					$("#comment_text").val("");// 댓글 등록후 내용 초기화 하는 코드
+					$("#content").val("");// 댓글 등록후 내용 초기화 하는 코드
 					comment_list(); // 댓글을 다시 불러드리기 위한 호출 함수
+					comment_size(); // 댓글 수를 파악하기위한 호출 함수
 
 				},
 
@@ -356,8 +502,8 @@ function comment_list(){
 		});
 	
 	
-	
-		$(document).on("click", ".delUrl2", function() {
+		// 댓글 삭제 이벤트
+		$(document).on("click", ".rplay_del", function() {
 			
 				var Del = confirm("삭제 하시겠습니까?") // 클릭시 삭제할 것인지 물어보는 코드
 
@@ -366,14 +512,14 @@ function comment_list(){
 					var rno = $(this).attr("data_num"); // 해당 댓글 값을 가져오는 코드
 
 					 $.ajax({
-						url : "replydel.bizpoll",
+						url : "replydel.bigshort",
 						type : "POST",
 						dataType : "json",
 						data : "rno=" + rno,
 						success : function(data) {
 
 							comment_list(); // 삭제 완료하면 댓글을 다시 불러드리기 위한 함수 호출
-
+							comment_size(); // 댓글 수를 파악하기위한 호출 함수
 						},
 
 						error : function() {
@@ -432,23 +578,42 @@ function comment_list(){
 			
 		});
 		
+		//게시판 수정 이벤트
 		
+		$(document).on("click", "#bodyupdate", function() {
+			
+			var Del = confirm("수정 하시겠습니까?") // 클릭시 삭제할 것인지 물어보는 코드
+
+			if (Del == true) {
+
+				$("#bodyupdate_go").submit();
+
+			} else {
+
+				alert("취소 되었습니다.");
+				return false;
+
+			}
+
+		}); 
+		
+		//게시판 삭제 이벤트
 		$(document).on("click", "#bodydel", function() {
 			
 			var Del = confirm("삭제 하시겠습니까?") // 클릭시 삭제할 것인지 물어보는 코드
 
 			if (Del == true) {
 
-				var bno = $("#hidden").val(); 
+				var bno = $("#bno").val(); 
 
 				 $.ajax({
-					url : "modifydelete.bizpoll",
+					url : "modifydelete.bigshort",
 					type : "POST",
 					dataType : "json",
 					data : "bno=" + bno,
 					success : function(data) {
 
-						location.href="boardlist.bizpoll";
+						location.href="listAll.bigshort";
 						
 
 					},
@@ -471,3 +636,5 @@ function comment_list(){
 </script>
  </body>
  </html>
+ 
+ <%@ include file="../footer.jsp" %>

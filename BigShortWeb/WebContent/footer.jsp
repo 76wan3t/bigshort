@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div id="footer">
-		<div class="inner">
+		<div class="inner2">
 			Copyright(C) 2018 Bigshort. All right Reserved.
 		</div>
 	</div>

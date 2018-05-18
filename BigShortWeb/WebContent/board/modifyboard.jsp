@@ -27,7 +27,7 @@
 		});	
 		$(".pull-left").on("click", function() {
 			
-			location.href = "/BigShortWeb/listAll.bigshort"
+			location.href = "/BigShortWeb/boardbody.bigshort?bno="+${bDto.bno};
 		});	
 });
 </script>
@@ -36,8 +36,9 @@
 <body>
 	<div>
 		<div class="container">
-	      <form id ="update" name="update" action="../boardupdate.bigshort" method="post" enctype="multipart/form-data" >
+	      <form id ="update" name="update" action="/BigShortWeb/boardupdate.bigshort" method="post" enctype="multipart/form-data" >
 			<table class="table table-bordered">
+			<input type="hidden" id="bno" name="bno" value="${bDto.bno }" >
 			
 			   <thead>
 			    <caption> <h1 id="new_h1">글 수정</h1> </caption>
@@ -52,13 +53,24 @@
 				            </tr>
 				            <tr>
 						<th >첨부파일 : </th>
-						<td id="file_td">
-							<span class="filter-50">
-								<input class="upload-name" value="파일선택" disabled="disabled">
-								<input type="file" name="files" id="files" style="display: none">
-								<label for="files" id="label" class="btn">파일 첨부</label>
-							</span>
-						</td>
+						<c:if test="${bDto.filename == '-'}">
+							<td id="file_td">
+								<span class="filter-50">
+									<input class="upload-name" value="파일선택" disabled="disabled">
+									<input type="file" name="files" id="files" style="display: none">
+									<label for="files" id="label" class="btn">파일 첨부</label>
+								</span>
+							</td>
+						</c:if>
+						<c:if test="${bDto.filename != '-'}">
+							<td id="file_td">
+								<span class="filter-50">
+									<input class="upload-name" value="파일선택" disabled="disabled">
+									<input type="file" name="files" id="files" style="display: none">
+									<label for="files" id="label" class="btn">파일 첨부</label>
+								</span>
+							</td>
+						</c:if>
 					    </tr>
 				            <tr>
 				                <th>내용 : </th>

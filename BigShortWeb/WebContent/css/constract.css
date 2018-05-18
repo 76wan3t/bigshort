@@ -1,10 +1,8 @@
-	#body_wrap {
+	/* #body_wrap {
 		width: 1180px;
-	    padding-top: 200px;
-	    padding-right: 300px;
-	    padding-left: 300px;
+	    padding: 40px 300px 61px 300px;
 	    margin: 0 auto;
-	}
+	} */
 
 	#constract_container{
 		box-sizing: border-box;
@@ -13,8 +11,8 @@
 	
 	div.lang {
 		position: absolute;
-		top: 150px;
-		right: 600px;
+    	top: 100px;
+    	right: 0px;
 	}
 	.lang > select {
 		background: url('/BigShortWeb/images/sel_arr.gif') 100% 50% no-repeat;
@@ -40,7 +38,7 @@
 	}
 	
 	form#join_content {
-		width: 460px!important;
+		width: 500px!important;
 		margin: 0 auto!important;
 	}
 	
@@ -192,7 +190,7 @@
 	}
 	
 	.btn_type {
-		width: 220px;
+		width: 244px;
 		margin: 0px 5px;
 		font-size: 20px;
 		font-weight: 600;
@@ -230,7 +228,7 @@
 	
 	a {
 		text-decoration: none;
-		color: inherit;
+		/* color: inherit; */
 	}
 	
 	#error_span {
@@ -240,10 +238,6 @@
 		color: red;
 		display: none;
 	} 
-	
-	
-	
-	
 	
 	
 	

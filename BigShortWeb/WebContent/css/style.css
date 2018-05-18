@@ -7,6 +7,8 @@
 	background: url('../images/main5.jpg') no-repeat center top;
 	opacity: 0.93;
 	margin-top: 50px;
+	width: 100%;
+	/* min-width: 1300px; */
 }
 
 .inner {
@@ -152,7 +154,8 @@
 
 #header {
 	height: 50px;
-	min-width: 100%;
+	width : 100%;
+	/* min-width:1300px; */
 	position: absolute;
 	z-index: 1;
 	top: 0;
@@ -175,18 +178,44 @@
     height: 12px;
     position: absolute;
     background-color: #FFF;
-    margin-top: -7px;
+    margin-top: -1px;
     opacity: 0.5;
 		
 }
 
+#footer{
+	
+	width: 100%;
+	/* min-width: 1300px; */
+	
+}
 
+/* 광산구 그래프 위치지정 */
+#ComboChartIDed43ab15521 {
+	position: relative;
+	left: -60px;
+}
 
+/* 북구 그래프 위치지정 */
+#ComboChartIDed4622566b8{
+	position: relative;
+	left: -60px;
+}
 
+/* 남구 그래프 위치지정 */
+#ComboChartIDed43cc1148f {
+	position: relative;
+	left: -60px;
+}
 
+/* 서구 그래프 위치지정 */
+#ComboChartIDed443272950 {
+	position: relative;
+	left: -60px;
+}
 
-
-
-
-
-
+/* 동구 그래프 위치지정 */
+#ComboChartIDed474ab435b {
+	position: relative;
+	left: -60px;
+}
