@@ -18,7 +18,7 @@ public class NamGuImage {
     static int page = 1;
     static int total = 104;
     static String comlete_page ;
-    static String area = "namgu";
+    static String area = "namguimage";
     
     public void namguImage() throws IOException {
     	
@@ -66,11 +66,11 @@ public class NamGuImage {
                              }// 중복 체크 if문
                  
                 }//첫 번쩨 if 조건문
+			     ++page;
+			     comlete_page = base_url + page +base_url2;
                  
             }// for 반복문
     
-                 ++page;
-                  comlete_page = base_url + page +base_url2;
                  
         }// while문
     

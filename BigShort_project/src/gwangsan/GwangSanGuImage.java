@@ -17,7 +17,7 @@ public class GwangSanGuImage {
      static int page = 1;
      static int total = 162;
      static String comlete_page ;
-     static String area = "gwangsan";
+     static String area = "gwangsanimage";
      
      public void gwangsanguImage() throws IOException {
     	 
@@ -66,11 +66,11 @@ public class GwangSanGuImage {
                      
                     }//첫 번쩨 if 조건문
                      
+         
+         ++page;
+         comlete_page = base_url + page +base_url2;
+         
                 }// for 반복문
-        
-                     ++page;
-                      comlete_page = base_url + page +base_url2;
-                     
             }// while문
     	 
     	 

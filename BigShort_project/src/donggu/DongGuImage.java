@@ -18,7 +18,7 @@ public class DongGuImage {
     static int page = 1;
     static int total = 33;
     static String comlete_page ;
-    static String area = "donggu";
+    static String area = "dongguimage";
     
     
     public void dongguImage() throws IOException {
@@ -67,11 +67,11 @@ public class DongGuImage {
                                 }// 중복 체크 if문
                     
                    }//첫 번쩨 if 조건문
+        ++page;
+        comlete_page = base_url + page +base_url2;
                     
                }// for 반복문
        
-                    ++page;
-                     comlete_page = base_url + page +base_url2;
                     
            }// while문
     

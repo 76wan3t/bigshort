@@ -74,10 +74,11 @@ public class BukGuImage {
                     
                    }//첫 번쩨 if 조건문
                     
+			        ++page;
+			        comlete_page = base_url + page +base_url2;
+        
                }// for 반복문
        
-                    ++page;
-                     comlete_page = base_url + page +base_url2;
                     
            }// while문
 		
