@@ -1,52 +1,124 @@
 package com.bigshort.DTO;
 
 public class ProductDTO {
+	private int dongno;
+	private String dongname;
+	private String aptname;
+	private String DEAL;
+	private String subsidy;
+	private String price;
+	private String dongextent;
+	private String donglevel;
+	private String namepirce;
+	private String url;
+	private String dongdate;
 	
-	private String p_code;
-	private String  p_name;
-	private String  p_price2;
-	private String  p_img;
-	
-	public ProductDTO() {}
-	
-	public ProductDTO(String p_code, String p_name, String p_price2, String p_img) {
+	public ProductDTO() {
+		
+	}
+
+	public ProductDTO(int dongno, String dongname, String aptname, String dEAL, String subsidy, String price,
+			String dongextent, String donglevel, String namepirce, String url, String dongdate) {
 		super();
-		this.p_code = p_code;
-		this.p_name = p_name;
-		this.p_price2 = p_price2;
-		this.p_img = p_img;
+		this.dongno = dongno;
+		this.dongname = dongname;
+		this.aptname = aptname;
+		DEAL = dEAL;
+		this.subsidy = subsidy;
+		this.price = price;
+		this.dongextent = dongextent;
+		this.donglevel = donglevel;
+		this.namepirce = namepirce;
+		this.url = url;
+		this.dongdate = dongdate;
 	}
 
-	public String getP_code() {
-		return p_code;
+	public int getDongno() {
+		return dongno;
 	}
 
-	public void setP_code(String p_code) {
-		this.p_code = p_code;
+	public void setDongno(int dongno) {
+		this.dongno = dongno;
 	}
 
-	public String getP_name() {
-		return p_name;
+	public String getDongname() {
+		return dongname;
 	}
 
-	public void setP_name(String p_name) {
-		this.p_name = p_name;
+	public void setDongname(String dongname) {
+		this.dongname = dongname;
 	}
 
-	public String getP_price2() {
-		return p_price2;
+	public String getAptname() {
+		return aptname;
 	}
 
-	public void setP_price2(String p_price2) {
-		this.p_price2 = p_price2;
+	public void setAptname(String aptname) {
+		this.aptname = aptname;
 	}
 
-	public String getP_img() {
-		return p_img;
+	public String getDEAL() {
+		return DEAL;
 	}
 
-	public void setP_img(String p_img) {
-		this.p_img = p_img;
+	public void setDEAL(String dEAL) {
+		DEAL = dEAL;
+	}
+
+	public String getSubsidy() {
+		return subsidy;
+	}
+
+	public void setSubsidy(String subsidy) {
+		this.subsidy = subsidy;
+	}
+
+	public String getPrice() {
+		return price;
+	}
+
+	public void setPrice(String price) {
+		this.price = price;
+	}
+
+	public String getDongextent() {
+		return dongextent;
+	}
+
+	public void setDongextent(String dongextent) {
+		this.dongextent = dongextent;
+	}
+
+	public String getDonglevel() {
+		return donglevel;
+	}
+
+	public void setDonglevel(String donglevel) {
+		this.donglevel = donglevel;
+	}
+
+	public String getNamepirce() {
+		return namepirce;
+	}
+
+	public void setNamepirce(String namepirce) {
+		this.namepirce = namepirce;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	public String getDongdate() {
+		return dongdate;
+	}
+
+	public void setDongdate(String dongdate) {
+		this.dongdate = dongdate;
 	}
 	
 	

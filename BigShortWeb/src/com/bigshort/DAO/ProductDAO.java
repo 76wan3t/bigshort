@@ -42,47 +42,21 @@ public class ProductDAO {
 	    }
 	    
 	    
-	    
-	    
-	    public List<ProductDTO> bestlist() {
-	    	List<ProductDTO> list = new ArrayList<>();
-	    	
-	    	sqlSession = sqlSessionFactory.openSession();
-	    	
-	    	try {
-	    		
-	    		list = sqlSession.selectList("bestview");
-	    		
-	    		
-	    		
-				
-			} catch (Exception e) {
-				
-				e.printStackTrace();
-				
-			}finally {
-				
-				sqlSession.close();
-			}
-	    	
-	    	return list;
-	    }
-	    
 	    private static ProductDAO instance = new ProductDAO();
 		public static ProductDAO getInstance() {
 			return instance;
 		}
 
-		public List<ProductDTO> gwangsanList() {
+		public List<ProductDTO> gwangsanList(String dongname) {
 		
 			List<ProductDTO> list = new ArrayList<>();
 			sqlSession = sqlSessionFactory.openSession();
 			
 			
 			try {
-				list = sqlSession.selectList("gwangsanlist");
+				list = sqlSession.selectList("gwangsanlist", dongname);
 						
-						
+					System.out.println(list.size());	
 			
 				
 			} catch (Exception e) {

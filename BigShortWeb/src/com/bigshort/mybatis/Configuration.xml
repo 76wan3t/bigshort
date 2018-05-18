@@ -14,6 +14,7 @@
 		<typeAlias type="com.bigshort.DTO.BoardDTO" alias="bDto"/>
 		<typeAlias type="com.bigshort.DTO.ReplyDTO" alias="rDto"/>
 		<typeAlias type="com.bigshort.DTO.NextPreDTO" alias="nDto"/>
+		<typeAlias type="com.bigshort.DTO.ProductDTO" alias="pDto"/>
 		
 		
 		

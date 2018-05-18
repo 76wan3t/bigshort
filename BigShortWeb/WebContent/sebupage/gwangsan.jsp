@@ -14,7 +14,8 @@
 		$("#td1").on("click", function() {
 			$(".graph").css("display", "none");
 			$(".graph-con2").css("display", "block");
-
+			
+			
 		});
 		$("#td2").on("click", function() {
 			$(".graph").css("display", "none");
@@ -145,7 +146,7 @@
 				<table>
 					<thead>
 						<tr id="gwangsan1">
-							<td id="td1">도산동</td>
+							<td id="td1"><a href="gwangsandetail2.bigshort?dongname=도산동">도산동</a></td>
 							<td id="td2">도천동</td>
 							<td id="td3">비아동</td>
 							<td id="td4">산월동</td>
@@ -6649,11 +6650,12 @@
 
 			<!-- 상품게시페이지 시작 -->
 			<div id="board">
+			<c:forEach items="${gwangsan}" var="gwangsan">
 				<div class="product">
-					<span class="aptname">아파트이름</span>
-					<span class="standard">평수</span>
-					<span class="average">평균가</span>
-					<span class="price">매매가</span>
+					<span class="aptname">${gwangsan.aptname}</span>
+					<span class="standard">${gwangsan.dongextent}</span>
+					<span class="average">${gwangsan.donglevel}</span>
+					<span class="price">${gwangsan.nameprice }</span>
 				</div>
 				<div class="product">
 					<span class="aptname">아파트이름</span>
@@ -6721,6 +6723,7 @@
 					<span class="average">평균가</span>
 					<span class="price">매매가</span>
 				</div>
+				</c:forEach>
 			</div>
 			<!-- 상품게시페이지 끝 -->
 
