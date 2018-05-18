@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 public class SqlMapConfig {
 	
 	private static SqlSessionFactory sqlSessionFactory; 
+	private static SqlSessionFactory sqlSessionFactory2;
 	
 	static {
 		String resource = "com/bigshort/mybatis/Configuration.xml";
@@ -19,7 +20,14 @@ public class SqlMapConfig {
 			
 			if(sqlSessionFactory == null) {
 				
-				sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
+				sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader,"development");
+				
+			}
+			
+			if (sqlSessionFactory2 == null) {
+				
+			
+				sqlSessionFactory2 = new SqlSessionFactoryBuilder().build(reader,"development2");
 				
 			}
 		} catch (Exception e) {
@@ -31,5 +39,9 @@ public class SqlMapConfig {
 	
 		public static SqlSessionFactory getSqlSession() {
 			return sqlSessionFactory;
+		}
+		
+		public static SqlSessionFactory getSqlSession2() {
+			return sqlSessionFactory2;
 		}
 }
