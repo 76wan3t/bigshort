@@ -45,6 +45,7 @@
 	<mappers>
 		<mapper resource="com/bigshort/mybatis/MemberMapper.xml"/>
 		<mapper resource="com/bigshort/mybatis/BoardMapper.xml"/>
+		<mapper resource="com/bigshort/mybatis/SebuPageMapper.xml"/>
 	</mappers>
 	
 </configuration>
