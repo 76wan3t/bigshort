@@ -75,7 +75,8 @@ test_2_giv$html$header <- header
 plot(test_2_giv)
 
 #막대 / 선 그래프 출력
-test_2_combo <- gvisComboChart(test_2,options = list(seriesType="bars", series = "{2:{type:'line'}}"))
+test_2_combo <- gvisComboChart(test_2,options = list(seriesType="bars",legend="top", series = "{2:{type:'line'}}"))
+
 
 # 한글 깨짐 해결
 header <- test_2_combo$html$header
