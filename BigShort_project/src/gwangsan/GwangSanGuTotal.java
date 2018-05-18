@@ -9,8 +9,8 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import main.BigShortDAO;
-import main.BigShortDTO;
+import DAO.BigShortDAO;
+import DTO.BigShortDTO;
 
 public class GwangSanGuTotal {
 	 static String base_url = "http://home.sarangbang.com/linead/list.html?nPage=";

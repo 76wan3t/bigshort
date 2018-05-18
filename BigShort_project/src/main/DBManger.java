@@ -9,7 +9,7 @@ public class DBManger {
 	
 	private static Connection conn;    
     private final static String DRIVER = "oracle.jdbc.driver.OracleDriver";
-    private final static String URL = "jdbc:oracle:thin:@teno.homedns.tv:1521:XE"; //오라클 서버 주소
+    private final static String URL = "jdbc:oracle:thin:@bigshort.homedns.tv:1521:XE"; //오라클 서버 주소
     private final static String USER = "bigshort"; // 아이디
     private final static String PASSWORD = "bigshort4800"; // 비밀번호
     

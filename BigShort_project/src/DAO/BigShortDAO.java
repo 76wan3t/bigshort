@@ -1,8 +1,11 @@
-package main;
+package DAO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+
+import DTO.BigShortDTO;
+import main.DBManger;
 public class BigShortDAO {
     
     Connection conn =null;

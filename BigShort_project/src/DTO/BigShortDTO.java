@@ -1,10 +1,10 @@
-package main;
+package DTO;
 
 import java.sql.Date;
 
 public class BigShortDTO {
-      private int dongno; // 등록 번호
-      private String dongname; // 동대 이름
+    private int dongno; // 등록 번호
+    private String dongname; // 동대 이름
     private String aptname; // 아파트 이름
     private String deal; // 전세, 월세, 매매
     private int subsidy; // 보조금
