@@ -87,9 +87,29 @@ table {
 	display: block;
 }
 
+#board {
+	position: relative;
+	margin:  0 auto;
+    width: 100%;
+    height: auto;
+}
 
-
-
+.aptname {
+	margin-top: 20px;
+    padding-bottom: 15px;
+}
+.standard {
+	margin-top: 15px;
+    padding-bottom: 10px;
+}
+.average {
+	margin-top: 15px;
+    padding-bottom: 10px;
+}
+.price {
+	margin-top: 15px;
+    padding-bottom: 10px;
+}
 
 
 

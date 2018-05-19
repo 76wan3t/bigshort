@@ -12,7 +12,7 @@ import com.bigshort.DTO.ProductDTO;
 import com.bigshort.action.Action;
 import com.bigshort.action.ActionForward;
 
-public class gwangsandetail2Action implements Action{
+public class DongguDetail2Action implements Action{
 
 	@Override
 	public ActionForward excute(HttpServletRequest request, HttpServletResponse response)
@@ -26,12 +26,12 @@ public class gwangsandetail2Action implements Action{
 		
 		ProductDTO pDto = new ProductDTO();
 		ProductDAO pDao = ProductDAO.getInstance();
-		List<ProductDTO> list = pDao.gwangsanList(dongname);
+		List<ProductDTO> list = pDao.dongguList(dongname);
 		
 		
 		request.setAttribute("product", list);
 		
-		pDto = pDao.gwangsanMean(dongname);
+		pDto = pDao.dongguMean(dongname);
 		
 		request.setAttribute("pDto", pDto);
 		

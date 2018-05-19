@@ -19,6 +19,10 @@ import com.bigshort.action.mypage.MyIndexAction;
 import com.bigshort.action.mypage.MyUpdateAction;
 import com.bigshort.action.mypage.PwUpdateAction;
 import com.bigshort.action.mypage.UpdatePwAction;
+import com.bigshort.action.sebupage.BukguDetail2Action;
+import com.bigshort.action.sebupage.DongguDetail2Action;
+import com.bigshort.action.sebupage.NamguDetail2Action;
+import com.bigshort.action.sebupage.SerguDetail2Action;
 import com.bigshort.action.sebupage.gwangsandetail2Action;
 import com.bigshort.action.zone.*;
 
@@ -168,6 +172,18 @@ public class BigshortFrontController extends HttpServlet {
 				forward = action.excute(request, respnse); 
 			}else if(command.equals("/gwangsandetail2.bigshort")) { // 광산구 세부페이지 데이터 출력을 위한 액션
 				action = new gwangsandetail2Action();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/bukgudetail2.bigshort")) { // 북구 세부페이지 데이터 출력을 위한 액션
+				action = new BukguDetail2Action();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/namgudetail2.bigshort")) { // 남구 세부페이지 데이터 출력을 위한 액션
+				action = new NamguDetail2Action();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/sergudetail2.bigshort")) { // 서구 세부페이지 데이터 출력을 위한 액션
+				action = new SerguDetail2Action();
+				forward = action.excute(request, respnse); 
+			}else if(command.equals("/donggudetail2.bigshort")) { // 동구 세부페이지 데이터 출력을 위한 액션
+				action = new DongguDetail2Action();
 				forward = action.excute(request, respnse); 
 			}
 			

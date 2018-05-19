@@ -13,86 +13,112 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		
-		
+		function product(dongname) {
+			var dongname;
+			
+			alert(dongname);
+			
+			$.ajax({
+				type:"POST",
+				url:"sergudetail2.bigshort",
+				data:"dongname=" + dongname,
+				success:function(result){
+					$("#board").html(result);
+				}
+			});
+		}
 		
 		
 		$("#td1").on("click", function() {
 
 			$(".graph").css("display", "none");
 			$(".graph-con2").css("display", "block");
-
+			var dongname = $(".dongname1").val();
+			product(dongname);
 		});
 		$("#td2").on("click", function() {
 
 			$(".graph").css("display", "none");
 			$(".graph-con3").css("display", "block");
-
+			var dongname = $(".dongname2").val();
+			product(dongname);
 		});
 		$("#td3").on("click", function() {
 
 			$(".graph").css("display", "none");
 			$(".graph-con4").css("display", "block");
-
+			var dongname = $(".dongname3").val();
+			product(dongname);
 		});
 		$("#td4").on("click", function() {
 
 			$(".graph").css("display", "none");
 			$(".graph-con5").css("display", "block");
-
+			var dongname = $(".dongname4").val();
+			product(dongname);
 		});
 		$("#td5").on("click", function() {
 
 			$(".graph").css("display", "none");
 			$(".graph-con6").css("display", "block");
-
+			var dongname = $(".dongname5").val();
+			product(dongname);
 		});
 		$("#td6").on("click", function() {
 
 			$(".graph").css("display", "none");
 			$(".graph-con7").css("display", "block");
-
+			var dongname = $(".dongname6").val();
+			product(dongname);
 		});
 		$("#td7").on("click", function() {
 
 			$(".graph").css("display", "none");
 			$(".graph-con8").css("display", "block");
-
+			var dongname = $(".dongname7").val();
+			product(dongname);
 		});
 		$("#td8").on("click", function() {
 
 			$(".graph").css("display", "none");
 			$(".graph-con9").css("display", "block");
-
+			var dongname = $(".dongname8").val();
+			product(dongname);
 		});
 		$("#td9").on("click", function() {
 
 			$(".graph").css("display", "none");
 			$(".graph-con10").css("display", "block");
-
+			var dongname = $(".dongname9").val();
+			product(dongname);
 		});
 		$("#td10").on("click", function() {
 
 			$(".graph").css("display", "none");
 			$(".graph-con11").css("display", "block");
-
+			var dongname = $(".dongname10").val();
+			product(dongname);
 		});
 		$("#td11").on("click", function() {
 
 			$(".graph").css("display", "none");
 			$(".graph-con12").css("display", "block");
-
+			var dongname = $(".dongname11").val();
+			product(dongname);
 		});
 		$("#td12").on("click", function() {
 
 			$(".graph").css("display", "none");
 			$(".graph-con13").css("display", "block");
-
+			var dongname = $(".dongname12").val();
+			product(dongname);
 		});
 		$("#td13").on("click", function() {
 
 			$(".graph").css("display", "none");
 			$(".graph-con14").css("display", "block");
-
+			var dongname = $(".dongname13").val();
+			product(dongname);
 		});
 		
 		setTimeout(function() {
@@ -122,23 +148,23 @@ href="/BigShortWeb/css/west.css?var=1">
 				<table>
 					<thead>
 						<tr id="west1">
-							<td id="td1">광천동</td>
-							<td id="td2">금호동</td>
-							<td id="td3">내방동</td>
-							<td id="td4">농성동</td>
-							<td id="td5">동천동</td>
+							<td id="td1"><a href="#">광천동<input type="hidden" value="광천동" class="dongname1"></a></td>
+							<td id="td2"><a href="#">금호동<input type="hidden" value="금호동" class="dongname2"></a></td>
+							<td id="td3"><a href="#">내방동<input type="hidden" value="내방동" class="dongname3"></a></td>
+							<td id="td4"><a href="#">농성동<input type="hidden" value="농성동" class="dongname4"></a></td>
+							<td id="td5"><a href="#">동천동<input type="hidden" value="동천동" class="dongname5"></a></td>
 						</tr>
 						<tr id="west2">
-							<td id="td6">마륵동</td>
-							<td id="td7">매월동</td>
-							<td id="td8">쌍촌동</td>
-							<td id="td9" class="yangdong">양동</td>
-							<td id="td10">유촌동</td>
+							<td id="td6"><a href="#">마륵동<input type="hidden" value="마륵동" class="dongname6"></a></td>
+							<td id="td7"><a href="#">매월동<input type="hidden" value="매월동" class="dongname7"></a></td>
+							<td id="td8"><a href="#">쌍촌동<input type="hidden" value="쌍촌동" class="dongname8"></a></td>
+							<td id="td9" class="yangdong"><a href="#">양동<input type="hidden" value="양동" class="dongname9"></a></td>
+							<td id="td10"><a href="#">유촌동<input type="hidden" value="유촌동" class="dongname10"></a></td>
 						</tr>
 						<tr id="west3">
-							<td id="td11">치평동</td>
-							<td id="td12">풍암동</td>
-							<td id="td13">화정동</td>
+							<td id="td11"><a href="#">치평동<input type="hidden" value="치평동" class="dongname11"></a></td>
+							<td id="td12"><a href="#">풍암동<input type="hidden" value="풍암동" class="dongname12"></a></td>
+							<td id="td13"><a href="#">화정동<input type="hidden" value="화정동" class="dongname13"></a></td>
 					</thead>
 				</table>
 			</div>
@@ -4737,6 +4763,10 @@ href="/BigShortWeb/css/west.css?var=1">
 			</div>
 
 			<!-- 화정동 그래프 끝 -->
+			<div id="board">
+			
+			</div>
+
 
 		</div>
 	</div>

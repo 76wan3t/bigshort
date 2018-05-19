@@ -76,6 +76,8 @@ table {
 #board {
 	position: relative;
 	margin:  0 auto;
+    width: 100%;
+    height: auto;
 }
 
 #table1 {
@@ -128,10 +130,7 @@ td {
 	cursor: pointer;
 }
 
-#board {
-    width: 100%;
-    height: auto;
-}
+
 
 .product {
 	border: 2px solid #CCC;
