@@ -18,7 +18,7 @@
 			
 			$.ajax({
 				type:"POST",
-				url:"gwangsandetail2.bigshort",
+				url:"donggudetail2.bigshort",
 				data:"dongname=" + dongname,
 				success:function(result){
 					$("#board").html(result);
