@@ -169,17 +169,109 @@
 			$(".graph-con1").css("display", "block");
 
 		}, 1000);
+		
+		
+		
+		/* 계산기 계산 부분 */
+		$("#main_cal_m").on("click", function(){
+			$("#main_cal_m").val("");
+		});
+		
+		$("#main_cal_p").on("click", function(){
+			$("#main_cal_p").val("");
+		});
+		
+		$("#main_cal_m").on("change keyup paste", function(){
+			
+			var ir = $('#main_cal_m').val();
+			
+				var im  = ir / 3.3058;
+				;
+				$('#main_cal_p').val(im.toFixed(2));
+			
+		});
+		
+		$("#main_cal_p").on("change keyup paste", function(){
+			
+			var ir = $('#main_cal_p').val();
+			
+				var im  = ir * 3.3058;
+				$('#main_cal_m').val(im.toFixed(2));
+			
+		});
 
 	});
 </script>
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" type="text/css" href="/BigShortWeb/css/north.css?var=2">
+<style type="text/css">
+	.main_calc {
+	
+    width: 84px;
+    border: 1px solid #d8d8d8;
+    height: 67px;
+    /* position: relative; */
+    
+	}
+	.main_calc_title {
+	
+    background-color: #75787d;
+    width: 84px;
+    height: 27px;
+    text-align: center;
+    color: #FFF;
+    padding-top: 7px;
+    font-size: 11px;
+    
+	}
+	#all_calc{
+		    text-align: center;
+    		position: fixed;
+    		width: 100%;
+    		top : 100px;
+	}
+	#top_calc{
+		width: 1200px;
+		display: inline-block;
+		text-align: right;
+	}
+	#right{
+		display: inline-block;
+	}
+</style>
 </head>
 
 <body>
 
 	<div class="wrap">
+	
+		
+					<!-- 계산기 부분 -->
+		<div id="all_calc">
+			<div id="top_calc">
+				<div id="right">
+					<div class="main_calc_title position">면적환산기</div>
+					<div class="main_calc position">
+							<div style="margin:6px 0 0 5px;text-align:left;height:19px;">
+								<span style="position:relative;display:inline-block;border:1px solid #cfcfcf;height:19px;width:54px">
+									<span style="position:absolute;right:-14px;bottom:0px;color:#68728b;font-size:11px;">㎡</span>
+									<input type="text" id="main_cal_m" style="width:49px; height:17px;line-height:19px; padding:0;padding-left:5px;margin:0;font-size:11px;border:0; position: absolute;">
+								</span>
+							</div>
+							<div style="margin:8px 0 0 5px;text-align:left;height:19px;">
+								<span style="position:relative;display:inline-block;border:1px solid #cfcfcf;height:19px;width:54px">
+								<span style="position:absolute;right:-14px;bottom:0px;color:#68728b;font-size:11px;">평</span>
+								<input type="text" id="main_cal_p" style="width:49px; height:17px;line-height:19px; padding:0;padding-left:5px;margin:0;font-size:11px;border:0; position: absolute;"></span>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	
+	
+	
 		<div id="container">
 			<div class="gakgu">
 				<table>
