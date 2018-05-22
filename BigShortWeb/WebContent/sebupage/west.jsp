@@ -16,7 +16,6 @@
 		function product(dongname) {
 			var dongname;
 			
-			alert(dongname);
 			
 			$.ajax({
 				type:"POST",
