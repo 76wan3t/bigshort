@@ -429,7 +429,7 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 			
 			if (dd != "null") {
 				
-				location.href="answer.bizpoll?bno="+bno;
+				location.href="answer.bigshort?bno="+bno;
 
 			} else {
 				

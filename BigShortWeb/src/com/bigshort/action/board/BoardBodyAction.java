@@ -24,7 +24,7 @@ public class BoardBodyAction implements Action{
 		
 		List<BoardDTO> list = null;
 		List<NextPreDTO> list2 = null;
-		String url = "board/read.jsp";
+		String url = "board/read2.jsp";
 		
 		String bno = request.getParameter("bno");
 		

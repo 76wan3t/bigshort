@@ -18,7 +18,7 @@ public class ReplyAddAction implements Action{
 	public ActionForward excute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		String url = "boardbody.bizpoll";
+		String url = "boardbody.bigshort";
 		
 		String mid = request.getParameter("mid");
 		int bno = Integer.parseInt(request.getParameter("bno"));
