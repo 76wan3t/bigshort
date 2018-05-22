@@ -37,10 +37,21 @@
 	h2{margin:0;padding:0;}
 	.tab_type{box-shadow:1px 1px 4px rgba(0,0,0,0.34);}
 	.tab_type>.btn_tab{display:table;table-layout:fixed;width:100%;}
-	.tab_type>.btn_tab>li{display:table-cell;position:relative;vertical-align:middle;}
+	/* .tab_type>.btn_tab>li.active a { background-color: #fff;border-bottom: 1px solid #fff; color: #38474f;} */
 	.tab_type>.btn_tab>li a{display:block;width: 100%;height:100%;background-color:#faf8f7;border-top:1px solid #fbf9f8;border-bottom:1px solid #f2f0ef;font-size: 20px;font-weight:500; color:#808486; text-align:center; line-height:54px;}
+	.tab_type>.btn_tab>li{display:table-cell;position:relative;vertical-align:middle;}
 	.notice .notice_area .tab_content_wrap{padding:50px 70px 45px;}
 	.tab_type>.tab_content_wrap{background-color:#fff;}
+	.tbl_lst td>a {
+		display: inline;
+		overflow: hidden;
+		width: 500px;
+		text-align: center;
+		color: #717171;
+		text-overflow: ellipsis;
+		word-break: break-all;
+		white-space: nowrap;
+	}
 	form{margin:0;padding:0;}
 	.tab_type .tab_content.active{display:block;}
 	.notice .detail_title{padding:11px 0 15px; border-top:1px solid #717171; border-bottom:1px solid #e2ddd5;}
@@ -48,7 +59,7 @@
 	.notice .detail_title ul{overflow:hidden; margin-top:12px;}
 	.notice .detail_title ul li:first-child{margin-left:0;padding-left:0;border-left:0;}
 	.notice .detail_title ul li{float:left; font-size:14px;color:#717171; line-height:14px;padding-left:12px;margin-left:12px;border-left:1px solid #e2ddd5;}
-	.notice .detail_content{padding:36px 20px 40px; font-size:14px;color:#717171;line-height:22px;}
+	.notice .detail_content{padding:36px 20px 40px; font-size:14px;color:#717171;line-height:150px;}
 	
 	.notice .detail_lst_view{border-top:1px solid #e2ddd5;}
 	.notice detail_lst_view ul li{border-bottom:1px solid #e2ddd5;}
@@ -148,7 +159,6 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 .w3-table td{padding: 8px 21px!important;}
 .w3-table td a{text-overflow: ellipsis;overflow: hidden; max-width:408px; height:19px;}
 
-
 	
 </style>
 </head>
@@ -170,8 +180,8 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 				<div class="notice_area">
 					<div class="tab_type">
 						<ul class="btn_tab">
-							<li><a href="#">질문게시판</a></li>
-							<li class="active"><a href="#">PRESS</a></li>
+							<li><a href="#">게시글</a></li>
+							<!-- <li class="active"><a href="#">자유컬럼</a></li> -->
 						</ul>
 						<div class="tab_content_wrap">
 							
@@ -183,7 +193,7 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
                  							 <form action="modifyview.bigshort" id="bodyupdate_go" method="get">
                  							<input type="hidden" name="bno" id="bno" value="${bDto.bno }" />
                 			 			</form>
-											<strong>${bDto.title}</strong>
+											<strong style="color:blue">${bDto.title}</strong>
 												<c:if test="${fn:trim(sessionScope.loginUser.mid) eq fn:trim(bDto.writer) || fn:trim(sessionScope.loginUser.mname) eq '관리자' }">        
                  		<input type="button" value="수정" class="w3-button w3-white w3-border" id="bodyupdate">
                  	
