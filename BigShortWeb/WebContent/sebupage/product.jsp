@@ -15,11 +15,10 @@
 		<div class="product">
 			<a href="${product.url}">
 			<span class="aptname">건물명 : ${product.aptname}</span>
-			<span class="standard">평수 : ${product.dongextent}</span>
-			<span class="average">평균가 : 
-				<fmt:formatNumber value="${pDto.mean_price}" pattern="###,###,###,###"/>원
+			<span class="standard">면적 : ${product.dongextent}ｍ²</span>
+			<span class="average">평균가 : <fmt:formatNumber value="${pDto.mean_price}" pattern="###,###,###,###"/>원
 			</span>
-			<span class="price">매매가 : ${product.nameprice}원</span>
+			<span class="price">매매가 :${product.nameprice}원</span>
 			</a>
 		</div>
 	</c:forEach>
