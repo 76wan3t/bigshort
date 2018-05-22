@@ -11,9 +11,9 @@
 </head>
 <body>
 	
-	<c:forEach items="${product}" var="product">
+	<c:forEach items="${product}" var="product" >
 		<div class="product">
-			<a href="${product.url}">
+			<a href="${product.url}" target="_blank">
 			<span class="aptname">건물명 : ${product.aptname}</span>
 			<span class="standard">면적 : ${product.dongextent}ｍ²</span>
 			<span class="average">평균가 : <fmt:formatNumber value="${pDto.mean_price}" pattern="###,###,###,###"/>원
