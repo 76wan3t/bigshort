@@ -157,6 +157,7 @@
 <form action="memUpdate.bigshort" method="POST" id="updatefrm" name="updatefrm">
 	<div id="join_wrap">
 	<div id="title">정보 수정</div>
+	<div style="color:red">*필수 사항입니다</div>
 		<div id="info_wrap1">
 		<!-- 아이디 (필수) -->
 			<div class="info" id="id_div">
@@ -200,6 +201,7 @@
 		</div>
 
 <br>		
+		<div style="color:green">아래는 선택사항입니다.</div>
 		<div class="info_wrap" id="info_wrap3">
 		<!-- 사업자 번호 -->
 		<!-- 사업자 등록 번호 ***-**-***** 10자리 형식 --> 
