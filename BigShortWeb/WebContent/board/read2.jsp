@@ -259,18 +259,12 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 		</div>
 		<!-- //container -->
           <div class="brunch_comment #comment" style="display: block;">
+          	<div id="repleyda"></div>
 
 
 			
-            <div class="comment_head"><strong class="tit_comment"><span class="txt_num"></span></strong>
-</div>
-            <div class="comment_content">
-                <div class="list_comment_more" style="display: none;">
-                </div>
-				
 
-            </div>
-<c:if test="${fn:trim(sessionScope.loginUser.mid) ne ''}">
+	<c:if test="${fn:trim(sessionScope.loginUser.mid) ne ''}">
      <div class="wrap_comment_write">
       <form id="replyadd" class="comment_write brunch_login" method="post" action="replyadd.bigshort">
 	<div id="chat">
@@ -395,26 +389,12 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 			data : "bno=" + bno,
 			success : function(result) {
 	
-				$(".comment_content").html(result);
+				$("#repleyda").html(result);
 	
 			}
 		});
 	} 
-	function comment_size(){
-		
-		var bno = $("#bno").val();
-		
-		$.ajax({
-			type : "POST",
-			url : "commentsize.bigshort",
-			data : "bno=" + bno,
-			success : function(result) {
 	
-				$(".tit_comment").html(result);
-	
-			}
-		});
-	} 
 	
 	
 /*  	function sweet_count(){
@@ -437,8 +417,7 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 	$(document).ready(function(){
 		
 		comment_list();
-		comment_size();
-		// sweet_count(); 
+
 		
 		
 		var comment2 = $("#comment2").val();
@@ -524,7 +503,7 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 
 					$("#content2").val("");// 댓글 등록후 내용 초기화 하는 코드
 					comment_list(); // 댓글을 다시 불러드리기 위한 호출 함수
-					comment_size(); // 댓글 수를 파악하기위한 호출 함수
+					
 
 				},
 
@@ -555,7 +534,7 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 						success : function(data) {
 
 							comment_list(); // 삭제 완료하면 댓글을 다시 불러드리기 위한 함수 호출
-							comment_size(); // 댓글 수를 파악하기위한 호출 함수
+							
 						},
 
 						error : function() {

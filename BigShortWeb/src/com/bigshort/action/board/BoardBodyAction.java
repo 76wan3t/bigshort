@@ -54,10 +54,10 @@ public class BoardBodyAction implements Action{
 		
 		// 상세페이지에서 댓글 갯수 구하기
 		
-		List<ReplyDTO> list3 = null;
+		/*List<ReplyDTO> list3 = null;
 		ReplyDAO rDao = ReplyDAO.getInstance();
 		list3 = rDao.replyList(num);
-		request.setAttribute("replylist", list3);
+		request.setAttribute("replylist", list3);*/
 		
 		ActionForward forward = new ActionForward();
 	

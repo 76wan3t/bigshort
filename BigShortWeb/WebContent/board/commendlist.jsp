@@ -22,35 +22,46 @@
 </head>
 <body>
 
-	<c:forEach items="${replylist}" var="replylist">
-               <ul class="list_comment"><li class="item animation_up">
-                <div class="comment">
-			<div class="cont_info">
-				<div class="writer">
-					${replylist.writer} <fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${replylist.regdata }" />
-				</div>
+
+            <div class="comment_head"><strong class="tit_comment">댓글  ${replylist.size()}<span class="txt_num"></span></strong></div>
+            <div class="comment_content">
+                <div class="list_comment_more" >
+                
+	                <c:forEach items="${replylist}" var="replylist">
+		                <ul class="list_comment"><li class="item animation_up">
+			                <div class="comment">
+								<div class="cont_info">
+									<div class="writer">
+										${replylist.writer} <fmt:formatDate pattern="yyyy-MM-dd HH:mm" value="${replylist.regdata }" />
+									</div>
+									
+									
+									<c:set var="cmt" value="${fn:replace(replylist.content,crcn,br)}" />
+									<c:set var="cmt" value="${fn:replace(cmt,cr,br)}" />
+									<c:set var="cmt" value="${fn:replace(cmt,cn,br)}" />
+									<c:set var="cmt" value="${fn:replace(cmt,' ',sp)}" />
+									
+									
+									<div class="desc_comment"><c:out value="${cmt}" escapeXml="false"/></div>
+							
+									<div class="comment_setting">
+										<div class="wrap_comment_menu">
+											<a href="#" class="btn_set" >신고</a>
+											<c:if test="${fn:trim(sessionScope.loginUser.mid) eq fn:trim(replylist.writer) || fn:trim(sessionScope.loginUser.mname) eq '관리자' }">
+												<span class="btn_set"> | <a href="#" class="btn_set rplay_del" href="#" data_num="${replylist.rno }">삭제</a></span>
+											</c:if>
+										</div>
+									</div>
+								</div>
+							</div>
+						</ul>
+					</c:forEach>
+                </div>
 				
-				
-				<c:set var="cmt" value="${fn:replace(replylist.content,crcn,br)}" />
-				<c:set var="cmt" value="${fn:replace(cmt,cr,br)}" />
-				<c:set var="cmt" value="${fn:replace(cmt,cn,br)}" />
-				<c:set var="cmt" value="${fn:replace(cmt,' ',sp)}" />
-				
-				
-				<div class="desc_comment"><c:out value="${cmt}" escapeXml="false"/></div>
-		
-				<div class="comment_setting">
-					<div class="wrap_comment_menu">
-						<a href="#" class="btn_set" >신고</a>
-						<c:if test="${fn:trim(sessionScope.loginUser.mid) eq fn:trim(replylist.writer) || fn:trim(sessionScope.loginUser.mname) eq '관리자' }">
-							<span class="btn_set"> | <a href="#" class="btn_set rplay_del" href="#" data_num="${replylist.rno }">삭제</a></span>
-						</c:if>
-					</div>
-				</div>
-			</div>
-		</div>
-		</ul>
-	</c:forEach>
+
+            </div>
+
+	
 
 </body>
 </html>

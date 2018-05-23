@@ -146,9 +146,6 @@ public class BigshortFrontController extends HttpServlet {
 			}else if(command.equals("/download.bigshort")) { // 다운로드를 받기 위한 액션
 				action = new DownLoadAction();
 				forward = action.excute(request, respnse); 
-			}else if(command.equals("/commentsize.bigshort")) { // 댓글 수를 파악하기위한 액션
-				action = new CommentSizeAction();
-				forward = action.excute(request, respnse); 
 			}else if(command.equals("/myIndex.bigshort")) { // 마이페이지를 가기위한 액션
 				action = new MyIndexAction();
 				forward = action.excute(request, respnse); 
