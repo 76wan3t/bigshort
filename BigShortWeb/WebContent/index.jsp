@@ -26,7 +26,7 @@
 <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
-		
+
 		$(".gwangsan").hover(function() {
 			$(".graph-con1").css("display", "block");
 
@@ -106,7 +106,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" type="text/css" href="css/style.css?var=1">
 </head>
-<body >
+<body>
 	<div class="wrap">
 		<div id="container">
 			<div class="top_page">
@@ -141,61 +141,302 @@
 				<div class="graph-con1">
 					<div class="page-path">광주광역시 > 광산구</div>
 					<div class="graph-inner">
+						<!-- jsHeader -->
+
+
 						<script type="text/javascript">
-							// jsData 
-							function gvisDataComboChartIDed43ab15521() {
+							// jsData
+
+							function gvisDataComboChartIDf405dc97b0a() {
+
 								var data = new google.visualization.DataTable();
-								var datajson = [
-										[ "도산동", 284000000, 13500000, 126220000 ],
-										[ "도천동", 103000000, 80000000, 90000000 ],
-										[ "비아동", 177000000, 75000000, 120012500 ],
-										[ "산월동", 275000000, 195000000,
-												227073529.4 ],
-										[ "산정동", 590000000, 52000000,
-												282357894.7 ],
-										[ "선암동", 350000000, 237000000,
-												287255319.1 ],
-										[ "소촌동", 240000000, 61000000,
-												146711538.5 ],
-										[ "송정동", 270000000, 69000000, 145781250 ],
-										[ "수완동", 890000000, 320000000,
-												533898148.1 ],
-										[ "신가동", 620000000, 113000000,
-												315050279.3 ],
-										[ "신창동", 410000000, 61000000,
-												226107569.7 ],
-										[ "신촌동", 205000000, 88000000,
-												169409090.9 ],
-										[ "쌍암동", 125000000, 125000000,
-												125000000 ],
-										[ "우산동", 273000000, 58000000,
-												108613821.1 ],
-										[ "운남동", 258000000, 85000000, 144241784 ],
-										[ "운수동", 116000000, 103000000,
-												108000000 ],
-										[ "월계동", 320000000, 102000000,
-												171201680.7 ],
-										[ "월곡동", 253000000, 70000000, 162625000 ],
-										[ "장덕동", 800000000, 215000000,
-												385390804.6 ],
-										[ "하남동", 177000000, 121000000,
-												150882352.9 ],
-										[ "흑석동", 420000000, 240000000,
-												322222222.2 ] ];
+
+								var datajson =
+
+								[
+
+								[
+
+								"도산동",
+
+								239000000,
+
+								65000000,
+
+								120858823.5
+
+								],
+
+								[
+
+								"도천동",
+
+								115000000,
+
+								80000000,
+
+								95318181.82
+
+								],
+
+								[
+
+								"비아동",
+
+								167000000,
+
+								74000000,
+
+								111070588.2
+
+								],
+
+								[
+
+								"산월동",
+
+								290000000,
+
+								190000000,
+
+								227545977
+
+								],
+
+								[
+
+								"산정동",
+
+								590000000,
+
+								60000000,
+
+								286268518.5
+
+								],
+
+								[
+
+								"선암동",
+
+								350000000,
+
+								163000000,
+
+								285208333.3
+
+								],
+
+								[
+
+								"소촌동",
+
+								240000000,
+
+								63000000,
+
+								144062992.1
+
+								],
+
+								[
+
+								"송정동",
+
+								310000000,
+
+								68000000,
+
+								152727272.7
+
+								],
+
+								[
+
+								"수완동",
+
+								890000000,
+
+								343000000,
+
+								520254902
+
+								],
+
+								[
+
+								"신가동",
+
+								638000000,
+
+								115000000,
+
+								326886597.9
+
+								],
+
+								[
+
+								"신창동",
+
+								410000000,
+
+								83000000,
+
+								218829411.8
+
+								],
+
+								[
+
+								"신촌동",
+
+								205000000,
+
+								88000000,
+
+								172625000
+
+								],
+
+								[
+
+								"쌍암동",
+
+								165000000,
+
+								135000000,
+
+								150000000
+
+								],
+
+								[
+
+								"우산동",
+
+								350000000,
+
+								58000000,
+
+								115289256.2
+
+								],
+
+								[
+
+								"운남동",
+
+								258000000,
+
+								85000000,
+
+								142078282.8
+
+								],
+
+								[
+
+								"운수동",
+
+								120000000,
+
+								103000000,
+
+								108250000
+
+								],
+
+								[
+
+								"월계동",
+
+								320000000,
+
+								105000000,
+
+								173520634.9
+
+								],
+
+								[
+
+								"월곡동",
+
+								250000000,
+
+								70000000,
+
+								159800000
+
+								],
+
+								[
+
+								"장덕동",
+
+								790000000,
+
+								220000000,
+
+								387949275.4
+
+								],
+
+								[
+
+								"하남동",
+
+								180000000,
+
+								121000000,
+
+								157090909.1
+
+								],
+
+								[
+
+								"흑석동",
+
+								440000000,
+
+								238000000,
+
+								309567567.6
+
+								]
+
+								];
+
 								data.addColumn('string', 'DONGNAME');
+
 								data.addColumn('number', '최대가격');
+
 								data.addColumn('number', '최소가격');
+
 								data.addColumn('number', '평균가');
+
 								data.addRows(datajson);
+
 								return (data);
+
 							}
 
 							// jsDrawChart
-							function drawChartComboChartIDed43ab15521() {
-								var data = gvisDataComboChartIDed43ab15521();
+
+							function drawChartComboChartIDf405dc97b0a() {
+
+								var data = gvisDataComboChartIDf405dc97b0a();
+
 								var options = {};
+
 								options["allowHtml"] = true;
+
 								options["seriesType"] = "bars";
+
+								options["legend"] = "top";
+
 								options["series"] = {
 									2 : {
 										type : 'line'
@@ -203,82 +444,130 @@
 								};
 								/* 차트의 전체 크기 조절 */
 								options["width"] = 1500;
-								options["height"] = 400;
+
+								options["height"] = 483;
 
 								var chart = new google.visualization.ComboChart(
+
 										document
-												.getElementById('ComboChartIDed43ab15521'));
+												.getElementById('ComboChartIDf405dc97b0a')
+
+								);
+
 								chart.draw(data, options);
 
 							}
 
 							// jsDisplayChart
+
 							(function() {
+
 								var pkgs = window.__gvisPackages = window.__gvisPackages
 										|| [];
+
 								var callbacks = window.__gvisCallbacks = window.__gvisCallbacks
 										|| [];
+
 								var chartid = "corechart";
 
 								// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+
 								var i, newPackage = true;
+
 								for (i = 0; newPackage && i < pkgs.length; i++) {
+
 									if (pkgs[i] === chartid)
+
 										newPackage = false;
+
 								}
+
 								if (newPackage)
+
 									pkgs.push(chartid);
 
 								// Add the drawChart function to the global list of callbacks
+
 								callbacks
-										.push(drawChartComboChartIDed43ab15521);
+										.push(drawChartComboChartIDf405dc97b0a);
+
 							})();
-							function displayChartComboChartIDed43ab15521() {
+
+							function displayChartComboChartIDf405dc97b0a() {
+
 								var pkgs = window.__gvisPackages = window.__gvisPackages
 										|| [];
+
 								var callbacks = window.__gvisCallbacks = window.__gvisCallbacks
 										|| [];
+
 								window.clearTimeout(window.__gvisLoad);
+
 								// The timeout is set to 100 because otherwise the container div we are
+
 								// targeting might not be part of the document yet
+
 								window.__gvisLoad = setTimeout(function() {
+
 									var pkgCount = pkgs.length;
+
 									google.load("visualization", "1", {
 										packages : pkgs,
 										callback : function() {
+
 											if (pkgCount != pkgs.length) {
+
 												// Race condition where another setTimeout call snuck in after us; if
+
 												// that call added a package, we must not shift its callback
+
 												return;
+
 											}
+
 											while (callbacks.length > 0)
+
 												callbacks.shift()();
+
 										}
 									});
+
 								}, 100);
+
 							}
 
 							// jsFooter
 						</script>
 
+
+
 						<!-- jsChart -->
+
 						<script type="text/javascript"
-							src="https://www.google.com/jsapi?callback=displayChartComboChartIDed43ab15521"></script>
+							src="https://www.google.com/jsapi?callback=displayChartComboChartIDf405dc97b0a"></script>
+
+
 
 						<!-- divChart -->
 
-						<div id="ComboChartIDed43ab15521"
-							style="width: 500; height: 500;"></div>
+
+
+						<div id="ComboChartIDf405dc97b0a"
+							style="width: 1300; height: automatic;"></div>
+
 						<div>
 							<span>Data: data &#8226; Chart ID: <a
-								href="Chart_ComboChartIDed43ab15521.html">gwangsan-chart</a>
+								href="Chart_ComboChartIDf405dc97b0a.html">ComboChartIDf405dc97b0a</a>
 								&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
+
 							<!-- htmlFooter -->
-							<span> R version 3.4.4 (2018-03-15) &#8226; <a
+
+							<span> R version 3.4.3 (2017-11-30) &#8226; <a
 								href="https://developers.google.com/terms/">Google Terms of
 									Use</a> &#8226; <a
 								href="https://google-developers.appspot.com/chart/interactive/docs/gallery/combochart">Documentation
 									and Data Policy</a>
+
 							</span>
 						</div>
 
@@ -291,58 +580,302 @@
 				<div class="graph-con2">
 					<div class="page-path">광주광역시 > 북구</div>
 					<div class="graph-inner">
+						<!-- jsHeader -->
+
+
 						<script type="text/javascript">
-							// jsData 
-							function gvisDataComboChartIDed4622566b8() {
+							// jsData
+
+							function gvisDataComboChartIDf40224944cc() {
+
 								var data = new google.visualization.DataTable();
-								var datajson = [
-										[ "각화동", 338000000, 92000000,
-												174739130.4 ],
-										[ "동림동", 230000000, 90000000,
-												155756097.6 ],
-										[ "두암동", 650000000, 63000000,
-												160456937.8 ],
-										[ "매곡동", 355000000, 70000000,
-												181766917.3 ],
-										[ "문흥동", 310000000, 57000000,
-												155952554.7 ],
-										[ "본촌동", 500000000, 218000000,
-												340333333.3 ],
-										[ "삼각동", 340000000, 47000000,
-												159423076.9 ],
-										[ "신안동", 205000000, 37500000, 144025000 ],
-										[ "신용동", 520000000, 115000000,
-												298381679.4 ],
-										[ "양산동", 395000000, 77500000,
-												190212837.8 ],
-										[ "연제동", 335000000, 87000000,
-												190628819.4 ],
-										[ "오치동", 179500000, 62000000,
-												121810606.1 ],
-										[ "용두동", 275000000, 259000000,
-												267333333.3 ],
-										[ "용봉동", 450000000, 77000000,
-												192227848.1 ],
-										[ "우산동", 263000000, 96000000,
-												209161290.3 ],
-										[ "운암동", 610000000, 65000000, 231975502 ],
-										[ "일곡동", 460000000, 87000000,
-												196834801.8 ],
-										[ "임동", 340000000, 77000000, 231200000 ] ];
+
+								var datajson =
+
+								[
+
+								[
+
+								"각화동",
+
+								338000000,
+
+								92000000,
+
+								182941176.5
+
+								],
+
+								[
+
+								"동림동",
+
+								230000000,
+
+								83000000,
+
+								143600000
+
+								],
+
+								[
+
+								"동선택",
+
+								175000000,
+
+								175000000,
+
+								175000000
+
+								],
+
+								[
+
+								"두암동",
+
+								650000000,
+
+								63000000,
+
+								157330449.8
+
+								],
+
+								[
+
+								"매곡동",
+
+								355000000,
+
+								78000000,
+
+								185408227.8
+
+								],
+
+								[
+
+								"문흥동",
+
+								300000000,
+
+								56000000,
+
+								147044705.9
+
+								],
+
+								[
+
+								"본촌동",
+
+								398000000,
+
+								215000000,
+
+								322186046.5
+
+								],
+
+								[
+
+								"삼각동",
+
+								335000000,
+
+								47000000,
+
+								174184615.4
+
+								],
+
+								[
+
+								"신안동",
+
+								245000000,
+
+								95000000,
+
+								151421052.6
+
+								],
+
+								[
+
+								"신용동",
+
+								520000000,
+
+								98000000,
+
+								276141361.3
+
+								],
+
+								[
+
+								"양산동",
+
+								450000000,
+
+								74000000,
+
+								183785714.3
+
+								],
+
+								[
+
+								"연제동",
+
+								335000000,
+
+								79000000,
+
+								201247256.1
+
+								],
+
+								[
+
+								"오치동",
+
+								418000000,
+
+								43000000,
+
+								142250000
+
+								],
+
+								[
+
+								"용두동",
+
+								480000000,
+
+								109000000,
+
+								234058695.7
+
+								],
+
+								[
+
+								"용봉동",
+
+								465000000,
+
+								77000000,
+
+								213021447.7
+
+								],
+
+								[
+
+								"우산동",
+
+								263000000,
+
+								90000000,
+
+								200454545.5
+
+								],
+
+								[
+
+								"운암동",
+
+								590000000,
+
+								83000000,
+
+								227170227.3
+
+								],
+
+								[
+
+								"일곡동",
+
+								465000000,
+
+								85000000,
+
+								185236014
+
+								],
+
+								[
+
+								"임동",
+
+								340000000,
+
+								43000000,
+
+								218070370.4
+
+								],
+
+								[
+
+								"중흥동",
+
+								300000000,
+
+								73000000,
+
+								213500000
+
+								],
+
+								[
+
+								"풍향동",
+
+								400000000,
+
+								125000000,
+
+								326600000
+
+								]
+
+								];
+
 								data.addColumn('string', 'DONGNAME');
+
 								data.addColumn('number', '최대가격');
+
 								data.addColumn('number', '최소가격');
+
 								data.addColumn('number', '평균가');
+
 								data.addRows(datajson);
+
 								return (data);
+
 							}
 
 							// jsDrawChart
-							function drawChartComboChartIDed4622566b8() {
-								var data = gvisDataComboChartIDed4622566b8();
+
+							function drawChartComboChartIDf40224944cc() {
+
+								var data = gvisDataComboChartIDf40224944cc();
+
 								var options = {};
+
 								options["allowHtml"] = true;
+
 								options["seriesType"] = "bars";
+
+								options["legend"] = "top";
+
 								options["series"] = {
 									2 : {
 										type : 'line'
@@ -350,82 +883,130 @@
 								};
 								/* 차트의 전체 크기 조절 */
 								options["width"] = 1500;
-								options["height"] = 400;
+
+								options["height"] = 483;
 
 								var chart = new google.visualization.ComboChart(
+
 										document
-												.getElementById('ComboChartIDed4622566b8'));
+												.getElementById('ComboChartIDf40224944cc')
+
+								);
+
 								chart.draw(data, options);
 
 							}
 
 							// jsDisplayChart
+
 							(function() {
+
 								var pkgs = window.__gvisPackages = window.__gvisPackages
 										|| [];
+
 								var callbacks = window.__gvisCallbacks = window.__gvisCallbacks
 										|| [];
+
 								var chartid = "corechart";
 
 								// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+
 								var i, newPackage = true;
+
 								for (i = 0; newPackage && i < pkgs.length; i++) {
+
 									if (pkgs[i] === chartid)
+
 										newPackage = false;
+
 								}
+
 								if (newPackage)
+
 									pkgs.push(chartid);
 
 								// Add the drawChart function to the global list of callbacks
+
 								callbacks
-										.push(drawChartComboChartIDed4622566b8);
+										.push(drawChartComboChartIDf40224944cc);
+
 							})();
-							function displayChartComboChartIDed4622566b8() {
+
+							function displayChartComboChartIDf40224944cc() {
+
 								var pkgs = window.__gvisPackages = window.__gvisPackages
 										|| [];
+
 								var callbacks = window.__gvisCallbacks = window.__gvisCallbacks
 										|| [];
+
 								window.clearTimeout(window.__gvisLoad);
+
 								// The timeout is set to 100 because otherwise the container div we are
+
 								// targeting might not be part of the document yet
+
 								window.__gvisLoad = setTimeout(function() {
+
 									var pkgCount = pkgs.length;
+
 									google.load("visualization", "1", {
 										packages : pkgs,
 										callback : function() {
+
 											if (pkgCount != pkgs.length) {
+
 												// Race condition where another setTimeout call snuck in after us; if
+
 												// that call added a package, we must not shift its callback
+
 												return;
+
 											}
+
 											while (callbacks.length > 0)
+
 												callbacks.shift()();
+
 										}
 									});
+
 								}, 100);
+
 							}
 
 							// jsFooter
 						</script>
 
+
+
 						<!-- jsChart -->
+
 						<script type="text/javascript"
-							src="https://www.google.com/jsapi?callback=displayChartComboChartIDed4622566b8"></script>
+							src="https://www.google.com/jsapi?callback=displayChartComboChartIDf40224944cc"></script>
+
+
 
 						<!-- divChart -->
 
-						<div id="ComboChartIDed4622566b8"
-							style="width: 500; height: 500;"></div>
+
+
+						<div id="ComboChartIDf40224944cc"
+							style="width: 500; height: automatic;"></div>
+
 						<div>
 							<span>Data: data &#8226; Chart ID: <a
-								href="Chart_ComboChartIDed4622566b8.html">bukgu-chart</a>
+								href="Chart_ComboChartIDf40224944cc.html">ComboChartIDf40224944cc</a>
 								&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
+
 							<!-- htmlFooter -->
-							<span> R version 3.4.4 (2018-03-15) &#8226; <a
+
+							<span> R version 3.4.3 (2017-11-30) &#8226; <a
 								href="https://developers.google.com/terms/">Google Terms of
 									Use</a> &#8226; <a
 								href="https://google-developers.appspot.com/chart/interactive/docs/gallery/combochart">Documentation
 									and Data Policy</a>
+
 							</span>
 						</div>
 
@@ -438,47 +1019,194 @@
 				<div class="graph-con3">
 					<div class="page-path">광주광역시 > 남구</div>
 					<div class="graph-inner">
+						<!-- jsHeader -->
+
+
 						<script type="text/javascript">
-							// jsData 
-							function gvisDataComboChartIDed43cc1148f() {
+							// jsData
+
+							function gvisDataComboChartIDf4045996d2d() {
+
 								var data = new google.visualization.DataTable();
-								var datajson = [
-										[ "노대동", 640000000, 238000000,
-												348697916.7 ],
-										[ "방림동", 320000000, 60000000,
-												190458333.3 ],
-										[ "백운동", 400000000, 113000000,
-												252310810.8 ],
-										[ "봉선동", 1500000000, 73000000,
-												269121951.2 ],
-										[ "서동", 320000000, 113000000, 277750000 ],
-										[ "송하동", 265000000, 103000000,
-												182238095.2 ],
-										[ "양림동", 320000000, 290000000,
-												308333333.3 ],
-										[ "월산동", 660000000, 68000000, 231600000 ],
-										[ "주월동", 500000000, 53000000,
-												209880842.9 ],
-										[ "지석동", 245000000, 243000000,
-												243666666.7 ],
-										[ "진월동", 550000000, 62000000,
-												209718373.5 ],
-										[ "행암동", 570000000, 255000000,
-												320666666.7 ] ];
+
+								var datajson =
+
+								[
+
+								[
+
+								"노대동",
+
+								595000000,
+
+								238000000,
+
+								340743902.4
+
+								],
+
+								[
+
+								"방림동",
+
+								322000000,
+
+								65000000,
+
+								182295082
+
+								],
+
+								[
+
+								"백운동",
+
+								420000000,
+
+								114000000,
+
+								260474359
+
+								],
+
+								[
+
+								"봉선동",
+
+								1500000000,
+
+								60000000,
+
+								277380239.5
+
+								],
+
+								[
+
+								"서동",
+
+								318000000,
+
+								113000000,
+
+								257533333.3
+
+								],
+
+								[
+
+								"송하동",
+
+								265000000,
+
+								105000000,
+
+								178426470.6
+
+								],
+
+								[
+
+								"양림동",
+
+								310000000,
+
+								285000000,
+
+								298428571.4
+
+								],
+
+								[
+
+								"월산동",
+
+								465000000,
+
+								73000000,
+
+								199184210.5
+
+								],
+
+								[
+
+								"주월동",
+
+								500000000,
+
+								53000000,
+
+								210938367.3
+
+								],
+
+								[
+
+								"지석동",
+
+								353000000,
+
+								245000000,
+
+								286600000
+
+								],
+
+								[
+
+								"진월동",
+
+								710000000,
+
+								52000000,
+
+								216153322.7
+
+								],
+
+								[
+
+								"행암동",
+
+								630000000,
+
+								255000000,
+
+								328826087
+
+								]
+
+								];
+
 								data.addColumn('string', 'DONGNAME');
+
 								data.addColumn('number', '최대가격');
+
 								data.addColumn('number', '최소가격');
+
 								data.addColumn('number', '평균가');
+
 								data.addRows(datajson);
+
 								return (data);
+
 							}
 
 							// jsDrawChart
-							function drawChartComboChartIDed43cc1148f() {
-								var data = gvisDataComboChartIDed43cc1148f();
+
+							function drawChartComboChartIDf4045996d2d() {
+
+								var data = gvisDataComboChartIDf4045996d2d();
+
 								var options = {};
+
 								options["allowHtml"] = true;
+
 								options["seriesType"] = "bars";
+
+								options["legend"] = "top";
+
 								options["series"] = {
 									2 : {
 										type : 'line'
@@ -486,83 +1214,130 @@
 								};
 								/* 차트의 전체 크기 조절 */
 								options["width"] = 1500;
-								options["height"] = 400;
-								options["overflow"] = scroll;
+
+								options["height"] = 483;
 
 								var chart = new google.visualization.ComboChart(
+
 										document
-												.getElementById('ComboChartIDed43cc1148f'));
+												.getElementById('ComboChartIDf4045996d2d')
+
+								);
+
 								chart.draw(data, options);
 
 							}
 
 							// jsDisplayChart
+
 							(function() {
+
 								var pkgs = window.__gvisPackages = window.__gvisPackages
 										|| [];
+
 								var callbacks = window.__gvisCallbacks = window.__gvisCallbacks
 										|| [];
+
 								var chartid = "corechart";
 
 								// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+
 								var i, newPackage = true;
+
 								for (i = 0; newPackage && i < pkgs.length; i++) {
+
 									if (pkgs[i] === chartid)
+
 										newPackage = false;
+
 								}
+
 								if (newPackage)
+
 									pkgs.push(chartid);
 
 								// Add the drawChart function to the global list of callbacks
+
 								callbacks
-										.push(drawChartComboChartIDed43cc1148f);
+										.push(drawChartComboChartIDf4045996d2d);
+
 							})();
-							function displayChartComboChartIDed43cc1148f() {
+
+							function displayChartComboChartIDf4045996d2d() {
+
 								var pkgs = window.__gvisPackages = window.__gvisPackages
 										|| [];
+
 								var callbacks = window.__gvisCallbacks = window.__gvisCallbacks
 										|| [];
+
 								window.clearTimeout(window.__gvisLoad);
+
 								// The timeout is set to 100 because otherwise the container div we are
+
 								// targeting might not be part of the document yet
+
 								window.__gvisLoad = setTimeout(function() {
+
 									var pkgCount = pkgs.length;
+
 									google.load("visualization", "1", {
 										packages : pkgs,
 										callback : function() {
+
 											if (pkgCount != pkgs.length) {
+
 												// Race condition where another setTimeout call snuck in after us; if
+
 												// that call added a package, we must not shift its callback
+
 												return;
+
 											}
+
 											while (callbacks.length > 0)
+
 												callbacks.shift()();
+
 										}
 									});
+
 								}, 100);
+
 							}
 
 							// jsFooter
 						</script>
 
+
+
 						<!-- jsChart -->
+
 						<script type="text/javascript"
-							src="https://www.google.com/jsapi?callback=displayChartComboChartIDed43cc1148f"></script>
+							src="https://www.google.com/jsapi?callback=displayChartComboChartIDf4045996d2d"></script>
+
+
 
 						<!-- divChart -->
 
-						<div id="ComboChartIDed43cc1148f"
-							style="width: 500; height: 500;"></div>
+
+
+						<div id="ComboChartIDf4045996d2d"
+							style="width: 500; height: automatic;"></div>
+
 						<div>
 							<span>Data: data &#8226; Chart ID: <a
-								href="Chart_ComboChartIDed43cc1148f.html">namgu-chart</a>
+								href="Chart_ComboChartIDf4045996d2d.html">ComboChartIDf4045996d2d</a>
 								&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
+
 							<!-- htmlFooter -->
-							<span> R version 3.4.4 (2018-03-15) &#8226; <a
+
+							<span> R version 3.4.3 (2017-11-30) &#8226; <a
 								href="https://developers.google.com/terms/">Google Terms of
 									Use</a> &#8226; <a
 								href="https://google-developers.appspot.com/chart/interactive/docs/gallery/combochart">Documentation
 									and Data Policy</a>
+
 							</span>
 						</div>
 
@@ -574,50 +1349,218 @@
 				<div class="graph-con4">
 					<div class="page-path">광주광역시 > 서구</div>
 					<div class="graph-inner">
+						<!-- jsHeader -->
+
+
 						<script type="text/javascript">
-							// jsData 
-							function gvisDataComboChartIDed443272950() {
+							// jsData
+
+							function gvisDataComboChartIDf40691766e2() {
+
 								var data = new google.visualization.DataTable();
-								var datajson = [
-										[ "광천동", 590000000, 85000000,
-												428285714.3 ],
-										[ "금호동", 635000000, 90000000,
-												226853479.9 ],
-										[ "내방동", 255000000, 61000000,
-												160386363.6 ],
-										[ "농성동", 235000000, 59000000,
-												154307692.3 ],
-										[ "동천동", 650000000, 248000000,
-												345672413.8 ],
-										[ "마륵동", 690000000, 180000000,
-												442384615.4 ],
-										[ "매월동", 410000000, 239000000,
-												323166666.7 ],
-										[ "쌍촌동", 820000000, 75000000,
-												225285046.7 ],
-										[ "양동", 350000000, 102000000, 179500000 ],
-										[ "유촌동", 255000000, 91000000,
-												186680722.9 ],
-										[ "치평동", 710000000, 72500000,
-												292638235.3 ],
-										[ "풍암동", 820000000, 85000000,
-												225360128.6 ],
-										[ "화정동", 640000000, 51000000,
-												270446601.9 ] ];
+
+								var datajson =
+
+								[
+
+								[
+
+								"광천동",
+
+								585000000,
+
+								80000000,
+
+								333758620.7
+
+								],
+
+								[
+
+								"금호동",
+
+								760000000,
+
+								86000000,
+
+								227996153.8
+
+								],
+
+								[
+
+								"내방동",
+
+								255000000,
+
+								62000000,
+
+								163000000
+
+								],
+
+								[
+
+								"농성동",
+
+								240000000,
+
+								78000000,
+
+								165812500
+
+								],
+
+								[
+
+								"동선택",
+
+								75000000,
+
+								75000000,
+
+								75000000
+
+								],
+
+								[
+
+								"동천동",
+
+								595000000,
+
+								250000000,
+
+								347260000
+
+								],
+
+								[
+
+								"마륵동",
+
+								690000000,
+
+								180000000,
+
+								446250000
+
+								],
+
+								[
+
+								"매월동",
+
+								254000000,
+
+								240000000,
+
+								244000000
+
+								],
+
+								[
+
+								"쌍촌동",
+
+								950000000,
+
+								92000000,
+
+								234459183.7
+
+								],
+
+								[
+
+								"양동",
+
+								350000000,
+
+								102000000,
+
+								188189189.2
+
+								],
+
+								[
+
+								"유촌동",
+
+								255000000,
+
+								91000000,
+
+								185375000
+
+								],
+
+								[
+
+								"치평동",
+
+								710000000,
+
+								72500000,
+
+								287769480.5
+
+								],
+
+								[
+
+								"풍암동",
+
+								728000000,
+
+								82000000,
+
+								225330000
+
+								],
+
+								[
+
+								"화정동",
+
+								625000000,
+
+								63000000,
+
+								280926045
+
+								]
+
+								];
+
 								data.addColumn('string', 'DONGNAME');
+
 								data.addColumn('number', '최대가격');
+
 								data.addColumn('number', '최소가격');
+
 								data.addColumn('number', '평균가');
+
 								data.addRows(datajson);
+
 								return (data);
+
 							}
 
 							// jsDrawChart
-							function drawChartComboChartIDed443272950() {
-								var data = gvisDataComboChartIDed443272950();
+
+							function drawChartComboChartIDf40691766e2() {
+
+								var data = gvisDataComboChartIDf40691766e2();
+
 								var options = {};
+
 								options["allowHtml"] = true;
+
 								options["seriesType"] = "bars";
+
+								options["legend"] = "top";
+
 								options["series"] = {
 									2 : {
 										type : 'line'
@@ -625,82 +1568,130 @@
 								};
 								/* 차트의 전체 크기 조절 */
 								options["width"] = 1500;
-								options["height"] = 400;
+
+								options["height"] = 483;
 
 								var chart = new google.visualization.ComboChart(
+
 										document
-												.getElementById('ComboChartIDed443272950'));
+												.getElementById('ComboChartIDf40691766e2')
+
+								);
+
 								chart.draw(data, options);
 
 							}
 
 							// jsDisplayChart
+
 							(function() {
+
 								var pkgs = window.__gvisPackages = window.__gvisPackages
 										|| [];
+
 								var callbacks = window.__gvisCallbacks = window.__gvisCallbacks
 										|| [];
+
 								var chartid = "corechart";
 
 								// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+
 								var i, newPackage = true;
+
 								for (i = 0; newPackage && i < pkgs.length; i++) {
+
 									if (pkgs[i] === chartid)
+
 										newPackage = false;
+
 								}
+
 								if (newPackage)
+
 									pkgs.push(chartid);
 
 								// Add the drawChart function to the global list of callbacks
+
 								callbacks
-										.push(drawChartComboChartIDed443272950);
+										.push(drawChartComboChartIDf40691766e2);
+
 							})();
-							function displayChartComboChartIDed443272950() {
+
+							function displayChartComboChartIDf40691766e2() {
+
 								var pkgs = window.__gvisPackages = window.__gvisPackages
 										|| [];
+
 								var callbacks = window.__gvisCallbacks = window.__gvisCallbacks
 										|| [];
+
 								window.clearTimeout(window.__gvisLoad);
+
 								// The timeout is set to 100 because otherwise the container div we are
+
 								// targeting might not be part of the document yet
+
 								window.__gvisLoad = setTimeout(function() {
+
 									var pkgCount = pkgs.length;
+
 									google.load("visualization", "1", {
 										packages : pkgs,
 										callback : function() {
+
 											if (pkgCount != pkgs.length) {
+
 												// Race condition where another setTimeout call snuck in after us; if
+
 												// that call added a package, we must not shift its callback
+
 												return;
+
 											}
+
 											while (callbacks.length > 0)
+
 												callbacks.shift()();
+
 										}
 									});
+
 								}, 100);
+
 							}
 
 							// jsFooter
 						</script>
 
+
+
 						<!-- jsChart -->
+
 						<script type="text/javascript"
-							src="https://www.google.com/jsapi?callback=displayChartComboChartIDed443272950"></script>
+							src="https://www.google.com/jsapi?callback=displayChartComboChartIDf40691766e2"></script>
+
+
 
 						<!-- divChart -->
 
-						<div id="ComboChartIDed443272950"
-							style="width: 500; height: 500;"></div>
+
+
+						<div id="ComboChartIDf40691766e2"
+							style="width: 500; height: automatic;"></div>
+
 						<div>
 							<span>Data: data &#8226; Chart ID: <a
-								href="Chart_ComboChartIDed443272950.html">seogu-chart</a>
+								href="Chart_ComboChartIDf40691766e2.html">ComboChartIDf40691766e2</a>
 								&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
+
 							<!-- htmlFooter -->
-							<span> R version 3.4.4 (2018-03-15) &#8226; <a
+
+							<span> R version 3.4.3 (2017-11-30) &#8226; <a
 								href="https://developers.google.com/terms/">Google Terms of
 									Use</a> &#8226; <a
 								href="https://google-developers.appspot.com/chart/interactive/docs/gallery/combochart">Documentation
 									and Data Policy</a>
+
 							</span>
 						</div>
 
@@ -712,49 +1703,206 @@
 				<div class="graph-con5">
 					<div class="page-path">광주광역시 > 동구</div>
 					<div class="graph-inner">
+						<!-- jsHeader -->
+
+
 						<script type="text/javascript">
-							// jsData 
-							function gvisDataComboChartIDed474ab435b() {
+							// jsData
+
+							function gvisDataComboChartIDf40224613d8() {
+
 								var data = new google.visualization.DataTable();
-								var datajson = [
-										[ "계림동", 435000000, 89000000, 255238806 ],
-										[ "금남로2가", 250000000, 250000000,
-												250000000 ],
-										[ "금남로3가", 122000000, 122000000,
-												122000000 ],
-										[ "대인동", 206000000, 155000000,
-												185333333.3 ],
-										[ "동명동", 230000000, 210000000,
-												223333333.3 ],
-										[ "산수동", 315000000, 65000000,
-												176697674.4 ],
-										[ "소태동", 541500000, 72000000,
-												151035714.3 ],
-										[ "용산동", 147000000, 147000000,
-												147000000 ],
-										[ "운림동", 410000000, 125000000,
-												228898550.7 ],
-										[ "월남동", 300000000, 210000000,
-												255527777.8 ],
-										[ "지산동", 300000000, 85000000, 219718750 ],
-										[ "충장로4가", 218000000, 107000000,
-												183857142.9 ],
-										[ "학동", 658000000, 105000000,
-												263752136.8 ] ];
+
+								var datajson =
+
+								[
+
+								[
+
+								"계림동",
+
+								435000000,
+
+								89000000,
+
+								258900000
+
+								],
+
+								[
+
+								"금남로2가",
+
+								250000000,
+
+								230000000,
+
+								236666666.7
+
+								],
+
+								[
+
+								"금남로3가",
+
+								129000000,
+
+								115000000,
+
+								122000000
+
+								],
+
+								[
+
+								"동명동",
+
+								235000000,
+
+								235000000,
+
+								235000000
+
+								],
+
+								[
+
+								"산수동",
+
+								330000000,
+
+								60000000,
+
+								184500000
+
+								],
+
+								[
+
+								"소태동",
+
+								550000000,
+
+								67000000,
+
+								196807692.3
+
+								],
+
+								[
+
+								"수기동",
+
+								85000000,
+
+								82000000,
+
+								83500000
+
+								],
+
+								[
+
+								"용산동",
+
+								255000000,
+
+								78000000,
+
+								140600000
+
+								],
+
+								[
+
+								"운림동",
+
+								455000000,
+
+								130000000,
+
+								238178571.4
+
+								],
+
+								[
+
+								"월남동",
+
+								300000000,
+
+								207000000,
+
+								253411764.7
+
+								],
+
+								[
+
+								"지산동",
+
+								300000000,
+
+								72000000,
+
+								205125000
+
+								],
+
+								[
+
+								"충장로4가",
+
+								225000000,
+
+								100000000,
+
+								181500000
+
+								],
+
+								[
+
+								"학동",
+
+								750000000,
+
+								105000000,
+
+								269622807
+
+								]
+
+								];
+
 								data.addColumn('string', 'DONGNAME');
+
 								data.addColumn('number', '최대가격');
+
 								data.addColumn('number', '최소가격');
+
 								data.addColumn('number', '평균가');
+
 								data.addRows(datajson);
+
 								return (data);
+
 							}
 
 							// jsDrawChart
-							function drawChartComboChartIDed474ab435b() {
-								var data = gvisDataComboChartIDed474ab435b();
+
+							function drawChartComboChartIDf40224613d8() {
+
+								var data = gvisDataComboChartIDf40224613d8();
+
 								var options = {};
+
 								options["allowHtml"] = true;
+
 								options["seriesType"] = "bars";
+
+								options["legend"] = "top";
+
 								options["series"] = {
 									2 : {
 										type : 'line'
@@ -762,82 +1910,130 @@
 								};
 								/* 차트의 전체 크기 조절 */
 								options["width"] = 1500;
-								options["height"] = 400;
+
+								options["height"] = 483;
 
 								var chart = new google.visualization.ComboChart(
+
 										document
-												.getElementById('ComboChartIDed474ab435b'));
+												.getElementById('ComboChartIDf40224613d8')
+
+								);
+
 								chart.draw(data, options);
 
 							}
 
 							// jsDisplayChart
+
 							(function() {
+
 								var pkgs = window.__gvisPackages = window.__gvisPackages
 										|| [];
+
 								var callbacks = window.__gvisCallbacks = window.__gvisCallbacks
 										|| [];
+
 								var chartid = "corechart";
 
 								// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+
 								var i, newPackage = true;
+
 								for (i = 0; newPackage && i < pkgs.length; i++) {
+
 									if (pkgs[i] === chartid)
+
 										newPackage = false;
+
 								}
+
 								if (newPackage)
+
 									pkgs.push(chartid);
 
 								// Add the drawChart function to the global list of callbacks
+
 								callbacks
-										.push(drawChartComboChartIDed474ab435b);
+										.push(drawChartComboChartIDf40224613d8);
+
 							})();
-							function displayChartComboChartIDed474ab435b() {
+
+							function displayChartComboChartIDf40224613d8() {
+
 								var pkgs = window.__gvisPackages = window.__gvisPackages
 										|| [];
+
 								var callbacks = window.__gvisCallbacks = window.__gvisCallbacks
 										|| [];
+
 								window.clearTimeout(window.__gvisLoad);
+
 								// The timeout is set to 100 because otherwise the container div we are
+
 								// targeting might not be part of the document yet
+
 								window.__gvisLoad = setTimeout(function() {
+
 									var pkgCount = pkgs.length;
+
 									google.load("visualization", "1", {
 										packages : pkgs,
 										callback : function() {
+
 											if (pkgCount != pkgs.length) {
+
 												// Race condition where another setTimeout call snuck in after us; if
+
 												// that call added a package, we must not shift its callback
+
 												return;
+
 											}
+
 											while (callbacks.length > 0)
+
 												callbacks.shift()();
+
 										}
 									});
+
 								}, 100);
+
 							}
 
 							// jsFooter
 						</script>
 
+
+
 						<!-- jsChart -->
+
 						<script type="text/javascript"
-							src="https://www.google.com/jsapi?callback=displayChartComboChartIDed474ab435b"></script>
+							src="https://www.google.com/jsapi?callback=displayChartComboChartIDf40224613d8"></script>
+
+
 
 						<!-- divChart -->
 
-						<div id="ComboChartIDed474ab435b"
-							style="width: 500; height: 500;"></div>
+
+
+						<div id="ComboChartIDf40224613d8"
+							style="width: 500; height: automatic;"></div>
+
 						<div>
 							<span>Data: data &#8226; Chart ID: <a
-								href="Chart_ComboChartIDed474ab435b.html">donggu-chart</a>
+								href="Chart_ComboChartIDf40224613d8.html">ComboChartIDf40224613d8</a>
 								&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
+
 							<!-- htmlFooter -->
-							<span> R version 3.4.4 (2018-03-15) &#8226; <a
+
+							<span> R version 3.4.3 (2017-11-30) &#8226; <a
 								href="https://developers.google.com/terms/">Google Terms of
 									Use</a> &#8226; <a
 								href="https://google-developers.appspot.com/chart/interactive/docs/gallery/combochart">Documentation
 									and Data Policy</a>
+
 							</span>
 						</div>
 

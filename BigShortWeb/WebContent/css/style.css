@@ -134,6 +134,8 @@
 
 #container .graph-inner {
 	min-height: 350px;
+	position: relative;
+	left: -60px;
 }
 
 .menu-utility-user > li > a {

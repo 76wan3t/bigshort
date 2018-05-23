@@ -12,21 +12,20 @@
 <title>가방</title>
 <script type="text/javascript">
 	$(document).ready(function() {
-		
+
 		function product(dongname) {
 			var dongname;
-			
+
 			$.ajax({
-				type:"POST",
-				url:"donggudetail2.bigshort",
-				data:"dongname=" + dongname,
-				success:function(result){
+				type : "POST",
+				url : "donggudetail2.bigshort",
+				data : "dongname=" + dongname,
+				success : function(result) {
 					$("#board").html(result);
 				}
 			});
 		}
-		
-		
+
 		$("#td1").on("click", function() {
 
 			$(".graph").css("display", "none");
@@ -117,34 +116,34 @@
 			$(".graph-con1").css("display", "block");
 
 		}, 1000);
-		
+
 		/* 계산기 계산 부분 */
-		
-		$("#main_cal_m").on("click", function(){
+
+		$("#main_cal_m").on("click", function() {
 			$("#main_cal_m").val("");
 		});
-		
-		$("#main_cal_p").on("click", function(){
+
+		$("#main_cal_p").on("click", function() {
 			$("#main_cal_p").val("");
 		});
-		
-		$("#main_cal_m").on("change keyup paste", function(){
-			
+
+		$("#main_cal_m").on("change keyup paste", function() {
+
 			var ir = $('#main_cal_m').val();
-			
-				var im  = ir / 3.3058;
-				;
-				$('#main_cal_p').val(im.toFixed(2));
-			
+
+			var im = ir / 3.3058;
+			;
+			$('#main_cal_p').val(im.toFixed(2));
+
 		});
-		
-		$("#main_cal_p").on("change keyup paste", function(){
-			
+
+		$("#main_cal_p").on("change keyup paste", function() {
+
 			var ir = $('#main_cal_p').val();
-			
-				var im  = ir * 3.3058;
-				$('#main_cal_m').val(im.toFixed(2));
-			
+
+			var im = ir * 3.3058;
+			$('#main_cal_m').val(im.toFixed(2));
+
 		});
 
 	});
@@ -153,41 +152,46 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" type="text/css"
 	href="/BigShortWeb/css/east.css?var=1">
-	
-	<style type="text/css">
-	.main_calc {
-	
-    width: 84px;
-    border: 1px solid #d8d8d8;
-    height: 67px;
-    /* position: relative; */
-    
-	}
-	.main_calc_title {
-	
-    background-color: #75787d;
-    width: 84px;
-    height: 27px;
-    text-align: center;
-    color: #FFF;
-    padding-top: 7px;
-    font-size: 11px;
-    
-	}
-	#all_calc{
-		    text-align: center;
-    		position: fixed;
-    		width: 100%;
-    		top : 100px;
-	}
-	#top_calc{
-		width: 1200px;
-		display: inline-block;
-		text-align: right;
-	}
-	#right{
-		display: inline-block;
-	}
+
+<style type="text/css">
+.main_calc {
+	width: 84px;
+	border: 1px solid #d8d8d8;
+	height: 67px;
+	/* position: relative; */
+}
+
+.main_calc_title {
+	background-color: #75787d;
+	width: 84px;
+	height: 27px;
+	text-align: center;
+	color: #FFF;
+	padding-top: 7px;
+	font-size: 11px;
+}
+
+#all_calc {
+	text-align: center;
+	position: fixed;
+	width: 100%;
+	top: 100px;
+}
+
+#top_calc {
+	width: 1200px;
+	display: inline-block;
+	text-align: right;
+}
+
+#right {
+	display: inline-block;
+}
+
+.graph-inner {
+	position: relative;
+	left: -60px;
+}
 </style>
 </head>
 
@@ -197,54 +201,73 @@
 <body>
 
 	<div class="wrap">
-	
-				<!-- 계산기 부분 -->
+
+		<!-- 계산기 부분 -->
 		<div id="all_calc">
 			<div id="top_calc">
 				<div id="right">
 					<div class="main_calc_title position">면적환산기</div>
 					<div class="main_calc position">
-							<div style="margin:6px 0 0 5px;text-align:left;height:19px;">
-								<span style="position:relative;display:inline-block;border:1px solid #cfcfcf;height:19px;width:54px">
-									<span style="position:absolute;right:-14px;bottom:0px;color:#68728b;font-size:11px;">㎡</span>
-									<input type="text" id="main_cal_m" style="width:49px; height:17px;line-height:19px; padding:0;padding-left:5px;margin:0;font-size:11px;border:0; position: absolute;">
-								</span>
-							</div>
-							<div style="margin:8px 0 0 5px;text-align:left;height:19px;">
-								<span style="position:relative;display:inline-block;border:1px solid #cfcfcf;height:19px;width:54px">
-								<span style="position:absolute;right:-14px;bottom:0px;color:#68728b;font-size:11px;">평</span>
-								<input type="text" id="main_cal_p" style="width:49px; height:17px;line-height:19px; padding:0;padding-left:5px;margin:0;font-size:11px;border:0; position: absolute;"></span>
-							</div>
+						<div style="margin: 6px 0 0 5px; text-align: left; height: 19px;">
+							<span
+								style="position: relative; display: inline-block; border: 1px solid #cfcfcf; height: 19px; width: 54px">
+								<span
+								style="position: absolute; right: -14px; bottom: 0px; color: #68728b; font-size: 11px;">㎡</span>
+								<input type="text" id="main_cal_m"
+								style="width: 49px; height: 17px; line-height: 19px; padding: 0; padding-left: 5px; margin: 0; font-size: 11px; border: 0; position: absolute;">
+							</span>
+						</div>
+						<div style="margin: 8px 0 0 5px; text-align: left; height: 19px;">
+							<span
+								style="position: relative; display: inline-block; border: 1px solid #cfcfcf; height: 19px; width: 54px">
+								<span
+								style="position: absolute; right: -14px; bottom: 0px; color: #68728b; font-size: 11px;">평</span>
+								<input type="text" id="main_cal_p"
+								style="width: 49px; height: 17px; line-height: 19px; padding: 0; padding-left: 5px; margin: 0; font-size: 11px; border: 0; position: absolute;">
+							</span>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	
-	
-	
-	
-	
+
+
+
+
+
 		<div id="container">
 			<div class="gakgu">
 				<table>
 					<thead>
 						<tr id="east1">
-							<td id="td1"><a href="#">계림동<input type="hidden" value="계림동" class="dongname1"></a></td>
-							<td id="td2" class="toomuch"><a href="#">금남로2가<input type="hidden" value="금남로2가" class="dongname2"></a></td>
-							<td id="td3" class="toomuch"><a href="#">금남로3가<input type="hidden" value="금남로3가" class="dongname3"></a></td>
-							<td id="td4"><a href="#">동명동<input type="hidden" value="동명동" class="dongname4"></a></td>
-							<td id="td5"><a href="#">산수동<input type="hidden" value="산수동" class="dongname5"></a></td>
+							<td id="td1"><a href="#">계림동<input type="hidden"
+									value="계림동" class="dongname1"></a></td>
+							<td id="td2" class="toomuch"><a href="#">금남로2가<input
+									type="hidden" value="금남로2가" class="dongname2"></a></td>
+							<td id="td3" class="toomuch"><a href="#">금남로3가<input
+									type="hidden" value="금남로3가" class="dongname3"></a></td>
+							<td id="td4"><a href="#">동명동<input type="hidden"
+									value="동명동" class="dongname4"></a></td>
+							<td id="td5"><a href="#">산수동<input type="hidden"
+									value="산수동" class="dongname5"></a></td>
 						</tr>
 						<tr id="east2">
-							<td id="td6"><a href="#">소태동<input type="hidden" value="소태동" class="dongname6"></a></td>
-							<td id="td7"><a href="#">용산동<input type="hidden" value="용산동" class="dongname7"></a></td>
-							<td id="td8"><a href="#">운림동<input type="hidden" value="운림동" class="dongname8"></a></td>
-							<td id="td9"><a href="#">월남동<input type="hidden" value="월남동" class="dongname9"></a></td>
-							<td id="td10"><a href="#">지산동<input type="hidden" value="지산동" class="dongname10"></a></td>
+							<td id="td6"><a href="#">소태동<input type="hidden"
+									value="소태동" class="dongname6"></a></td>
+							<td id="td7"><a href="#">용산동<input type="hidden"
+									value="용산동" class="dongname7"></a></td>
+							<td id="td8"><a href="#">운림동<input type="hidden"
+									value="운림동" class="dongname8"></a></td>
+							<td id="td9"><a href="#">월남동<input type="hidden"
+									value="월남동" class="dongname9"></a></td>
+							<td id="td10"><a href="#">지산동<input type="hidden"
+									value="지산동" class="dongname10"></a></td>
 						</tr>
 						<tr id="east3">
-							<td id="td11" class="toomuch"><a href="#">충장로4가<input type="hidden" value="충장로4가" class="dongname11"></a></td>
-							<td id="td12" class="hakdong"><a href="#">학동<input type="hidden" value="학동" class="dongname12"></a></td>
+							<td id="td11" class="toomuch"><a href="#">충장로4가<input
+									type="hidden" value="충장로4가" class="dongname11"></a></td>
+							<td id="td12" class="hakdong"><a href="#">학동<input
+									type="hidden" value="학동" class="dongname12"></a></td>
 					</thead>
 				</table>
 			</div>
@@ -253,122 +276,338 @@
 			<div class="graph graph-con1">
 				<div class="page-path">광주광역시 > 동구</div>
 				<div class="graph-inner">
+					<!-- jsHeader -->
+
+
 					<script type="text/javascript">
-						// jsData 
-						function gvisDataComboChartIDed474ab435b() {
+						// jsData
+
+						function gvisDataComboChartIDf40224613d8() {
+
 							var data = new google.visualization.DataTable();
-							var datajson = [
-									[ "계림동", 435000000, 89000000, 255238806 ],
-									[ "금남로2가", 250000000, 250000000, 250000000 ],
-									[ "금남로3가", 122000000, 122000000, 122000000 ],
-									[ "대인동", 206000000, 155000000, 185333333.3 ],
-									[ "동명동", 230000000, 210000000, 223333333.3 ],
-									[ "산수동", 315000000, 65000000, 176697674.4 ],
-									[ "소태동", 541500000, 72000000, 151035714.3 ],
-									[ "용산동", 147000000, 147000000, 147000000 ],
-									[ "운림동", 410000000, 125000000, 228898550.7 ],
-									[ "월남동", 300000000, 210000000, 255527777.8 ],
-									[ "지산동", 300000000, 85000000, 219718750 ],
-									[ "충장로4가", 218000000, 107000000,
-											183857142.9 ],
-									[ "학동", 658000000, 105000000, 263752136.8 ] ];
+
+							var datajson =
+
+							[
+
+							[
+
+							"계림동",
+
+							435000000,
+
+							89000000,
+
+							258900000
+
+							],
+
+							[
+
+							"금남로2가",
+
+							250000000,
+
+							230000000,
+
+							236666666.7
+
+							],
+
+							[
+
+							"금남로3가",
+
+							129000000,
+
+							115000000,
+
+							122000000
+
+							],
+
+							[
+
+							"동명동",
+
+							235000000,
+
+							235000000,
+
+							235000000
+
+							],
+
+							[
+
+							"산수동",
+
+							330000000,
+
+							60000000,
+
+							184500000
+
+							],
+
+							[
+
+							"소태동",
+
+							550000000,
+
+							67000000,
+
+							196807692.3
+
+							],
+
+							[
+
+							"수기동",
+
+							85000000,
+
+							82000000,
+
+							83500000
+
+							],
+
+							[
+
+							"용산동",
+
+							255000000,
+
+							78000000,
+
+							140600000
+
+							],
+
+							[
+
+							"운림동",
+
+							455000000,
+
+							130000000,
+
+							238178571.4
+
+							],
+
+							[
+
+							"월남동",
+
+							300000000,
+
+							207000000,
+
+							253411764.7
+
+							],
+
+							[
+
+							"지산동",
+
+							300000000,
+
+							72000000,
+
+							205125000
+
+							],
+
+							[
+
+							"충장로4가",
+
+							225000000,
+
+							100000000,
+
+							181500000
+
+							],
+
+							[
+
+							"학동",
+
+							750000000,
+
+							105000000,
+
+							269622807
+
+							]
+
+							];
+
 							data.addColumn('string', 'DONGNAME');
+
 							data.addColumn('number', '최대가격');
+
 							data.addColumn('number', '최소가격');
+
 							data.addColumn('number', '평균가');
+
 							data.addRows(datajson);
+
 							return (data);
+
 						}
 
 						// jsDrawChart
-						function drawChartComboChartIDed474ab435b() {
-							var data = gvisDataComboChartIDed474ab435b();
+
+						function drawChartComboChartIDf40224613d8() {
+
+							var data = gvisDataComboChartIDf40224613d8();
+
 							var options = {};
+
 							options["allowHtml"] = true;
+
 							options["seriesType"] = "bars";
+
+							options["legend"] = "top";
+
 							options["series"] = {
 								2 : {
 									type : 'line'
 								}
 							};
 							/* 차트의 전체 크기 조절 */
-							options["width"] = 2000;
-							options["height"] = 400;
-							options["overflow"] = scroll;
-
+							options["width"] = 1100;
+							
+							options["height"] = 483;
+							
+							
+							
 							var chart = new google.visualization.ComboChart(
-									document
-											.getElementById('ComboChartIDed474ab435b'));
+
+							document.getElementById('ComboChartIDf40224613d8')
+
+							);
+							
+
 							chart.draw(data, options);
 
 						}
 
 						// jsDisplayChart
+
 						(function() {
+
 							var pkgs = window.__gvisPackages = window.__gvisPackages
 									|| [];
+
 							var callbacks = window.__gvisCallbacks = window.__gvisCallbacks
 									|| [];
+
 							var chartid = "corechart";
 
 							// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+
 							var i, newPackage = true;
+
 							for (i = 0; newPackage && i < pkgs.length; i++) {
+
 								if (pkgs[i] === chartid)
+
 									newPackage = false;
+
 							}
+
 							if (newPackage)
+
 								pkgs.push(chartid);
 
 							// Add the drawChart function to the global list of callbacks
-							callbacks.push(drawChartComboChartIDed474ab435b);
+
+							callbacks.push(drawChartComboChartIDf40224613d8);
+
 						})();
-						function displayChartComboChartIDed474ab435b() {
+
+						function displayChartComboChartIDf40224613d8() {
+
 							var pkgs = window.__gvisPackages = window.__gvisPackages
 									|| [];
+
 							var callbacks = window.__gvisCallbacks = window.__gvisCallbacks
 									|| [];
+
 							window.clearTimeout(window.__gvisLoad);
+
 							// The timeout is set to 100 because otherwise the container div we are
+
 							// targeting might not be part of the document yet
+
 							window.__gvisLoad = setTimeout(function() {
+
 								var pkgCount = pkgs.length;
+
 								google.load("visualization", "1", {
 									packages : pkgs,
 									callback : function() {
+
 										if (pkgCount != pkgs.length) {
+
 											// Race condition where another setTimeout call snuck in after us; if
+
 											// that call added a package, we must not shift its callback
+
 											return;
+
 										}
+
 										while (callbacks.length > 0)
+
 											callbacks.shift()();
+
 									}
 								});
+
 							}, 100);
+
 						}
 
 						// jsFooter
 					</script>
 
+
+
 					<!-- jsChart -->
+
 					<script type="text/javascript"
-						src="https://www.google.com/jsapi?callback=displayChartComboChartIDed474ab435b"></script>
+						src="https://www.google.com/jsapi?callback=displayChartComboChartIDf40224613d8"></script>
+
+
 
 					<!-- divChart -->
 
-					<div id="ComboChartIDed474ab435b"
-						style="width: 500; height: 500; overflow: scroll;"></div>
+
+
+					<div id="ComboChartIDf40224613d8"
+						style="width: 500; height: automatic;"></div>
+
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
-							href="Chart_ComboChartIDed474ab435b.html">ComboChartIDed474ab435b</a>
+							href="Chart_ComboChartIDf40224613d8.html">ComboChartIDf40224613d8</a>
 							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
+
 						<!-- htmlFooter -->
-						<span> R version 3.4.4 (2018-03-15) &#8226; <a
+
+						<span> R version 3.4.3 (2017-11-30) &#8226; <a
 							href="https://developers.google.com/terms/">Google Terms of
 								Use</a> &#8226; <a
 							href="https://google-developers.appspot.com/chart/interactive/docs/gallery/combochart">Documentation
 								and Data Policy</a>
+
 						</span>
 					</div>
 
@@ -386,7 +625,7 @@
 					<script type="text/javascript">
 						// jsData
 
-						function gvisDataComboChartIDb183e006d25() {
+						function gvisDataComboChartIDf4040e07843() {
 
 							var data = new google.visualization.DataTable();
 
@@ -472,9 +711,9 @@
 
 						// jsDrawChart
 
-						function drawChartComboChartIDb183e006d25() {
+						function drawChartComboChartIDf4040e07843() {
 
-							var data = gvisDataComboChartIDb183e006d25();
+							var data = gvisDataComboChartIDf4040e07843();
 
 							var options = {};
 
@@ -482,19 +721,21 @@
 
 							options["seriesType"] = "bars";
 
+							options["legend"] = "top";
+
 							options["series"] = {
 								2 : {
 									type : 'line'
 								}
 							};
-
+							/* 차트의 전체 크기 조절 */
 							options["width"] = 900;
-
+							
 							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
-							document.getElementById('ComboChartIDb183e006d25')
+							document.getElementById('ComboChartIDf4040e07843')
 
 							);
 
@@ -532,11 +773,11 @@
 
 							// Add the drawChart function to the global list of callbacks
 
-							callbacks.push(drawChartComboChartIDb183e006d25);
+							callbacks.push(drawChartComboChartIDf4040e07843);
 
 						})();
 
-						function displayChartComboChartIDb183e006d25() {
+						function displayChartComboChartIDf4040e07843() {
 
 							var pkgs = window.__gvisPackages = window.__gvisPackages
 									|| [];
@@ -587,7 +828,7 @@
 					<!-- jsChart -->
 
 					<script type="text/javascript"
-						src="https://www.google.com/jsapi?callback=displayChartComboChartIDb183e006d25"></script>
+						src="https://www.google.com/jsapi?callback=displayChartComboChartIDf4040e07843"></script>
 
 
 
@@ -595,18 +836,17 @@
 
 
 
-					<div id="ComboChartIDb183e006d25" style="width: 1200; height: 500;">
-
-					</div>
+					<div id="ComboChartIDf4040e07843"
+						style="width: 500; height: automatic;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
-							href="Chart_ComboChartIDb183e006d25.html">ComboChartIDb183e006d25</a>
+							href="Chart_ComboChartIDf4040e07843.html">ComboChartIDf4040e07843</a>
 							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 
 						<!-- htmlFooter -->
 
-						<span> R version 3.4.4 (2018-03-15) &#8226; <a
+						<span> R version 3.4.3 (2017-11-30) &#8226; <a
 							href="https://developers.google.com/terms/">Google Terms of
 								Use</a> &#8226; <a
 							href="https://google-developers.appspot.com/chart/interactive/docs/gallery/combochart">Documentation
@@ -629,7 +869,7 @@
 					<script type="text/javascript">
 						// jsData
 
-						function gvisDataComboChartIDb18112e5d5c() {
+						function gvisDataComboChartIDf4040102e2c() {
 
 							var data = new google.visualization.DataTable();
 
@@ -667,9 +907,9 @@
 
 						// jsDrawChart
 
-						function drawChartComboChartIDb18112e5d5c() {
+						function drawChartComboChartIDf4040102e2c() {
 
-							var data = gvisDataComboChartIDb18112e5d5c();
+							var data = gvisDataComboChartIDf4040102e2c();
 
 							var options = {};
 
@@ -677,19 +917,21 @@
 
 							options["seriesType"] = "bars";
 
+							options["legend"] = "top";
+
 							options["series"] = {
 								2 : {
 									type : 'line'
 								}
 							};
-
+							/* 차트의 전체 크기 조절 */
 							options["width"] = 900;
-
+							
 							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
-							document.getElementById('ComboChartIDb18112e5d5c')
+							document.getElementById('ComboChartIDf4040102e2c')
 
 							);
 
@@ -727,11 +969,11 @@
 
 							// Add the drawChart function to the global list of callbacks
 
-							callbacks.push(drawChartComboChartIDb18112e5d5c);
+							callbacks.push(drawChartComboChartIDf4040102e2c);
 
 						})();
 
-						function displayChartComboChartIDb18112e5d5c() {
+						function displayChartComboChartIDf4040102e2c() {
 
 							var pkgs = window.__gvisPackages = window.__gvisPackages
 									|| [];
@@ -782,7 +1024,7 @@
 					<!-- jsChart -->
 
 					<script type="text/javascript"
-						src="https://www.google.com/jsapi?callback=displayChartComboChartIDb18112e5d5c"></script>
+						src="https://www.google.com/jsapi?callback=displayChartComboChartIDf4040102e2c"></script>
 
 
 
@@ -790,18 +1032,17 @@
 
 
 
-					<div id="ComboChartIDb18112e5d5c" style="width: 1200; height: 500;">
-
-					</div>
+					<div id="ComboChartIDf4040102e2c"
+						style="width: 500; height: automatic;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
-							href="Chart_ComboChartIDb18112e5d5c.html">ComboChartIDb18112e5d5c</a>
+							href="Chart_ComboChartIDf4040102e2c.html">ComboChartIDf4040102e2c</a>
 							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 
 						<!-- htmlFooter -->
 
-						<span> R version 3.4.4 (2018-03-15) &#8226; <a
+						<span> R version 3.4.3 (2017-11-30) &#8226; <a
 							href="https://developers.google.com/terms/">Google Terms of
 								Use</a> &#8226; <a
 							href="https://google-developers.appspot.com/chart/interactive/docs/gallery/combochart">Documentation
@@ -824,7 +1065,7 @@
 					<script type="text/javascript">
 						// jsData
 
-						function gvisDataComboChartIDb184d0b28f8() {
+						function gvisDataComboChartIDf401ab82f78() {
 
 							var data = new google.visualization.DataTable();
 
@@ -862,9 +1103,9 @@
 
 						// jsDrawChart
 
-						function drawChartComboChartIDb184d0b28f8() {
+						function drawChartComboChartIDf401ab82f78() {
 
-							var data = gvisDataComboChartIDb184d0b28f8();
+							var data = gvisDataComboChartIDf401ab82f78();
 
 							var options = {};
 
@@ -872,19 +1113,21 @@
 
 							options["seriesType"] = "bars";
 
+							options["legend"] = "top";
+
 							options["series"] = {
 								2 : {
 									type : 'line'
 								}
 							};
-
+							/* 차트의 전체 크기 조절 */
 							options["width"] = 900;
-
+							
 							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
-							document.getElementById('ComboChartIDb184d0b28f8')
+							document.getElementById('ComboChartIDf401ab82f78')
 
 							);
 
@@ -922,11 +1165,11 @@
 
 							// Add the drawChart function to the global list of callbacks
 
-							callbacks.push(drawChartComboChartIDb184d0b28f8);
+							callbacks.push(drawChartComboChartIDf401ab82f78);
 
 						})();
 
-						function displayChartComboChartIDb184d0b28f8() {
+						function displayChartComboChartIDf401ab82f78() {
 
 							var pkgs = window.__gvisPackages = window.__gvisPackages
 									|| [];
@@ -977,7 +1220,7 @@
 					<!-- jsChart -->
 
 					<script type="text/javascript"
-						src="https://www.google.com/jsapi?callback=displayChartComboChartIDb184d0b28f8"></script>
+						src="https://www.google.com/jsapi?callback=displayChartComboChartIDf401ab82f78"></script>
 
 
 
@@ -985,18 +1228,17 @@
 
 
 
-					<div id="ComboChartIDb184d0b28f8" style="width: 1200; height: 500;">
-
-					</div>
+					<div id="ComboChartIDf401ab82f78"
+						style="width: 500; height: automatic;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
-							href="Chart_ComboChartIDb184d0b28f8.html">ComboChartIDb184d0b28f8</a>
+							href="Chart_ComboChartIDf401ab82f78.html">ComboChartIDf401ab82f78</a>
 							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 
 						<!-- htmlFooter -->
 
-						<span> R version 3.4.4 (2018-03-15) &#8226; <a
+						<span> R version 3.4.3 (2017-11-30) &#8226; <a
 							href="https://developers.google.com/terms/">Google Terms of
 								Use</a> &#8226; <a
 							href="https://google-developers.appspot.com/chart/interactive/docs/gallery/combochart">Documentation
@@ -1018,7 +1260,7 @@
 					<script type="text/javascript">
 						// jsData
 
-						function gvisDataComboChartIDb187b7431e() {
+						function gvisDataComboChartIDf40ccc727d() {
 
 							var data = new google.visualization.DataTable();
 
@@ -1056,9 +1298,9 @@
 
 						// jsDrawChart
 
-						function drawChartComboChartIDb187b7431e() {
+						function drawChartComboChartIDf40ccc727d() {
 
-							var data = gvisDataComboChartIDb187b7431e();
+							var data = gvisDataComboChartIDf40ccc727d();
 
 							var options = {};
 
@@ -1066,19 +1308,21 @@
 
 							options["seriesType"] = "bars";
 
+							options["legend"] = "top";
+
 							options["series"] = {
 								2 : {
 									type : 'line'
 								}
 							};
-
+							/* 차트의 전체 크기 조절 */
 							options["width"] = 900;
-
+							
 							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
-							document.getElementById('ComboChartIDb187b7431e')
+							document.getElementById('ComboChartIDf40ccc727d')
 
 							);
 
@@ -1116,11 +1360,11 @@
 
 							// Add the drawChart function to the global list of callbacks
 
-							callbacks.push(drawChartComboChartIDb187b7431e);
+							callbacks.push(drawChartComboChartIDf40ccc727d);
 
 						})();
 
-						function displayChartComboChartIDb187b7431e() {
+						function displayChartComboChartIDf40ccc727d() {
 
 							var pkgs = window.__gvisPackages = window.__gvisPackages
 									|| [];
@@ -1171,7 +1415,7 @@
 					<!-- jsChart -->
 
 					<script type="text/javascript"
-						src="https://www.google.com/jsapi?callback=displayChartComboChartIDb187b7431e"></script>
+						src="https://www.google.com/jsapi?callback=displayChartComboChartIDf40ccc727d"></script>
 
 
 
@@ -1179,18 +1423,17 @@
 
 
 
-					<div id="ComboChartIDb187b7431e" style="width: 1200; height: 500;">
-
-					</div>
+					<div id="ComboChartIDf40ccc727d"
+						style="width: 500; height: automatic;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
-							href="Chart_ComboChartIDb187b7431e.html">ComboChartIDb187b7431e</a>
+							href="Chart_ComboChartIDf40ccc727d.html">ComboChartIDf40ccc727d</a>
 							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 
 						<!-- htmlFooter -->
 
-						<span> R version 3.4.4 (2018-03-15) &#8226; <a
+						<span> R version 3.4.3 (2017-11-30) &#8226; <a
 							href="https://developers.google.com/terms/">Google Terms of
 								Use</a> &#8226; <a
 							href="https://google-developers.appspot.com/chart/interactive/docs/gallery/combochart">Documentation
@@ -1213,7 +1456,7 @@
 					<script type="text/javascript">
 						// jsData
 
-						function gvisDataComboChartIDb18e761c48() {
+						function gvisDataComboChartIDf4037714e74() {
 
 							var data = new google.visualization.DataTable();
 
@@ -1383,9 +1626,9 @@
 
 						// jsDrawChart
 
-						function drawChartComboChartIDb18e761c48() {
+						function drawChartComboChartIDf4037714e74() {
 
-							var data = gvisDataComboChartIDb18e761c48();
+							var data = gvisDataComboChartIDf4037714e74();
 
 							var options = {};
 
@@ -1393,19 +1636,21 @@
 
 							options["seriesType"] = "bars";
 
+							options["legend"] = "top";
+
 							options["series"] = {
 								2 : {
 									type : 'line'
 								}
 							};
-
+							/* 차트의 전체 크기 조절 */
 							options["width"] = 900;
-
+							
 							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
-							document.getElementById('ComboChartIDb18e761c48')
+							document.getElementById('ComboChartIDf4037714e74')
 
 							);
 
@@ -1443,11 +1688,11 @@
 
 							// Add the drawChart function to the global list of callbacks
 
-							callbacks.push(drawChartComboChartIDb18e761c48);
+							callbacks.push(drawChartComboChartIDf4037714e74);
 
 						})();
 
-						function displayChartComboChartIDb18e761c48() {
+						function displayChartComboChartIDf4037714e74() {
 
 							var pkgs = window.__gvisPackages = window.__gvisPackages
 									|| [];
@@ -1498,7 +1743,7 @@
 					<!-- jsChart -->
 
 					<script type="text/javascript"
-						src="https://www.google.com/jsapi?callback=displayChartComboChartIDb18e761c48"></script>
+						src="https://www.google.com/jsapi?callback=displayChartComboChartIDf4037714e74"></script>
 
 
 
@@ -1506,18 +1751,17 @@
 
 
 
-					<div id="ComboChartIDb18e761c48" style="width: 1200; height: 500;">
-
-					</div>
+					<div id="ComboChartIDf4037714e74"
+						style="width: 500; height: automatic;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
-							href="Chart_ComboChartIDb18e761c48.html">ComboChartIDb18e761c48</a>
+							href="Chart_ComboChartIDf4037714e74.html">ComboChartIDf4037714e74</a>
 							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 
 						<!-- htmlFooter -->
 
-						<span> R version 3.4.4 (2018-03-15) &#8226; <a
+						<span> R version 3.4.3 (2017-11-30) &#8226; <a
 							href="https://developers.google.com/terms/">Google Terms of
 								Use</a> &#8226; <a
 							href="https://google-developers.appspot.com/chart/interactive/docs/gallery/combochart">Documentation
@@ -1540,7 +1784,7 @@
 					<script type="text/javascript">
 						// jsData
 
-						function gvisDataComboChartIDb182617235a() {
+						function gvisDataComboChartIDf4017221390() {
 
 							var data = new google.visualization.DataTable();
 
@@ -1698,9 +1942,9 @@
 
 						// jsDrawChart
 
-						function drawChartComboChartIDb182617235a() {
+						function drawChartComboChartIDf4017221390() {
 
-							var data = gvisDataComboChartIDb182617235a();
+							var data = gvisDataComboChartIDf4017221390();
 
 							var options = {};
 
@@ -1708,19 +1952,21 @@
 
 							options["seriesType"] = "bars";
 
+							options["legend"] = "top";
+
 							options["series"] = {
 								2 : {
 									type : 'line'
 								}
 							};
-
+							/* 차트의 전체 크기 조절 */
 							options["width"] = 900;
-
+							
 							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
-							document.getElementById('ComboChartIDb182617235a')
+							document.getElementById('ComboChartIDf4017221390')
 
 							);
 
@@ -1758,11 +2004,11 @@
 
 							// Add the drawChart function to the global list of callbacks
 
-							callbacks.push(drawChartComboChartIDb182617235a);
+							callbacks.push(drawChartComboChartIDf4017221390);
 
 						})();
 
-						function displayChartComboChartIDb182617235a() {
+						function displayChartComboChartIDf4017221390() {
 
 							var pkgs = window.__gvisPackages = window.__gvisPackages
 									|| [];
@@ -1813,7 +2059,7 @@
 					<!-- jsChart -->
 
 					<script type="text/javascript"
-						src="https://www.google.com/jsapi?callback=displayChartComboChartIDb182617235a"></script>
+						src="https://www.google.com/jsapi?callback=displayChartComboChartIDf4017221390"></script>
 
 
 
@@ -1821,18 +2067,17 @@
 
 
 
-					<div id="ComboChartIDb182617235a" style="width: 1200; height: 500;">
-
-					</div>
+					<div id="ComboChartIDf4017221390"
+						style="width: 500; height: automatic;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
-							href="Chart_ComboChartIDb182617235a.html">ComboChartIDb182617235a</a>
+							href="Chart_ComboChartIDf4017221390.html">ComboChartIDf4017221390</a>
 							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 
 						<!-- htmlFooter -->
 
-						<span> R version 3.4.4 (2018-03-15) &#8226; <a
+						<span> R version 3.4.3 (2017-11-30) &#8226; <a
 							href="https://developers.google.com/terms/">Google Terms of
 								Use</a> &#8226; <a
 							href="https://google-developers.appspot.com/chart/interactive/docs/gallery/combochart">Documentation
@@ -1854,7 +2099,7 @@
 					<script type="text/javascript">
 						// jsData
 
-						function gvisDataComboChartIDb182422e97() {
+						function gvisDataComboChartIDf4010146d0e() {
 
 							var data = new google.visualization.DataTable();
 
@@ -1940,9 +2185,9 @@
 
 						// jsDrawChart
 
-						function drawChartComboChartIDb182422e97() {
+						function drawChartComboChartIDf4010146d0e() {
 
-							var data = gvisDataComboChartIDb182422e97();
+							var data = gvisDataComboChartIDf4010146d0e();
 
 							var options = {};
 
@@ -1950,19 +2195,21 @@
 
 							options["seriesType"] = "bars";
 
+							options["legend"] = "top";
+
 							options["series"] = {
 								2 : {
 									type : 'line'
 								}
 							};
-
+							/* 차트의 전체 크기 조절 */
 							options["width"] = 900;
-
+							
 							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
-							document.getElementById('ComboChartIDb182422e97')
+							document.getElementById('ComboChartIDf4010146d0e')
 
 							);
 
@@ -2000,11 +2247,11 @@
 
 							// Add the drawChart function to the global list of callbacks
 
-							callbacks.push(drawChartComboChartIDb182422e97);
+							callbacks.push(drawChartComboChartIDf4010146d0e);
 
 						})();
 
-						function displayChartComboChartIDb182422e97() {
+						function displayChartComboChartIDf4010146d0e() {
 
 							var pkgs = window.__gvisPackages = window.__gvisPackages
 									|| [];
@@ -2055,7 +2302,7 @@
 					<!-- jsChart -->
 
 					<script type="text/javascript"
-						src="https://www.google.com/jsapi?callback=displayChartComboChartIDb182422e97"></script>
+						src="https://www.google.com/jsapi?callback=displayChartComboChartIDf4010146d0e"></script>
 
 
 
@@ -2063,18 +2310,17 @@
 
 
 
-					<div id="ComboChartIDb182422e97" style="width: 1200; height: 500;">
-
-					</div>
+					<div id="ComboChartIDf4010146d0e"
+						style="width: 500; height: automatic;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
-							href="Chart_ComboChartIDb182422e97.html">ComboChartIDb182422e97</a>
+							href="Chart_ComboChartIDf4010146d0e.html">ComboChartIDf4010146d0e</a>
 							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 
 						<!-- htmlFooter -->
 
-						<span> R version 3.4.4 (2018-03-15) &#8226; <a
+						<span> R version 3.4.3 (2017-11-30) &#8226; <a
 							href="https://developers.google.com/terms/">Google Terms of
 								Use</a> &#8226; <a
 							href="https://google-developers.appspot.com/chart/interactive/docs/gallery/combochart">Documentation
@@ -2097,7 +2343,7 @@
 					<script type="text/javascript">
 						// jsData
 
-						function gvisDataComboChartIDb1823a252cb() {
+						function gvisDataComboChartIDf406a962492() {
 
 							var data = new google.visualization.DataTable();
 
@@ -2255,9 +2501,9 @@
 
 						// jsDrawChart
 
-						function drawChartComboChartIDb1823a252cb() {
+						function drawChartComboChartIDf406a962492() {
 
-							var data = gvisDataComboChartIDb1823a252cb();
+							var data = gvisDataComboChartIDf406a962492();
 
 							var options = {};
 
@@ -2265,19 +2511,21 @@
 
 							options["seriesType"] = "bars";
 
+							options["legend"] = "top";
+
 							options["series"] = {
 								2 : {
 									type : 'line'
 								}
 							};
-
+							/* 차트의 전체 크기 조절 */
 							options["width"] = 900;
-
+							
 							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
-							document.getElementById('ComboChartIDb1823a252cb')
+							document.getElementById('ComboChartIDf406a962492')
 
 							);
 
@@ -2315,11 +2563,11 @@
 
 							// Add the drawChart function to the global list of callbacks
 
-							callbacks.push(drawChartComboChartIDb1823a252cb);
+							callbacks.push(drawChartComboChartIDf406a962492);
 
 						})();
 
-						function displayChartComboChartIDb1823a252cb() {
+						function displayChartComboChartIDf406a962492() {
 
 							var pkgs = window.__gvisPackages = window.__gvisPackages
 									|| [];
@@ -2370,7 +2618,7 @@
 					<!-- jsChart -->
 
 					<script type="text/javascript"
-						src="https://www.google.com/jsapi?callback=displayChartComboChartIDb1823a252cb"></script>
+						src="https://www.google.com/jsapi?callback=displayChartComboChartIDf406a962492"></script>
 
 
 
@@ -2378,18 +2626,17 @@
 
 
 
-					<div id="ComboChartIDb1823a252cb" style="width: 1200; height: 500;">
-
-					</div>
+					<div id="ComboChartIDf406a962492"
+						style="width: 500; height: automatic;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
-							href="Chart_ComboChartIDb1823a252cb.html">ComboChartIDb1823a252cb</a>
+							href="Chart_ComboChartIDf406a962492.html">ComboChartIDf406a962492</a>
 							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 
 						<!-- htmlFooter -->
 
-						<span> R version 3.4.4 (2018-03-15) &#8226; <a
+						<span> R version 3.4.3 (2017-11-30) &#8226; <a
 							href="https://developers.google.com/terms/">Google Terms of
 								Use</a> &#8226; <a
 							href="https://google-developers.appspot.com/chart/interactive/docs/gallery/combochart">Documentation
@@ -2412,7 +2659,7 @@
 					<script type="text/javascript">
 						// jsData
 
-						function gvisDataComboChartIDb1839505a9f() {
+						function gvisDataComboChartIDf4027795984() {
 
 							var data = new google.visualization.DataTable();
 
@@ -2450,9 +2697,9 @@
 
 						// jsDrawChart
 
-						function drawChartComboChartIDb1839505a9f() {
+						function drawChartComboChartIDf4027795984() {
 
-							var data = gvisDataComboChartIDb1839505a9f();
+							var data = gvisDataComboChartIDf4027795984();
 
 							var options = {};
 
@@ -2460,19 +2707,21 @@
 
 							options["seriesType"] = "bars";
 
+							options["legend"] = "top";
+
 							options["series"] = {
 								2 : {
 									type : 'line'
 								}
 							};
-
+							/* 차트의 전체 크기 조절 */
 							options["width"] = 900;
-
+							
 							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
-							document.getElementById('ComboChartIDb1839505a9f')
+							document.getElementById('ComboChartIDf4027795984')
 
 							);
 
@@ -2510,11 +2759,11 @@
 
 							// Add the drawChart function to the global list of callbacks
 
-							callbacks.push(drawChartComboChartIDb1839505a9f);
+							callbacks.push(drawChartComboChartIDf4027795984);
 
 						})();
 
-						function displayChartComboChartIDb1839505a9f() {
+						function displayChartComboChartIDf4027795984() {
 
 							var pkgs = window.__gvisPackages = window.__gvisPackages
 									|| [];
@@ -2565,7 +2814,7 @@
 					<!-- jsChart -->
 
 					<script type="text/javascript"
-						src="https://www.google.com/jsapi?callback=displayChartComboChartIDb1839505a9f"></script>
+						src="https://www.google.com/jsapi?callback=displayChartComboChartIDf4027795984"></script>
 
 
 
@@ -2573,18 +2822,17 @@
 
 
 
-					<div id="ComboChartIDb1839505a9f" style="width: 1200; height: 500;">
-
-					</div>
+					<div id="ComboChartIDf4027795984"
+						style="width: 500; height: automatic;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
-							href="Chart_ComboChartIDb1839505a9f.html">ComboChartIDb1839505a9f</a>
+							href="Chart_ComboChartIDf4027795984.html">ComboChartIDf4027795984</a>
 							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 
 						<!-- htmlFooter -->
 
-						<span> R version 3.4.4 (2018-03-15) &#8226; <a
+						<span> R version 3.4.3 (2017-11-30) &#8226; <a
 							href="https://developers.google.com/terms/">Google Terms of
 								Use</a> &#8226; <a
 							href="https://google-developers.appspot.com/chart/interactive/docs/gallery/combochart">Documentation
@@ -2607,7 +2855,7 @@
 					<script type="text/javascript">
 						// jsData
 
-						function gvisDataComboChartIDb186ce151b1() {
+						function gvisDataComboChartIDf4014cc1452() {
 
 							var data = new google.visualization.DataTable();
 
@@ -2729,9 +2977,9 @@
 
 						// jsDrawChart
 
-						function drawChartComboChartIDb186ce151b1() {
+						function drawChartComboChartIDf4014cc1452() {
 
-							var data = gvisDataComboChartIDb186ce151b1();
+							var data = gvisDataComboChartIDf4014cc1452();
 
 							var options = {};
 
@@ -2739,19 +2987,21 @@
 
 							options["seriesType"] = "bars";
 
+							options["legend"] = "top";
+
 							options["series"] = {
 								2 : {
 									type : 'line'
 								}
 							};
-
+							/* 차트의 전체 크기 조절 */
 							options["width"] = 900;
-
+							
 							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
-							document.getElementById('ComboChartIDb186ce151b1')
+							document.getElementById('ComboChartIDf4014cc1452')
 
 							);
 
@@ -2789,11 +3039,11 @@
 
 							// Add the drawChart function to the global list of callbacks
 
-							callbacks.push(drawChartComboChartIDb186ce151b1);
+							callbacks.push(drawChartComboChartIDf4014cc1452);
 
 						})();
 
-						function displayChartComboChartIDb186ce151b1() {
+						function displayChartComboChartIDf4014cc1452() {
 
 							var pkgs = window.__gvisPackages = window.__gvisPackages
 									|| [];
@@ -2844,7 +3094,7 @@
 					<!-- jsChart -->
 
 					<script type="text/javascript"
-						src="https://www.google.com/jsapi?callback=displayChartComboChartIDb186ce151b1"></script>
+						src="https://www.google.com/jsapi?callback=displayChartComboChartIDf4014cc1452"></script>
 
 
 
@@ -2852,18 +3102,17 @@
 
 
 
-					<div id="ComboChartIDb186ce151b1" style="width: 1200; height: 500;">
-
-					</div>
+					<div id="ComboChartIDf4014cc1452"
+						style="width: 500; height: automatic;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
-							href="Chart_ComboChartIDb186ce151b1.html">ComboChartIDb186ce151b1</a>
+							href="Chart_ComboChartIDf4014cc1452.html">ComboChartIDf4014cc1452</a>
 							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 
 						<!-- htmlFooter -->
 
-						<span> R version 3.4.4 (2018-03-15) &#8226; <a
+						<span> R version 3.4.3 (2017-11-30) &#8226; <a
 							href="https://developers.google.com/terms/">Google Terms of
 								Use</a> &#8226; <a
 							href="https://google-developers.appspot.com/chart/interactive/docs/gallery/combochart">Documentation
@@ -2886,7 +3135,7 @@
 					<script type="text/javascript">
 						// jsData
 
-						function gvisDataComboChartIDb185950294a() {
+						function gvisDataComboChartIDf40d721cbf() {
 
 							var data = new google.visualization.DataTable();
 
@@ -2936,9 +3185,9 @@
 
 						// jsDrawChart
 
-						function drawChartComboChartIDb185950294a() {
+						function drawChartComboChartIDf40d721cbf() {
 
-							var data = gvisDataComboChartIDb185950294a();
+							var data = gvisDataComboChartIDf40d721cbf();
 
 							var options = {};
 
@@ -2946,19 +3195,21 @@
 
 							options["seriesType"] = "bars";
 
+							options["legend"] = "top";
+
 							options["series"] = {
 								2 : {
 									type : 'line'
 								}
 							};
-
+							/* 차트의 전체 크기 조절 */
 							options["width"] = 900;
-
+							
 							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
-							document.getElementById('ComboChartIDb185950294a')
+							document.getElementById('ComboChartIDf40d721cbf')
 
 							);
 
@@ -2996,11 +3247,11 @@
 
 							// Add the drawChart function to the global list of callbacks
 
-							callbacks.push(drawChartComboChartIDb185950294a);
+							callbacks.push(drawChartComboChartIDf40d721cbf);
 
 						})();
 
-						function displayChartComboChartIDb185950294a() {
+						function displayChartComboChartIDf40d721cbf() {
 
 							var pkgs = window.__gvisPackages = window.__gvisPackages
 									|| [];
@@ -3051,7 +3302,7 @@
 					<!-- jsChart -->
 
 					<script type="text/javascript"
-						src="https://www.google.com/jsapi?callback=displayChartComboChartIDb185950294a"></script>
+						src="https://www.google.com/jsapi?callback=displayChartComboChartIDf40d721cbf"></script>
 
 
 
@@ -3059,18 +3310,17 @@
 
 
 
-					<div id="ComboChartIDb185950294a" style="width: 1200; height: 500;">
-
-					</div>
+					<div id="ComboChartIDf40d721cbf"
+						style="width: 500; height: automatic;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
-							href="Chart_ComboChartIDb185950294a.html">ComboChartIDb185950294a</a>
+							href="Chart_ComboChartIDf40d721cbf.html">ComboChartIDf40d721cbf</a>
 							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 
 						<!-- htmlFooter -->
 
-						<span> R version 3.4.4 (2018-03-15) &#8226; <a
+						<span> R version 3.4.3 (2017-11-30) &#8226; <a
 							href="https://developers.google.com/terms/">Google Terms of
 								Use</a> &#8226; <a
 							href="https://google-developers.appspot.com/chart/interactive/docs/gallery/combochart">Documentation
@@ -3093,7 +3343,7 @@
 					<script type="text/javascript">
 						// jsData
 
-						function gvisDataComboChartID19e46ec82aa2() {
+						function gvisDataComboChartIDf40625573a5() {
 
 							var data = new google.visualization.DataTable();
 
@@ -3275,15 +3525,17 @@
 
 						// jsDrawChart
 
-						function drawChartComboChartID19e46ec82aa2() {
+						function drawChartComboChartIDf40625573a5() {
 
-							var data = gvisDataComboChartID19e46ec82aa2();
+							var data = gvisDataComboChartIDf40625573a5();
 
 							var options = {};
 
 							options["allowHtml"] = true;
 
 							options["seriesType"] = "bars";
+
+							options["legend"] = "top";
 
 							options["series"] = {
 								2 : {
@@ -3297,7 +3549,7 @@
 
 							var chart = new google.visualization.ComboChart(
 
-							document.getElementById('ComboChartID19e46ec82aa2')
+							document.getElementById('ComboChartIDf40625573a5')
 
 							);
 
@@ -3335,11 +3587,11 @@
 
 							// Add the drawChart function to the global list of callbacks
 
-							callbacks.push(drawChartComboChartID19e46ec82aa2);
+							callbacks.push(drawChartComboChartIDf40625573a5);
 
 						})();
 
-						function displayChartComboChartID19e46ec82aa2() {
+						function displayChartComboChartIDf40625573a5() {
 
 							var pkgs = window.__gvisPackages = window.__gvisPackages
 									|| [];
@@ -3390,7 +3642,7 @@
 					<!-- jsChart -->
 
 					<script type="text/javascript"
-						src="https://www.google.com/jsapi?callback=displayChartComboChartID19e46ec82aa2"></script>
+						src="https://www.google.com/jsapi?callback=displayChartComboChartIDf40625573a5"></script>
 
 
 
@@ -3398,12 +3650,12 @@
 
 
 
-					<div id="ComboChartID19e46ec82aa2"
+					<div id="ComboChartIDf40625573a5"
 						style="width: 500; height: automatic;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
-							href="Chart_ComboChartID19e46ec82aa2.html">ComboChartID19e46ec82aa2</a>
+							href="Chart_ComboChartIDf40625573a5.html">ComboChartIDf40625573a5</a>
 							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 
 						<!-- htmlFooter -->
@@ -3420,9 +3672,7 @@
 			</div>
 
 			<!-- 학동 그래프 끝 -->
-			<div id="board">
-			
-			</div>
+			<div id="board"></div>
 
 		</div>
 	</div>

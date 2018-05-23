@@ -2,8 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp"%>
 
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,23 +10,20 @@
 <title>가방</title>
 <script type="text/javascript">
 	$(document).ready(function() {
-		
+
 		function product(dongname) {
 			var dongname;
-			
-			
+
 			$.ajax({
-				type:"POST",
-				url:"bukgudetail2.bigshort",
-				data:"dongname=" + dongname,
-				success:function(result){
+				type : "POST",
+				url : "bukgudetail2.bigshort",
+				data : "dongname=" + dongname,
+				success : function(result) {
 					$("#board").html(result);
 				}
 			});
 		}
-		
-		
-		
+
 		$("#td1").on("click", function() {
 
 			$(".graph").css("display", "none");
@@ -168,138 +163,167 @@
 			$(".graph-con1").css("display", "block");
 
 		}, 1000);
-		
-		
-		
+
 		/* 계산기 계산 부분 */
-		$("#main_cal_m").on("click", function(){
+		$("#main_cal_m").on("click", function() {
 			$("#main_cal_m").val("");
 		});
-		
-		$("#main_cal_p").on("click", function(){
+
+		$("#main_cal_p").on("click", function() {
 			$("#main_cal_p").val("");
 		});
-		
-		$("#main_cal_m").on("change keyup paste", function(){
-			
+
+		$("#main_cal_m").on("change keyup paste", function() {
+
 			var ir = $('#main_cal_m').val();
-			
-				var im  = ir / 3.3058;
-				;
-				$('#main_cal_p').val(im.toFixed(2));
-			
+
+			var im = ir / 3.3058;
+			;
+			$('#main_cal_p').val(im.toFixed(2));
+
 		});
-		
-		$("#main_cal_p").on("change keyup paste", function(){
-			
+
+		$("#main_cal_p").on("change keyup paste", function() {
+
 			var ir = $('#main_cal_p').val();
-			
-				var im  = ir * 3.3058;
-				$('#main_cal_m').val(im.toFixed(2));
-			
+
+			var im = ir * 3.3058;
+			$('#main_cal_m').val(im.toFixed(2));
+
 		});
 
 	});
 </script>
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" type="text/css" href="/BigShortWeb/css/north.css?var=2">
+<link rel="stylesheet" type="text/css"
+	href="/BigShortWeb/css/north.css?var=2">
 <style type="text/css">
-	.main_calc {
-	
-    width: 84px;
-    border: 1px solid #d8d8d8;
-    height: 67px;
-    /* position: relative; */
-    
-	}
-	.main_calc_title {
-	
-    background-color: #75787d;
-    width: 84px;
-    height: 27px;
-    text-align: center;
-    color: #FFF;
-    padding-top: 7px;
-    font-size: 11px;
-    
-	}
-	#all_calc{
-		    text-align: center;
-    		position: fixed;
-    		width: 100%;
-    		top : 100px;
-	}
-	#top_calc{
-		width: 1200px;
-		display: inline-block;
-		text-align: right;
-	}
-	#right{
-		display: inline-block;
-	}
+.main_calc {
+	width: 84px;
+	border: 1px solid #d8d8d8;
+	height: 67px;
+	/* position: relative; */
+}
+
+.main_calc_title {
+	background-color: #75787d;
+	width: 84px;
+	height: 27px;
+	text-align: center;
+	color: #FFF;
+	padding-top: 7px;
+	font-size: 11px;
+}
+
+#all_calc {
+	text-align: center;
+	position: fixed;
+	width: 100%;
+	top: 100px;
+}
+
+#top_calc {
+	width: 1200px;
+	display: inline-block;
+	text-align: right;
+}
+
+#right {
+	display: inline-block;
+}
+
+.graph-inner {
+	position: relative;
+	left: -60px;
+}
 </style>
 </head>
 
 <body>
 
 	<div class="wrap">
-	
-		
-					<!-- 계산기 부분 -->
+
+
+		<!-- 계산기 부분 -->
 		<div id="all_calc">
 			<div id="top_calc">
 				<div id="right">
 					<div class="main_calc_title position">면적환산기</div>
 					<div class="main_calc position">
-							<div style="margin:6px 0 0 5px;text-align:left;height:19px;">
-								<span style="position:relative;display:inline-block;border:1px solid #cfcfcf;height:19px;width:54px">
-									<span style="position:absolute;right:-14px;bottom:0px;color:#68728b;font-size:11px;">㎡</span>
-									<input type="text" id="main_cal_m" style="width:49px; height:17px;line-height:19px; padding:0;padding-left:5px;margin:0;font-size:11px;border:0; position: absolute;">
-								</span>
-							</div>
-							<div style="margin:8px 0 0 5px;text-align:left;height:19px;">
-								<span style="position:relative;display:inline-block;border:1px solid #cfcfcf;height:19px;width:54px">
-								<span style="position:absolute;right:-14px;bottom:0px;color:#68728b;font-size:11px;">평</span>
-								<input type="text" id="main_cal_p" style="width:49px; height:17px;line-height:19px; padding:0;padding-left:5px;margin:0;font-size:11px;border:0; position: absolute;"></span>
-							</div>
+						<div style="margin: 6px 0 0 5px; text-align: left; height: 19px;">
+							<span
+								style="position: relative; display: inline-block; border: 1px solid #cfcfcf; height: 19px; width: 54px">
+								<span
+								style="position: absolute; right: -14px; bottom: 0px; color: #68728b; font-size: 11px;">㎡</span>
+								<input type="text" id="main_cal_m"
+								style="width: 49px; height: 17px; line-height: 19px; padding: 0; padding-left: 5px; margin: 0; font-size: 11px; border: 0; position: absolute;">
+							</span>
+						</div>
+						<div style="margin: 8px 0 0 5px; text-align: left; height: 19px;">
+							<span
+								style="position: relative; display: inline-block; border: 1px solid #cfcfcf; height: 19px; width: 54px">
+								<span
+								style="position: absolute; right: -14px; bottom: 0px; color: #68728b; font-size: 11px;">평</span>
+								<input type="text" id="main_cal_p"
+								style="width: 49px; height: 17px; line-height: 19px; padding: 0; padding-left: 5px; margin: 0; font-size: 11px; border: 0; position: absolute;">
+							</span>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	
-	
-	
-	
+
+
+
+
 		<div id="container">
 			<div class="gakgu">
 				<table>
 					<thead>
 						<tr id="north1">
-							<td id="td1"><a href="#">각화동<input type="hidden" value="각화동" class="dongname1"></a></td>
-							<td id="td2"><a href="#">동림동<input type="hidden" value="동림동" class="dongname2"></a></td>
-							<td id="td3"><a href="#">두암동<input type="hidden" value="두암동" class="dongname3"></a></td>
-							<td id="td4"><a href="#">매곡동<input type="hidden" value="매곡동" class="dongname4"></a></td>
-							<td id="td5"><a href="#">문흥동<input type="hidden" value="문흥동" class="dongname5"></a></td>
+							<td id="td1"><a href="#">각화동<input type="hidden"
+									value="각화동" class="dongname1"></a></td>
+							<td id="td2"><a href="#">동림동<input type="hidden"
+									value="동림동" class="dongname2"></a></td>
+							<td id="td3"><a href="#">두암동<input type="hidden"
+									value="두암동" class="dongname3"></a></td>
+							<td id="td4"><a href="#">매곡동<input type="hidden"
+									value="매곡동" class="dongname4"></a></td>
+							<td id="td5"><a href="#">문흥동<input type="hidden"
+									value="문흥동" class="dongname5"></a></td>
 						</tr>
 						<tr id="north2">
-							<td id="td6"><a href="#">본촌동<input type="hidden" value="본촌동" class="dongname6"></a></td>
-							<td id="td7"><a href="#">삼각동<input type="hidden" value="삼각동" class="dongname7"></a></td>
-							<td id="td8"><a href="#">신안동<input type="hidden" value="신안동" class="dongname8"></a></td>
-							<td id="td9"><a href="#">신용동<input type="hidden" value="신용동" class="dongname9"></a></td>
-							<td id="td10"><a href="#">양산동<input type="hidden" value="양산동" class="dongname10"></a></td>
+							<td id="td6"><a href="#">본촌동<input type="hidden"
+									value="본촌동" class="dongname6"></a></td>
+							<td id="td7"><a href="#">삼각동<input type="hidden"
+									value="삼각동" class="dongname7"></a></td>
+							<td id="td8"><a href="#">신안동<input type="hidden"
+									value="신안동" class="dongname8"></a></td>
+							<td id="td9"><a href="#">신용동<input type="hidden"
+									value="신용동" class="dongname9"></a></td>
+							<td id="td10"><a href="#">양산동<input type="hidden"
+									value="양산동" class="dongname10"></a></td>
 						</tr>
 						<tr id="north3">
-							<td id="td11"><a href="#">연제동<input type="hidden" value="연제동" class="dongname11"></a></td>
-							<td id="td12"><a href="#">오치동<input type="hidden" value="오치동" class="dongname12"></a></td>
-							<td id="td13"><a href="#">용두동<input type="hidden" value="용두동" class="dongname13"></a></td>
-							<td id="td14"><a href="#">용봉동<input type="hidden" value="용봉동" class="dongname14"></a></td>
-							<td id="td15"><a href="#">우산동<input type="hidden" value="우산동" class="dongname15"></a></td>
+							<td id="td11"><a href="#">연제동<input type="hidden"
+									value="연제동" class="dongname11"></a></td>
+							<td id="td12"><a href="#">오치동<input type="hidden"
+									value="오치동" class="dongname12"></a></td>
+							<td id="td13"><a href="#">용두동<input type="hidden"
+									value="용두동" class="dongname13"></a></td>
+							<td id="td14"><a href="#">용봉동<input type="hidden"
+									value="용봉동" class="dongname14"></a></td>
+							<td id="td15"><a href="#">우산동<input type="hidden"
+									value="우산동" class="dongname15"></a></td>
 						</tr>
 						<tr id="north4">
-							<td id="td16"><a href="#">운암동<input type="hidden" value="운암동" class="dongname16"></a></td>
-							<td id="td17"><a href="#">일곡동<input type="hidden" value="일곡동" class="dongname17"></a></td>
-							<td id="td18"><a href="#">임동<input type="hidden" value="임동" class="dongname18"></a></td>
+							<td id="td16"><a href="#">운암동<input type="hidden"
+									value="운암동" class="dongname16"></a></td>
+							<td id="td17"><a href="#">일곡동<input type="hidden"
+									value="일곡동" class="dongname17"></a></td>
+							<td id="td18"><a href="#">임동<input type="hidden"
+									value="임동" class="dongname18"></a></td>
 					</thead>
 				</table>
 			</div>
@@ -308,144 +332,13 @@
 			<div class="graph graph-con1">
 				<div class="page-path">광주광역시 > 북구</div>
 				<div class="graph-inner">
-					<script type="text/javascript">
-						// jsData 
-						function gvisDataComboChartIDed4622566b8() {
-							var data = new google.visualization.DataTable();
-							var datajson = [
-									[ "각화동", 338000000, 92000000, 174739130.4 ],
-									[ "동림동", 230000000, 90000000, 155756097.6 ],
-									[ "두암동", 650000000, 63000000, 160456937.8 ],
-									[ "매곡동", 355000000, 70000000, 181766917.3 ],
-									[ "문흥동", 310000000, 57000000, 155952554.7 ],
-									[ "본촌동", 500000000, 218000000, 340333333.3 ],
-									[ "삼각동", 340000000, 47000000, 159423076.9 ],
-									[ "신안동", 205000000, 37500000, 144025000 ],
-									[ "신용동", 520000000, 115000000, 298381679.4 ],
-									[ "양산동", 395000000, 77500000, 190212837.8 ],
-									[ "연제동", 335000000, 87000000, 190628819.4 ],
-									[ "오치동", 179500000, 62000000, 121810606.1 ],
-									[ "용두동", 275000000, 259000000, 267333333.3 ],
-									[ "용봉동", 450000000, 77000000, 192227848.1 ],
-									[ "우산동", 263000000, 96000000, 209161290.3 ],
-									[ "운암동", 610000000, 65000000, 231975502 ],
-									[ "일곡동", 460000000, 87000000, 196834801.8 ],
-									[ "임동", 340000000, 77000000, 231200000 ] ];
-							data.addColumn('string', 'DONGNAME');
-							data.addColumn('number', '최대가격');
-							data.addColumn('number', '최소가격');
-							data.addColumn('number', '평균가');
-							data.addRows(datajson);
-							return (data);
-						}
-
-						// jsDrawChart
-						function drawChartComboChartIDed4622566b8() {
-							var data = gvisDataComboChartIDed4622566b8();
-							var options = {};
-							options["allowHtml"] = true;
-							options["seriesType"] = "bars";
-							options["series"] = {
-								2 : {
-									type : 'line'
-								}
-							};
-							/* 차트의 전체 크기 조절 */
-							options["width"] = 2000;
-							options["height"] = 400;
-							options["overflow"] = scroll;
-
-							var chart = new google.visualization.ComboChart(
-									document
-											.getElementById('ComboChartIDed4622566b8'));
-							chart.draw(data, options);
-
-						}
-
-						// jsDisplayChart
-						(function() {
-							var pkgs = window.__gvisPackages = window.__gvisPackages
-									|| [];
-							var callbacks = window.__gvisCallbacks = window.__gvisCallbacks
-									|| [];
-							var chartid = "corechart";
-
-							// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
-							var i, newPackage = true;
-							for (i = 0; newPackage && i < pkgs.length; i++) {
-								if (pkgs[i] === chartid)
-									newPackage = false;
-							}
-							if (newPackage)
-								pkgs.push(chartid);
-
-							// Add the drawChart function to the global list of callbacks
-							callbacks.push(drawChartComboChartIDed4622566b8);
-						})();
-						function displayChartComboChartIDed4622566b8() {
-							var pkgs = window.__gvisPackages = window.__gvisPackages
-									|| [];
-							var callbacks = window.__gvisCallbacks = window.__gvisCallbacks
-									|| [];
-							window.clearTimeout(window.__gvisLoad);
-							// The timeout is set to 100 because otherwise the container div we are
-							// targeting might not be part of the document yet
-							window.__gvisLoad = setTimeout(function() {
-								var pkgCount = pkgs.length;
-								google.load("visualization", "1", {
-									packages : pkgs,
-									callback : function() {
-										if (pkgCount != pkgs.length) {
-											// Race condition where another setTimeout call snuck in after us; if
-											// that call added a package, we must not shift its callback
-											return;
-										}
-										while (callbacks.length > 0)
-											callbacks.shift()();
-									}
-								});
-							}, 100);
-						}
-
-						// jsFooter
-					</script>
-
-					<!-- jsChart -->
-					<script type="text/javascript"
-						src="https://www.google.com/jsapi?callback=displayChartComboChartIDed4622566b8"></script>
-
-					<!-- divChart -->
-
-					<div id="ComboChartIDed4622566b8"
-						style="width: 500; height: 500; overflow: scroll;"></div>
-					<div>
-						<span>Data: data &#8226; Chart ID: <a
-							href="Chart_ComboChartIDed4622566b8.html">ComboChartIDed4622566b8</a>
-							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
-						<!-- htmlFooter -->
-						<span> R version 3.4.4 (2018-03-15) &#8226; <a
-							href="https://developers.google.com/terms/">Google Terms of
-								Use</a> &#8226; <a
-							href="https://google-developers.appspot.com/chart/interactive/docs/gallery/combochart">Documentation
-								and Data Policy</a>
-						</span>
-					</div>
-
-				</div>
-			</div>
-			<!-- 북구 전체 그래프 div 끝 -->
-
-			<!-- 각화동 그래프 시작 -->
-			<div class="graph graph-con2">
-				<div class="page-path">북구 > 각화동</div>
-				<div class="graph-inner">
 					<!-- jsHeader -->
 
 
 					<script type="text/javascript">
 						// jsData
 
-						function gvisDataComboChartID120866175935() {
+						function gvisDataComboChartIDf40224944cc() {
 
 							var data = new google.visualization.DataTable();
 
@@ -455,67 +348,247 @@
 
 							[
 
-							"골드클래스",
+							"각화동",
 
 							338000000,
 
-							320000000,
+							92000000,
 
-							327000000
+							182941176.5
 
 							],
 
 							[
 
-							"글로벌",
+							"동림동",
+
+							230000000,
+
+							83000000,
+
+							143600000
+
+							],
+
+							[
+
+							"두암동",
+
+							650000000,
+
+							63000000,
+
+							157330449.8
+
+							],
+
+							[
+
+							"매곡동",
+
+							355000000,
+
+							78000000,
+
+							185408227.8
+
+							],
+
+							[
+
+							"문흥동",
 
 							300000000,
 
-							140000000,
+							56000000,
 
-							187687500
-
-							],
-
-							[
-
-							"금호",
-
-							250000000,
-
-							137000000,
-
-							189266666.7
+							147044705.9
 
 							],
 
 							[
 
-							"무등파크",
+							"본촌동",
 
-							150000000,
+							398000000,
 
-							92000000,
+							215000000,
 
-							117000000
+							322186046.5
 
 							],
 
 							[
 
-							"해광파크",
+							"삼각동",
 
-							141000000,
+							335000000,
 
-							132000000,
+							47000000,
 
-							136600000
+							174184615.4
+
+							],
+
+							[
+
+							"신안동",
+
+							245000000,
+
+							95000000,
+
+							151421052.6
+
+							],
+
+							[
+
+							"신용동",
+
+							520000000,
+
+							98000000,
+
+							276141361.3
+
+							],
+
+							[
+
+							"양산동",
+
+							450000000,
+
+							74000000,
+
+							183785714.3
+
+							],
+
+							[
+
+							"연제동",
+
+							335000000,
+
+							79000000,
+
+							201247256.1
+
+							],
+
+							[
+
+							"오치동",
+
+							418000000,
+
+							43000000,
+
+							142250000
+
+							],
+
+							[
+
+							"용두동",
+
+							480000000,
+
+							109000000,
+
+							234058695.7
+
+							],
+
+							[
+
+							"용봉동",
+
+							465000000,
+
+							77000000,
+
+							213021447.7
+
+							],
+
+							[
+
+							"우산동",
+
+							263000000,
+
+							90000000,
+
+							200454545.5
+
+							],
+
+							[
+
+							"운암동",
+
+							590000000,
+
+							83000000,
+
+							227170227.3
+
+							],
+
+							[
+
+							"일곡동",
+
+							465000000,
+
+							85000000,
+
+							185236014
+
+							],
+
+							[
+
+							"임동",
+
+							340000000,
+
+							43000000,
+
+							218070370.4
+
+							],
+
+							[
+
+							"중흥동",
+
+							300000000,
+
+							73000000,
+
+							213500000
+
+							],
+
+							[
+
+							"풍향동",
+
+							400000000,
+
+							125000000,
+
+							326600000
 
 							]
 
 							];
 
-							data.addColumn('string', 'APTNAME');
+							data.addColumn('string', 'DONGNAME');
 
 							data.addColumn('number', '최대가격');
 
@@ -531,9 +604,9 @@
 
 						// jsDrawChart
 
-						function drawChartComboChartID120866175935() {
+						function drawChartComboChartIDf40224944cc() {
 
-							var data = gvisDataComboChartID120866175935();
+							var data = gvisDataComboChartIDf40224944cc();
 
 							var options = {};
 
@@ -541,19 +614,21 @@
 
 							options["seriesType"] = "bars";
 
+							options["legend"] = "top";
+
 							options["series"] = {
 								2 : {
 									type : 'line'
 								}
 							};
 							/* 차트의 전체 크기 조절 */
-							options["width"] = 900;
-							
+							options["width"] = 1100;
+
 							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
-							document.getElementById('ComboChartID120866175935')
+							document.getElementById('ComboChartIDf40224944cc')
 
 							);
 
@@ -591,11 +666,11 @@
 
 							// Add the drawChart function to the global list of callbacks
 
-							callbacks.push(drawChartComboChartID120866175935);
+							callbacks.push(drawChartComboChartIDf40224944cc);
 
 						})();
 
-						function displayChartComboChartID120866175935() {
+						function displayChartComboChartIDf40224944cc() {
 
 							var pkgs = window.__gvisPackages = window.__gvisPackages
 									|| [];
@@ -646,7 +721,7 @@
 					<!-- jsChart -->
 
 					<script type="text/javascript"
-						src="https://www.google.com/jsapi?callback=displayChartComboChartID120866175935"></script>
+						src="https://www.google.com/jsapi?callback=displayChartComboChartIDf40224944cc"></script>
 
 
 
@@ -654,12 +729,256 @@
 
 
 
-					<div id="ComboChartID120866175935"
+					<div id="ComboChartIDf40224944cc"
 						style="width: 500; height: automatic;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
-							href="Chart_ComboChartID120866175935.html">ComboChartID120866175935</a>
+							href="Chart_ComboChartIDf40224944cc.html">ComboChartIDf40224944cc</a>
+							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
+
+						<!-- htmlFooter -->
+
+						<span> R version 3.4.3 (2017-11-30) &#8226; <a
+							href="https://developers.google.com/terms/">Google Terms of
+								Use</a> &#8226; <a
+							href="https://google-developers.appspot.com/chart/interactive/docs/gallery/combochart">Documentation
+								and Data Policy</a>
+
+						</span>
+					</div>
+
+				</div>
+			</div>
+			<!-- 북구 전체 그래프 div 끝 -->
+
+			<!-- 각화동 그래프 시작 -->
+			<div class="graph graph-con2">
+				<div class="page-path">북구 > 각화동</div>
+				<div class="graph-inner">
+					<!-- jsHeader -->
+
+
+					<script type="text/javascript">
+						// jsData
+
+						function gvisDataComboChartID152045fb481c() {
+
+							var data = new google.visualization.DataTable();
+
+							var datajson =
+
+							[
+
+							[
+
+							"골드클래스",
+
+							338000000,
+
+							325000000,
+
+							330500000
+
+							],
+
+							[
+
+							"글로벌",
+
+							190000000,
+
+							138000000,
+
+							166000000
+
+							],
+
+							[
+
+							"금호",
+
+							230000000,
+
+							135000000,
+
+							169307692.3
+
+							],
+
+							[
+
+							"무등파크",
+
+							157000000,
+
+							92000000,
+
+							124538461.5
+
+							],
+
+							[
+
+							"해광파크",
+
+							140000000,
+
+							134000000,
+
+							136333333.3
+
+							]
+
+							];
+
+							data.addColumn('string', 'APTNAME');
+
+							data.addColumn('number', '최대가격');
+
+							data.addColumn('number', '최소가격');
+
+							data.addColumn('number', '평균가');
+
+							data.addRows(datajson);
+
+							return (data);
+
+						}
+
+						// jsDrawChart
+
+						function drawChartComboChartID152045fb481c() {
+
+							var data = gvisDataComboChartID152045fb481c();
+
+							var options = {};
+
+							options["allowHtml"] = true;
+
+							options["seriesType"] = "bars";
+
+							options["legend"] = "top";
+
+							options["series"] = {
+								2 : {
+									type : 'line'
+								}
+							};
+							/* 차트의 전체 크기 조절 */
+							options["width"] = 1100;
+
+							options["height"] = 483;
+
+							var chart = new google.visualization.ComboChart(
+
+							document.getElementById('ComboChartID152045fb481c')
+
+							);
+
+							chart.draw(data, options);
+
+						}
+
+						// jsDisplayChart
+
+						(function() {
+
+							var pkgs = window.__gvisPackages = window.__gvisPackages
+									|| [];
+
+							var callbacks = window.__gvisCallbacks = window.__gvisCallbacks
+									|| [];
+
+							var chartid = "corechart";
+
+							// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+
+							var i, newPackage = true;
+
+							for (i = 0; newPackage && i < pkgs.length; i++) {
+
+								if (pkgs[i] === chartid)
+
+									newPackage = false;
+
+							}
+
+							if (newPackage)
+
+								pkgs.push(chartid);
+
+							// Add the drawChart function to the global list of callbacks
+
+							callbacks.push(drawChartComboChartID152045fb481c);
+
+						})();
+
+						function displayChartComboChartID152045fb481c() {
+
+							var pkgs = window.__gvisPackages = window.__gvisPackages
+									|| [];
+
+							var callbacks = window.__gvisCallbacks = window.__gvisCallbacks
+									|| [];
+
+							window.clearTimeout(window.__gvisLoad);
+
+							// The timeout is set to 100 because otherwise the container div we are
+
+							// targeting might not be part of the document yet
+
+							window.__gvisLoad = setTimeout(function() {
+
+								var pkgCount = pkgs.length;
+
+								google.load("visualization", "1", {
+									packages : pkgs,
+									callback : function() {
+
+										if (pkgCount != pkgs.length) {
+
+											// Race condition where another setTimeout call snuck in after us; if
+
+											// that call added a package, we must not shift its callback
+
+											return;
+
+										}
+
+										while (callbacks.length > 0)
+
+											callbacks.shift()();
+
+									}
+								});
+
+							}, 100);
+
+						}
+
+						// jsFooter
+					</script>
+
+
+
+					<!-- jsChart -->
+
+					<script type="text/javascript"
+						src="https://www.google.com/jsapi?callback=displayChartComboChartID152045fb481c"></script>
+
+
+
+					<!-- divChart -->
+
+
+
+					<div id="ComboChartID152045fb481c"
+						style="width: 500; height: automatic;"></div>
+
+					<div>
+						<span>Data: data &#8226; Chart ID: <a
+							href="Chart_ComboChartID152045fb481c.html">ComboChartID152045fb481c</a>
 							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 
 						<!-- htmlFooter -->
@@ -686,7 +1005,7 @@
 					<script type="text/javascript">
 						// jsData
 
-						function gvisDataComboChartID120810896f33() {
+						function gvisDataComboChartID152049b058e9() {
 
 							var data = new google.visualization.DataTable();
 
@@ -698,11 +1017,11 @@
 
 							"삼라마이다스빌",
 
-							225000000,
+							220000000,
 
-							190000000,
+							198000000,
 
-							208000000
+							207100000
 
 							],
 
@@ -712,9 +1031,9 @@
 
 							230000000,
 
-							85000000,
+							90000000,
 
-							151902439
+							157478260.9
 
 							],
 
@@ -724,9 +1043,9 @@
 
 							225000000,
 
-							130000000,
+							140000000,
 
-							160300000
+							180400000
 
 							],
 
@@ -734,35 +1053,11 @@
 
 							"우미",
 
-							115000000,
+							97000000,
 
 							95000000,
 
-							100777777.8
-
-							],
-
-							[
-
-							"유일가든",
-
-							93000000,
-
-							83000000,
-
-							86800000
-
-							],
-
-							[
-
-							"푸른주공1단지",
-
-							115000000,
-
-							102000000,
-
-							105727272.7
+							95666666.67
 
 							],
 
@@ -770,11 +1065,11 @@
 
 							"푸른주공3단지",
 
-							147000000,
+							150000000,
 
-							117000000,
+							120000000,
 
-							133809523.8
+							134866666.7
 
 							],
 
@@ -782,11 +1077,11 @@
 
 							"푸른주공4단지",
 
-							200000000,
+							167000000,
 
-							140000000,
+							151000000,
 
-							173857142.9
+							157000000
 
 							]
 
@@ -808,9 +1103,9 @@
 
 						// jsDrawChart
 
-						function drawChartComboChartID120810896f33() {
+						function drawChartComboChartID152049b058e9() {
 
-							var data = gvisDataComboChartID120810896f33();
+							var data = gvisDataComboChartID152049b058e9();
 
 							var options = {};
 
@@ -818,19 +1113,21 @@
 
 							options["seriesType"] = "bars";
 
+							options["legend"] = "top";
+
 							options["series"] = {
 								2 : {
 									type : 'line'
 								}
 							};
 							/* 차트의 전체 크기 조절 */
-							options["width"] = 900;
-							
+							options["width"] = 1100;
+
 							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
-							document.getElementById('ComboChartID120810896f33')
+							document.getElementById('ComboChartID152049b058e9')
 
 							);
 
@@ -868,11 +1165,11 @@
 
 							// Add the drawChart function to the global list of callbacks
 
-							callbacks.push(drawChartComboChartID120810896f33);
+							callbacks.push(drawChartComboChartID152049b058e9);
 
 						})();
 
-						function displayChartComboChartID120810896f33() {
+						function displayChartComboChartID152049b058e9() {
 
 							var pkgs = window.__gvisPackages = window.__gvisPackages
 									|| [];
@@ -923,7 +1220,7 @@
 					<!-- jsChart -->
 
 					<script type="text/javascript"
-						src="https://www.google.com/jsapi?callback=displayChartComboChartID120810896f33"></script>
+						src="https://www.google.com/jsapi?callback=displayChartComboChartID152049b058e9"></script>
 
 
 
@@ -931,12 +1228,12 @@
 
 
 
-					<div id="ComboChartID120810896f33"
+					<div id="ComboChartID152049b058e9"
 						style="width: 500; height: automatic;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
-							href="Chart_ComboChartID120810896f33.html">ComboChartID120810896f33</a>
+							href="Chart_ComboChartID152049b058e9.html">ComboChartID152049b058e9</a>
 							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 
 						<!-- htmlFooter -->
@@ -964,7 +1261,7 @@
 					<script type="text/javascript">
 						// jsData
 
-						function gvisDataComboChartID120844fb52ba() {
+						function gvisDataComboChartID1520a694d14() {
 
 							var data = new google.visualization.DataTable();
 
@@ -978,9 +1275,9 @@
 
 							135000000,
 
-							76000000,
+							119000000,
 
-							105500000
+							127000000
 
 							],
 
@@ -990,9 +1287,33 @@
 
 							127000000,
 
-							127000000,
+							97000000,
 
-							127000000
+							112000000
+
+							],
+
+							[
+
+							"그린파크",
+
+							175000000,
+
+							175000000,
+
+							175000000
+
+							],
+
+							[
+
+							"기산로얄타운",
+
+							270000000,
+
+							180000000,
+
+							210000000
 
 							],
 
@@ -1004,7 +1325,7 @@
 
 							220000000,
 
-							265000000
+							261666666.7
 
 							],
 
@@ -1012,11 +1333,11 @@
 
 							"동산훼밀리",
 
-							100000000,
+							95000000,
 
 							85000000,
 
-							92500000
+							90000000
 
 							],
 
@@ -1026,9 +1347,9 @@
 
 							73000000,
 
-							72000000,
+							73000000,
 
-							72500000
+							73000000
 
 							],
 
@@ -1036,11 +1357,11 @@
 
 							"두암주공3단지",
 
-							108000000,
+							95000000,
 
 							63000000,
 
-							76666666.67
+							72431818.18
 
 							],
 
@@ -1048,11 +1369,11 @@
 
 							"라인동산",
 
-							190000000,
+							185000000,
 
-							125000000,
+							185000000,
 
-							135750000
+							185000000
 
 							],
 
@@ -1062,9 +1383,9 @@
 
 							245000000,
 
-							200000000,
+							225000000,
 
-							230586206.9
+							230850000
 
 							],
 
@@ -1072,11 +1393,11 @@
 
 							"목화",
 
-							113000000,
+							73000000,
 
 							73000000,
 
-							93000000
+							73000000
 
 							],
 
@@ -1088,7 +1409,7 @@
 
 							428000000,
 
-							521750000
+							525900000
 
 							],
 
@@ -1096,11 +1417,11 @@
 
 							"무등파크1차",
 
-							155000000,
+							150000000,
 
 							140000000,
 
-							144750000
+							143750000
 
 							],
 
@@ -1110,9 +1431,9 @@
 
 							165000000,
 
-							110000000,
+							127000000,
 
-							134866666.7
+							142533333.3
 
 							],
 
@@ -1120,11 +1441,11 @@
 
 							"무등파크3차",
 
-							200000000,
+							197000000,
 
-							165000000,
+							167000000,
 
-							183857142.9
+							178000000
 
 							],
 
@@ -1132,11 +1453,11 @@
 
 							"문화",
 
-							72000000,
+							85000000,
 
-							65000000,
+							67000000,
 
-							69000000
+							75500000
 
 							],
 
@@ -1148,19 +1469,19 @@
 
 							88000000,
 
-							129615384.6
+							113923076.9
 
 							],
 
 							[
 
-							"미진",
+							"백조",
 
-							102000000,
+							81000000,
 
-							102000000,
+							81000000,
 
-							102000000
+							81000000
 
 							],
 
@@ -1168,11 +1489,11 @@
 
 							"부영",
 
-							117000000,
+							100000000,
 
-							90000000,
+							86000000,
 
-							103545454.5
+							94000000
 
 							],
 
@@ -1180,11 +1501,23 @@
 
 							"산호",
 
-							80000000,
+							76000000,
 
-							80000000,
+							76000000,
 
-							80000000
+							76000000
+
+							],
+
+							[
+
+							"삼호",
+
+							72000000,
+
+							72000000,
+
+							72000000
 
 							],
 
@@ -1194,9 +1527,9 @@
 
 							93000000,
 
-							86000000,
+							83000000,
 
-							89000000
+							89666666.67
 
 							],
 
@@ -1204,9 +1537,9 @@
 
 							"양서",
 
-							102000000,
+							105000000,
 
-							102000000,
+							99000000,
 
 							102000000
 
@@ -1220,7 +1553,7 @@
 
 							95000000,
 
-							102500000
+							101333333.3
 
 							],
 
@@ -1228,11 +1561,11 @@
 
 							"율곡타운",
 
-							112000000,
+							115000000,
 
 							66000000,
 
-							81180555.56
+							82696969.7
 
 							],
 
@@ -1252,23 +1585,11 @@
 
 							"중흥S클래스",
 
-							389000000,
+							400000000,
 
-							383000000,
+							390000000,
 
-							387000000
-
-							],
-
-							[
-
-							"청아",
-
-							127000000,
-
-							127000000,
-
-							127000000
+							395000000
 
 							],
 
@@ -1276,11 +1597,11 @@
 
 							"현대",
 
-							340000000,
+							310000000,
 
-							115000000,
+							132000000,
 
-							179512820.5
+							187500000
 
 							],
 
@@ -1292,7 +1613,7 @@
 
 							230000000,
 
-							271888888.9
+							285000000
 
 							],
 
@@ -1300,11 +1621,11 @@
 
 							"화성",
 
-							90000000,
+							93000000,
 
-							90000000,
+							93000000,
 
-							90000000
+							93000000
 
 							]
 
@@ -1326,9 +1647,9 @@
 
 						// jsDrawChart
 
-						function drawChartComboChartID120844fb52ba() {
+						function drawChartComboChartID1520a694d14() {
 
-							var data = gvisDataComboChartID120844fb52ba();
+							var data = gvisDataComboChartID1520a694d14();
 
 							var options = {};
 
@@ -1336,19 +1657,21 @@
 
 							options["seriesType"] = "bars";
 
+							options["legend"] = "top";
+
 							options["series"] = {
 								2 : {
 									type : 'line'
 								}
 							};
 							/* 차트의 전체 크기 조절 */
-							options["width"] = 900;
-							
+							options["width"] = 1100;
+
 							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
-							document.getElementById('ComboChartID120844fb52ba')
+							document.getElementById('ComboChartID1520a694d14')
 
 							);
 
@@ -1386,11 +1709,11 @@
 
 							// Add the drawChart function to the global list of callbacks
 
-							callbacks.push(drawChartComboChartID120844fb52ba);
+							callbacks.push(drawChartComboChartID1520a694d14);
 
 						})();
 
-						function displayChartComboChartID120844fb52ba() {
+						function displayChartComboChartID1520a694d14() {
 
 							var pkgs = window.__gvisPackages = window.__gvisPackages
 									|| [];
@@ -1441,7 +1764,7 @@
 					<!-- jsChart -->
 
 					<script type="text/javascript"
-						src="https://www.google.com/jsapi?callback=displayChartComboChartID120844fb52ba"></script>
+						src="https://www.google.com/jsapi?callback=displayChartComboChartID1520a694d14"></script>
 
 
 
@@ -1449,12 +1772,12 @@
 
 
 
-					<div id="ComboChartID120844fb52ba"
+					<div id="ComboChartID1520a694d14"
 						style="width: 500; height: automatic;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
-							href="Chart_ComboChartID120844fb52ba.html">ComboChartID120844fb52ba</a>
+							href="Chart_ComboChartID1520a694d14.html">ComboChartID1520a694d14</a>
 							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 
 						<!-- htmlFooter -->
@@ -1482,7 +1805,7 @@
 					<script type="text/javascript">
 						// jsData
 
-						function gvisDataComboChartID1208196816d() {
+						function gvisDataComboChartID15203b6f61d9() {
 
 							var data = new google.visualization.DataTable();
 
@@ -1494,11 +1817,11 @@
 
 							"금호타운",
 
-							195000000,
+							185000000,
 
-							138000000,
+							139000000,
 
-							161352941.2
+							155769230.8
 
 							],
 
@@ -1506,11 +1829,11 @@
 
 							"대광로제비앙",
 
-							289000000,
+							277000000,
 
-							275000000,
+							277000000,
 
-							282000000
+							277000000
 
 							],
 
@@ -1518,11 +1841,11 @@
 
 							"대성베르힐",
 
-							330000000,
+							350000000,
 
 							245000000,
 
-							296200000
+							298769230.8
 
 							],
 
@@ -1534,7 +1857,7 @@
 
 							235000000,
 
-							263928571.4
+							263647058.8
 
 							],
 
@@ -1542,23 +1865,11 @@
 
 							"대화",
 
-							105000000,
+							127000000,
 
-							95000000,
+							82000000,
 
-							100000000
-
-							],
-
-							[
-
-							"동남",
-
-							160000000,
-
-							160000000,
-
-							160000000
+							100500000
 
 							],
 
@@ -1566,11 +1877,11 @@
 
 							"부림1차",
 
-							180000000,
+							120000000,
 
 							92000000,
 
-							114555555.6
+							107571428.6
 
 							],
 
@@ -1580,9 +1891,9 @@
 
 							115000000,
 
-							85000000,
+							80000000,
 
-							108500000
+							106300000
 
 							],
 
@@ -1590,11 +1901,11 @@
 
 							"삼성",
 
-							190000000,
+							187000000,
 
 							112000000,
 
-							159600000
+							160636363.6
 
 							],
 
@@ -1604,9 +1915,9 @@
 
 							195000000,
 
-							145000000,
+							185000000,
 
-							171705882.4
+							193750000
 
 							],
 
@@ -1614,11 +1925,11 @@
 
 							"서강",
 
-							110000000,
+							116000000,
 
-							88500000,
+							89000000,
 
-							100833333.3
+							100384615.4
 
 							],
 
@@ -1628,9 +1939,9 @@
 
 							320000000,
 
-							200000000,
+							205000000,
 
-							237410256.4
+							280066666.7
 
 							],
 
@@ -1640,9 +1951,9 @@
 
 							150000000,
 
-							142000000,
+							143000000,
 
-							145285714.3
+							147571428.6
 
 							],
 
@@ -1650,11 +1961,11 @@
 
 							"호반1차",
 
-							100000000,
+							110000000,
 
-							78000000,
+							70000000,
 
-							86000000
+							85500000
 
 							],
 
@@ -1662,11 +1973,11 @@
 
 							"호반2차",
 
-							120000000,
+							118000000,
 
-							105000000,
+							107000000,
 
-							111500000
+							111250000
 
 							]
 
@@ -1688,9 +1999,9 @@
 
 						// jsDrawChart
 
-						function drawChartComboChartID1208196816d() {
+						function drawChartComboChartID15203b6f61d9() {
 
-							var data = gvisDataComboChartID1208196816d();
+							var data = gvisDataComboChartID15203b6f61d9();
 
 							var options = {};
 
@@ -1698,19 +2009,21 @@
 
 							options["seriesType"] = "bars";
 
+							options["legend"] = "top";
+
 							options["series"] = {
 								2 : {
 									type : 'line'
 								}
 							};
 							/* 차트의 전체 크기 조절 */
-							options["width"] = 900;
-							
+							options["width"] = 1100;
+
 							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
-							document.getElementById('ComboChartID1208196816d')
+							document.getElementById('ComboChartID15203b6f61d9')
 
 							);
 
@@ -1748,11 +2061,11 @@
 
 							// Add the drawChart function to the global list of callbacks
 
-							callbacks.push(drawChartComboChartID1208196816d);
+							callbacks.push(drawChartComboChartID15203b6f61d9);
 
 						})();
 
-						function displayChartComboChartID1208196816d() {
+						function displayChartComboChartID15203b6f61d9() {
 
 							var pkgs = window.__gvisPackages = window.__gvisPackages
 									|| [];
@@ -1803,7 +2116,7 @@
 					<!-- jsChart -->
 
 					<script type="text/javascript"
-						src="https://www.google.com/jsapi?callback=displayChartComboChartID1208196816d"></script>
+						src="https://www.google.com/jsapi?callback=displayChartComboChartID15203b6f61d9"></script>
 
 
 
@@ -1811,12 +2124,12 @@
 
 
 
-					<div id="ComboChartID1208196816d"
+					<div id="ComboChartID15203b6f61d9"
 						style="width: 500; height: automatic;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
-							href="Chart_ComboChartID1208196816d.html">ComboChartID1208196816d</a>
+							href="Chart_ComboChartID15203b6f61d9.html">ComboChartID15203b6f61d9</a>
 							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 
 						<!-- htmlFooter -->
@@ -1845,7 +2158,7 @@
 					<script type="text/javascript">
 						// jsData
 
-						function gvisDataComboChartID1208178714b5() {
+						function gvisDataComboChartID15207f72469() {
 
 							var data = new google.visualization.DataTable();
 
@@ -1857,11 +2170,11 @@
 
 							"공간",
 
-							147000000,
+							125000000,
 
-							127000000,
+							125000000,
 
-							135111111.1
+							125000000
 
 							],
 
@@ -1871,9 +2184,9 @@
 
 							137000000,
 
-							115000000,
+							116000000,
 
-							123653846.2
+							124083333.3
 
 							],
 
@@ -1883,9 +2196,9 @@
 
 							230000000,
 
-							185000000,
+							210000000,
 
-							206250000
+							220000000
 
 							],
 
@@ -1895,9 +2208,9 @@
 
 							295000000,
 
-							183000000,
+							200000000,
 
-							217195122
+							240840000
 
 							],
 
@@ -1905,11 +2218,11 @@
 
 							"대주1차",
 
-							87000000,
+							57000000,
 
-							56000000,
+							57000000,
 
-							72181818.18
+							57000000
 
 							],
 
@@ -1919,9 +2232,9 @@
 
 							157000000,
 
-							82000000,
+							80000000,
 
-							107800000
+							113000000
 
 							],
 
@@ -1929,11 +2242,11 @@
 
 							"대주3차",
 
-							105000000,
+							108000000,
 
-							85000000,
+							90000000,
 
-							96000000
+							98818181.82
 
 							],
 
@@ -1941,11 +2254,11 @@
 
 							"라인1차",
 
-							145000000,
+							147000000,
 
-							107000000,
+							120000000,
 
-							131178571.4
+							134882352.9
 
 							],
 
@@ -1953,11 +2266,11 @@
 
 							"라인3차",
 
-							125000000,
+							138000000,
 
-							117000000,
+							113000000,
 
-							121666666.7
+							121500000
 
 							],
 
@@ -1965,35 +2278,11 @@
 
 							"라인동산2차",
 
-							270000000,
+							285000000,
 
 							170000000,
 
-							196125000
-
-							],
-
-							[
-
-							"명지",
-
-							175000000,
-
-							160000000,
-
-							167111111.1
-
-							],
-
-							[
-
-							"모아",
-
-							195000000,
-
-							170000000,
-
-							182578947.4
+							214588235.3
 
 							],
 
@@ -2001,11 +2290,11 @@
 
 							"상록",
 
-							138000000,
+							137000000,
 
-							112000000,
+							117000000,
 
-							126218750
+							126708333.3
 
 							],
 
@@ -2015,9 +2304,9 @@
 
 							110000000,
 
-							98000000,
+							102000000,
 
-							104666666.7
+							106428571.4
 
 							],
 
@@ -2025,11 +2314,11 @@
 
 							"우미호반",
 
-							189000000,
+							168000000,
 
 							165000000,
 
-							171000000
+							165750000
 
 							],
 
@@ -2039,9 +2328,9 @@
 
 							134000000,
 
-							83000000,
+							90000000,
 
-							108000000
+							117700000
 
 							],
 
@@ -2049,11 +2338,11 @@
 
 							"우성",
 
-							193000000,
+							183000000,
 
-							149000000,
+							150000000,
 
-							165312500
+							160812500
 
 							],
 
@@ -2061,11 +2350,11 @@
 
 							"일신",
 
-							132000000,
+							140000000,
 
-							115000000,
+							117000000,
 
-							122238095.2
+							124040000
 
 							],
 
@@ -2073,11 +2362,11 @@
 
 							"제일",
 
-							108000000,
+							105000000,
 
-							89000000,
+							95000000,
 
-							98352941.18
+							97750000
 
 							],
 
@@ -2085,11 +2374,11 @@
 
 							"중흥1차",
 
-							173000000,
+							170000000,
 
 							145000000,
 
-							163111111.1
+							164444444.4
 
 							],
 
@@ -2097,11 +2386,11 @@
 
 							"중흥2차",
 
-							150000000,
+							140000000,
 
 							113000000,
 
-							130157894.7
+							127857142.9
 
 							],
 
@@ -2111,9 +2400,9 @@
 
 							142000000,
 
-							107000000,
+							113000000,
 
-							126851851.9
+							128695652.2
 
 							],
 
@@ -2121,11 +2410,11 @@
 
 							"해광한신",
 
-							168000000,
+							173000000,
 
-							156000000,
+							159000000,
 
-							162500000
+							166222222.2
 
 							],
 
@@ -2133,11 +2422,11 @@
 
 							"현대",
 
-							300000000,
+							310000000,
 
 							190000000,
 
-							233916666.7
+							240703703.7
 
 							]
 
@@ -2159,9 +2448,9 @@
 
 						// jsDrawChart
 
-						function drawChartComboChartID1208178714b5() {
+						function drawChartComboChartID15207f72469() {
 
-							var data = gvisDataComboChartID1208178714b5();
+							var data = gvisDataComboChartID15207f72469();
 
 							var options = {};
 
@@ -2169,19 +2458,21 @@
 
 							options["seriesType"] = "bars";
 
+							options["legend"] = "top";
+
 							options["series"] = {
 								2 : {
 									type : 'line'
 								}
 							};
 							/* 차트의 전체 크기 조절 */
-							options["width"] = 900;
-							
+							options["width"] = 1100;
+
 							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
-							document.getElementById('ComboChartID1208178714b5')
+							document.getElementById('ComboChartID15207f72469')
 
 							);
 
@@ -2219,11 +2510,11 @@
 
 							// Add the drawChart function to the global list of callbacks
 
-							callbacks.push(drawChartComboChartID1208178714b5);
+							callbacks.push(drawChartComboChartID15207f72469);
 
 						})();
 
-						function displayChartComboChartID1208178714b5() {
+						function displayChartComboChartID15207f72469() {
 
 							var pkgs = window.__gvisPackages = window.__gvisPackages
 									|| [];
@@ -2274,7 +2565,7 @@
 					<!-- jsChart -->
 
 					<script type="text/javascript"
-						src="https://www.google.com/jsapi?callback=displayChartComboChartID1208178714b5"></script>
+						src="https://www.google.com/jsapi?callback=displayChartComboChartID15207f72469"></script>
 
 
 
@@ -2282,12 +2573,12 @@
 
 
 
-					<div id="ComboChartID1208178714b5"
+					<div id="ComboChartID15207f72469"
 						style="width: 500; height: automatic;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
-							href="Chart_ComboChartID1208178714b5.html">ComboChartID1208178714b5</a>
+							href="Chart_ComboChartID15207f72469.html">ComboChartID15207f72469</a>
 							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 
 						<!-- htmlFooter -->
@@ -2315,7 +2606,7 @@
 					<script type="text/javascript">
 						// jsData
 
-						function gvisDataComboChartID120819d03595() {
+						function gvisDataComboChartID15205f0342cc() {
 
 							var data = new google.visualization.DataTable();
 
@@ -2327,11 +2618,23 @@
 
 							"부영사랑으로",
 
-							225000000,
+							227000000,
 
-							215000000,
+							218000000,
 
-							218909090.9
+							220222222.2
+
+							],
+
+							[
+
+							"이안광주첨단",
+
+							281000000,
+
+							250000000,
+
+							265500000
 
 							],
 
@@ -2339,11 +2642,11 @@
 
 							"현진에버빌",
 
-							398000000,
+							500000000,
 
-							269000000,
+							267000000,
 
-							357687500
+							376529411.8
 
 							]
 
@@ -2365,9 +2668,9 @@
 
 						// jsDrawChart
 
-						function drawChartComboChartID120819d03595() {
+						function drawChartComboChartID15205f0342cc() {
 
-							var data = gvisDataComboChartID120819d03595();
+							var data = gvisDataComboChartID15205f0342cc();
 
 							var options = {};
 
@@ -2375,19 +2678,21 @@
 
 							options["seriesType"] = "bars";
 
+							options["legend"] = "top";
+
 							options["series"] = {
 								2 : {
 									type : 'line'
 								}
 							};
 							/* 차트의 전체 크기 조절 */
-							options["width"] = 900;
-							
+							options["width"] = 1100;
+
 							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
-							document.getElementById('ComboChartID120819d03595')
+							document.getElementById('ComboChartID15205f0342cc')
 
 							);
 
@@ -2425,11 +2730,11 @@
 
 							// Add the drawChart function to the global list of callbacks
 
-							callbacks.push(drawChartComboChartID120819d03595);
+							callbacks.push(drawChartComboChartID15205f0342cc);
 
 						})();
 
-						function displayChartComboChartID120819d03595() {
+						function displayChartComboChartID15205f0342cc() {
 
 							var pkgs = window.__gvisPackages = window.__gvisPackages
 									|| [];
@@ -2480,7 +2785,7 @@
 					<!-- jsChart -->
 
 					<script type="text/javascript"
-						src="https://www.google.com/jsapi?callback=displayChartComboChartID120819d03595"></script>
+						src="https://www.google.com/jsapi?callback=displayChartComboChartID15205f0342cc"></script>
 
 
 
@@ -2488,12 +2793,12 @@
 
 
 
-					<div id="ComboChartID120819d03595"
+					<div id="ComboChartID15205f0342cc"
 						style="width: 500; height: automatic;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
-							href="Chart_ComboChartID120819d03595.html">ComboChartID120819d03595</a>
+							href="Chart_ComboChartID15205f0342cc.html">ComboChartID15205f0342cc</a>
 							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 
 						<!-- htmlFooter -->
@@ -2521,7 +2826,7 @@
 					<script type="text/javascript">
 						// jsData
 
-						function gvisDataComboChartID120899b5c20() {
+						function gvisDataComboChartID15203876caa() {
 
 							var data = new google.visualization.DataTable();
 
@@ -2535,9 +2840,9 @@
 
 							230000000,
 
-							116000000,
+							128000000,
 
-							160019230.8
+							176000000
 
 							],
 
@@ -2545,11 +2850,11 @@
 
 							"극동마이다스빌",
 
-							180000000,
+							185000000,
 
-							173000000,
+							155000000,
 
-							178600000
+							170000000
 
 							],
 
@@ -2569,11 +2874,11 @@
 
 							"모아호반",
 
-							128000000,
+							130000000,
 
 							104000000,
 
-							117416666.7
+							114692307.7
 
 							],
 
@@ -2585,7 +2890,7 @@
 
 							140000000,
 
-							147166666.7
+							146857142.9
 
 							],
 
@@ -2593,11 +2898,11 @@
 
 							"서라",
 
-							143000000,
+							130000000,
 
 							105000000,
 
-							120071428.6
+							119153846.2
 
 							],
 
@@ -2609,7 +2914,7 @@
 
 							115000000,
 
-							141727272.7
+							131142857.1
 
 							],
 
@@ -2617,11 +2922,11 @@
 
 							"일곡엘리체프라임",
 
-							335000000,
+							340000000,
 
 							300000000,
 
-							316565217.4
+							313888888.9
 
 							],
 
@@ -2629,11 +2934,11 @@
 
 							"혁신타운",
 
-							52000000,
+							47000000,
 
 							47000000,
 
-							49500000
+							47000000
 
 							],
 
@@ -2645,7 +2950,7 @@
 
 							73000000,
 
-							81500000
+							83250000
 
 							]
 
@@ -2667,9 +2972,9 @@
 
 						// jsDrawChart
 
-						function drawChartComboChartID120899b5c20() {
+						function drawChartComboChartID15203876caa() {
 
-							var data = gvisDataComboChartID120899b5c20();
+							var data = gvisDataComboChartID15203876caa();
 
 							var options = {};
 
@@ -2677,19 +2982,21 @@
 
 							options["seriesType"] = "bars";
 
+							options["legend"] = "top";
+
 							options["series"] = {
 								2 : {
 									type : 'line'
 								}
 							};
 							/* 차트의 전체 크기 조절 */
-							options["width"] = 900;
-							
+							options["width"] = 1100;
+
 							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
-							document.getElementById('ComboChartID120899b5c20')
+							document.getElementById('ComboChartID15203876caa')
 
 							);
 
@@ -2727,11 +3034,11 @@
 
 							// Add the drawChart function to the global list of callbacks
 
-							callbacks.push(drawChartComboChartID120899b5c20);
+							callbacks.push(drawChartComboChartID15203876caa);
 
 						})();
 
-						function displayChartComboChartID120899b5c20() {
+						function displayChartComboChartID15203876caa() {
 
 							var pkgs = window.__gvisPackages = window.__gvisPackages
 									|| [];
@@ -2782,7 +3089,7 @@
 					<!-- jsChart -->
 
 					<script type="text/javascript"
-						src="https://www.google.com/jsapi?callback=displayChartComboChartID120899b5c20"></script>
+						src="https://www.google.com/jsapi?callback=displayChartComboChartID15203876caa"></script>
 
 
 
@@ -2790,12 +3097,12 @@
 
 
 
-					<div id="ComboChartID120899b5c20"
+					<div id="ComboChartID15203876caa"
 						style="width: 500; height: automatic;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
-							href="Chart_ComboChartID120899b5c20.html">ComboChartID120899b5c20</a>
+							href="Chart_ComboChartID15203876caa.html">ComboChartID15203876caa</a>
 							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 
 						<!-- htmlFooter -->
@@ -2824,7 +3131,7 @@
 					<script type="text/javascript">
 						// jsData
 
-						function gvisDataComboChartID12084f471f97() {
+						function gvisDataComboChartID15202a88b68() {
 
 							var data = new google.visualization.DataTable();
 
@@ -2838,21 +3145,21 @@
 
 							115000000,
 
-							112000000,
+							103000000,
 
-							113500000
+							110000000
 
 							],
 
 							[
 
-							"모아타운",
+							"부강아트빌",
 
-							245000000,
+							37500000,
 
-							245000000,
+							37500000,
 
-							245000000
+							37500000
 
 							],
 
@@ -2860,11 +3167,11 @@
 
 							"삼익",
 
-							133000000,
+							137000000,
 
-							133000000,
+							120000000,
 
-							133000000
+							128500000
 
 							],
 
@@ -2876,7 +3183,7 @@
 
 							142000000,
 
-							161166666.7
+							157666666.7
 
 							],
 
@@ -2884,11 +3191,11 @@
 
 							"중흥파크",
 
-							100000000,
+							95000000,
 
 							95000000,
 
-							97000000
+							95000000
 
 							],
 
@@ -2922,9 +3229,9 @@
 
 						// jsDrawChart
 
-						function drawChartComboChartID12084f471f97() {
+						function drawChartComboChartID15202a88b68() {
 
-							var data = gvisDataComboChartID12084f471f97();
+							var data = gvisDataComboChartID15202a88b68();
 
 							var options = {};
 
@@ -2932,19 +3239,21 @@
 
 							options["seriesType"] = "bars";
 
+							options["legend"] = "top";
+
 							options["series"] = {
 								2 : {
 									type : 'line'
 								}
 							};
 							/* 차트의 전체 크기 조절 */
-							options["width"] = 900;
-							
+							options["width"] = 1100;
+
 							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
-							document.getElementById('ComboChartID12084f471f97')
+							document.getElementById('ComboChartID15202a88b68')
 
 							);
 
@@ -2982,11 +3291,11 @@
 
 							// Add the drawChart function to the global list of callbacks
 
-							callbacks.push(drawChartComboChartID12084f471f97);
+							callbacks.push(drawChartComboChartID15202a88b68);
 
 						})();
 
-						function displayChartComboChartID12084f471f97() {
+						function displayChartComboChartID15202a88b68() {
 
 							var pkgs = window.__gvisPackages = window.__gvisPackages
 									|| [];
@@ -3037,7 +3346,7 @@
 					<!-- jsChart -->
 
 					<script type="text/javascript"
-						src="https://www.google.com/jsapi?callback=displayChartComboChartID12084f471f97"></script>
+						src="https://www.google.com/jsapi?callback=displayChartComboChartID15202a88b68"></script>
 
 
 
@@ -3045,12 +3354,12 @@
 
 
 
-					<div id="ComboChartID12084f471f97"
+					<div id="ComboChartID15202a88b68"
 						style="width: 500; height: automatic;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
-							href="Chart_ComboChartID12084f471f97.html">ComboChartID12084f471f97</a>
+							href="Chart_ComboChartID15202a88b68.html">ComboChartID15202a88b68</a>
 							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 
 						<!-- htmlFooter -->
@@ -3078,7 +3387,7 @@
 					<script type="text/javascript">
 						// jsData
 
-						function gvisDataComboChartID12083a61600a() {
+						function gvisDataComboChartID15207f47144b() {
 
 							var data = new google.visualization.DataTable();
 
@@ -3090,11 +3399,11 @@
 
 							"GS첨단자이1차",
 
-							515000000,
+							460000000,
 
-							285000000,
+							295000000,
 
-							350000000
+							368863636.4
 
 							],
 
@@ -3102,11 +3411,11 @@
 
 							"GS첨단자이2차",
 
-							350000000,
+							345000000,
 
-							325000000,
+							297000000,
 
-							331909090.9
+							318333333.3
 
 							],
 
@@ -3114,11 +3423,11 @@
 
 							"용두주공",
 
-							150000000,
+							143000000,
 
-							98000000,
+							115000000,
 
-							123265306.1
+							129500000
 
 							],
 
@@ -3126,11 +3435,11 @@
 
 							"제일풍경채",
 
-							370000000,
+							385000000,
 
-							285000000,
+							275000000,
 
-							332222222.2
+							325857142.9
 
 							],
 
@@ -3140,9 +3449,9 @@
 
 							520000000,
 
-							370000000,
+							505000000,
 
-							420818181.8
+							512500000
 
 							],
 
@@ -3150,11 +3459,11 @@
 
 							"한양수자인리버뷰",
 
-							372000000,
+							355000000,
 
 							225000000,
 
-							278727272.7
+							283750000
 
 							],
 
@@ -3164,9 +3473,9 @@
 
 							415000000,
 
-							330000000,
+							338000000,
 
-							356300000
+							363666666.7
 
 							],
 
@@ -3176,9 +3485,9 @@
 
 							450000000,
 
-							365000000,
+							348000000,
 
-							405000000
+							396466666.7
 
 							]
 
@@ -3200,9 +3509,9 @@
 
 						// jsDrawChart
 
-						function drawChartComboChartID12083a61600a() {
+						function drawChartComboChartID15207f47144b() {
 
-							var data = gvisDataComboChartID12083a61600a();
+							var data = gvisDataComboChartID15207f47144b();
 
 							var options = {};
 
@@ -3210,19 +3519,21 @@
 
 							options["seriesType"] = "bars";
 
+							options["legend"] = "top";
+
 							options["series"] = {
 								2 : {
 									type : 'line'
 								}
 							};
 							/* 차트의 전체 크기 조절 */
-							options["width"] = 900;
-							
+							options["width"] = 1100;
+
 							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
-							document.getElementById('ComboChartID12083a61600a')
+							document.getElementById('ComboChartID15207f47144b')
 
 							);
 
@@ -3260,11 +3571,11 @@
 
 							// Add the drawChart function to the global list of callbacks
 
-							callbacks.push(drawChartComboChartID12083a61600a);
+							callbacks.push(drawChartComboChartID15207f47144b);
 
 						})();
 
-						function displayChartComboChartID12083a61600a() {
+						function displayChartComboChartID15207f47144b() {
 
 							var pkgs = window.__gvisPackages = window.__gvisPackages
 									|| [];
@@ -3315,7 +3626,7 @@
 					<!-- jsChart -->
 
 					<script type="text/javascript"
-						src="https://www.google.com/jsapi?callback=displayChartComboChartID12083a61600a"></script>
+						src="https://www.google.com/jsapi?callback=displayChartComboChartID15207f47144b"></script>
 
 
 
@@ -3323,12 +3634,12 @@
 
 
 
-					<div id="ComboChartID12083a61600a"
+					<div id="ComboChartID15207f47144b"
 						style="width: 500; height: automatic;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
-							href="Chart_ComboChartID12083a61600a.html">ComboChartID12083a61600a</a>
+							href="Chart_ComboChartID15207f47144b.html">ComboChartID15207f47144b</a>
 							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 
 						<!-- htmlFooter -->
@@ -3350,14 +3661,13 @@
 			<div class="graph graph-con11">
 				<div class="page-path">북구 > 양산동</div>
 				<div class="graph-inner">
-
 					<!-- jsHeader -->
 
 
 					<script type="text/javascript">
 						// jsData
 
-						function gvisDataComboChartID12084f256519() {
+						function gvisDataComboChartID152065bbc74() {
 
 							var data = new google.visualization.DataTable();
 
@@ -3369,11 +3679,11 @@
 
 							"GS자이1차",
 
-							450000000,
+							395000000,
 
-							251000000,
+							256000000,
 
-							352151515.2
+							300375000
 
 							],
 
@@ -3381,11 +3691,11 @@
 
 							"GS자이2차",
 
-							410000000,
+							380000000,
 
 							280000000,
 
-							342333333.3
+							333437500
 
 							],
 
@@ -3393,23 +3703,11 @@
 
 							"금광",
 
-							168000000,
+							170000000,
 
-							110000000,
+							151000000,
 
-							131090909.1
-
-							],
-
-							[
-
-							"동남2차",
-
-							100000000,
-
-							85000000,
-
-							94333333.33
+							156142857.1
 
 							],
 
@@ -3419,33 +3717,9 @@
 
 							99000000,
 
-							80000000,
+							78000000,
 
-							86333333.33
-
-							],
-
-							[
-
-							"드림플러스",
-
-							233000000,
-
-							233000000,
-
-							233000000
-
-							],
-
-							[
-
-							"마루힐센트럴파크",
-
-							165000000,
-
-							148000000,
-
-							155285714.3
+							89750000
 
 							],
 
@@ -3457,7 +3731,7 @@
 
 							100000000,
 
-							106400000
+							106750000
 
 							],
 
@@ -3469,7 +3743,7 @@
 
 							208000000,
 
-							220200000
+							216666666.7
 
 							],
 
@@ -3481,19 +3755,7 @@
 
 							215000000,
 
-							228000000
-
-							],
-
-							[
-
-							"올리브",
-
-							193000000,
-
-							185000000,
-
-							190250000
+							228888888.9
 
 							],
 
@@ -3503,9 +3765,9 @@
 
 							170000000,
 
-							82000000,
+							83000000,
 
-							110812500
+							126583333.3
 
 							],
 
@@ -3513,11 +3775,11 @@
 
 							"일신1차",
 
-							135000000,
+							140000000,
 
-							124000000,
+							125000000,
 
-							130875000
+							132500000
 
 							],
 
@@ -3527,21 +3789,9 @@
 
 							135000000,
 
-							122000000,
+							115000000,
 
-							130363636.4
-
-							],
-
-							[
-
-							"청암",
-
-							107000000,
-
-							81500000,
-
-							96750000
+							128071428.6
 
 							],
 
@@ -3553,19 +3803,7 @@
 
 							115000000,
 
-							141578947.4
-
-							],
-
-							[
-
-							"한양",
-
-							120000000,
-
-							120000000,
-
-							120000000
+							133384615.4
 
 							],
 
@@ -3573,11 +3811,11 @@
 
 							"호반",
 
-							140000000,
+							136000000,
 
 							77500000,
 
-							97729166.67
+							91361111.11
 
 							],
 
@@ -3587,9 +3825,9 @@
 
 							193000000,
 
-							74000000,
+							80000000,
 
-							145083333.3
+							172687500
 
 							]
 
@@ -3611,9 +3849,9 @@
 
 						// jsDrawChart
 
-						function drawChartComboChartID12084f256519() {
+						function drawChartComboChartID152065bbc74() {
 
-							var data = gvisDataComboChartID12084f256519();
+							var data = gvisDataComboChartID152065bbc74();
 
 							var options = {};
 
@@ -3621,19 +3859,21 @@
 
 							options["seriesType"] = "bars";
 
+							options["legend"] = "top";
+
 							options["series"] = {
 								2 : {
 									type : 'line'
 								}
 							};
 							/* 차트의 전체 크기 조절 */
-							options["width"] = 900;
-							
+							options["width"] = 1100;
+
 							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
-							document.getElementById('ComboChartID12084f256519')
+							document.getElementById('ComboChartID152065bbc74')
 
 							);
 
@@ -3671,11 +3911,11 @@
 
 							// Add the drawChart function to the global list of callbacks
 
-							callbacks.push(drawChartComboChartID12084f256519);
+							callbacks.push(drawChartComboChartID152065bbc74);
 
 						})();
 
-						function displayChartComboChartID12084f256519() {
+						function displayChartComboChartID152065bbc74() {
 
 							var pkgs = window.__gvisPackages = window.__gvisPackages
 									|| [];
@@ -3726,7 +3966,7 @@
 					<!-- jsChart -->
 
 					<script type="text/javascript"
-						src="https://www.google.com/jsapi?callback=displayChartComboChartID12084f256519"></script>
+						src="https://www.google.com/jsapi?callback=displayChartComboChartID152065bbc74"></script>
 
 
 
@@ -3734,12 +3974,12 @@
 
 
 
-					<div id="ComboChartID12084f256519"
+					<div id="ComboChartID152065bbc74"
 						style="width: 500; height: automatic;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
-							href="Chart_ComboChartID12084f256519.html">ComboChartID12084f256519</a>
+							href="Chart_ComboChartID152065bbc74.html">ComboChartID152065bbc74</a>
 							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 
 						<!-- htmlFooter -->
@@ -3767,7 +4007,7 @@
 					<script type="text/javascript">
 						// jsData
 
-						function gvisDataComboChartID120876e24c1a() {
+						function gvisDataComboChartID152055e455f0() {
 
 							var data = new google.visualization.DataTable();
 
@@ -3781,9 +4021,9 @@
 
 							110000000,
 
-							79000000,
+							93000000,
 
-							93428571.43
+							102400000
 
 							],
 
@@ -3793,9 +4033,9 @@
 
 							125000000,
 
-							96000000,
+							97000000,
 
-							107312500
+							108789473.7
 
 							],
 
@@ -3805,9 +4045,9 @@
 
 							335000000,
 
-							267000000,
+							265000000,
 
-							293533333.3
+							294500000
 
 							],
 
@@ -3815,11 +4055,11 @@
 
 							"대주피오레1차",
 
-							260000000,
+							235000000,
 
 							211000000,
 
-							232434782.6
+							225600000
 
 							],
 
@@ -3831,7 +4071,7 @@
 
 							237000000,
 
-							253190476.2
+							252700000
 
 							],
 
@@ -3843,7 +4083,7 @@
 
 							87000000,
 
-							98000000
+							96857142.86
 
 							],
 
@@ -3851,11 +4091,11 @@
 
 							"연제골드클래스",
 
-							270000000,
-
 							269550000,
 
-							269775000
+							236500000,
+
+							248516666.7
 
 							],
 
@@ -3863,11 +4103,11 @@
 
 							"한국아델리움",
 
-							175000000,
+							177000000,
 
 							160000000,
 
-							170250000
+							170000000
 
 							],
 
@@ -3875,11 +4115,11 @@
 
 							"현대",
 
-							238000000,
+							168000000,
 
-							140000000,
+							139000000,
 
-							176790697.7
+							157281250
 
 							]
 
@@ -3901,9 +4141,9 @@
 
 						// jsDrawChart
 
-						function drawChartComboChartID120876e24c1a() {
+						function drawChartComboChartID152055e455f0() {
 
-							var data = gvisDataComboChartID120876e24c1a();
+							var data = gvisDataComboChartID152055e455f0();
 
 							var options = {};
 
@@ -3911,19 +4151,21 @@
 
 							options["seriesType"] = "bars";
 
+							options["legend"] = "top";
+
 							options["series"] = {
 								2 : {
 									type : 'line'
 								}
 							};
 							/* 차트의 전체 크기 조절 */
-							options["width"] = 900;
-							
+							options["width"] = 1100;
+
 							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
-							document.getElementById('ComboChartID120876e24c1a')
+							document.getElementById('ComboChartID152055e455f0')
 
 							);
 
@@ -3961,11 +4203,11 @@
 
 							// Add the drawChart function to the global list of callbacks
 
-							callbacks.push(drawChartComboChartID120876e24c1a);
+							callbacks.push(drawChartComboChartID152055e455f0);
 
 						})();
 
-						function displayChartComboChartID120876e24c1a() {
+						function displayChartComboChartID152055e455f0() {
 
 							var pkgs = window.__gvisPackages = window.__gvisPackages
 									|| [];
@@ -4016,7 +4258,7 @@
 					<!-- jsChart -->
 
 					<script type="text/javascript"
-						src="https://www.google.com/jsapi?callback=displayChartComboChartID120876e24c1a"></script>
+						src="https://www.google.com/jsapi?callback=displayChartComboChartID152055e455f0"></script>
 
 
 
@@ -4024,12 +4266,12 @@
 
 
 
-					<div id="ComboChartID120876e24c1a"
+					<div id="ComboChartID152055e455f0"
 						style="width: 500; height: automatic;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
-							href="Chart_ComboChartID120876e24c1a.html">ComboChartID120876e24c1a</a>
+							href="Chart_ComboChartID152055e455f0.html">ComboChartID152055e455f0</a>
 							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 
 						<!-- htmlFooter -->
@@ -4057,7 +4299,7 @@
 					<script type="text/javascript">
 						// jsData
 
-						function gvisDataComboChartID120876eb58c2() {
+						function gvisDataComboChartID15203ec5563d() {
 
 							var data = new google.visualization.DataTable();
 
@@ -4067,145 +4309,13 @@
 
 							[
 
-							"고운1차",
-
-							80000000,
-
-							80000000,
-
-							80000000
-
-							],
-
-							[
-
-							"공간",
-
-							122000000,
-
-							87000000,
-
-							102111111.1
-
-							],
-
-							[
-
-							"금호타운",
-
-							180000000,
-
-							110000000,
-
-							133333333.3
-
-							],
-
-							[
-
-							"대광",
-
-							83000000,
-
-							73000000,
-
-							79666666.67
-
-							],
-
-							[
-
-							"대웅",
-
-							138000000,
-
-							138000000,
-
-							138000000
-
-							],
-
-							[
-
-							"대화",
-
-							95000000,
-
-							80000000,
-
-							88166666.67
-
-							],
-
-							[
-
-							"도나우아파트",
-
-							64000000,
-
-							64000000,
-
-							64000000
-
-							],
-
-							[
-
-							"동선",
-
-							87000000,
-
-							77000000,
-
-							82000000
-
-							],
-
-							[
-
-							"럭키",
-
-							165000000,
-
-							138000000,
-
-							148454545.5
-
-							],
-
-							[
-
 							"로얄타운",
 
 							115000000,
 
 							85000000,
 
-							100000000
-
-							],
-
-							[
-
-							"무등파크",
-
-							173000000,
-
-							148000000,
-
-							158400000
-
-							],
-
-							[
-
-							"비리치타운",
-
-							259000000,
-
-							259000000,
-
-							259000000
+							102166666.7
 
 							],
 
@@ -4213,11 +4323,11 @@
 
 							"삼익1차",
 
-							235000000,
+							135000000,
 
 							130000000,
 
-							175153846.2
+							132400000
 
 							],
 
@@ -4225,23 +4335,11 @@
 
 							"삼익2차",
 
-							210000000,
+							150000000,
 
 							149000000,
 
-							172428571.4
-
-							],
-
-							[
-
-							"양지",
-
-							78000000,
-
-							78000000,
-
-							78000000
+							149333333.3
 
 							],
 
@@ -4249,11 +4347,11 @@
 
 							"오치",
 
-							65000000,
+							62000000,
 
-							65000000,
+							62000000,
 
-							65000000
+							62000000
 
 							],
 
@@ -4263,9 +4361,9 @@
 
 							101000000,
 
-							68000000,
+							70000000,
 
-							82000000
+							90888888.89
 
 							],
 
@@ -4273,11 +4371,11 @@
 
 							"우미",
 
-							155000000,
+							158000000,
 
-							143000000,
+							150000000,
 
-							150200000
+							153111111.1
 
 							],
 
@@ -4287,21 +4385,9 @@
 
 							179500000,
 
-							135000000,
+							144000000,
 
-							150152173.9
-
-							],
-
-							[
-
-							"중도다이아빌",
-
-							48000000,
-
-							43000000,
-
-							45500000
+							154843750
 
 							],
 
@@ -4309,35 +4395,11 @@
 
 							"천오",
 
-							80000000,
+							79000000,
 
 							79000000,
 
-							79666666.67
-
-							],
-
-							[
-
-							"한국아델리움",
-
-							418000000,
-
-							368000000,
-
-							386100000
-
-							],
-
-							[
-
-							"혁신1차",
-
-							110000000,
-
-							80000000,
-
-							95000000
+							79000000
 
 							],
 
@@ -4347,9 +4409,9 @@
 
 							108000000,
 
-							98000000,
+							95000000,
 
-							103000000
+							97714285.71
 
 							]
 
@@ -4371,9 +4433,9 @@
 
 						// jsDrawChart
 
-						function drawChartComboChartID120876eb58c2() {
+						function drawChartComboChartID15203ec5563d() {
 
-							var data = gvisDataComboChartID120876eb58c2();
+							var data = gvisDataComboChartID15203ec5563d();
 
 							var options = {};
 
@@ -4381,19 +4443,21 @@
 
 							options["seriesType"] = "bars";
 
+							options["legend"] = "top";
+
 							options["series"] = {
 								2 : {
 									type : 'line'
 								}
 							};
 							/* 차트의 전체 크기 조절 */
-							options["width"] = 900;
-							
+							options["width"] = 1100;
+
 							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
-							document.getElementById('ComboChartID120876eb58c2')
+							document.getElementById('ComboChartID15203ec5563d')
 
 							);
 
@@ -4431,11 +4495,11 @@
 
 							// Add the drawChart function to the global list of callbacks
 
-							callbacks.push(drawChartComboChartID120876eb58c2);
+							callbacks.push(drawChartComboChartID15203ec5563d);
 
 						})();
 
-						function displayChartComboChartID120876eb58c2() {
+						function displayChartComboChartID15203ec5563d() {
 
 							var pkgs = window.__gvisPackages = window.__gvisPackages
 									|| [];
@@ -4486,7 +4550,7 @@
 					<!-- jsChart -->
 
 					<script type="text/javascript"
-						src="https://www.google.com/jsapi?callback=displayChartComboChartID120876eb58c2"></script>
+						src="https://www.google.com/jsapi?callback=displayChartComboChartID15203ec5563d"></script>
 
 
 
@@ -4494,12 +4558,12 @@
 
 
 
-					<div id="ComboChartID120876eb58c2"
+					<div id="ComboChartID15203ec5563d"
 						style="width: 500; height: automatic;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
-							href="Chart_ComboChartID120876eb58c2.html">ComboChartID120876eb58c2</a>
+							href="Chart_ComboChartID15203ec5563d.html">ComboChartID15203ec5563d</a>
 							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 
 						<!-- htmlFooter -->
@@ -4527,7 +4591,7 @@
 					<script type="text/javascript">
 						// jsData
 
-						function gvisDataComboChartID12085f2351c5() {
+						function gvisDataComboChartID152015fb49e9() {
 
 							var data = new google.visualization.DataTable();
 
@@ -4537,73 +4601,13 @@
 
 							[
 
-							"양산타운",
-
-							147000000,
-
-							109000000,
-
-							132428571.4
-
-							],
-
-							[
-
-							"이안광주첨단",
-
-							480000000,
-
-							225000000,
-
-							297200000
-
-							],
-
-							[
-
 							"진아리채",
 
 							275000000,
 
-							262000000,
+							259000000,
 
 							267333333.3
-
-							],
-
-							[
-
-							"첨단미래하이클래스",
-
-							192000000,
-
-							192000000,
-
-							192000000
-
-							],
-
-							[
-
-							"첨단용두산이고운",
-
-							342000000,
-
-							342000000,
-
-							342000000
-
-							],
-
-							[
-
-							"첨단우방아이유쉘",
-
-							327000000,
-
-							214500000,
-
-							288270000
 
 							]
 
@@ -4625,9 +4629,9 @@
 
 						// jsDrawChart
 
-						function drawChartComboChartID12085f2351c5() {
+						function drawChartComboChartID152015fb49e9() {
 
-							var data = gvisDataComboChartID12085f2351c5();
+							var data = gvisDataComboChartID152015fb49e9();
 
 							var options = {};
 
@@ -4635,19 +4639,21 @@
 
 							options["seriesType"] = "bars";
 
+							options["legend"] = "top";
+
 							options["series"] = {
 								2 : {
 									type : 'line'
 								}
 							};
 							/* 차트의 전체 크기 조절 */
-							options["width"] = 900;
-							
+							options["width"] = 1100;
+
 							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
-							document.getElementById('ComboChartID12085f2351c5')
+							document.getElementById('ComboChartID152015fb49e9')
 
 							);
 
@@ -4685,11 +4691,11 @@
 
 							// Add the drawChart function to the global list of callbacks
 
-							callbacks.push(drawChartComboChartID12085f2351c5);
+							callbacks.push(drawChartComboChartID152015fb49e9);
 
 						})();
 
-						function displayChartComboChartID12085f2351c5() {
+						function displayChartComboChartID152015fb49e9() {
 
 							var pkgs = window.__gvisPackages = window.__gvisPackages
 									|| [];
@@ -4740,7 +4746,7 @@
 					<!-- jsChart -->
 
 					<script type="text/javascript"
-						src="https://www.google.com/jsapi?callback=displayChartComboChartID12085f2351c5"></script>
+						src="https://www.google.com/jsapi?callback=displayChartComboChartID152015fb49e9"></script>
 
 
 
@@ -4748,12 +4754,12 @@
 
 
 
-					<div id="ComboChartID12085f2351c5"
+					<div id="ComboChartID152015fb49e9"
 						style="width: 500; height: automatic;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
-							href="Chart_ComboChartID12085f2351c5.html">ComboChartID12085f2351c5</a>
+							href="Chart_ComboChartID152015fb49e9.html">ComboChartID152015fb49e9</a>
 							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 
 						<!-- htmlFooter -->
@@ -4781,7 +4787,7 @@
 					<script type="text/javascript">
 						// jsData
 
-						function gvisDataComboChartID12085e1c2a90() {
+						function gvisDataComboChartID152021547638() {
 
 							var data = new google.visualization.DataTable();
 
@@ -4791,13 +4797,13 @@
 
 							[
 
-							"금곡",
+							"고운",
 
-							80000000,
+							78000000,
 
-							80000000,
+							78000000,
 
-							80000000
+							78000000
 
 							],
 
@@ -4809,7 +4815,7 @@
 
 							150000000,
 
-							162882352.9
+							162400000
 
 							],
 
@@ -4819,9 +4825,9 @@
 
 							350000000,
 
-							290000000,
+							340000000,
 
-							322076923.1
+							343142857.1
 
 							],
 
@@ -4829,11 +4835,11 @@
 
 							"꿈에그린",
 
-							349000000,
+							285000000,
 
 							215000000,
 
-							269205882.4
+							259583333.3
 
 							],
 
@@ -4843,9 +4849,9 @@
 
 							230000000,
 
-							195000000,
+							200000000,
 
-							208588235.3
+							211571428.6
 
 							],
 
@@ -4857,7 +4863,7 @@
 
 							205000000,
 
-							210000000
+							212727272.7
 
 							],
 
@@ -4867,9 +4873,9 @@
 
 							259000000,
 
-							217000000,
+							243000000,
 
-							243484848.5
+							249150000
 
 							],
 
@@ -4881,7 +4887,7 @@
 
 							117000000,
 
-							122600000
+							123833333.3
 
 							],
 
@@ -4899,25 +4905,13 @@
 
 							[
 
-							"동성노블리4차",
-
-							110000000,
-
-							110000000,
-
-							110000000
-
-							],
-
-							[
-
 							"명보",
 
 							123000000,
 
 							109000000,
 
-							116200000
+							117200000
 
 							],
 
@@ -4925,11 +4919,11 @@
 
 							"모아미래도",
 
-							240000000,
+							220000000,
 
-							153000000,
+							156000000,
 
-							201954545.5
+							195200000
 
 							],
 
@@ -4937,11 +4931,11 @@
 
 							"삼성",
 
-							245000000,
+							238000000,
 
 							215000000,
 
-							226666666.7
+							226000000
 
 							],
 
@@ -4951,9 +4945,9 @@
 
 							130000000,
 
-							95000000,
+							110000000,
 
-							106500000
+							116666666.7
 
 							],
 
@@ -4961,11 +4955,11 @@
 
 							"성산",
 
-							107000000,
+							120000000,
 
 							107000000,
 
-							107000000
+							113500000
 
 							],
 
@@ -4973,11 +4967,11 @@
 
 							"신동아",
 
-							200000000,
+							195000000,
 
-							136000000,
+							147000000,
 
-							174750000
+							176500000
 
 							],
 
@@ -4985,11 +4979,11 @@
 
 							"쌍용예가",
 
-							450000000,
+							400000000,
 
-							365000000,
+							385000000,
 
-							401833333.3
+							392400000
 
 							],
 
@@ -4997,11 +4991,11 @@
 
 							"아이파크",
 
-							465000000,
+							450000000,
 
 							430000000,
 
-							452500000
+							440000000
 
 							],
 
@@ -5009,11 +5003,11 @@
 
 							"엘리체",
 
-							325000000,
+							310000000,
 
-							235000000,
+							250000000,
 
-							258136363.6
+							279666666.7
 
 							],
 
@@ -5021,11 +5015,11 @@
 
 							"용봉2휴먼시아",
 
-							265000000,
+							252000000,
 
 							220000000,
 
-							241294117.6
+							235636363.6
 
 							],
 
@@ -5033,11 +5027,11 @@
 
 							"우미",
 
-							181000000,
+							182000000,
 
-							181000000,
+							182000000,
 
-							181000000
+							182000000
 
 							],
 
@@ -5045,11 +5039,11 @@
 
 							"우영",
 
-							160000000,
+							105000000,
 
 							77000000,
 
-							101000000
+							95166666.67
 
 							],
 
@@ -5057,11 +5051,11 @@
 
 							"유창파크4차",
 
-							145000000,
+							138000000,
 
 							102000000,
 
-							121727272.7
+							117571428.6
 
 							],
 
@@ -5071,9 +5065,9 @@
 
 							155000000,
 
-							81000000,
+							85000000,
 
-							123416666.7
+							131214285.7
 
 							],
 
@@ -5083,21 +5077,9 @@
 
 							149000000,
 
-							100000000,
+							101000000,
 
-							118100000
-
-							],
-
-							[
-
-							"유창허니문",
-
-							185000000,
-
-							140000000,
-
-							156666666.7
+							116222222.2
 
 							],
 
@@ -5105,11 +5087,11 @@
 
 							"중흥",
 
-							250000000,
+							186000000,
 
 							127000000,
 
-							163705882.4
+							149400000
 
 							],
 
@@ -5119,9 +5101,9 @@
 
 							255000000,
 
-							240000000,
+							242000000,
 
-							248625000
+							250375000
 
 							],
 
@@ -5133,7 +5115,7 @@
 
 							102000000,
 
-							140250000
+							137333333.3
 
 							],
 
@@ -5141,11 +5123,11 @@
 
 							"한신",
 
-							223000000,
+							157000000,
 
-							117000000,
+							120000000,
 
-							153300000
+							135571428.6
 
 							],
 
@@ -5153,23 +5135,11 @@
 
 							"현대1차",
 
-							205000000,
+							151000000,
 
-							149000000,
+							151000000,
 
-							160583333.3
-
-							],
-
-							[
-
-							"현대2차",
-
-							210000000,
-
-							159000000,
-
-							176333333.3
+							151000000
 
 							],
 
@@ -5181,7 +5151,7 @@
 
 							185000000,
 
-							219153846.2
+							212916666.7
 
 							],
 
@@ -5189,11 +5159,11 @@
 
 							"호반",
 
-							170000000,
+							165000000,
 
-							111000000,
+							150000000,
 
-							138500000
+							156111111.1
 
 							]
 
@@ -5215,9 +5185,9 @@
 
 						// jsDrawChart
 
-						function drawChartComboChartID12085e1c2a90() {
+						function drawChartComboChartID152021547638() {
 
-							var data = gvisDataComboChartID12085e1c2a90();
+							var data = gvisDataComboChartID152021547638();
 
 							var options = {};
 
@@ -5225,19 +5195,21 @@
 
 							options["seriesType"] = "bars";
 
+							options["legend"] = "top";
+
 							options["series"] = {
 								2 : {
 									type : 'line'
 								}
 							};
 							/* 차트의 전체 크기 조절 */
-							options["width"] = 900;
-							
+							options["width"] = 1100;
+
 							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
-							document.getElementById('ComboChartID12085e1c2a90')
+							document.getElementById('ComboChartID152021547638')
 
 							);
 
@@ -5275,11 +5247,11 @@
 
 							// Add the drawChart function to the global list of callbacks
 
-							callbacks.push(drawChartComboChartID12085e1c2a90);
+							callbacks.push(drawChartComboChartID152021547638);
 
 						})();
 
-						function displayChartComboChartID12085e1c2a90() {
+						function displayChartComboChartID152021547638() {
 
 							var pkgs = window.__gvisPackages = window.__gvisPackages
 									|| [];
@@ -5330,7 +5302,7 @@
 					<!-- jsChart -->
 
 					<script type="text/javascript"
-						src="https://www.google.com/jsapi?callback=displayChartComboChartID12085e1c2a90"></script>
+						src="https://www.google.com/jsapi?callback=displayChartComboChartID152021547638"></script>
 
 
 
@@ -5338,12 +5310,12 @@
 
 
 
-					<div id="ComboChartID12085e1c2a90"
+					<div id="ComboChartID152021547638"
 						style="width: 500; height: automatic;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
-							href="Chart_ComboChartID12085e1c2a90.html">ComboChartID12085e1c2a90</a>
+							href="Chart_ComboChartID152021547638.html">ComboChartID152021547638</a>
 							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 
 						<!-- htmlFooter -->
@@ -5371,7 +5343,7 @@
 					<script type="text/javascript">
 						// jsData
 
-						function gvisDataComboChartID1208184d3cdf() {
+						function gvisDataComboChartID152031d130f8() {
 
 							var data = new google.visualization.DataTable();
 
@@ -5381,25 +5353,13 @@
 
 							[
 
-							"무등",
-
-							100000000,
-
-							100000000,
-
-							100000000
-
-							],
-
-							[
-
 							"무진",
 
-							110000000,
+							105000000,
 
-							110000000,
+							96000000,
 
-							110000000
+							100500000
 
 							],
 
@@ -5407,11 +5367,11 @@
 
 							"우미프라자",
 
-							110000000,
+							127000000,
 
-							90000000,
+							103000000,
 
-							101000000
+							111666666.7
 
 							],
 
@@ -5423,7 +5383,7 @@
 
 							213000000,
 
-							229235294.1
+							228769230.8
 
 							]
 
@@ -5445,9 +5405,9 @@
 
 						// jsDrawChart
 
-						function drawChartComboChartID1208184d3cdf() {
+						function drawChartComboChartID152031d130f8() {
 
-							var data = gvisDataComboChartID1208184d3cdf();
+							var data = gvisDataComboChartID152031d130f8();
 
 							var options = {};
 
@@ -5455,19 +5415,21 @@
 
 							options["seriesType"] = "bars";
 
+							options["legend"] = "top";
+
 							options["series"] = {
 								2 : {
 									type : 'line'
 								}
 							};
 							/* 차트의 전체 크기 조절 */
-							options["width"] = 900;
-							
+							options["width"] = 1100;
+
 							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
-							document.getElementById('ComboChartID1208184d3cdf')
+							document.getElementById('ComboChartID152031d130f8')
 
 							);
 
@@ -5505,11 +5467,11 @@
 
 							// Add the drawChart function to the global list of callbacks
 
-							callbacks.push(drawChartComboChartID1208184d3cdf);
+							callbacks.push(drawChartComboChartID152031d130f8);
 
 						})();
 
-						function displayChartComboChartID1208184d3cdf() {
+						function displayChartComboChartID152031d130f8() {
 
 							var pkgs = window.__gvisPackages = window.__gvisPackages
 									|| [];
@@ -5560,7 +5522,7 @@
 					<!-- jsChart -->
 
 					<script type="text/javascript"
-						src="https://www.google.com/jsapi?callback=displayChartComboChartID1208184d3cdf"></script>
+						src="https://www.google.com/jsapi?callback=displayChartComboChartID152031d130f8"></script>
 
 
 
@@ -5568,12 +5530,12 @@
 
 
 
-					<div id="ComboChartID1208184d3cdf"
+					<div id="ComboChartID152031d130f8"
 						style="width: 500; height: automatic;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
-							href="Chart_ComboChartID1208184d3cdf.html">ComboChartID1208184d3cdf</a>
+							href="Chart_ComboChartID152031d130f8.html">ComboChartID152031d130f8</a>
 							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 
 						<!-- htmlFooter -->
@@ -5601,7 +5563,7 @@
 					<script type="text/javascript">
 						// jsData
 
-						function gvisDataComboChartID12085f20330d() {
+						function gvisDataComboChartID15203f037e8() {
 
 							var data = new google.visualization.DataTable();
 
@@ -5613,11 +5575,11 @@
 
 							"금호",
 
-							245000000,
+							250000000,
 
-							154000000,
+							152000000,
 
-							195266666.7
+							205909090.9
 
 							],
 
@@ -5625,11 +5587,11 @@
 
 							"나산",
 
-							330000000,
+							435000000,
 
-							149000000,
+							195000000,
 
-							243047619
+							280857142.9
 
 							],
 
@@ -5637,35 +5599,11 @@
 
 							"남양휴튼",
 
-							390000000,
+							610000000,
 
 							305000000,
 
-							358000000
-
-							],
-
-							[
-
-							"대라수",
-
-							158000000,
-
-							142000000,
-
-							149400000
-
-							],
-
-							[
-
-							"대우",
-
-							88000000,
-
-							88000000,
-
-							88000000
+							404000000
 
 							],
 
@@ -5673,11 +5611,11 @@
 
 							"대주",
 
-							285000000,
+							262000000,
 
-							145000000,
+							140000000,
 
-							180526315.8
+							171523809.5
 
 							],
 
@@ -5689,7 +5627,7 @@
 
 							143000000,
 
-							154555555.6
+							150200000
 
 							],
 
@@ -5697,11 +5635,11 @@
 
 							"롯데캐슬1단지",
 
-							335000000,
+							325000000,
 
-							210000000,
+							260000000,
 
-							248125000
+							299000000
 
 							],
 
@@ -5709,11 +5647,11 @@
 
 							"롯데캐슬2단지",
 
-							338000000,
+							310000000,
 
-							240000000,
+							265000000,
 
-							287833333.3
+							300000000
 
 							],
 
@@ -5721,11 +5659,11 @@
 
 							"롯데캐슬3단지",
 
-							300000000,
+							272000000,
 
-							190000000,
+							272000000,
 
-							222470588.2
+							272000000
 
 							],
 
@@ -5733,11 +5671,11 @@
 
 							"미라보2차",
 
-							167000000,
+							166000000,
 
-							138000000,
+							165900000,
 
-							160100000
+							165950000
 
 							],
 
@@ -5747,9 +5685,9 @@
 
 							270000000,
 
-							160000000,
+							159000000,
 
-							202482758.6
+							205411764.7
 
 							],
 
@@ -5757,11 +5695,11 @@
 
 							"벽산블루밍메가시티1단지",
 
-							400000000,
+							270000000,
 
-							275000000,
+							270000000,
 
-							357571428.6
+							270000000
 
 							],
 
@@ -5769,11 +5707,11 @@
 
 							"벽산블루밍메가시티2단지",
 
-							510000000,
+							480000000,
 
-							340000000,
+							360000000,
 
-							412500000
+							418823529.4
 
 							],
 
@@ -5781,11 +5719,11 @@
 
 							"벽산블루밍메가시티3단지",
 
-							325000000,
+							315000000,
 
 							220000000,
 
-							269904761.9
+							257277777.8
 
 							],
 
@@ -5793,23 +5731,11 @@
 
 							"블루시안1차",
 
-							215000000,
-
-							163000000,
-
-							195200000
-
-							],
-
-							[
-
-							"블루시안2차",
-
-							227000000,
-
 							225000000,
 
-							226333333.3
+							210000000,
+
+							216000000
 
 							],
 
@@ -5819,9 +5745,9 @@
 
 							175000000,
 
-							145000000,
+							165000000,
 
-							168000000
+							167166666.7
 
 							],
 
@@ -5831,9 +5757,9 @@
 
 							420000000,
 
-							260000000,
+							253000000,
 
-							330000000
+							319750000
 
 							],
 
@@ -5841,11 +5767,11 @@
 
 							"우미1차",
 
-							115000000,
+							118000000,
 
 							95000000,
 
-							105388888.9
+							107375000
 
 							],
 
@@ -5865,11 +5791,11 @@
 
 							"우성",
 
-							185000000,
+							178000000,
 
-							140000000,
+							144000000,
 
-							168600000
+							164263157.9
 
 							],
 
@@ -5879,21 +5805,9 @@
 
 							590000000,
 
-							400000000,
+							580000000,
 
-							530714285.7
-
-							],
-
-							[
-
-							"운암아이미소",
-
-							165000000,
-
-							140000000,
-
-							150750000
+							582000000
 
 							],
 
@@ -5901,11 +5815,11 @@
 
 							"운암주공3단지",
 
-							266000000,
+							249000000,
 
-							150000000,
+							175000000,
 
-							188200000
+							203750000
 
 							],
 
@@ -5917,7 +5831,7 @@
 
 							83000000,
 
-							139900000
+							137142857.1
 
 							],
 
@@ -5925,23 +5839,11 @@
 
 							"유탑하늘세움",
 
-							215000000,
+							225000000,
 
 							207000000,
 
-							209500000
-
-							],
-
-							[
-
-							"일신1차",
-
-							158000000,
-
-							158000000,
-
-							158000000
+							211666666.7
 
 							],
 
@@ -5949,11 +5851,11 @@
 
 							"일신2차",
 
-							130000000,
+							116000000,
 
-							104000000,
+							106000000,
 
-							116565217.4
+							110800000
 
 							],
 
@@ -5961,11 +5863,11 @@
 
 							"중흥파크1차",
 
-							240000000,
+							167000000,
 
 							140000000,
 
-							192750000
+							155666666.7
 
 							],
 
@@ -5977,7 +5879,7 @@
 
 							145000000,
 
-							148666666.7
+							148500000
 
 							],
 
@@ -5985,11 +5887,11 @@
 
 							"코아루렉시안",
 
-							319000000,
+							327000000,
 
 							253000000,
 
-							270538461.5
+							279454545.5
 
 							],
 
@@ -5997,11 +5899,11 @@
 
 							"트라움힐",
 
-							200000000,
+							205000000,
 
-							200000000,
+							205000000,
 
-							200000000
+							205000000
 
 							],
 
@@ -6009,35 +5911,23 @@
 
 							"한국",
 
-							230000000,
+							300000000,
 
-							125000000,
+							168000000,
 
-							164416666.7
-
-							],
-
-							[
-
-							"해피아이유",
-
-							190000000,
-
-							190000000,
-
-							190000000
+							194111111.1
 
 							],
 
 							[
 
-							"현대",
+							"한영",
 
-							190000000,
+							67000000,
 
-							170000000,
+							65000000,
 
-							180642857.1
+							66000000
 
 							]
 
@@ -6059,9 +5949,9 @@
 
 						// jsDrawChart
 
-						function drawChartComboChartID12085f20330d() {
+						function drawChartComboChartID15203f037e8() {
 
-							var data = gvisDataComboChartID12085f20330d();
+							var data = gvisDataComboChartID15203f037e8();
 
 							var options = {};
 
@@ -6069,19 +5959,21 @@
 
 							options["seriesType"] = "bars";
 
+							options["legend"] = "top";
+
 							options["series"] = {
 								2 : {
 									type : 'line'
 								}
 							};
 							/* 차트의 전체 크기 조절 */
-							options["width"] = 900;
-							
+							options["width"] = 1100;
+
 							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
-							document.getElementById('ComboChartID12085f20330d')
+							document.getElementById('ComboChartID15203f037e8')
 
 							);
 
@@ -6119,11 +6011,11 @@
 
 							// Add the drawChart function to the global list of callbacks
 
-							callbacks.push(drawChartComboChartID12085f20330d);
+							callbacks.push(drawChartComboChartID15203f037e8);
 
 						})();
 
-						function displayChartComboChartID12085f20330d() {
+						function displayChartComboChartID15203f037e8() {
 
 							var pkgs = window.__gvisPackages = window.__gvisPackages
 									|| [];
@@ -6174,7 +6066,7 @@
 					<!-- jsChart -->
 
 					<script type="text/javascript"
-						src="https://www.google.com/jsapi?callback=displayChartComboChartID12085f20330d"></script>
+						src="https://www.google.com/jsapi?callback=displayChartComboChartID15203f037e8"></script>
 
 
 
@@ -6182,12 +6074,12 @@
 
 
 
-					<div id="ComboChartID12085f20330d"
+					<div id="ComboChartID15203f037e8"
 						style="width: 500; height: automatic;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
-							href="Chart_ComboChartID12085f20330d.html">ComboChartID12085f20330d</a>
+							href="Chart_ComboChartID15203f037e8.html">ComboChartID15203f037e8</a>
 							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 
 						<!-- htmlFooter -->
@@ -6215,7 +6107,7 @@
 					<script type="text/javascript">
 						// jsData
 
-						function gvisDataComboChartID120842d81ba3() {
+						function gvisDataComboChartID152057435c5b() {
 
 							var data = new google.visualization.DataTable();
 
@@ -6229,9 +6121,9 @@
 
 							260000000,
 
-							233000000,
+							235000000,
 
-							242600000
+							242545454.5
 
 							],
 
@@ -6239,11 +6131,11 @@
 
 							"대림1차",
 
-							176000000,
+							171000000,
 
 							120000000,
 
-							157214285.7
+							152307692.3
 
 							],
 
@@ -6253,9 +6145,9 @@
 
 							232000000,
 
-							175000000,
+							180000000,
 
-							202565217.4
+							205280000
 
 							],
 
@@ -6267,7 +6159,7 @@
 
 							105000000,
 
-							134928571.4
+							130000000
 
 							],
 
@@ -6279,7 +6171,7 @@
 
 							252000000,
 
-							288375000
+							304727272.7
 
 							],
 
@@ -6287,11 +6179,11 @@
 
 							"롯데",
 
-							465000000,
+							460000000,
 
 							305000000,
 
-							357500000
+							358187500
 
 							],
 
@@ -6303,7 +6195,7 @@
 
 							175000000,
 
-							203394736.8
+							202218750
 
 							],
 
@@ -6311,11 +6203,11 @@
 
 							"삼호",
 
-							362000000,
+							335000000,
 
-							252000000,
+							285000000,
 
-							301909090.9
+							311166666.7
 
 							],
 
@@ -6327,7 +6219,7 @@
 
 							270000000,
 
-							318307692.3
+							324750000
 
 							],
 
@@ -6335,11 +6227,11 @@
 
 							"진로",
 
-							162000000,
+							167000000,
 
-							140000000,
+							145000000,
 
-							156117647.1
+							155117647.1
 
 							],
 
@@ -6349,9 +6241,9 @@
 
 							110000000,
 
-							85000000,
+							93000000,
 
-							100727272.7
+							101800000
 
 							],
 
@@ -6359,23 +6251,11 @@
 
 							"청솔2차",
 
-							115000000,
+							113000000,
 
-							89000000,
+							87000000,
 
-							100428571.4
-
-							],
-
-							[
-
-							"청솔3차",
-
-							103000000,
-
-							88000000,
-
-							96750000
+							96333333.33
 
 							],
 
@@ -6385,9 +6265,9 @@
 
 							110000000,
 
-							92000000,
+							93000000,
 
-							100800000
+							103285714.3
 
 							],
 
@@ -6395,11 +6275,11 @@
 
 							"한국",
 
-							162000000,
+							155000000,
 
 							132000000,
 
-							150272727.3
+							150900000
 
 							],
 
@@ -6407,11 +6287,11 @@
 
 							"한일",
 
-							160000000,
+							162000000,
 
-							145000000,
+							141000000,
 
-							152571428.6
+							152720000
 
 							],
 
@@ -6421,9 +6301,9 @@
 
 							150000000,
 
-							132000000,
+							135000000,
 
-							139277777.8
+							142400000
 
 							],
 
@@ -6433,9 +6313,9 @@
 
 							168000000,
 
-							140000000,
+							142000000,
 
-							150750000
+							151875000
 
 							],
 
@@ -6443,23 +6323,11 @@
 
 							"현대3차",
 
-							228000000,
+							225000000,
 
-							207000000,
+							210000000,
 
-							220181818.2
-
-							],
-
-							[
-
-							"호반일신",
-
-							156000000,
-
-							143000000,
-
-							151000000
+							219444444.4
 
 							]
 
@@ -6481,9 +6349,9 @@
 
 						// jsDrawChart
 
-						function drawChartComboChartID120842d81ba3() {
+						function drawChartComboChartID152057435c5b() {
 
-							var data = gvisDataComboChartID120842d81ba3();
+							var data = gvisDataComboChartID152057435c5b();
 
 							var options = {};
 
@@ -6491,19 +6359,21 @@
 
 							options["seriesType"] = "bars";
 
+							options["legend"] = "top";
+
 							options["series"] = {
 								2 : {
 									type : 'line'
 								}
 							};
 							/* 차트의 전체 크기 조절 */
-							options["width"] = 900;
-							
+							options["width"] = 1100;
+
 							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
-							document.getElementById('ComboChartID120842d81ba3')
+							document.getElementById('ComboChartID152057435c5b')
 
 							);
 
@@ -6541,11 +6411,11 @@
 
 							// Add the drawChart function to the global list of callbacks
 
-							callbacks.push(drawChartComboChartID120842d81ba3);
+							callbacks.push(drawChartComboChartID152057435c5b);
 
 						})();
 
-						function displayChartComboChartID120842d81ba3() {
+						function displayChartComboChartID152057435c5b() {
 
 							var pkgs = window.__gvisPackages = window.__gvisPackages
 									|| [];
@@ -6596,7 +6466,7 @@
 					<!-- jsChart -->
 
 					<script type="text/javascript"
-						src="https://www.google.com/jsapi?callback=displayChartComboChartID120842d81ba3"></script>
+						src="https://www.google.com/jsapi?callback=displayChartComboChartID152057435c5b"></script>
 
 
 
@@ -6604,12 +6474,12 @@
 
 
 
-					<div id="ComboChartID120842d81ba3"
+					<div id="ComboChartID152057435c5b"
 						style="width: 500; height: automatic;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
-							href="Chart_ComboChartID120842d81ba3.html">ComboChartID120842d81ba3</a>
+							href="Chart_ComboChartID152057435c5b.html">ComboChartID152057435c5b</a>
 							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 
 						<!-- htmlFooter -->
@@ -6637,25 +6507,13 @@
 					<script type="text/javascript">
 						// jsData
 
-						function gvisDataComboChartID120843cb1a2b() {
+						function gvisDataComboChartID15201f8d6d02() {
 
 							var data = new google.visualization.DataTable();
 
 							var datajson =
 
 							[
-
-							[
-
-							"국제미소래",
-
-							130000000,
-
-							130000000,
-
-							130000000
-
-							],
 
 							[
 
@@ -6671,25 +6529,13 @@
 
 							[
 
-							"임동다이아빌",
-
-							43000000,
-
-							43000000,
-
-							43000000
-
-							],
-
-							[
-
 							"임동주공",
 
-							227000000,
+							226000000,
 
-							137000000,
+							155000000,
 
-							167117647.1
+							186375000
 
 							],
 
@@ -6699,9 +6545,9 @@
 
 							220000000,
 
-							197000000,
+							220000000,
 
-							208500000
+							220000000
 
 							],
 
@@ -6711,9 +6557,9 @@
 
 							135000000,
 
-							90000000,
+							77000000,
 
-							120000000
+							95000000
 
 							],
 
@@ -6721,9 +6567,9 @@
 
 							"한국아델리움1차",
 
-							239000000,
+							240000000,
 
-							238000000,
+							237000000,
 
 							238500000
 
@@ -6735,9 +6581,9 @@
 
 							340000000,
 
-							240000000,
+							245000000,
 
-							279720000
+							278909090.9
 
 							]
 
@@ -6759,9 +6605,9 @@
 
 						// jsDrawChart
 
-						function drawChartComboChartID120843cb1a2b() {
+						function drawChartComboChartID15201f8d6d02() {
 
-							var data = gvisDataComboChartID120843cb1a2b();
+							var data = gvisDataComboChartID15201f8d6d02();
 
 							var options = {};
 
@@ -6769,19 +6615,21 @@
 
 							options["seriesType"] = "bars";
 
+							options["legend"] = "top";
+
 							options["series"] = {
 								2 : {
 									type : 'line'
 								}
 							};
 							/* 차트의 전체 크기 조절 */
-							options["width"] = 900;
-							
+							options["width"] = 1100;
+
 							options["height"] = 483;
 
 							var chart = new google.visualization.ComboChart(
 
-							document.getElementById('ComboChartID120843cb1a2b')
+							document.getElementById('ComboChartID15201f8d6d02')
 
 							);
 
@@ -6819,11 +6667,11 @@
 
 							// Add the drawChart function to the global list of callbacks
 
-							callbacks.push(drawChartComboChartID120843cb1a2b);
+							callbacks.push(drawChartComboChartID15201f8d6d02);
 
 						})();
 
-						function displayChartComboChartID120843cb1a2b() {
+						function displayChartComboChartID15201f8d6d02() {
 
 							var pkgs = window.__gvisPackages = window.__gvisPackages
 									|| [];
@@ -6874,7 +6722,7 @@
 					<!-- jsChart -->
 
 					<script type="text/javascript"
-						src="https://www.google.com/jsapi?callback=displayChartComboChartID120843cb1a2b"></script>
+						src="https://www.google.com/jsapi?callback=displayChartComboChartID15201f8d6d02"></script>
 
 
 
@@ -6882,12 +6730,12 @@
 
 
 
-					<div id="ComboChartID120843cb1a2b"
+					<div id="ComboChartID15201f8d6d02"
 						style="width: 500; height: automatic;"></div>
 
 					<div>
 						<span>Data: data &#8226; Chart ID: <a
-							href="Chart_ComboChartID120843cb1a2b.html">ComboChartID120843cb1a2b</a>
+							href="Chart_ComboChartID15201f8d6d02.html">ComboChartID15201f8d6d02</a>
 							&#8226; <a href="https://github.com/mages/googleVis">googleVis-0.6.2</a></span><br />
 
 						<!-- htmlFooter -->
@@ -6904,8 +6752,7 @@
 			</div>
 
 			<!-- 임동 그래프 끝 -->
-			<div id="board">
-			</div>
+			<div id="board"></div>
 
 
 		</div>
