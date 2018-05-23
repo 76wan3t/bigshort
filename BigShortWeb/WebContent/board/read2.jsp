@@ -376,6 +376,7 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 
 			</table>
 		</div>
+		<input type="hidden" id="comment_reply" value="${comment_reply }">
 
 <script type="text/javascript">
 
@@ -420,13 +421,13 @@ legend{font-family:"Noto Sans Light","Malgun Gothic",sans-serif; margin: 0; padd
 
 		
 		
-		var comment2 = $("#comment2").val();
+		var comment_reply = $("#comment_reply").val();
 		
-		if(comment2 == 'ture' ){
+		if(comment_reply == 'ture' ){
 			
 			$('html, body').animate({
 				
-				scrollTop: $('#commentlist').offset().top
+				scrollTop: $('#repleyda').offset().top
 				
 			});
 		
