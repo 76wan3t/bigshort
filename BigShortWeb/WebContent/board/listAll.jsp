@@ -80,7 +80,7 @@
 		margin: 0;
 		padding: 0;
 	}
-	.tab_type>.btn_tab>li.active a{
+/* 	.tab_type>.btn_tab>li.active a{
 		background-color: #fff;
 		border-bottom: 1px solid #fff;
 		color:#38474f;
@@ -89,7 +89,7 @@
 		background-color: #fff;
 		border-bottom: 1px solid #fff;
 		color:#38474f;
-	}
+	} */
 	.tab_type>.btn_tab>li a{
 		display: block;
 		width: 100%;
@@ -275,7 +275,7 @@
 		display: inline;
 		overflow: hidden;
 		width: 500px;
-		text-align: left;
+		text-align: center;
 		color: #717171;
 		text-overflow: ellipsis;
 		word-break: break-all;
@@ -352,7 +352,7 @@
 					<div class="tab_type">
 							<ul class="btn_tab">
 								<li class="active"><a href="#">게시글</a></li>
-								<li><a href="#">자유컬럼</a></li>
+								<!-- <li><a href="#">자유컬럼</a></li> -->
 							</ul>
 						<div class="tab_content_wrap">
 							<div class="tab_content active">

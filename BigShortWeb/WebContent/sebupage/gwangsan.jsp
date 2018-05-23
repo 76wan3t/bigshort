@@ -10,118 +10,155 @@
 <title>가방</title>
 <script type="text/javascript">
 	$(document).ready(function() {
-
+	
+		
+		function product(dongname) {
+			var dongname;
+			
+			
+			$.ajax({
+				type:"POST",
+				url:"gwangsandetail2.bigshort",
+				data:"dongname=" + dongname,
+				success:function(result){
+					$("#board").html(result);
+				}
+			});
+		}
+			
 		$("#td1").on("click", function() {
 			$(".graph").css("display", "none");
 			$(".graph-con2").css("display", "block");
-			
+			var dongname = $(".dongname1").val();
+			product(dongname);
 			
 		});
 		$("#td2").on("click", function() {
 			$(".graph").css("display", "none");
 			$(".graph-con3").css("display", "block");
-
+			var dongname = $(".dongname2").val();
+			product(dongname);
 		});
 		$("#td3").on("click", function() {
 			$(".graph").css("display", "none");
 			$(".graph-con4").css("display", "block");
-
+			var dongname = $(".dongname3").val();
+			product(dongname);
 		});
 		$("#td4").on("click", function() {
 			$(".graph").css("display", "none");
 			$(".graph-con5").css("display", "block");
-
+			var dongname = $(".dongname4").val();
+			product(dongname);
 		});
 		$("#td5").on("click", function() {
 			$(".graph").css("display", "none");
 			$(".graph-con6").css("display", "block");
-
+			var dongname = $(".dongname5").val();
+			product(dongname);
 		});
 		$("#td6").on("click", function() {
 			$(".graph").css("display", "none");
 			$(".graph-con7").css("display", "block");
-
+			var dongname = $(".dongname6").val();
+			product(dongname);
 		});
 		$("#td7").on("click", function() {
 			$(".graph").css("display", "none");
 			$(".graph-con8").css("display", "block");
-
+			var dongname = $(".dongname7").val();
+			product(dongname);
 		});
 		$("#td8").on("click", function() {
 			$(".graph").css("display", "none");
 			$(".graph-con9").css("display", "block");
-
+			var dongname = $(".dongname8").val();
+			product(dongname);
 		});
 		$("#td9").on("click", function() {
 			$(".graph").css("display", "none");
 			$(".graph-con10").css("display", "block");
-
+			var dongname = $(".dongname9").val();
+			product(dongname);
 		});
 		$("#td10").on("click", function() {
 			$(".graph").css("display", "none");
 			$(".graph-con11").css("display", "block");
-
+			var dongname = $(".dongname10").val();
+			product(dongname);
 		});
 		$("#td11").on("click", function() {
 			$(".graph").css("display", "none");
 			$(".graph-con12").css("display", "block");
-
+			var dongname = $(".dongname11").val();
+			product(dongname);
 		});
 		$("#td12").on("click", function() {
 			$(".graph").css("display", "none");
 			$(".graph-con13").css("display", "block");
-
+			var dongname = $(".dongname12").val();
+			product(dongname);
 		});
 		$("#td13").on("click", function() {
 			$(".graph").css("display", "none");
 			$(".graph-con14").css("display", "block");
-
+			var dongname = $(".dongname13").val();
+			product(dongname);
 		});
 		$("#td14").on("click", function() {
 
 			$(".graph").css("display", "none");
 			$(".graph-con15").css("display", "block");
-
+			var dongname = $(".dongname14").val();
+			product(dongname);
 		});
 		$("#td15").on("click", function() {
 
 			$(".graph").css("display", "none");
 			$(".graph-con16").css("display", "block");
-
+			var dongname = $(".dongname15").val();
+			product(dongname);
 		});
 		$("#td16").on("click", function() {
 
 			$(".graph").css("display", "none");
 			$(".graph-con17").css("display", "block");
-
+			var dongname = $(".dongname16").val();
+			product(dongname);
 		});
 		$("#td17").on("click", function() {
 
 			$(".graph").css("display", "none");
 			$(".graph-con18").css("display", "block");
-
+			var dongname = $(".dongname17").val();
+			product(dongname);
 		});
 		$("#td18").on("click", function() {
 
 			$(".graph").css("display", "none");
 			$(".graph-con19").css("display", "block");
-
+			var dongname = $(".dongname18").val();
+			product(dongname);
 		});
 		$("#td19").on("click", function() {
-
+			
 			$(".graph").css("display", "none");
 			$(".graph-con20").css("display", "block");
-
+			var dongname = $(".dongname19").val();
+			product(dongname);
+			
 		});
 		$("#td20").on("click", function() {
 			$(".graph").css("display", "none");
 			$(".graph-con21").css("display", "block");
-
+			var dongname = $(".dongname20").val();
+			product(dongname);
 		});
 		$("#td21").on("click", function() {
 			$(".graph").css("display", "none");
 			$(".graph-con22").css("display", "block");
-
+			var dongname = $(".dongname21").val();
+			product(dongname);
 		});
 
 		setTimeout(function() {
@@ -130,51 +167,142 @@
 			$(".graph-con1").css("display", "block");
 
 		}, 1000);
+		
+		
+		
+		/* 계산기 계산 부분 */
+		$("#main_cal_m").on("click", function(){
+			$("#main_cal_m").val("");
+		});
+		
+		$("#main_cal_p").on("click", function(){
+			$("#main_cal_p").val("");
+		});
+		
+		$("#main_cal_m").on("change keyup paste", function(){
+			
+			var ir = $('#main_cal_m').val();
+			
+				var im  = ir / 3.3058;
+				;
+				$('#main_cal_p').val(im.toFixed(2));
+			
+		});
+		
+		$("#main_cal_p").on("change keyup paste", function(){
+			
+			var ir = $('#main_cal_p').val();
+			
+				var im  = ir * 3.3058;
+				$('#main_cal_m').val(im.toFixed(2));
+			
+		});
 	});
 </script>
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" type="text/css"
 	href="/BigShortWeb/css/gwangsan.css?var=1">
+	<style type="text/css">
+	.main_calc {
+	
+    width: 84px;
+    border: 1px solid #d8d8d8;
+    height: 67px;
+    /* position: relative; */
+    
+	}
+	.main_calc_title {
+	
+    background-color: #75787d;
+    width: 84px;
+    height: 27px;
+    text-align: center;
+    color: #FFF;
+    padding-top: 7px;
+    font-size: 11px;
+    
+	}
+	#all_calc{
+		    text-align: center;
+    		position: fixed;
+    		width: 100%;
+    		top : 100px;
+	}
+	#top_calc{
+		width: 1200px;
+		display: inline-block;
+		text-align: right;
+	}
+	#right{
+		display: inline-block;
+	}
+</style>
 </head>
 
 <body>
                                                        
 	<div class="wrap">
+	
+					<!-- 계산기 부분 -->
+		<div id="all_calc">
+			<div id="top_calc">
+				<div id="right">
+					<div class="main_calc_title position">면적환산기</div>
+					<div class="main_calc position">
+							<div style="margin:6px 0 0 5px;text-align:left;height:19px;">
+								<span style="position:relative;display:inline-block;border:1px solid #cfcfcf;height:19px;width:54px">
+									<span style="position:absolute;right:-14px;bottom:0px;color:#68728b;font-size:11px;">㎡</span>
+									<input type="text" id="main_cal_m" style="width:49px; height:17px;line-height:19px; padding:0;padding-left:5px;margin:0;font-size:11px;border:0; position: absolute;">
+								</span>
+							</div>
+							<div style="margin:8px 0 0 5px;text-align:left;height:19px;">
+								<span style="position:relative;display:inline-block;border:1px solid #cfcfcf;height:19px;width:54px">
+								<span style="position:absolute;right:-14px;bottom:0px;color:#68728b;font-size:11px;">평</span>
+								<input type="text" id="main_cal_p" style="width:49px; height:17px;line-height:19px; padding:0;padding-left:5px;margin:0;font-size:11px;border:0; position: absolute;"></span>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	
+	
+	
 		<div id="container">
 			<div class="gakgu">
 				<table>
 					<thead>
 						<tr id="gwangsan1">
-							<td id="td1"><a href="gwangsandetail2.bigshort?dongname=도산동">도산동</a></td>
-							<td id="td2">도천동</td>
-							<td id="td3">비아동</td>
-							<td id="td4">산월동</td>
-							<td id="td5">산정동</td>
+							<td id="td1"><a href="#">도산동<input type="hidden" value="도산동" class="dongname1"></a></td>
+							<td id="td2"><a href="#">도천동<input type="hidden" value="도천동" class="dongname2"></a></td>
+							<td id="td3"><a href="#">비아동<input type="hidden" value="비아동" class="dongname3"></a></td>
+							<td id="td4"><a href="#">산월동<input type="hidden" value="산월동" class="dongname4"></a></td>
+							<td id="td5"><a href="#">산정동<input type="hidden" value="산정동" class="dongname5"></a></td>
 						</tr>
 						<tr id="gwangsan2">
-							<td id="td6">선암동</td>
-							<td id="td7">소촌동</td>
-							<td id="td8">송정동</td>
-							<td id="td9">수완동</td>
-							<td id="td10">신가동</td>
+							<td id="td6"><a href="#">선암동<input type="hidden" value="선암동" class="dongname6"></a></td>
+							<td id="td7"><a href="#">소촌동<input type="hidden" value="소촌동" class="dongname7"></a></td>
+							<td id="td8"><a href="#">송정동<input type="hidden" value="송정동" class="dongname8"></a></td>
+							<td id="td9"><a href="#">수완동<input type="hidden" value="수완동" class="dongname9"></a></td>
+							<td id="td10"><a href="#">신가동<input type="hidden" value="신가동" class="dongname10"></a></td>
 						</tr>
 						<tr id="gwangsan3">
-							<td id="td11">신창동</td>
-							<td id="td12">신촌동</td>
-							<td id="td13">쌍암동</td>
-							<td id="td14">우산동</td>
-							<td id="td15">운남동</td>
+							<td id="td11"><a href="#">신창동<input type="hidden" value="신창동" class="dongname11"></a></td>
+							<td id="td12"><a href="#">신촌동<input type="hidden" value="신촌동" class="dongname12"></a></td>
+							<td id="td13"><a href="#">쌍암동<input type="hidden" value="쌍암동" class="dongname13"></a></td>
+							<td id="td14"><a href="#">우산동<input type="hidden" value="우산동" class="dongname14"></a></td>
+							<td id="td15"><a href="#">운남동<input type="hidden" value="운남동" class="dongname15"></a></td>
 						</tr>
 						<tr id="gwangsan4">
-							<td id="td16">운수동</td>
-							<td id="td17">월계동</td>
-							<td id="td18">월곡동</td>
-							<td id="td19">장덕동</td>
-							<td id="td20">하남동</td>
+							<td id="td16"><a href="#">운수동<input type="hidden" value="운수동" class="dongname16"></a></td>
+							<td id="td17"><a href="#">월계동<input type="hidden" value="월계동" class="dongname17"></a></td>
+							<td id="td18"><a href="#">월곡동<input type="hidden" value="월곡동" class="dongname18"></a></td>
+							<td id="td19"><a href="#">장덕동<input type="hidden" value="장덕동" class="dongname19"></a></td>
+							<td id="td20"><a href="#">하남동<input type="hidden" value="하남동" class="dongname20"></a></td>
 						</tr>
 						<tr id="gwangsan5">
-							<td id="td21">흑석동</td>
+							<td id="td21"><a href="#">흑석동<input type="hidden" value="흑석동" class="dongname21"></a></td>
 					</thead>
 				</table>
 			</div>
@@ -6650,80 +6778,18 @@
 
 			<!-- 상품게시페이지 시작 -->
 			<div id="board">
-			<c:forEach items="${gwangsan}" var="gwangsan">
+			<%-- <c:forEach items="${gwangsan}" var="gwangsan">
 				<div class="product">
-					<span class="aptname">${gwangsan.aptname}</span>
-					<span class="standard">${gwangsan.dongextent}</span>
-					<span class="average">${gwangsan.donglevel}</span>
-					<span class="price">${gwangsan.nameprice }</span>
+					<a href="${gwangsan.url}">
+					<span class="aptname">건물명 : ${gwangsan.aptname}</span>
+					<span class="standard">평수 : ${gwangsan.dongextent}</span>
+					<span class="average">평균가 : 
+						<fmt:formatNumber value="${pDto.mean_price}" pattern="###,###,###,###"/>원
+					</span>
+					<span class="price">매매가 : ${gwangsan.nameprice}원</span>
+					</a>
 				</div>
-				<div class="product">
-					<span class="aptname">아파트이름</span>
-					<span class="standard">평수</span>
-					<span class="average">평균가</span>
-					<span class="price">매매가</span>
-				</div>
-				<div class="product">
-					<span class="aptname">아파트이름</span>
-					<span class="standard">평수</span>
-					<span class="average">평균가</span>
-					<span class="price">매매가</span>
-				</div>
-				<div class="product">
-					<span class="aptname">아파트이름</span>
-					<span class="standard">평수</span>
-					<span class="average">평균가</span>
-					<span class="price">매매가</span>
-				</div>
-				<div class="product">
-					<span class="aptname">아파트이름</span>
-					<span class="standard">평수</span>
-					<span class="average">평균가</span>
-					<span class="price">매매가</span>
-				</div>
-				<div class="product">
-					<span class="aptname">아파트이름</span>
-					<span class="standard">평수</span>
-					<span class="average">평균가</span>
-					<span class="price">매매가</span>
-				</div>
-				<div class="product">
-					<span class="aptname">아파트이름</span>
-					<span class="standard">평수</span>
-					<span class="average">평균가</span>
-					<span class="price">매매가</span>
-				</div>
-				<div class="product">
-					<span class="aptname">아파트이름</span>
-					<span class="standard">평수</span>
-					<span class="average">평균가</span>
-					<span class="price">매매가</span>
-				</div>
-				<div class="product">
-					<span class="aptname">아파트이름</span>
-					<span class="standard">평수</span>
-					<span class="average">평균가</span>
-					<span class="price">매매가</span>
-				</div>
-				<div class="product">
-					<span class="aptname">아파트이름</span>
-					<span class="standard">평수</span>
-					<span class="average">평균가</span>
-					<span class="price">매매가</span>
-				</div>
-				<div class="product">
-					<span class="aptname">아파트이름</span>
-					<span class="standard">평수</span>
-					<span class="average">평균가</span>
-					<span class="price">매매가</span>
-				</div>
-				<div class="product">
-					<span class="aptname">아파트이름</span>
-					<span class="standard">평수</span>
-					<span class="average">평균가</span>
-					<span class="price">매매가</span>
-				</div>
-				</c:forEach>
+				</c:forEach> --%>
 			</div>
 			<!-- 상품게시페이지 끝 -->
 

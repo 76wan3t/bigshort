@@ -55,10 +55,9 @@ public class ProductDAO {
 			
 			try {
 				list = sqlSession.selectList("gwangsanlist", dongname);
-						
-					System.out.println(list.size());	
-			
 				
+					System.out.println(list.size());
+			
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {
@@ -69,8 +68,153 @@ public class ProductDAO {
 			
 		}
 		
+		public ProductDTO gwangsanMean(String dongname) {
+			ProductDTO pDto = new ProductDTO();
+			
+			sqlSession = sqlSessionFactory.openSession();
+			
+			try {
+				
+				pDto = sqlSession.selectOne("gwangsanmean",dongname);
+				
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				sqlSession.close();
+			}
+			return pDto;
+		}
+		
+		public List<ProductDTO> bukguList(String dongname) {
+			List<ProductDTO> list = new ArrayList<>();
+			sqlSession = sqlSessionFactory.openSession();
+			
+			try {
+				list = sqlSession.selectList("bukgulist",dongname);
+				
+				System.out.println(list.size());
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				sqlSession.close();
+			}
+			
+			return list;
+		}
+		
+		public ProductDTO bukguMean(String dongname) {
+			ProductDTO pDto = new ProductDTO();
+			sqlSession = sqlSessionFactory.openSession();
+			
+			try {
+				pDto = sqlSession.selectOne("bukgumean",dongname);
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				sqlSession.close();
+			}
+			return pDto;
+			
+		}
+		public List<ProductDTO> namguList(String dongname) {
+			List<ProductDTO> list = new ArrayList<>();
+			sqlSession = sqlSessionFactory.openSession();
+			try {
+				list = sqlSession.selectList("namgulist",dongname);
+				
+				System.out.println(list.size());
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				sqlSession.close();
+			}
+			
+			return list;
+		}
+		
+		public ProductDTO namguMean(String dongname) {
+			ProductDTO pDto = new ProductDTO();
+			sqlSession = sqlSessionFactory.openSession();
+			
+			try {
+				pDto = sqlSession.selectOne("namgumean",dongname);
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				sqlSession.close();
+			}
+			return pDto;
+			
+		}
 		
 		
+		public List<ProductDTO> seoguList(String dongname) {
+			List<ProductDTO> list = new ArrayList<>();
+			sqlSession = sqlSessionFactory.openSession();
+			try {
+				list = sqlSession.selectList("seogulist",dongname);
+				
+				System.out.println(list.size());
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				sqlSession.close();
+			}
+			
+			return list;
+		}
+		
+		public ProductDTO seoguMean(String dongname) {
+			ProductDTO pDto = new ProductDTO();
+			sqlSession = sqlSessionFactory.openSession();
+			
+			try {
+				pDto = sqlSession.selectOne("seogumean",dongname);
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				sqlSession.close();
+			}
+			return pDto;
+			
+		}
+		
+		
+		public List<ProductDTO> dongguList(String dongname) {
+			List<ProductDTO> list = new ArrayList<>();
+			sqlSession = sqlSessionFactory.openSession();
+			try {
+				list = sqlSession.selectList("donggulist",dongname);
+				
+				System.out.println(list.size());
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				sqlSession.close();
+			}
+			
+			return list;
+		}
+		
+		public ProductDTO dongguMean(String dongname) {
+			ProductDTO pDto = new ProductDTO();
+			sqlSession = sqlSessionFactory.openSession();
+			
+			try {
+				pDto = sqlSession.selectOne("donggumean",dongname);
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				sqlSession.close();
+			}
+			return pDto;
+			
+		}
 		
 
 }

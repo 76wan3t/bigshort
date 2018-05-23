@@ -37,7 +37,7 @@
 			var li2checked = $("#li2box").is(":checked"); /* li2box의 체크값을 li2checked 변수에 담음 */
 
 			if (li1checked == false || li2checked == false) { /* li1checked나 li2checked가 둘중에 하나라도 체크가 안되있으면 if실행 */
-				$("#span").css("display", "block"); /* #span에 css style display를 block를 실행 */
+				$("#error_span").css("display", "block"); /* #span에 css style display를 block를 실행 */
 				return false; /*  */
 			} else {
 				$("#join_content").submit();

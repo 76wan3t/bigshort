@@ -9,16 +9,26 @@ public class ProductDTO {
 	private String price;
 	private String dongextent;
 	private String donglevel;
-	private String namepirce;
+	private String nameprice;
 	private String url;
 	private String dongdate;
+	private String mean_price;
 	
+
+	public String getMean_price() {
+		return mean_price;
+	}
+
+	public void setMean_price(String mean_price) {
+		this.mean_price = mean_price;
+	}
+
 	public ProductDTO() {
 		
 	}
 
 	public ProductDTO(int dongno, String dongname, String aptname, String dEAL, String subsidy, String price,
-			String dongextent, String donglevel, String namepirce, String url, String dongdate) {
+			String dongextent, String donglevel, String nameprice, String url, String dongdate) {
 		super();
 		this.dongno = dongno;
 		this.dongname = dongname;
@@ -28,7 +38,7 @@ public class ProductDTO {
 		this.price = price;
 		this.dongextent = dongextent;
 		this.donglevel = donglevel;
-		this.namepirce = namepirce;
+		this.nameprice = nameprice;
 		this.url = url;
 		this.dongdate = dongdate;
 	}
@@ -97,12 +107,29 @@ public class ProductDTO {
 		this.donglevel = donglevel;
 	}
 
-	public String getNamepirce() {
-		return namepirce;
+	public String getnameprice() {
+		return nameprice;
 	}
 
-	public void setNamepirce(String namepirce) {
-		this.namepirce = namepirce;
+	public void setnameprice(String nameprice) {
+		this.nameprice = nameprice;
+	}
+
+	public ProductDTO(int dongno, String dongname, String aptname, String dEAL, String subsidy, String price,
+			String dongextent, String donglevel, String nameprice, String url, String dongdate, String mean_price) {
+		super();
+		this.dongno = dongno;
+		this.dongname = dongname;
+		this.aptname = aptname;
+		DEAL = dEAL;
+		this.subsidy = subsidy;
+		this.price = price;
+		this.dongextent = dongextent;
+		this.donglevel = donglevel;
+		this.nameprice = nameprice;
+		this.url = url;
+		this.dongdate = dongdate;
+		this.mean_price = mean_price;
 	}
 
 	public String getUrl() {

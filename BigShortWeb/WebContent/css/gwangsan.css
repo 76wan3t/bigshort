@@ -76,6 +76,8 @@ table {
 #board {
 	position: relative;
 	margin:  0 auto;
+    width: 100%;
+    height: auto;
 }
 
 #table1 {
@@ -128,10 +130,7 @@ td {
 	cursor: pointer;
 }
 
-#board {
-    width: 100%;
-    height: auto;
-}
+
 
 .product {
 	border: 2px solid #CCC;
@@ -145,7 +144,7 @@ td {
     cursor: pointer;
 }
 
-.product > span {
+.product > a > span {
 	text-align: center;
 	font-size: 16px;
 	font-family: 'Jeju Gothic', serif;
@@ -167,7 +166,10 @@ td {
 .price {
 	margin-top: 15px;
     padding-bottom: 10px;
+    color: #2565d0; 
+    /* color: #FF4242; */
 }
+
 
 
 

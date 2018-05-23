@@ -13,9 +13,83 @@
 		WHERE deal='매매' AND DONGNAME=#{dongname}
 		group by dongname, APTNAME, PRICE, dongextent, donglevel, nameprice, url
 		HAVING PRICE  <= ]]><![CDATA[(SELECT ROUND(AVG(PRICE)) FROM gwangsan WHERE deal='매매' AND DONGNAME=#{dongname})]]>
-			
 	
 	</select>
+
+	<select id="gwangsanmean" resultType="pDto" parameterType="String">
+		SELECT  ROUND(AVG(PRICE)) AS mean_price 
+		FROM gwangsan 
+		WHERE deal='매매' AND DONGNAME=#{dongname}
+	
+	</select>
+
+	<select id="bukgulist" resultType="pDto" parameterType="String">
+		<![CDATA[
+		SELECT dongname, APTNAME, PRICE, dongextent, donglevel, nameprice, url
+		FROM bukgu
+		WHERE deal='매매' AND DONGNAME=#{dongname}
+		group by dongname, APTNAME, PRICE, dongextent, donglevel, nameprice, url
+		HAVING PRICE  <= ]]><![CDATA[(SELECT ROUND(AVG(PRICE)) FROM bukgu WHERE deal='매매' AND DONGNAME=#{dongname})]]>
+	</select>
+
+	<select id="bukgumean" resultType="pDto" parameterType="String">
+		SELECT  ROUND(AVG(PRICE)) AS mean_price 
+		FROM bukgu 
+		WHERE deal='매매' AND DONGNAME=#{dongname}
+	</select>
+	
+	
+	<select id="namgulist" resultType="pDto" parameterType="String">
+		<![CDATA[
+		SELECT dongname, APTNAME, PRICE, dongextent, donglevel, nameprice, url
+		FROM namgu
+		WHERE deal='매매' AND DONGNAME=#{dongname}
+		group by dongname, APTNAME, PRICE, dongextent, donglevel, nameprice, url
+		HAVING PRICE  <= ]]><![CDATA[(SELECT ROUND(AVG(PRICE)) FROM namgu WHERE deal='매매' AND DONGNAME=#{dongname})]]>
+	</select>
+
+	<select id="namgumean" resultType="pDto" parameterType="String">
+		SELECT  ROUND(AVG(PRICE)) AS mean_price 
+		FROM namgu 
+		WHERE deal='매매' AND DONGNAME=#{dongname}
+	</select>
+	
+	
+	
+	<select id="seogulist" resultType="pDto" parameterType="String">
+		<![CDATA[
+		SELECT dongname, APTNAME, PRICE, dongextent, donglevel, nameprice, url
+		FROM seogu
+		WHERE deal='매매' AND DONGNAME=#{dongname}
+		group by dongname, APTNAME, PRICE, dongextent, donglevel, nameprice, url
+		HAVING PRICE  <= ]]><![CDATA[(SELECT ROUND(AVG(PRICE)) FROM seogu WHERE deal='매매' AND DONGNAME=#{dongname})]]>
+	</select>
+
+	<select id="seogumean" resultType="pDto" parameterType="String">
+		SELECT  ROUND(AVG(PRICE)) AS mean_price 
+		FROM seogu 
+		WHERE deal='매매' AND DONGNAME=#{dongname}
+	</select>
+	
+	
+	
+	<select id="donggulist" resultType="pDto" parameterType="String">
+		<![CDATA[
+		SELECT dongname, APTNAME, PRICE, dongextent, donglevel, nameprice, url
+		FROM donggu
+		WHERE deal='매매' AND DONGNAME=#{dongname}
+		group by dongname, APTNAME, PRICE, dongextent, donglevel, nameprice, url
+		HAVING PRICE  <= ]]><![CDATA[(SELECT ROUND(AVG(PRICE)) FROM donggu WHERE deal='매매' AND DONGNAME=#{dongname})]]>
+	</select>
+
+	<select id="donggumean" resultType="pDto" parameterType="String">
+		SELECT  ROUND(AVG(PRICE)) AS mean_price 
+		FROM donggu 
+		WHERE deal='매매' AND DONGNAME=#{dongname}
+	</select>
+
+
+
 
 
 
