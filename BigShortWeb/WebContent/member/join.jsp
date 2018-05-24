@@ -23,6 +23,8 @@
 				$("#idck").css("display","block");
 			}else if(id != ""){
 				$("#idck").css("display","none");
+				
+				
 				$.ajax({
 					url:"memajax.bigshort",
 					type:"POST",
@@ -50,6 +52,9 @@
 						alert("system error");
 					}
 				});
+				
+				
+				
 			}
 		});
 		
@@ -306,6 +311,7 @@
 		</div>
 
 <br>		
+		<div style="color:green; margin-bottom:10px;">아래는 선택사항입니다.</div>
 		<div class="info_wrap" id="info_wrap3">
 		<!-- 사업자 번호 -->
 		<!-- 사업자 등록 번호 ***-**-***** 10자리 형식 --> 
